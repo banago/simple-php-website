@@ -9,7 +9,7 @@
 </form>
 <?php
 include 'restAuth.php';
-$macAddress = '34:17:EB:A6:28:E5';
+$macAddress = '(%2290%3Ab1%3A1c%3A87%3A60%3A38%22)';
 echo $iseAddress . $macAddress;
 if (isset($_POST['button1'])) 
   (
@@ -18,7 +18,7 @@ if (isset($_POST['button1']))
   $curl = curl_init();
   curl_setopt_array($curl, array(
   CURLOPT_SSL_VERIFYPEER => false,
-  CURLOPT_URL => $iseAddress . $macAddress,
+  CURLOPT_URL => $primeAddress . $macAddress,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
