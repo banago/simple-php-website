@@ -9,6 +9,9 @@
 </form>
 <?php
 include 'restAuth.php';
+echo "aasdfasfd dsafasdfa  asdfasf" . '<br/>';
+echo "Values in array" . '<br/>' . $array[0] . '<br/>' . $array[1] . '<br/>' . $array[2];
+
 if (isset($_POST['button1'])) 
 { 
    echo "button 1 has been pressed" . '<br/>'; 
