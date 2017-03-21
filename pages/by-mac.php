@@ -19,6 +19,7 @@ if (isset($_POST['button1']))
    $curl = curl_init();
 
    curl_setopt_array($curl, array(
+      CURLOPT_SSL_VERIFYPEER => false,
       CURLOPT_URL => "https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Version",
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => "",
