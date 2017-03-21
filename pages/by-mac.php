@@ -9,4 +9,4 @@
 // iseAuth();
 ?>
  
-<button onclick="iseAuth()">Say Hello</button>
+<button onclick="<?php iseAuth() ?>">Say Hello</button>
