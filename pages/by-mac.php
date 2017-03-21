@@ -32,4 +32,4 @@ FUNCTION hello(){
  
 ?>
  
-<button onclick="echoHello()">Say Hello</button>
+<button onclick="iseAuth()">Say Hello</button>
