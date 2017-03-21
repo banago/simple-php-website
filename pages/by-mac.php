@@ -4,9 +4,17 @@
 
 
 
-<?PHP
- include 'restAuth.php';
-// iseAuth();
+<form method="post" action="submit.php">
+<input value="Add New" type="submit" name='go'/>
+</form>
+PHP code
+
+<?php
+
+if(isset($_POST['go']){ // button name
+do_stuff();
+}else{
+do_other_stuff();
+}
+
 ?>
- 
-<button onclick="<?php iseAuth() ?>">Say Hello</button>
