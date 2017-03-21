@@ -36,11 +36,7 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  //echo $response;
-  $response->preserveWhiteSpace = false;
-  $response->formatOutput = true;
-  $xml_string = $response->saveXML();
-  echo $xml_string;
+  echo $response->asXML();
 }
 }  
 ?>
