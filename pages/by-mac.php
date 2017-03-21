@@ -8,6 +8,7 @@
 <input type="submit" name="button1"  value="My Button">
 </form>
 <?php
+include 'restAuth.php';
 if (isset($_POST['button1'])) 
 { 
    echo "button 1 has been pressed"; 
