@@ -9,4 +9,4 @@
 // iseAuth();
 ?>
  
-<button onclick="submit()">Say Hello</button>
+<button onclick="restAuth()">Say Hello</button>
