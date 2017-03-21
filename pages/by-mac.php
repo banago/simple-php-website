@@ -37,7 +37,8 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  echo $response;
+  //echo $response;
+  $json_string = json_encode($response, JSON_PRETTY_PRINT);
   //$xml = new SimpleXMLElement($response);
   //$dom = new DOMDocument('1.0');
   //$dom->preserveWhiteSpace = false;
