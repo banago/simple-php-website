@@ -16,8 +16,8 @@
         <h2><?php siteName(); ?></h2>
         <nav class="menu">
             <a href="/" title="Home">Mac</a> |    
-            <a href="/?page=about-us">About</a> |
-            <a href="/?page=products">Products</a> |
+            <a href="/?page=about-us">IP</a> |
+            <a href="/?page=products">Host Name</a> |
             <a href="/?page=contact-us">Contact</a>
         </nav>
     </header>    
