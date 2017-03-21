@@ -41,16 +41,6 @@ if ($err) {
   //print_r($json);
   //echo $response;
   echo $json["vlanId']['associationTime'];
-  //echo $json['vlanId'];
-  //echo $json['vlanId'];
-  //echo $json['associationTime'];
-  //echo $json['connectionType'];
-  //echo $json['deviceIpAddress'];
-  //echo $json['deviceName'];
-  //echo $json['userName'];
-  //echo $json['vendor'];
-  //echo $json['vlan'];
-  //echo $json['vlanId'];
 }
 }  
 ?>
