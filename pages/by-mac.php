@@ -38,7 +38,15 @@ if ($err) {
   echo "cURL Error #:" . $err;
 } else {
   $json = json_decode($response, true);
-   echo $json['queryResponse']['entity'][0]['clientsDTO']['connectionType'];
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['connectionType'] . '<br/>' ;
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceIpAddress'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceName'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceType'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['hostname'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['ipAddress'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['macAddress'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['securityPolicyStatus'] . '<br/>';
+   cho $json['queryResponse']['entity'][0]['clientsDTO']['userName'] . '<br/>';
   //print_r($json);
   //echo $response;
   //echo $json['vlanId']['associationTime'];
