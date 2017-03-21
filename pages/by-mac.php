@@ -38,16 +38,17 @@ if ($err) {
   echo "cURL Error #:" . $err;
 } else {
   $json = json_decode($response, true);
-  print_r($json);
-   //echo $response;
-  //$json_string = json_encode($response, JSON_PRETTY_PRINT);
-  //echo $json_string;
-  //$xml = new SimpleXMLElement($response);
-  //$dom = new DOMDocument('1.0');
-  //$dom->preserveWhiteSpace = false;
-  //$dom->formatOutput = true;
-  //$dom->loadXML($xml->asXML());
-  //echo $dom->saveXML();
+  //print_r($json);
+  //echo $response;
+  echo $json['macAddress'];
+  echo $json['associationTime'];
+  echo $json['connectionType'];
+  echo $json['deviceIpAddress'];
+  echo $json['deviceName'];
+  echo $json['userName'];
+  echo $json['vendor'];
+  echo $json['vlan'];
+  echo $json['vlanId'];
 }
 }  
 ?>
