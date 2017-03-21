@@ -36,7 +36,8 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  echo $response->asXML();
+  $xml = new SimpleXMLElement($response);
+  echo $xml->asXML();
 }
 }  
 ?>
