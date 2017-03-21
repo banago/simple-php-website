@@ -9,7 +9,7 @@
 </form>
 <?php
 include 'restAuth.php';
-$macAddress = '(34-17-EB-A6-28-E5)';
+$macAddress = '(%2234%3A17%3Aeb%3Aa6%3A28%3Ae5%22)';
 echo $iseAddress . $macAddress . '<br/>';
 if (isset($_POST['button1'])) 
 { 
