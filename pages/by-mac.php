@@ -38,7 +38,7 @@ if ($err) {
   echo "cURL Error #:" . $err;
 } else {
   $json = json_decode($response, true);
-   echo $json['vlanId']['associationTime'];
+   echo $json['@displayName']['associationTime'];
    print $json->payload->vlanId;
   print_r($json);
   //echo $response;
