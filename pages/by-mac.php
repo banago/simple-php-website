@@ -8,6 +8,6 @@
 
 <?php 
 if(isset($_POST['submit'])) { 
-    foo(); 
+    rest_Auth(); 
 } 
 ?>
