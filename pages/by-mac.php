@@ -12,7 +12,28 @@ include 'restAuth.php';
 if (isset($_POST['button1'])) 
 { 
    echo "button 1 has been pressed" . '<br/>'; 
-   
    iseAuth();
+   $curl = curl_init();
+
+   curl_setopt_array($curl, array(
+      CURLOPT_URL => "https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Version",
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => "",
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 30,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => "GET",
+      CURLOPT_HTTPHEADER => iseAuth(),
+));
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
 }  
 ?>
