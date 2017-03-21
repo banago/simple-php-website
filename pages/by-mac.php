@@ -12,5 +12,5 @@ include 'restAuth.php';
 if(isset($_POST['submit'])) { 
     iseAuth(); 
 }; 
-iseAuth(); 
+//iseAuth(); 
 ?>
