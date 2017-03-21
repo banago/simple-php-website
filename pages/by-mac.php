@@ -8,6 +8,7 @@
 </form>
 
 <?php 
+include 'restAuth.php';
 if(isset($_POST['submit'])) { 
     rest_Auth(); 
 } 
