@@ -38,11 +38,11 @@ if ($err) {
   echo "cURL Error #:" . $err;
 } else {
   $json = json_decode($response, true);
-  print_r($json);
+  //print_r($json);
   //echo $response;
-  echo $json["vlanId'];
-  echo $json['vlanId'];
-  echo $json['vlanId'];
+  echo $json["vlanId']['associationTime'];
+  //echo $json['vlanId'];
+  //echo $json['vlanId'];
   //echo $json['associationTime'];
   //echo $json['connectionType'];
   //echo $json['deviceIpAddress'];
