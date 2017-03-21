@@ -9,25 +9,25 @@
 </form>
 <?php
 include 'restAuth.php';
-$macAddress = '(%2290%3Ab1%3A1c%3A87%3A60%3A38%22)';
-echo $primeAddress . $macAddress;
+$macAddress = '34:17:EB:A6:28:E5';
+echo $iseAddress . $macAddress;
 if (isset($_POST['button1'])) 
-  (
-  echo "button 1 has been pressed" . '<br/>'; 
-  //iseAuth();
-  $curl = curl_init();
-  curl_setopt_array($curl, array(
-  CURLOPT_SSL_VERIFYPEER => false,
-  CURLOPT_URL => $primeAddress . $macAddress,
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_HTTPHEADER => $primeAuth,
-));
+{ 
+   echo "button 1 has been pressed" . '<br/>'; 
+   //iseAuth();
+   $curl = curl_init();
 
+   curl_setopt_array($curl, array(
+      CURLOPT_SSL_VERIFYPEER => false,
+      CURLOPT_URL => $iseAddress . $macAddress,
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => "",
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 300,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => "GET",
+      CURLOPT_HTTPHEADER => $iseAuth,
+));
 $response = curl_exec($curl);
 $err = curl_error($curl);
 
@@ -36,6 +36,13 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  echo $response;
+  $xml = new SimpleXMLElement($response);
+  //echo $xml->asXML();
+  $dom = new DOMDocument('1.0');
+  $dom->preserveWhiteSpace = false;
+  $dom->formatOutput = true;
+  $dom->loadXML($xml->asXML());
+  echo $dom->saveXML();
 }
+}  
 ?>
