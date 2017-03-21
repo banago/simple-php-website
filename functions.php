@@ -6,7 +6,7 @@
  * @var array
  */
 $config = [
-    'name' => 'Simple PHP Website',
+    'name' => 'Frosty Face',
 ];
 
 /**
@@ -15,7 +15,7 @@ $config = [
 function siteName()
 {
     global $config;
-    echo $config['Frosty Face'];
+    echo $config['name'];
 }
 
 /**
