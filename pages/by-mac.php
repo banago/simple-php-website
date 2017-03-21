@@ -8,9 +8,15 @@
 <input type="submit" name="button1"  value="My Button">
 </form>
 <?php
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
+include 'restAuth.php';
+$macAddress = '34:17:EB:A6:28:E5';
+echo $iseAddress . $macAddress;
+if (isset($_POST['button1'])) 
+  (
+  echo "button 1 has been pressed" . '<br/>'; 
+  //iseAuth();
+  $curl = curl_init();
+  curl_setopt_array($curl, array(
   CURLOPT_SSL_VERIFYPEER => false,
   CURLOPT_URL => $iseAddress . $macAddress,
   CURLOPT_RETURNTRANSFER => true,
