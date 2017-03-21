@@ -41,6 +41,5 @@ if ($err) {
   //print_r($json);
   //echo $response;
   echo $json["vlanId']['associationTime'];
-}
 }  
 ?>
