@@ -16,12 +16,9 @@ function echoHello(){
 </script>
  
 <?PHP
-FUNCTION hello(){
- GLOBAL $a;
- ECHO $a;
- }
+FUNCTION iseAuth()
  include 'restAuth.php';
- iseAuth();
+// iseAuth();
 ?>
  
 <button onclick="submit()">Say Hello</button>
