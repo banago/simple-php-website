@@ -36,8 +36,13 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  $xml = new SimpleXMLElement($response);
-  echo $xml->asXML();
+  //$xml = new SimpleXMLElement($response);
+  //echo $xml->asXML();
+  $dom = new DOMDocument('1.0');
+  $dom->preserveWhiteSpace = false;
+  $dom->formatOutput = true;
+  $dom->loadXML($response->asXML());
+  echo $dom->saveXML();
 }
 }  
 ?>
