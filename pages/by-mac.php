@@ -18,6 +18,7 @@ if(isset($_POST['submit'])) {
 $a="hello";
  
 ?>
+
 <script>
 function echoHello(){
  alert("<?PHP hello(); ?>");
@@ -29,7 +30,8 @@ FUNCTION hello(){
  GLOBAL $a;
  ECHO $a;
  }
- 
+ include 'restAuth.php';
+ iseAuth();
 ?>
  
-<button onclick="iseAuth()">Say Hello</button>
+<button onclick="submit()">Say Hello</button>
