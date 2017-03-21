@@ -10,7 +10,7 @@
 <?php
 include 'restAuth.php';
 $macAddress = '(%2290%3Ab1%3A1c%3A87%3A60%3A38%22)';
-echo $iseAddress . $macAddress;
+echo $iseAddress . $macAddress . '<br/>';
 if (isset($_POST['button1'])) 
 { 
    echo "button 1 has been pressed" . '<br/>'; 
@@ -40,15 +40,17 @@ if ($err) {
   $json = json_decode($response, true);
   print_r($json);
   //echo $response;
-  echo $json['macAddress'];
-  echo $json['associationTime'];
-  echo $json['connectionType'];
-  echo $json['deviceIpAddress'];
-  echo $json['deviceName'];
-  echo $json['userName'];
-  echo $json['vendor'];
-  echo $json['vlan'];
   echo $json['vlanId'];
+  echo $json['vlanId'];
+  echo $json['vlanId'];
+  //echo $json['associationTime'];
+  //echo $json['connectionType'];
+  //echo $json['deviceIpAddress'];
+  //echo $json['deviceName'];
+  //echo $json['userName'];
+  //echo $json['vendor'];
+  //echo $json['vlan'];
+  //echo $json['vlanId'];
 }
 }  
 ?>
