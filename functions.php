@@ -15,7 +15,7 @@ $config = [
 function siteName()
 {
     global $config;
-    echo $config['name'];
+    echo $config['Frosty Face'];
 }
 
 /**
@@ -46,4 +46,9 @@ function pageContent()
     } else {
         include 'pages/404.php';
     }
+}
+function siteVersion()
+{
+    global $sitever;
+    echo $sitever['17.0.0'];
 }
