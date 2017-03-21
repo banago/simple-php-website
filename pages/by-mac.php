@@ -19,6 +19,7 @@ if (isset($_POST['button1']))
 
    curl_setopt_array($curl, array(
       CURLOPT_SSL_VERIFYPEER => false,
+      CURLOPT_SSL_VERIFYHOST => false,
       CURLOPT_URL => $primeAddress . $macAddress,
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => "",
