@@ -10,7 +10,7 @@
 <?php
 include 'restAuth.php';
 $macAddress = '(%2290%3Ab1%3A1c%3A87%3A60%3A38%22)';
-echo $iseAddress . $macAddress;
+echo $primeAddress . $macAddress;
 if (isset($_POST['button1'])) 
   (
   echo "button 1 has been pressed" . '<br/>'; 
