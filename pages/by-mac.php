@@ -7,7 +7,7 @@
 <form method="post" action="submit.php">
 <input value="Add New" type="submit" name='go'/>
 </form>
-PHP code
+
 
 <?php
 
