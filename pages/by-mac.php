@@ -27,7 +27,7 @@ if (isset($_POST['button1']))
       CURLOPT_TIMEOUT => 30,
       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
       CURLOPT_CUSTOMREQUEST => "GET",
-      CURLOPT_HTTPHEADER => iseAuth(),
+      CURLOPT_HTTPHEADER => $iseAuth,
 ));
 $response = curl_exec($curl);
 $err = curl_error($curl);
