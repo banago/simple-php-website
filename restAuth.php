@@ -1,8 +1,10 @@
 <?php
+function iseAuth() {
+    $array = array(
+        "foo" => "bar",
+        "bar" => "foo",
+    );
+    echo "aasdfasfd dsafasdfa  asdfasf";
+}
 
-$array = array(
-    "foo" => "bar",
-    "bar" => "foo",
-);
-echo "aasdfasfd dsafasdfa  asdfasf";
 ?>
