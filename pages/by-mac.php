@@ -40,7 +40,7 @@ if ($err) {
   $json = json_decode($response, true);
   print_r($json);
   //echo $response;
-  echo $json['vlanId'];
+  echo $json["vlanId'];
   echo $json['vlanId'];
   echo $json['vlanId'];
   //echo $json['associationTime'];
