@@ -7,7 +7,9 @@
 <form method="POST" action=''>
 <input type="submit" name="button1"  value="My Button">
 </form>
+<?php
 if (isset($_POST['button1'])) 
 { 
    echo "button 1 has been pressed"; 
 }  
+?>
