@@ -15,7 +15,7 @@ echo "Values in array" . '<br/>' . $array[0] . '<br/>' . $array[1] . '<br/>' . $
 if (isset($_POST['button1'])) 
 { 
    echo "button 1 has been pressed" . '<br/>'; 
-   iseAuth();
+   //iseAuth();
    $curl = curl_init();
 
    curl_setopt_array($curl, array(
