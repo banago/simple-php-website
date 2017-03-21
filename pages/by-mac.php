@@ -46,7 +46,7 @@ if ($err) {
    echo $json['queryResponse']['entity'][0]['clientsDTO']['ipAddress'] . '<br/>';
    echo $json['queryResponse']['entity'][0]['clientsDTO']['macAddress'] . '<br/>';
    echo $json['queryResponse']['entity'][0]['clientsDTO']['securityPolicyStatus'] . '<br/>';
-   cho $json['queryResponse']['entity'][0]['clientsDTO']['userName'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['userName'] . '<br/>';
   //print_r($json);
   //echo $response;
   //echo $json['vlanId']['associationTime'];
