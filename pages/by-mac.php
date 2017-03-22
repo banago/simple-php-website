@@ -51,7 +51,7 @@ function macformat1(){
 				ya = txtArray[i].substring(0, len-sp[i1]) + xa + txtArray[i].substring(len-sp[i1]);
 				txtArray[i] = ya;
 			}
-			document.getElementById("macid1").innerHTML+=ya + "<br>";
+			document.getElementById("macid1").innerHTML+= xb +ya + xb + "<br>";
 		}
 	}else if (za == 2) {
 		sp = ["4","8"];
@@ -70,7 +70,7 @@ function macformat1(){
 				ya = txtArray[i].substring(0, len-sp[i1]) + xa + txtArray[i].substring(len-sp[i1]);
 				txtArray[i] = ya;
 			}
-			document.getElementById("macid1").innerHTML+= xb + ya + xb + "<br>";
+			document.getElementById("macid1").innerHTML+=ya + "<br>";
 		}
 	}else {
 		y = 0;
