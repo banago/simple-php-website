@@ -46,7 +46,7 @@ if ($err) {
 } else {
   //$json = json_encode($response);
   $json = json_decode($response, true);
-  echo $json['type'] . '<br/>';
+  echo $json['response']['0']['family'] . '<br/>';
   echo print_r($json) . '<br/>';
 }
 }
