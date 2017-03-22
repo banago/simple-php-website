@@ -120,6 +120,39 @@ if ($err) {
 }
 ?>
 
+<?php
+     if (isset($_GET['var_PHP_data'])) {
+       echo $_GET['var_PHP_data'];
+     } else {
+     ?>
+     <!DOCTYPE html>
+     <html>
+       <head>
+
+         <script>
+             $(document).ready(function() {
+                 $('#sub').click(function() {
+                     var var_data = "Hello World";
+                     $.ajax({
+                         url: 'http://10.16.3.238/?page=by-mac',
+                         type: 'GET',
+                          data: { var_PHP_data: var_data },
+                          success: function(data) {
+                              // do something;
+                             $('#result').html(data)
+                          }
+                      });
+                  });
+              });
+         </script>
+       </head>
+       <body>
+         <input type="submit" value="Submit" id="sub"/>
+         <div id="result">
+       </body>
+     </html>
+    <?php } ?>
+
 	
 
 
