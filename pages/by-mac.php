@@ -68,6 +68,15 @@ function macformat1(){
 </form>
 
 	
+<script language="javascript" >
+   id = "data"
+</script>
+
+<?php
+   $getthevalueofid = id;
+   echo $getthevalueofid;
+ ?>
+	
 <?php
 include 'restAuth.php';
 $macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
@@ -79,7 +88,8 @@ if (isset($_POST['button1']))
 { 
    
    echo "button 1 has been pressed" . '<br/>'; 
- 
+   $getthevalueofid = id;
+   echo $getthevalueofid;
    //iseAuth();
    $curl = curl_init();
    $somevar = $_GET["uid"];
@@ -130,39 +140,3 @@ if ($err) {
    echo $getthevalueofid;
  ?>
 	
-<?php
-      if (isset($_GET['tap'])) {
-       echo $_GET['tap'];
-     } else {
-     ?>
-     <!DOCTYPE html>
-     <html>
-       <head>
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
-            <script src="http://malsup.github.com/jquery.form.js"></script> 
-	    <script tap="cats"></script>
-         <script>
-	 var var_data = "Hello World";
-             $(document).ready(function() {
-                 $('#sub').click(function() {
-                     var var_data = "Hello World";
-                     $.ajax({
-                         url: 'http://10.16.3.238/?page=by-mac',
-                         type: 'GET',
-                          data: { var_PHP_data: var_data },
-                          success: function(data) {
-                              // do something;
-                             $('#result').html(data)
-                          }
-                      });
-                  });
-              });
-         </script>
-       </head>
-       <body>
-         <input type="submit" value="Submit" id="sub"/>
-         <div id="result">
-       </body>
-     </html>
-    <?php } ?>
-
