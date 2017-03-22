@@ -47,6 +47,7 @@ if ($err) {
   //$json = json_encode($response);
   $json = json_decode($response, true);
   echo $json['type'];
+  echo print_r($json);
 }
 }
 ?>
