@@ -59,12 +59,13 @@ function macformat1(){
 	}else {
 		y = 0;
 	}
+			window.location.href=”prime.php?name=xc";
 
 
 }
 
 </script>
-		  name="name"
+
 <p id="macid1"></p>
 </div></div></div></div></div></div>
 
