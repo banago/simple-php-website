@@ -66,6 +66,11 @@ function macformat1(){
 <p id="macid1"></p>
 </div></div></div></div></div></div>
 
+<form action="prime.php" method='get'>
+	<b>Enter your name: </b> <input type="text" name="name">
+	<input type="submit">
+	</form>
+	
 <form method="POST" action=''>
 <input type="submit" name="button1"  value="My Button">
 </form>
@@ -83,8 +88,6 @@ function macformat1(){
 <?php
 $macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
 echo $iseAddress . $macAddress . '<br/>';
-
-echo "asdfasfdsa ".$_GET['xa']."<br>";
 	
 if (isset($_POST['button1'])) 
 { 
