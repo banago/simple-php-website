@@ -75,7 +75,7 @@ include 'restAuth.php';
 $macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
 echo $iseAddress . $macAddress . '<br/>';
 
-$blah = $_POST['xb'];
+$blah = $_GET['xb'];
 echo "This is the value of blah" . $blah;
 	
 if (isset($_POST['button1'])) 
