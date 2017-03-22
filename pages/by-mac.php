@@ -56,7 +56,7 @@ function macformat1(){
 			//document.getElementById("macid1").innerHTML+= xc + "<br>";
 			//document.getElementById("macid1").innerHTML+= yak + "<br>"
 			jQuery.ajax({
-    				type: "GET",
+    				type: "POST",
    			 	url: 'prime.php',
     				dataType: 'json',
     				data: {functionname: 'add', arguments: [1, 2]},
