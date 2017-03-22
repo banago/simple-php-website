@@ -72,6 +72,9 @@ function macformat1(){
   var foo = '<?php echo $foo ?>';
 </script>
 	
+var variableToSend = 'foo';
+$.post('by-mac.php', {variable: variableToSend});
+	
 <?php
 include 'restAuth.php';
 $macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
@@ -79,8 +82,7 @@ echo $iseAddress . $macAddress . '<br/>';
 
 
 	
-var variableToSend = 'foo';
-$.post('file.php', {variable: variableToSend});
+
 
 $variable = $_POST['variable'];
 	
