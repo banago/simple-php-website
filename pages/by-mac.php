@@ -3,7 +3,7 @@
 </p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
 
 
-
+<form method="POST">
 <div class="entry-content">
       
         
@@ -68,22 +68,19 @@ function macformat1(){
 <form method="POST" action=''>
 <input type="submit" name="button1"  value="My Button">
 </form>
-<script type="text/javascript">
-  var foo = '<?php echo $foo ?>';
-</script>
-	
-var variableToSend = 'foo';
-$.post('by-mac.php', {variable: variableToSend});
+
 	
 <?php
 include 'restAuth.php';
 $macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
 echo $iseAddress . $macAddress . '<br/>';
-$variable = $_POST['variable'];
-echo $variable . '<br/>';
+
+$blah = isset($_POST['xb']);
+echo $blah;
 	
 if (isset($_POST['button1'])) 
 { 
+   
    echo "button 1 has been pressed" . '<br/>'; 
  
    //iseAuth();
