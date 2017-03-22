@@ -57,7 +57,7 @@ function macformat1(){
 			//document.getElementById("macid1").innerHTML+= yak + "<br>"
 			jQuery.ajax({
     				type: "GET",
-   			 	url: 'function.php',
+   			 	url: 'prime.php',
     				dataType: 'json',
     				data: {functionname: 'add', arguments: [1, 2]},
 
