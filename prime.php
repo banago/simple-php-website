@@ -1,10 +1,4 @@
 <?php
-$name = $_GET['name'];
-echo "Welcome to the website " . $name .'.';
-function primeMac($name)
-{
-  echo "This is the the VAR" . $name;
-  <?php
     header('Content-Type: application/json');
 
     $aResult = array();
@@ -33,8 +27,5 @@ function primeMac($name)
     }
 
     echo json_encode($aResult);
-
-?>
-}
 
 ?>
