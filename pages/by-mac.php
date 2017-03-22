@@ -79,12 +79,8 @@ $.post('by-mac.php', {variable: variableToSend});
 include 'restAuth.php';
 $macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
 echo $iseAddress . $macAddress . '<br/>';
-
-
-	
-
-
 $variable = $_POST['variable'];
+echo $variable . '<br/>';
 	
 if (isset($_POST['button1'])) 
 { 
