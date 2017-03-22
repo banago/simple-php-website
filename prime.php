@@ -1,3 +1,4 @@
+<?php
 /* Do some operation here, like talk to the database, the file-session
  * The world beyond, limbo, the city of shimmers, and Canada.
  * 
@@ -10,3 +11,4 @@ echo json_encode(42); //In the end, you need to echo the result.
 
                       //You can json_encode() any value in PHP, arrays, strings,
                       //even objects.
+?>
