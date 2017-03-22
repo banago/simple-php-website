@@ -44,7 +44,7 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  echo json_encode($response);
+  echo json_encode($response['type']);
 }
 }
 ?>
