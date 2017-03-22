@@ -52,9 +52,9 @@ function macformat1(){
 				txtArray[i] = ya;
 			}
 			xc = xb +ya + xb;
-			yak = window.location.href=”prime.php?name=xc";
-			document.getElementById("macid1").innerHTML+= xc + "<br>";
-			document.getElementById("macid1").innerHTML+= yak + "<br>"
+			window.location.href=”prime.php?name="+xc;
+			//document.getElementById("macid1").innerHTML+= xc + "<br>";
+			//document.getElementById("macid1").innerHTML+= yak + "<br>"
 			
 		}
 	
