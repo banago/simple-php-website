@@ -19,7 +19,7 @@ include 'prime.php';
 <script>
 
 function macformat1(){
-	var x,y,ya,z,za,xa,xb,xc,bc1,be1,name,a,b,answer,sp,sp1,sp2;
+	var x,y,ya,z,za,xa,xb,xc,bc1,be1,name,a,b,answer,sp,sp1,sp2,yak;
 	x=document.getElementById("form2");
 	y=x.elements["textarea"].value;
 	
@@ -52,14 +52,16 @@ function macformat1(){
 				txtArray[i] = ya;
 			}
 			xc = xb +ya + xb;
+			yak = window.location.href=”prime.php?name="xc";
 			document.getElementById("macid1").innerHTML+= xc + "<br>";
+			document.getElementById("macid1").innerHTML+= yak + "<br>"
 			
 		}
 	
 	}else {
 		y = 0;
 	}
-			window.location.href=”prime.php?name="xc";
+			
 
 
 }
