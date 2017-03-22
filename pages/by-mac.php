@@ -135,13 +135,7 @@ if ($err) {
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
             <script src="http://malsup.github.com/jquery.form.js"></script> 
          <script>
-		 var var_data = "Hello World";
-                     $.ajax({
-                         url: 'http://10.16.3.238/?page=by-mac',
-                         type: 'GET',
-                          data: { var_PHP_data: var_data },
-                          success: function(data) 
-                      });
+	
              $(document).ready(function() {
                  $('#sub').click(function() {
                      var var_data = "Hello World";
