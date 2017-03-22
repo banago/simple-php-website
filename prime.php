@@ -11,7 +11,9 @@ echo json_encode(42); //In the end, you need to echo the result.
 
                       //You can json_encode() any value in PHP, arrays, strings,
                       //even objects.
-$name = $_GET['name'];
+if (isset($_GET['primeMac'])) 
+{
+$name = $_GET['primeMac'];
 echo "This mac was passed" . $name . ".";
 
 
@@ -43,5 +45,6 @@ if ($err) {
   echo "cURL Error #:" . $err;
 } else {
   echo $response;
+}
 }
 ?>
