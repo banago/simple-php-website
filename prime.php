@@ -6,7 +6,7 @@
  * It all depends on the Content-type header that you send with your AJAX
  * request. */
 
-echo json_encode(42); //In the end, you need to echo the result. 
+echo json_encode(42) . '<br/>'; //In the end, you need to echo the result. 
                       //All data should be json_encode()d.
 
                       //You can json_encode() any value in PHP, arrays, strings,
@@ -14,7 +14,7 @@ echo json_encode(42); //In the end, you need to echo the result.
 if (isset($_GET['primeMac'])) 
 {
 $name = $_GET['primeMac'];
-echo "This mac was passed" . $name . ".";
+echo "This mac was passed" . $name . '<br/>';
 
 
 $curl = curl_init();
@@ -46,8 +46,8 @@ if ($err) {
 } else {
   //$json = json_encode($response);
   $json = json_decode($response, true);
-  echo $json['type'];
-  echo print_r($json);
+  echo $json['type'] . '<br/>';
+  echo print_r($json) . '<br/>';
 }
 }
 ?>
