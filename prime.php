@@ -1,4 +1,5 @@
 <?php
-$_GET['name']
+name = $_GET['name'];
+echo "Welcome to the website " . $name .'.';
 
 ?>
