@@ -125,8 +125,8 @@ if ($err) {
 	
 	
 <?php
-      if (isset($_GET['xa'])) {
-       echo $_GET['xa'];
+      if (isset($_GET['var_PHP_data'])) {
+       echo $_GET['var_PHP_data'];
      } else {
      ?>
      <!DOCTYPE html>
