@@ -10,7 +10,8 @@ include 'prime.php';
 <div class="entry-content">
       
         
-          <div class="e-content"><div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Post Body" data-type="item" data-updated-on="1472509483192" id="item-57c4b5b329687fa2d85a5c05"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-ac12f63a8d769a824803"><div class="sqs-block-content"><p>Here is a little tool I wrote to format Mac addresses. Enter each address on a newline.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_1_1472509339599_14596"><div class="sqs-block-content"><form id="form2"> 
+          <div class="e-content"><div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Post Body" data-type="item" data-updated-on="1472509483192" id="item-57c4b5b329687fa2d85a5c05"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-ac12f63a8d769a824803"><div class="sqs-block-content"><p>Here is a little tool I wrote to format Mac addresses. Enter each address on a newline.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_1_1472509339599_14596"><div class="sqs-block-content">
+		  <form id="form2" action="prime.php" method='get'> 
 <textarea name="textarea" style="width:250px;height:150px;">bA:dd:De:AD:be:ef&#13;&#10;dEDd.BEEF.caFe</textarea><br>
 
 
