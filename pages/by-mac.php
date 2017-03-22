@@ -76,7 +76,7 @@ $macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
 echo $iseAddress . $macAddress . '<br/>';
 
 $blah = isset($_POST['xb']);
-echo $blah;
+echo "This is the value of blah" . $blah;
 	
 if (isset($_POST['button1'])) 
 { 
