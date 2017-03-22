@@ -52,3 +52,9 @@ function siteVersion()
     global $sitever;
     echo $sitever['17.0.0'];
 }
+
+function primeMac($mac)
+{
+    echo "This would have been passed to prime " . $mac
+    echo $sitever['17.0.0'];
+}
