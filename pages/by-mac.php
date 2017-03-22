@@ -1,24 +1,4 @@
-    <html>
-       <head>
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
-            <script src="http://malsup.github.com/jquery.form.js"></script> 
-         <script>
-             $(document).ready(function() {
-                 $('#sub').click(function() {
-                     var var_data = "Hello World";
-                     $.ajax({
-                         url: 'http://10.16.3.238/?page=by-mac',
-                         type: 'GET',
-                          data: { var_PHP_data: var_data },
-                          success: function(data) {
-                              // do something;
-                             $('#result').html(data)
-                          }
-                      });
-                  });
-              });
-         </script>
-       </head>
+
 
 
 <p>This is the <b>By Mac</b> page. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -143,6 +123,27 @@ if ($err) {
 ?>
 
 <?php
+    <html>
+       <head>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+            <script src="http://malsup.github.com/jquery.form.js"></script> 
+         <script>
+             $(document).ready(function() {
+                 $('#sub').click(function() {
+                     var var_data = "Hello World";
+                     $.ajax({
+                         url: 'http://10.16.3.238/?page=by-mac',
+                         type: 'GET',
+                          data: { var_PHP_data: var_data },
+                          success: function(data) {
+                              // do something;
+                             $('#result').html(data)
+                          }
+                      });
+                  });
+              });
+         </script>
+       </head>
      if (isset($_GET['var_PHP_data'])) {
        echo $_GET['var_PHP_data'];
      } else {
