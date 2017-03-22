@@ -11,7 +11,7 @@
         //The actual data is found on this.responseText
         alert(this.responseText); //Will alert: 42
     };
-    oReq.open("get", "get-data.php", true);
+    oReq.open("get", "prime.php", true);
     //                               ^ Don't block the rest of the execution.
     //                                 Don't wait until the request finishes to 
     //                                 continue.
