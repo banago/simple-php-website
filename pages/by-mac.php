@@ -127,6 +127,7 @@ if ($err) {
 
 <?php
    $getthevalueofid = id;
+   echo $getthevalueofid;
  ?>
 	
 <?php
