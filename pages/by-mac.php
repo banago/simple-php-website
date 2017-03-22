@@ -50,12 +50,9 @@ function macformat1(){
 			}
 			xc = xb +ya + xb;
 			document.getElementById("macid1").innerHTML+= xc + "<br>";
-
-		
-
-	}else {
-		y = 0;
-	}
+			}else {
+				y = 0;
+			}
 
 
 
