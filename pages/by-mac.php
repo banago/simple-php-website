@@ -55,15 +55,6 @@ function macformat1(){
 	}else {
 		y = 0;
 	}
-}
-
-</script>
-<p id="macid1"></p>
-</div></div></div></div></div></div>
-
-
-
-
 
 <form method="POST" action=''>
 <input type="submit" name="button1"  value="My Button">
@@ -122,3 +113,15 @@ if ($err) {
 } 
 }
 ?>
+
+}
+
+</script>
+<p id="macid1"></p>
+</div></div></div></div></div></div>
+
+
+
+
+
+
