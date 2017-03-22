@@ -72,12 +72,15 @@ function macformat1(){
 include 'restAuth.php';
 $macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
 echo $iseAddress . $macAddress . '<br/>';
+
+echo "<script>document.writeln(xc);</script>";
+
 if (isset($_POST['button1'])) 
 { 
    echo "button 1 has been pressed" . '<br/>'; 
    //iseAuth();
    $curl = curl_init();
-
+   $somevar = $_GET["uid"];
    curl_setopt_array($curl, array(
       CURLOPT_SSL_VERIFYPEER => false,
       CURLOPT_SSL_VERIFYHOST => false,
