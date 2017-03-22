@@ -54,8 +54,8 @@ if ($err) {
   // $array[$i] is same as $item
   }
   for ($i = 0; $i < count($json); $i++) {
-    echo $json['response'][$i]'family'];
-    echo $json['response'][$i]'type'];
+    echo $json['response'][$i]['family'];
+    echo $json['response'][$i]['type'];
 }
   
 }
