@@ -73,7 +73,7 @@ function macformat1(){
 </script>
 
 <?php
-   $getthevalueofid = id;
+   $getthevalueofid = xc;
    echo $getthevalueofid;
  ?>
 	
