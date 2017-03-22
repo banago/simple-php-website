@@ -13,7 +13,7 @@ echo json_encode(42); //In the end, you need to echo the result.
                       //even objects.
 $name = $_GET['name'];
 echo "This mac was passed" . $name . ".";
-<?php
+
 
 $curl = curl_init();
 
