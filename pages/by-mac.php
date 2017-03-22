@@ -119,6 +119,24 @@ if ($err) {
 } 
 }
 ?>
+
+<script>
+             $(document).ready(function() {
+                 $('#sub').click(function() {
+                     var var_data = "Hello World";
+                     $.ajax({
+                         url: 'http://10.16.3.238/?page=by-mac',
+                         type: 'GET',
+                          data: { var_PHP_data: var_data },
+                          success: function(data) {
+                              // do something;
+                             $('#result').html(data)
+                          }
+                      });
+                  });
+              });
+         </script>	
+
 	
 <?php
      if (isset($_GET['var_PHP_data'])) {
