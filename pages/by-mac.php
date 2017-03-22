@@ -78,6 +78,7 @@ echo "<script>document.writeln(xc);</script>";
 if (isset($_POST['button1'])) 
 { 
    echo "button 1 has been pressed" . '<br/>'; 
+   echo "<script>document.writeln(xc);</script>";
    //iseAuth();
    $curl = curl_init();
    $somevar = $_GET["uid"];
