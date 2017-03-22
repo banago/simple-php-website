@@ -51,9 +51,13 @@ if ($err) {
   foreach($json as $i => $item) {
     echo $json[$i]['response'][$i]['family'];
     echo $json[$i]['response'][$i]['type'];
-
-    // $array[$i] is same as $item
+  // $array[$i] is same as $item
+  }
+  for ($i = 0; $i < count($json); $i++) {
+    echo $json['response'][$i]'family'];
+    echo $json['response'][$i]'family'];
 }
+  
 }
 }
 ?>
