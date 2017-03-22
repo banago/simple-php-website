@@ -52,7 +52,7 @@ function macformat1(){
 				txtArray[i] = ya;
 			}
 			xc = xb +ya + xb;
-			yak = window.location.href="function.php?name="+xc;
+			//yak = window.location.href="function.php?name="+xc;
 			//document.getElementById("macid1").innerHTML+= xc + "<br>";
 			//document.getElementById("macid1").innerHTML+= yak + "<br>"
 			jQuery.ajax({
