@@ -73,12 +73,19 @@ include 'restAuth.php';
 $macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
 echo $iseAddress . $macAddress . '<br/>';
 
-echo "<script>document.writeln(xc);</script>";
+<script type="text/javascript">
+  var foo = '<?php echo $foo ?>';
+</script>
+	
+var variableToSend = 'foo';
+$.post('file.php', {variable: variableToSend});
 
+$variable = $_POST['variable'];
+	
 if (isset($_POST['button1'])) 
 { 
    echo "button 1 has been pressed" . '<br/>'; 
-   echo "<script>document.writeln(xc);</script>";
+ 
    //iseAuth();
    $curl = curl_init();
    $somevar = $_GET["uid"];
