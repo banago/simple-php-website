@@ -68,14 +68,16 @@ function macformat1(){
 <form method="POST" action=''>
 <input type="submit" name="button1"  value="My Button">
 </form>
+<script type="text/javascript">
+  var foo = '<?php echo $foo ?>';
+</script>
+	
 <?php
 include 'restAuth.php';
 $macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
 echo $iseAddress . $macAddress . '<br/>';
 
-<script type="text/javascript">
-  var foo = '<?php echo $foo ?>';
-</script>
+
 	
 var variableToSend = 'foo';
 $.post('file.php', {variable: variableToSend});
