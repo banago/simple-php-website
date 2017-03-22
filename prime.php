@@ -1,31 +1,12 @@
-<?php
-    header('Content-Type: application/json');
+/* Do some operation here, like talk to the database, the file-session
+ * The world beyond, limbo, the city of shimmers, and Canada.
+ * 
+ * AJAX generally uses strings, but you can output JSON, HTML and XML as well. 
+ * It all depends on the Content-type header that you send with your AJAX
+ * request. */
 
-    $aResult = array();
+echo json_encode(42); //In the end, you need to echo the result. 
+                      //All data should be json_encode()d.
 
-    if( !isset($_POST['functionname']) ) { $aResult['error'] = 'No function name!'; }
-
-    if( !isset($_POST['arguments']) ) { $aResult['error'] = 'No function arguments!'; }
-
-    if( !isset($aResult['error']) ) {
-
-        switch($_POST['functionname']) {
-            case 'add':
-               if( !is_array($_POST['arguments']) || (count($_POST['arguments']) < 2) ) {
-                   $aResult['error'] = 'Error in arguments!';
-               }
-               else {
-                   $aResult['result'] = add(floatval($_POST['arguments'][0]), floatval($_POST['arguments'][1]));
-               }
-               break;
-
-            default:
-               $aResult['error'] = 'Not found function '.$_POST['functionname'].'!';
-               break;
-        }
-
-    }
-
-    echo json_encode($aResult);
-
-?>
+                      //You can json_encode() any value in PHP, arrays, strings,
+                      //even objects.
