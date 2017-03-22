@@ -16,7 +16,7 @@
 <script>
 
 function macformat1(){
-	var x,y,ya,z,za,xa,xb,bc1,be1,name,a,b,answer,sp,sp1,sp2;
+	var x,y,ya,z,za,xa,xb,xc,bc1,be1,name,a,b,answer,sp,sp1,sp2;
 	x=document.getElementById("form2");
 	y=x.elements["textarea"].value;
 	
@@ -24,6 +24,7 @@ function macformat1(){
   	zb="toUpperCase";
 	xa = "%3A";
 	xb = "%22";
+	xc;
 
 	//document.getElementById("calcid1").innerHTML="NewMac "+ za + "<br>";
 	sp= [];
@@ -47,7 +48,8 @@ function macformat1(){
 				ya = txtArray[i].substring(0, len-sp[i1]) + xa + txtArray[i].substring(len-sp[i1]);
 				txtArray[i] = ya;
 			}
-			document.getElementById("macid1").innerHTML+= xb +ya + xb + "<br>";
+			xc = xb +ya + xb;
+			document.getElementById("macid1").innerHTML+= xc + "<br>";
 		}
 	
 	}else {
