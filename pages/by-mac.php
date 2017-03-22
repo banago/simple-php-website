@@ -9,8 +9,7 @@
         
           <div class="e-content"><div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Post Body" data-type="item" data-updated-on="1472509483192" id="item-57c4b5b329687fa2d85a5c05"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-ac12f63a8d769a824803"><div class="sqs-block-content"><p>Here is a little tool I wrote to format Mac addresses. Enter each address on a newline.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_1_1472509339599_14596"><div class="sqs-block-content"><form id="form2"> 
 <textarea name="textarea" style="width:250px;height:150px;">bA:dd:De:AD:be:ef&#13;&#10;dEDd.BEEF.caFe</textarea><br>
-Case Upper : <input name="t3" type="radio" value="toUpperCase" onclick="macformat1()" checked="checked">
-Case Lower : <input name="t3" type="radio" value="toLowerCase" onclick="macformat1()" > <br>
+
 Colon : <input name="t1" type="radio" value=":" onclick="macformat1()">
 Dot : <input name="t1" type="radio" value="." onclick="macformat1()" checked="checked"> <br>
 2 : <input name="t2" type="radio" value=1 onclick="macformat1()" checked="checked">
@@ -24,8 +23,8 @@ function macformat1(){
 	x=document.getElementById("form2");
 	y=x.elements["textarea"].value;
 	z=x.elements["t1"].value;
-	za=x.elements["t2"].value;
-  	zb=x.elements["t3"].value;
+	za=1;
+  	zb="toUpperCase";
 	xa = "%3A";
 	xb = "%22";
 
@@ -53,25 +52,7 @@ function macformat1(){
 			}
 			document.getElementById("macid1").innerHTML+= xb +ya + xb + "<br>";
 		}
-	}else if (za == 2) {
-		sp = ["4","8"];
-		//Clears screen
-		document.getElementById("macid1").innerHTML= "";
-		for(var i=0;i<txtArray.length;i++){
-            if (zb == "toUpperCase"){
-              txtArray[i] = txtArray[i].toUpperCase();
-            }else if (zb == "toLowerCase"){
-              txtArray[i] = txtArray[i].toLowerCase();
-            }
-			txtArray[i] = txtArray[i].replace(/[-:.,]/g, "")
-			var len = txtArray[i].length;
-			//var ya = txtArray[i].substring(0, len-sp[0]) + "%" + txtArray[i].substring(len-sp[0]);
-			for(var i1=0;i1<sp.length;i1++){
-				ya = txtArray[i].substring(0, len-sp[i1]) + xa + txtArray[i].substring(len-sp[i1]);
-				txtArray[i] = ya;
-			}
-			document.getElementById("macid1").innerHTML+=ya + "<br>";
-		}
+	
 	}else {
 		y = 0;
 	}
