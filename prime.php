@@ -55,7 +55,7 @@ if ($err) {
   }
   for ($i = 0; $i < count($json); $i++) {
     echo $json['response'][$i]'family'];
-    echo $json['response'][$i]'family'];
+    echo $json['response'][$i]'type'];
 }
   
 }
