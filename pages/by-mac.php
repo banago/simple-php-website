@@ -20,13 +20,15 @@ Dot : <input name="t1" type="radio" value="." onclick="macformat1()" checked="ch
 <script>
 
 function macformat1(){
-	var x,y,ya,z,za,xa,bc1,be1,name,a,b,answer,sp,sp1,sp2;
+	var x,y,ya,z,za,xa,xb,bc1,be1,name,a,b,answer,sp,sp1,sp2;
 	x=document.getElementById("form2");
 	y=x.elements["textarea"].value;
 	z=x.elements["t1"].value;
 	za=x.elements["t2"].value;
   	zb=x.elements["t3"].value;
-	xa = z;
+	xa = "%3A";
+	xb = "%22";
+
 	//document.getElementById("calcid1").innerHTML="NewMac "+ za + "<br>";
 	sp= [];
 	//replaces new lines with a space and splits based on space
