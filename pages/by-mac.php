@@ -1,3 +1,5 @@
+
+
 <?php
 include 'restAuth.php';
 include 'prime.php';
@@ -18,7 +20,7 @@ include 'prime.php';
 <button onclick="macformat1()">Submit</button>
 <script>
 function macformat1(){
-	var x,y,ya,z,za,xa,xb,xc,bc1,be1,name,a,b,answer,sp,sp1,sp2,yak;
+	var x,y,ya,z,za,xa,xb,xc,bc1,be1,name,a,b,answer,sp,sp1,sp2;
 	x=document.getElementById("form2");
 	y=x.elements["textarea"].value;
 	
@@ -50,28 +52,14 @@ function macformat1(){
 				txtArray[i] = ya;
 			}
 			xc = xb +ya + xb;
-			//yak = window.location.href="function.php?name="+xc;
 			document.getElementById("macid1").innerHTML+= xc + "<br>";
-			//document.getElementById("macid1").innerHTML+= yak + "<br>"
-	
-                  else {
-                      console.log(obj.error);
-                  }
-            }	
-});
-			
 		}
 	
 	}else {
 		y = 0;
 	}
-			
-
-
 }
-
 </script>
-
 <p id="macid1"></p>
 </div></div></div></div></div></div>
 
@@ -121,9 +109,7 @@ if (isset($_POST['button1']))
 ));
 $response = curl_exec($curl);
 $err = curl_error($curl);
-
 curl_close($curl);
-
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
