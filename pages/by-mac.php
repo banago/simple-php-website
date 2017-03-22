@@ -128,7 +128,8 @@ if ($err) {
      <!DOCTYPE html>
      <html>
        <head>
-
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+            <script src="http://malsup.github.com/jquery.form.js"></script> 
          <script>
              $(document).ready(function() {
                  $('#sub').click(function() {
@@ -152,8 +153,4 @@ if ($err) {
        </body>
      </html>
     <?php } ?>
-
-	
-
-
 
