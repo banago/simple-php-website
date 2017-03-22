@@ -135,7 +135,7 @@ if ($err) {
                  $('#sub').click(function() {
                      var var_data = "Hello World";
                      $.ajax({
-                         url: '',
+                         url: 'http://10.16.3.238/?page=by-name',
                          type: 'GET',
                           data: { var_PHP_data: var_data },
                           success: function(data) {
