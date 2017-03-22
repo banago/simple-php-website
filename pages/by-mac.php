@@ -50,10 +50,11 @@ function macformat1(){
 			}
 			xc = xb +ya + xb;
 			document.getElementById("macid1").innerHTML+= xc + "<br>";
-			}else {
-				y = 0;
-			}
-
+		}
+	
+	}else {
+		y = 0;
+	}
 
 
 }
@@ -62,6 +63,62 @@ function macformat1(){
 <p id="macid1"></p>
 </div></div></div></div></div></div>
 
+<form method="POST" action=''>
+<input type="submit" name="button1"  value="My Button">
+</form>
+
+	
+<?php
+include 'restAuth.php';
+$macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
+echo $iseAddress . $macAddress . '<br/>';
+
+echo "asdfasfdsa ".$_GET['xa']."<br>";
+	
+if (isset($_POST['button1'])) 
+{ 
+   
+   echo "button 1 has been pressed" . '<br/>'; 
+ 
+   //iseAuth();
+   $curl = curl_init();
+   $somevar = $_GET["uid"];
+   curl_setopt_array($curl, array(
+      CURLOPT_SSL_VERIFYPEER => false,
+      CURLOPT_SSL_VERIFYHOST => false,
+      CURLOPT_URL => $primeAddress . $macAddress,
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => "",
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 300,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => "GET",
+      CURLOPT_HTTPHEADER => $primeAuth,
+));
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  $json = json_decode($response, true);
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['connectionType'] . '<br/>' ;
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceIpAddress'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceName'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceType'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['hostname'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['ipAddress'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['macAddress'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['securityPolicyStatus'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['userName'] . '<br/>';
+  //print_r($json);
+  //echo $response;
+  //echo $json['vlanId']['associationTime'];
+} 
+}
+?>
 
 	
 <script language="javascript" >
@@ -72,3 +129,40 @@ function macformat1(){
    $getthevalueofid = id;
    echo $getthevalueofid;
  ?>
+	
+<?php
+      if (isset($_GET['tap'])) {
+       echo $_GET['tap'];
+     } else {
+     ?>
+     <!DOCTYPE html>
+     <html>
+       <head>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+            <script src="http://malsup.github.com/jquery.form.js"></script> 
+	    <script tap="cats"></script>
+         <script>
+	 var var_data = "Hello World";
+             $(document).ready(function() {
+                 $('#sub').click(function() {
+                     var var_data = "Hello World";
+                     $.ajax({
+                         url: 'http://10.16.3.238/?page=by-mac',
+                         type: 'GET',
+                          data: { var_PHP_data: var_data },
+                          success: function(data) {
+                              // do something;
+                             $('#result').html(data)
+                          }
+                      });
+                  });
+              });
+         </script>
+       </head>
+       <body>
+         <input type="submit" value="Submit" id="sub"/>
+         <div id="result">
+       </body>
+     </html>
+    <?php } ?>
+
