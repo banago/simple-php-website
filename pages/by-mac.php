@@ -54,6 +54,7 @@ function macformat1(){
 			xc = xb +ya + xb;
 			document.getElementById("macid1").innerHTML+= xc + "<br>";
 		}
+		window.location.href=”index.php?name=" + xc;
 	
 	}else {
 		y = 0;
