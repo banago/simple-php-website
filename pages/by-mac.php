@@ -122,11 +122,11 @@ if ($err) {
 
 	
 <script language="javascript" >
-  var id = "data"
+   id = "data"
 </script>
 
 <?php
-   $getthevalueofid = var id;
+   $getthevalueofid = id;
  ?>
 	
 <?php
