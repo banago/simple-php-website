@@ -123,7 +123,8 @@ if ($err) {
 ?>
 
 <?php
-    <html>
+     <!DOCTYPE html>
+     <html>
        <head>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
             <script src="http://malsup.github.com/jquery.form.js"></script> 
@@ -144,6 +145,11 @@ if ($err) {
               });
          </script>
        </head>
+       <body>
+         <input type="submit" value="Submit" id="sub"/>
+         <div id="result">
+       </body>
+     </html>
      if (isset($_GET['var_PHP_data'])) {
        echo $_GET['var_PHP_data'];
      } else {
