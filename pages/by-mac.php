@@ -10,10 +10,7 @@
           <div class="e-content"><div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Post Body" data-type="item" data-updated-on="1472509483192" id="item-57c4b5b329687fa2d85a5c05"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-ac12f63a8d769a824803"><div class="sqs-block-content"><p>Here is a little tool I wrote to format Mac addresses. Enter each address on a newline.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_1_1472509339599_14596"><div class="sqs-block-content"><form id="form2"> 
 <textarea name="textarea" style="width:250px;height:150px;">bA:dd:De:AD:be:ef&#13;&#10;dEDd.BEEF.caFe</textarea><br>
 
-Colon : <input name="t1" type="radio" value=":" onclick="macformat1()">
-Dot : <input name="t1" type="radio" value="." onclick="macformat1()" checked="checked"> <br>
-2 : <input name="t2" type="radio" value=1 onclick="macformat1()" checked="checked">
-4 : <input name="t2" type="radio" value=2 onclick="macformat1()"> <br>
+
 </form>
 <button onclick="macformat1()">Submit</button>
 <script>
@@ -22,7 +19,7 @@ function macformat1(){
 	var x,y,ya,z,za,xa,xb,bc1,be1,name,a,b,answer,sp,sp1,sp2;
 	x=document.getElementById("form2");
 	y=x.elements["textarea"].value;
-	z=x.elements["t1"].value;
+	
 	za=1;
   	zb="toUpperCase";
 	xa = "%3A";
