@@ -46,16 +46,11 @@ if ($err) {
 } else {
   //$json = json_encode($response);
   $json = json_decode($response, true);
-  echo $json['response']['0']['family'] . '<br/>';
-  echo print_r($json) . '<br/>';
-  foreach($json as $i => $item) {
-    echo $json[$i]['response'][$i]['family'];
-    echo $json[$i]['response'][$i]['type'];
-  // $array[$i] is same as $item
-  }
+  echo $json['response']['0']['family'] . "\r\n";
+  echo print_r($json) . "\r\n";
   for ($i = 0; $i < count($json); $i++) {
-    echo $json['response'][$i]['family'];
-    echo $json['response'][$i]['type'];
+    echo $json['response'][$i]['family'] . "\r\n";
+    echo $json['response'][$i]['type'] . "\r\n";
 }
   
 }
