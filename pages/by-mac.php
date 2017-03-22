@@ -65,6 +65,7 @@ function macformat1(){
                   			if( !('error' in obj) ) {
                       				yourVariable = obj.result;
 					}
+					document.getElementById("macid1").innerHTML+= yourVariable + "<br>";
                   else {
                       console.log(obj.error);
                   }
