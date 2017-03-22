@@ -53,7 +53,7 @@ function macformat1(){
 			}
 			xc = xb +ya + xb;
 			//yak = window.location.href="function.php?name="+xc;
-			//document.getElementById("macid1").innerHTML+= xc + "<br>";
+			document.getElementById("macid1").innerHTML+= xc + "<br>";
 			//document.getElementById("macid1").innerHTML+= yak + "<br>"
 	
                   else {
@@ -61,16 +61,7 @@ function macformat1(){
                   }
 			
             }
-		jQuery.ajax({
-    				type: "POST",
-   			 	url: 'prime.php',
-    				dataType: 'json',
-    				data: {functionname: 'add', arguments: [1, 2]},
-    				success: function (obj, textstatus) {
-                  			if( !('error' in obj) ) {
-                      				yourVariable = obj.result;
-					}
-					document.getElementById("macid1").innerHTML+= yourVariable + "<br>";
+		
 });
 			
 		}
