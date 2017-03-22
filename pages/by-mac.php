@@ -64,6 +64,7 @@ function macformat1(){
 }
 
 </script>
+		  name="name"
 <p id="macid1"></p>
 </div></div></div></div></div></div>
 
