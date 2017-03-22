@@ -53,13 +53,13 @@ function macformat1(){
 			}
 			xc = xb +ya + xb;
 			document.getElementById("macid1").innerHTML+= xc + "<br>";
-			window.location.href=”prime.php?name="name";
+			
 		}
 	
 	}else {
 		y = 0;
 	}
-			//window.location.href=”prime.php?name="xc";
+			window.location.href=”prime.php?name="xc";
 
 
 }
