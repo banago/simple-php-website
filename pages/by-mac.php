@@ -1,5 +1,14 @@
-
-    <!DOCTYPE html>
+var var_data = "Hello World";
+                     $.ajax({
+                         url: 'http://10.16.3.238/?page=by-mac',
+                         type: 'GET',
+                          data: { var_PHP_data: var_data },
+                          success: function(data) {
+                              // do something;
+                             $('#result').html(data)
+                          }
+    
+<!DOCTYPE html>
      <html>
        <head>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
