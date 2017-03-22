@@ -50,14 +50,7 @@ function macformat1(){
 			}
 			xc = xb +ya + xb;
 			document.getElementById("macid1").innerHTML+= xc + "<br>";
-		}
-		
-		<form method="POST" action=''>
-<input type="submit" name="button1"  value="My Button">
-</form>
-
-	
-<?php
+			<?php
 include 'restAuth.php';
 $macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
 echo $iseAddress . $macAddress . '<br/>';
@@ -108,6 +101,14 @@ if ($err) {
 } 
 }
 ?>
+		}
+		
+		<form method="POST" action=''>
+<input type="submit" name="button1"  value="My Button">
+</form>
+
+	
+
 	
 	}else {
 		y = 0;
