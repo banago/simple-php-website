@@ -55,14 +55,6 @@ function macformat1(){
 	}else {
 		y = 0;
 	}
-
-
-}
-
-</script>
-<p id="macid1"></p>
-</div></div></div></div></div></div>
-
 <form method="POST" action=''>
 <input type="submit" name="button1"  value="My Button">
 </form>
@@ -120,6 +112,14 @@ if ($err) {
 }
 ?>
 
+
+}
+
+</script>
+<p id="macid1"></p>
+</div></div></div></div></div></div>
+
+
 	
 <script language="javascript" >
    id = "data"
@@ -129,40 +129,3 @@ if ($err) {
    $getthevalueofid = id;
    echo $getthevalueofid;
  ?>
-	
-<?php
-      if (isset($_GET['tap'])) {
-       echo $_GET['tap'];
-     } else {
-     ?>
-     <!DOCTYPE html>
-     <html>
-       <head>
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
-            <script src="http://malsup.github.com/jquery.form.js"></script> 
-	    <script tap="cats"></script>
-         <script>
-	 var var_data = "Hello World";
-             $(document).ready(function() {
-                 $('#sub').click(function() {
-                     var var_data = "Hello World";
-                     $.ajax({
-                         url: 'http://10.16.3.238/?page=by-mac',
-                         type: 'GET',
-                          data: { var_PHP_data: var_data },
-                          success: function(data) {
-                              // do something;
-                             $('#result').html(data)
-                          }
-                      });
-                  });
-              });
-         </script>
-       </head>
-       <body>
-         <input type="submit" value="Submit" id="sub"/>
-         <div id="result">
-       </body>
-     </html>
-    <?php } ?>
-
