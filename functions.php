@@ -55,6 +55,8 @@ function siteVersion()
 
 function primeMac($mac)
 {
-    echo "This would have been passed to prime " . $mac
+    $name = $_GET['name'];
+    echo "This would have been passed to prime " . $mac;
+    echo "This is what was passed through GET" . $name;
     echo $sitever['17.0.0'];
 }
