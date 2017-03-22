@@ -59,9 +59,7 @@ function macformat1(){
                   else {
                       console.log(obj.error);
                   }
-			
-            }
-		
+            }	
 });
 			
 		}
