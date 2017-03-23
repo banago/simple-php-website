@@ -139,5 +139,5 @@ if (isset($_POST['name']))
 
 <form method="POST" action=''>
 <input type="text" name="name">
-<input type="submit" value="My Button">
+<input type="submit" value="Submit">
 </form>
