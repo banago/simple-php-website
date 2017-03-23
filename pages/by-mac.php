@@ -83,7 +83,7 @@ echo $iseAddress . $macAddress;
 ?>
 
 <?php
-if (isset($_POST['name'])) 
+if (isset($_POST['nameee'])) 
 { 
 	$xc = $_POST['name'];
 	//$mac = $_POST['name'];
@@ -126,7 +126,7 @@ function macformat1(){
         	//The actual data is found on this.responseText
         	alert(this.responseText); //Will alert: 42
     		};
-    		oReq.open("get", "isefunctions.php?name="+y, true);
+    		oReq.open("get", "isefunctions.php?iseMAC="+y, true);
     		//                               ^ Don't block the rest of the execution.
    		//                                 Don't wait until the request finishes to 
     		//                                 continue.
