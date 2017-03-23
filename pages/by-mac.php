@@ -49,9 +49,7 @@ function macformat1(){
 			}
 			xc = xb +ya + xb;
 			document.getElementById("macid1").innerHTML+= xc + "<br>";
-		}
-		
-    		function reqListener () {
+			    		function reqListener () {
       			console.log(this.responseText);
     		}
     		var oReq = new XMLHttpRequest(); //New request object
@@ -65,9 +63,10 @@ function macformat1(){
    		//                                 Don't wait until the request finishes to 
     		//                                 continue.
     		oReq.send();
+		}
 		
-		//window.location.href="prime.php?name=" + xc;
-	
+
+
 	}else {
 		y = 0;
 	}
