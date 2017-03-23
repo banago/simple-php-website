@@ -57,3 +57,36 @@ if ($err) {
 }
 
 ?>
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_SSL_VERIFYPEER => false,
+  CURLOPT_URL => "https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/MACAddress/34:17:EB:A6:28:E5",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 300,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+  CURLOPT_HTTPHEADER => array(
+    "authorization: Basic aXNlX3Jlc3Q6UGFzc3dvcmQx",
+    "cache-control: no-cache",
+    "postman-token: d669f1e7-db3c-82e6-9376-df64cf021df1"
+  ),
+));
+
+function test_input($data) {
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+}
+?>
