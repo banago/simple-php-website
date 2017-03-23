@@ -17,50 +17,49 @@ $name = $_GET['primeMac'];
 echo "This mac was passed" . $name . "\r\n";
 
 
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://devnetapi.cisco.com/sandbox/apic_em/api/v1/network-device",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_POSTFIELDS => "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}",
-  CURLOPT_HTTPHEADER => array(
-    "cache-control: no-cache",
-    "content-type: application/json",
-    "postman-token: dd95064f-f134-7ddf-ec80-441a0e0bc4df",
-    "x-auth-token: ST-1677-GLGkyy7DV0CaSQuM0vVh-cas"
-  ),
+$macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
+echo $iseAddress . $macAddress . '<br/>';
+	
+if (isset($_POST['button1'])) 
+{ 
+   
+   echo "button 1 has been pressed" . '<br/>'; 
+   $getthevalueofid = id;
+   echo $getthevalueofid;
+   //iseAuth();
+   $curl = curl_init();
+   $somevar = $_GET["uid"];
+   curl_setopt_array($curl, array(
+      CURLOPT_SSL_VERIFYPEER => false,
+      CURLOPT_SSL_VERIFYHOST => false,
+      CURLOPT_URL => $primeAddress . $macAddress,
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => "",
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 300,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => "GET",
+      CURLOPT_HTTPHEADER => $primeAuth,
 ));
-
 $response = curl_exec($curl);
 $err = curl_error($curl);
-
 curl_close($curl);
-
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  //$json = json_encode($response);
   $json = json_decode($response, true);
-  $match = array('type','family','hostname','managementIpAddress','macAddress');
-  echo $json['response']['7']['family'] . "\r\n";
-  //echo print_r($json) . "\r\n";
-  for ($i1 = 0; $i1 < count($json['response']); $i1++) {
-    $count = count($json)['response'];
-    echo $count . "\r\n";
-    for ($i2 = 0; $i2 < count($match); $i2++) {
-      echo $json['response'][$i1][$match[$i2]] . "\r\n";
-      //echo $i2 . $match[$i1] . "\r\n";
-    
-    }
-  
-  }  
-
-}
-  
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['connectionType'] . '<br/>' ;
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceIpAddress'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceName'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceType'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['hostname'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['ipAddress'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['macAddress'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['securityPolicyStatus'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['userName'] . '<br/>';
+  //print_r($json);
+  //echo $response;
+  //echo $json['vlanId']['associationTime'];
+} 
 }
 ?>
