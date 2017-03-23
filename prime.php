@@ -57,8 +57,8 @@ if ($err) {
       //echo $i2 . $match[$i1] . "\r\n";
     }
     foreach($json as $i => $item) {
-    echo $json[$i]['type'];
-    echo $json[$i]['family'];
+    echo $json['response'][$i]['type'];
+    echo $json['response'][$i]['family'];
     // $array[$i] is same as $item
     }
     }
