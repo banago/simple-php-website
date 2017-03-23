@@ -134,6 +134,7 @@ if (isset($_POST['nameeee']))
 { 
 	$mac = $_POST['name'];
 	iseMAC($mac);
+}
 ?>
 
 <form method="POST" action=''>
