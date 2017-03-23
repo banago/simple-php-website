@@ -83,6 +83,7 @@ if (isset($_POST['name']))
 { 
    $macAddress = $_GET['name'];	
    echo "button 1 has been pressed" . '<br/>'; 
+   echo "This is the MAC which will be used" . $macAddress . '<br/>'; 
    //iseAuth();
    $curl = curl_init();
 
