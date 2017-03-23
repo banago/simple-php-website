@@ -48,7 +48,7 @@ if ($err) {
   $json = json_decode($response, true);
   $match = array('type','family','hostname','managementIpAddress','macAddress');
   echo $json['response']['7']['family'] . "\r\n";
-  echo print_r($json) . "\r\n";
+  //echo print_r($json) . "\r\n";
   for ($i1 = 0; $i1 < count($json); $i1++) {
     $count = count($json);
     echo $count . "\r\n";
