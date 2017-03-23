@@ -20,13 +20,8 @@ echo "This mac was passed" . $name . "\r\n";
 
 $macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
 echo $iseAddress . $macAddress . "\r\n";
-	
-
-   
-   echo "button 1 has been pressed" . "\r\n"; 
    $getthevalueofid = id;
    echo $getthevalueofid. "\r\n";
-   //iseAuth();
    $curl = curl_init();
    $somevar = $_GET["uid"];
    curl_setopt_array($curl, array(
@@ -54,13 +49,10 @@ if ($err) {
 	$match = array('connectionType','deviceIpAddress','deviceName','deviceType','hostname','ipAddress','macAddress','securityPolicyStatus','userName');
 	echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";
   	//echo print_r($json) . "\r\n";
-	$count = count($json)['queryResponse']['entity']['0']['clientsDTO'];
-	echo "Array contains this many values ::" . $count . "\r\n";
  	for ($i1 = 0; $i1 < count($json['queryResponse']['entity']['0']); $i1++) {
-		//$count = count($json)['response']['entity']['0']['clientsDTO'];
-		//echo "Array contains this many values ::" . $count . "\r\n";
-    		foreach ($match as $item) 
-		{
+		$count = count($json)['queryResponse']['entity']['0'];
+		echo "Array contains this many values ::" . $count . "\r\n";
+    		foreach ($match as $item) {
 			echo $json['queryResponse']['entity'][$i1]['clientsDTO'][$item] . "\r\n";
 		}
 	}
