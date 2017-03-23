@@ -25,7 +25,7 @@ echo $iseAddress . $macAddress . "\r\n";
    
    echo "button 1 has been pressed" . "\r\n"; 
    $getthevalueofid = id;
-   echo $getthevalueofid;
+   echo $getthevalueofid. "\r\n";
    //iseAuth();
    $curl = curl_init();
    $somevar = $_GET["uid"];
@@ -56,9 +56,9 @@ if ($err) {
   	echo print_r($json) . "\r\n";
  	for ($i1 = 0; $i1 < count($json['response']['entity']['0']['clientsDTO']); $i1++) {
 		$count = count($json)['response']['entity']['0']['clientsDTO'];
-		echo $count . "\r\n";
+		echo "Array contains this many values ::" . $count . "\r\n";
     		for ($i2 = 0; $i2 < count($match); $i2++) {
-        	echo $json['response']['entity']['0']['clientsDTO'][$i1][$match[$i2]] . "\r\n";
+        	echo $json['response']['entity']['$1']['clientsDTO'][$match[$i2]] . "\r\n";
         	//echo $i2 . $match[$i1] . "\r\n";
 		} 
 	}
