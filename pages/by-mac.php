@@ -81,7 +81,7 @@ $macAddress = '34:17:EB:A6:28:E5';
 echo $iseAddress . $macAddress;
 if (isset($_POST['name'])) 
 { 
-   $macAddress = $_GET['name'];	
+   $macAddress = $_POST['name'];	
    echo "button 1 has been pressed" . '<br/>'; 
    echo "This is the MAC which will be used" . $macAddress . '<br/>'; 
    //iseAuth();
