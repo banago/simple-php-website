@@ -53,13 +53,13 @@ if ($err) {
   //echo $json['vlanId']['associationTime'];
 	$match = array('connectionType','deviceIpAddress','deviceName','deviceType','hostname','ipAddress','macAddress','securityPolicyStatus','userName');
 	echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";
-  	echo print_r($json) . "\r\n";
+  	//echo print_r($json) . "\r\n";
  	for ($i1 = 0; $i1 < count($json['response']['entity']['0']['clientsDTO']); $i1++) {
 		$count = count($json)['response']['entity']['0']['clientsDTO'];
 		echo "Array contains this many values ::" . $count . "\r\n";
     		for ($i2 = 0; $i2 < count($match); $i2++) {
-        	echo $json['response']['entity']['$1']['clientsDTO'][$match[$i2]] . "\r\n";
-        	//echo $i2 . $match[$i1] . "\r\n";
+        		echo $json['response']['entity']['$1']['clientsDTO'][$match[$i2]] . "\r\n";
+        		//echo $i2 . $match[$i1] . "\r\n";
 		} 
 	}
 }
