@@ -46,7 +46,7 @@ if ($err) {
   //echo $json['vlanId']['associationTime'];
 	$match = array('connectionType','deviceIpAddress','deviceName','deviceType','hostname','ipAddress','macAddress','securityPolicyStatus','userName');
 	echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";
-  	//echo print_r($json) . "\r\n";
+  	echo print_r($json) . "\r\n";
  	for ($i1 = 0; $i1 < count($json['queryResponse']['entity']['0']); $i1++) {
     		foreach ($match as $item) {
 			echo $json['queryResponse']['entity'][$i1]['clientsDTO'][$item] . "\r\n";
