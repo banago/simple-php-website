@@ -43,6 +43,7 @@ function macformat1(){
 	//document.getElementById("calcid1").innerHTML="NewMac "+ za + "<br>";
 	sp= [];
 	//replaces new lines with a space and splits based on space
+	document.getElementById("macid1").innerHTML+=y + "<br>";
 
     		function reqListener () {
       			console.log(this.responseText);
