@@ -12,7 +12,7 @@ echo json_encode(42) . "\r\n"; //In the end, you need to echo the result.
 function iseMAC($macAddress){
   include 'restAuth.php';
   $name = $_GET['name'];
-  $macAddress = $name;
+  //$macAddress = $name;
   echo "Hello world!";
   //$macAddress = $_POST['name'];	
   echo "button 1 has been pressed" . '<br/>'; 
