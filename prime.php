@@ -14,11 +14,11 @@ echo json_encode(42) . "\r\n"; //In the end, you need to echo the result.
                       //even objects.
 if (isset($_GET['primeMac'])) 
 {
-$name = $_GET['primeMac'];
+$name = $_GET["primeMac"];
 echo "This mac was passed" . $name . "\r\n";
 
 
-$macAddress = "(" . $name . ")";
+$macAddress = "(" . '%2218%3A66%3Ada%3A10%3A9d%3A94%22' . ")";
 	//'(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
 echo $iseAddress . $macAddress . "\r\n";
    $curl = curl_init();
