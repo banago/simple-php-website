@@ -88,6 +88,7 @@ if (isset($_POST['name']))
 	$xc = $_POST['name'];
 	//$mac = $_POST['name'];
 	//iseMAC($macAddress);
+	<script>
 	function reqListener () {
 		console.log(this.responseText);
 	}
@@ -102,6 +103,7 @@ if (isset($_POST['name']))
    	//                                 Don't wait until the request finishes to 
     	//                                 continue.
     	oReq.send();
+	</script>
 }
 ?>
 
