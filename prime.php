@@ -51,7 +51,7 @@ if ($err) {
   //echo print_r($json) . "\r\n";
   for ($i1 = 0; $i1 < count($match); $i1++) {
     for ($i2 = 0; $i2 < count($json); $i2++) {
-      echo $json['response'][$i1][$i2] . "\r\n";
+      echo $json['response'][$i2][$i1] . "\r\n";
     }
     }
   }
