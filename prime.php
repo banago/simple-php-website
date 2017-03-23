@@ -6,7 +6,7 @@
  * It all depends on the Content-type header that you send with your AJAX
  * request. */
 
-echo json_encode(42) . '<br/>'; //In the end, you need to echo the result. 
+echo json_encode(42) . "\r\n"; //In the end, you need to echo the result. 
                       //All data should be json_encode()d.
 
                       //You can json_encode() any value in PHP, arrays, strings,
@@ -14,7 +14,7 @@ echo json_encode(42) . '<br/>'; //In the end, you need to echo the result.
 if (isset($_GET['primeMac'])) 
 {
 $name = $_GET['primeMac'];
-echo "This mac was passed" . $name . '<br/>';
+echo "This mac was passed" . $name . "\r\n";
 
 
 $curl = curl_init();
@@ -46,11 +46,10 @@ if ($err) {
 } else {
   //$json = json_encode($response);
   $json = json_decode($response, true);
-  $match = array('type','family','managementIpAddress');
-  echo $json['response']['0']['family'] . "\r\n";
-  echo print_r($json) . "\r\n";
+  $match = array('type','family','hostname','managementIpAddress','macAddress');
+  //echo $json['response']['0']['family'] . "\r\n";
+  //echo print_r($json) . "\r\n";
   for ($i1 = 0; $i1 < count($json); $i1++) {
-    //echo $json['response'][$i1][$match[$i1]] . "\r\n";
     for ($i2 = 0; $i2 < count($match); $i2++) {
       echo $json['response'][$i1][$match[$i2]] . "\r\n";
       //echo $i2 . $match[$i1] . "\r\n";
