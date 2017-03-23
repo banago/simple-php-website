@@ -27,18 +27,25 @@ function writeMsg()
   	echo $getthevalueofid. "\r\n";
      	$curl = curl_init();
    	$somevar = $_GET["uid"];
-   	curl_setopt_array($curl, array(
-		CURLOPT_SSL_VERIFYPEER => false,
-      		CURLOPT_SSL_VERIFYHOST => false,
-      		CURLOPT_URL => $primeAddress . $macAddress,
-      		CURLOPT_RETURNTRANSFER => true,
-     	 	CURLOPT_ENCODING => "",
-      		CURLOPT_MAXREDIRS => 10,
-      		CURLOPT_TIMEOUT => 300,
-      		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-      		CURLOPT_CUSTOMREQUEST => "GET",
-      		CURLOPT_HTTPHEADER => $primeAuth,
-	));
+   	curl_setopt_array($curl, array
+			  (
+				  
+				CURLOPT_SSL_VERIFYPEER => false,
+      				CURLOPT_SSL_VERIFYHOST => false,
+      				CURLOPT_URL => $primeAddress . $macAddress,
+      				CURLOPT_RETURNTRANSFER => true,
+     	 			CURLOPT_ENCODING => "",
+      				CURLOPT_MAXREDIRS => 10,
+      				CURLOPT_TIMEOUT => 300,
+      				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      				CURLOPT_CUSTOMREQUEST => "GET",
+      				CURLOPT_HTTPHEADER => $primeAuth, 
+			  ) 
+			 ) 
+		;
+				  
+
+	
 	$response = curl_exec($curl);
 	$err = curl_error($curl);
 	curl_close($curl);
