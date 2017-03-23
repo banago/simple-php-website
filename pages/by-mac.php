@@ -79,7 +79,7 @@ function macformat1(){
 <?php	
 $macAddress = '34:17:EB:A6:28:E5';
 echo $iseAddress . $macAddress;
-if (isset($_POST['button1'])) 
+if (isset($_POST['name'])) 
 { 
    $macAddress = $_GET['name'];	
    echo "button 1 has been pressed" . '<br/>'; 
