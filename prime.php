@@ -19,11 +19,11 @@ echo "This mac was passed" . $name . "\r\n";
 
 
 $macAddress = '(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
-echo $iseAddress . $macAddress . '<br/>';
+echo $iseAddress . $macAddress . "\r\n";
 	
 
    
-   echo "button 1 has been pressed" . '<br/>'; 
+   echo "button 1 has been pressed" . "\r\n"; 
    $getthevalueofid = id;
    echo $getthevalueofid;
    //iseAuth();
@@ -48,15 +48,15 @@ if ($err) {
   echo "cURL Error #:" . $err;
 } else {
   $json = json_decode($response, true);
-   echo $json['queryResponse']['entity'][0]['clientsDTO']['connectionType'] . '<br/>' ;
-   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceIpAddress'] . '<br/>';
-   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceName'] . '<br/>';
-   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceType'] . '<br/>';
-   echo $json['queryResponse']['entity'][0]['clientsDTO']['hostname'] . '<br/>';
-   echo $json['queryResponse']['entity'][0]['clientsDTO']['ipAddress'] . '<br/>';
-   echo $json['queryResponse']['entity'][0]['clientsDTO']['macAddress'] . '<br/>';
-   echo $json['queryResponse']['entity'][0]['clientsDTO']['securityPolicyStatus'] . '<br/>';
-   echo $json['queryResponse']['entity'][0]['clientsDTO']['userName'] . '<br/>';
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['connectionType'] . "\r\n";
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceIpAddress'] . "\r\n";
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceName'] . "\r\n";
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['deviceType'] . "\r\n";
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['hostname'] . "\r\n";
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['ipAddress'] . "\r\n";
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['macAddress'] . "\r\n";
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['securityPolicyStatus'] . "\r\n";
+   echo $json['queryResponse']['entity'][0]['clientsDTO']['userName'] . "\r\n";
   //print_r($json);
   //echo $response;
   //echo $json['vlanId']['associationTime'];
