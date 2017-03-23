@@ -58,8 +58,8 @@ function iseMAC(){
 }
 ?>
 <?php
-
-iseMAC();
-
-34:17:EB:A6:28:E5 
+if (isset($_GET['iseMac'])) 
+{
+	iseMAC();
+}
 ?>
