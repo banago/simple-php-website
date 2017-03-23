@@ -1,4 +1,5 @@
 <?php
+echo $primeAuth;
 include 'restAuth.php';
 /* Do some operation here, like talk to the database, the file-session
  * The world beyond, limbo, the city of shimmers, and Canada.
