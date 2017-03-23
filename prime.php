@@ -50,7 +50,6 @@ if ($err) {
   //echo $json['response']['0']['family'] . "\r\n";
   //echo print_r($json) . "\r\n";
   for ($i1 = 0; $i1 < count($json); $i1++) {
-    echo "\r\n";
     for ($i2 = 0; $i1 < count($json); $i2++) {
       echo $json['response'][$i1][$match[$i2]] . "\r\n";
       //echo $i2 . $match[$i1] . "\r\n";
