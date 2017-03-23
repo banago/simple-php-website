@@ -1,9 +1,5 @@
 
 
-<?php
-include 'restAuth.php';
-
-?>
 <p>This is the <b>By Mac</b> page. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 </p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
 
@@ -12,7 +8,7 @@ include 'restAuth.php';
 <div class="entry-content">
       
         
-          <div class="e-content"><div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Post Body" data-type="item" data-updated-on="1472509483192" id="item-57c4b5b329687fa2d85a5c05"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-ac12f63a8d769a824803"><div class="sqs-block-content"><p>Here is a little tool I wrote to format Mac addresses. Enter each address on a newline.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_1_1472509339599_14596"><div class="sqs-block-content"><form id="form2"> 
+          <div class="e-content"><div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Post Body" data-type="item" data-updated-on="1472509483192" id="item-57c4b5b329687fa2d85a5c05"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-ac12f63a8d769a824803"><div class="sqs-block-content"><p>Enter each address on a newline.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_1_1472509339599_14596"><div class="sqs-block-content"><form id="form2"> 
 <textarea name="textarea" style="width:250px;height:50px;">bA:dd:De:AD:be:ef&#13;&#10;dEDd.BEEF.caFe</textarea><br>
 
 
