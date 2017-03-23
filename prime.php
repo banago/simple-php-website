@@ -18,7 +18,7 @@ $name = $_GET['primeMac'];
 echo "This mac was passed" . $name . "\r\n";
 
 
-$macAddress = "(" . $name . ")";
+$macAddress = "(" . "20:47:47:C3:0F:8B" . ")";
 	//'(%2218%3A66%3Ada%3A10%3A9d%3A94%22)';
 echo $iseAddress . $macAddress . "\r\n";
    $curl = curl_init();
