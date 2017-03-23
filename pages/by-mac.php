@@ -129,7 +129,7 @@ if ($err) {
 } 
 ?>
 
-<?php>
+<?php
 if (isset($_POST['name'])) 
 { 
 	$mac = $_POST['name'];
