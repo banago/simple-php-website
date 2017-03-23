@@ -14,7 +14,7 @@ echo json_encode(42) . "\r\n"; //In the end, you need to echo the result.
                       //even objects.
 if (isset($_GET['primeMac'])) 
 {
-$name = $_GET["primeMac"];
+$name = $_GET['primeMac'];
 echo "This mac was passed" . $name . "\r\n";
 
 
