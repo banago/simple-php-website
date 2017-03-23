@@ -62,5 +62,6 @@ if (isset($_GET['iseMac']))
 {
 	$mac = $_GET['iseMac'];
 	echo $mac;
+	iseMAC($mac);
 }
 ?>
