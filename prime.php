@@ -60,7 +60,7 @@ if ($err) {
 		//$count = count($json)['response']['entity']['0']['clientsDTO'];
 		//echo "Array contains this many values ::" . $count . "\r\n";
     		for ($i2 = 0; $i2 < count($match); $i2++) {
-        		echo $json['response']['entity']['$1']['clientsDTO'][$match[$i2]] . "\r\n";
+        		echo $json['queryResponse']['entity']['$1']['clientsDTO'][$match[$i2]] . "\r\n";
         		//echo $i2 . $match[$i1] . "\r\n";
 		} 
 	}
