@@ -63,6 +63,6 @@ function writeMsg()
 	}
 if (isset($_GET['primeMac'])) 
 {
-	function
+	echo writeMsg();
 }
 ?>
