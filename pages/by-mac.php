@@ -28,23 +28,8 @@ if (isset($_POST['nameee']))
 
 
 </form>
-<button onclick="macformat1()">Submit</button>
+<button onclick="reqListener()">Submit</button>
 <script>
-function macformat1(){
-	var x,y,ya,z,za,xa,xb,xc,bc1,be1,name,a,b,answer,sp,sp1,sp2;
-	x=document.getElementById("form3");
-	y=x.elements["iseMac"].value;
-	
-	za=1;
-  	zb="toUpperCase";
-	xa = "%3A";
-	xb = "%22";
-	xc;
-	//document.getElementById("calcid1").innerHTML="NewMac "+ za + "<br>";
-	sp= [];
-	//replaces new lines with a space and splits based on space
-	document.getElementById("macid1").innerHTML+=y + "<br>";
-
     		function reqListener () {
       			console.log(this.responseText);
     		}
@@ -59,4 +44,5 @@ function macformat1(){
    		//                                 Don't wait until the request finishes to 
     		//                                 continue.
     		oReq.send(); 
+
 }
