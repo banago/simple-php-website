@@ -80,7 +80,7 @@ function macformat1(){
 <?php	
 $macAddress = '34:17:EB:A6:28:E5';
 echo $iseAddress . $macAddress;
-if (isset($_POST['name'])) 
+if (isset($_POST['nameeee'])) 
 { 
    $macAddress = $_POST['name'];	
    echo "button 1 has been pressed" . '<br/>'; 
@@ -130,7 +130,10 @@ if ($err) {
 ?>
 
 <?php>
-iseMAC();
+if (isset($_POST['nameeee'])) 
+{ 
+	$mac = $_POST['name'];
+	iseMAC($mac);
 ?>
 
 <form method="POST" action=''>
