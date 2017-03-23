@@ -9,7 +9,7 @@ echo json_encode(42) . "\r\n"; //In the end, you need to echo the result.
                       //All data should be json_encode()d.
                       //You can json_encode() any value in PHP, arrays, strings,
                       //even objects.
-function iseMAC($macAddress){
+function iseMAC(){
   include 'restAuth.php';
   $name = $_GET['name'];
   $macAddress = $name;
@@ -56,5 +56,10 @@ function iseMAC($macAddress){
 	}
 }
 }
+?>
+<?php
 
+iseMAC();
+
+34:17:EB:A6:28:E5 
 ?>
