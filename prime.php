@@ -54,8 +54,8 @@ if ($err) {
 	$match = array('connectionType','deviceIpAddress','deviceName','deviceType','hostname','ipAddress','macAddress','securityPolicyStatus','userName');
 	echo $json['queryResponse']['7']['family'] . "\r\n";
   	echo print_r($json) . "\r\n";
- 	for ($i1 = 0; $i1 < count($json['response']); $i1++) {
-		$count = count($json)['response'];
+ 	for ($i1 = 0; $i1 < count($json['response']['entity']); $i1++) {
+		$count = count($json)['response']['entity'];
 		echo $count . "\r\n";
     		for ($i2 = 0; $i2 < count($match); $i2++) {
         	echo $json['queryResponse']['entity'][$i1][$match[$i2]] . "\r\n";
