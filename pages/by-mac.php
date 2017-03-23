@@ -119,7 +119,7 @@ if ($err) {
   echo $array['user_name'] . "<br/>";
   echo $array[$match[0]] . "<br/>";
   $match = array('user_name','passed','network_device_name','acs_server','authentication_method','authentication_protocol','identity_group','framed_ip_address','location','device_type');
-  for ($i1 = 0; $i1 < count($array); $i1++) {
+  for ($i1 = 0; $i1 < 1; $i1++) {
     		foreach ($match as $item) {
 			echo $array[$item] . "<br/>";
 		}
