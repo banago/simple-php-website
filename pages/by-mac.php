@@ -133,7 +133,7 @@ if ($err) {
 if (isset($_POST['name'])) 
 { 
 	$mac = $_POST['name'];
-	iseMAC($mac);
+	iseMAC($macAddress);
 }
 ?>
 
