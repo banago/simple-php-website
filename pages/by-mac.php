@@ -80,7 +80,7 @@ function macformat1(){
 <?php	
 $macAddress = '34:17:EB:A6:28:E5';
 echo $iseAddress . $macAddress;
-
+?>
 
 <?php
 if (isset($_POST['name'])) 
