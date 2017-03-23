@@ -57,3 +57,9 @@ function iseMAC($macAddress){
 }
 }
 ?>
+<?php
+if (isset($_GET['primeMac'])) 
+{
+	$mac = $_GET['primeMac'];
+	echo $mac;
+?>
