@@ -81,6 +81,7 @@ $macAddress = '34:17:EB:A6:28:E5';
 echo $iseAddress . $macAddress;
 if (isset($_POST['button1'])) 
 { 
+   $macAddress = $_GET['name'];	
    echo "button 1 has been pressed" . '<br/>'; 
    //iseAuth();
    $curl = curl_init();
@@ -115,5 +116,6 @@ if ($err) {
 } 
 ?>
 <form method="POST" action=''>
-<input type="submit" name="button1"  value="My Button">
+<input type="text" name="name">
+<input type="submit" value="My Button">
 </form>
