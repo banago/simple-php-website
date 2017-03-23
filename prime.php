@@ -14,6 +14,7 @@ echo json_encode(42) . "\r\n"; //In the end, you need to echo the result.
                       //even objects.
 ?>
 <?php
+include 'restAuth.php';
 function writeMsg() 
 {
 	echo "Hello world!";
