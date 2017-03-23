@@ -56,12 +56,14 @@ if ($err) {
       echo $json['response'][$i1][$match[$i2]] . "\r\n";
       //echo $i2 . $match[$i1] . "\r\n";
     }
-    foreach($json as $i => $item) {
-    echo $json['response'][$i]['type'];
-    echo $json['response'][$i]['family'];
-    // $array[$i] is same as $item
-    }
-    }
-  }
+    for ($i1 = 0; $i1 < count($json); $i1++) {
+      foreach($match as $matches) {
+        if($content = getData($matches)) {
+          return $json['response'][$i1][$content] . "\r\n";
+        }
+      }
+    }  
+  }  
+}
 }
 ?>
