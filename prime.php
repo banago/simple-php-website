@@ -12,7 +12,8 @@ echo json_encode(42) . "\r\n"; //In the end, you need to echo the result.
 
                       //You can json_encode() any value in PHP, arrays, strings,
                       //even objects.
-
+?>
+<?php
 function writeMsg() 
 {
 	echo "Hello world!";
@@ -62,8 +63,8 @@ function writeMsg()
 			}
 		}
 	}
-}
-
+?>
+<?php
 	echo writeMsg();
 
 ?>
