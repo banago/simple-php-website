@@ -106,7 +106,7 @@ if (isset($_POST['nameee']))
 function macformat1(){
 	var x,y,ya,z,za,xa,xb,xc,bc1,be1,name,a,b,answer,sp,sp1,sp2;
 	x=document.getElementById("form3");
-	y=x.elements["name"].value;
+	y=x.elements["iseMac"].value;
 	
 	za=1;
   	zb="toUpperCase";
