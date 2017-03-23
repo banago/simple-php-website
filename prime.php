@@ -47,7 +47,7 @@ if ($err) {
   //$json = json_encode($response);
   $json = json_decode($response, true);
   $match = array('type','family','hostname','managementIpAddress','macAddress');
-  //echo $json['response']['0']['family'] . "\r\n";
+  echo $json['response']['7']['family'] . "\r\n";
   echo print_r($json) . "\r\n";
   for ($i1 = 0; $i1 < count($json); $i1++) {
     $count = count($json);
@@ -55,6 +55,11 @@ if ($err) {
     for ($i2 = 0; $i2 < count($match); $i2++) {
       echo $json['response'][$i1][$match[$i2]] . "\r\n";
       //echo $i2 . $match[$i1] . "\r\n";
+    }
+    foreach($json as $i => $item) {
+    echo $json[$i]['type'];
+    echo $json[$i]['family'];
+    // $array[$i] is same as $item
     }
     }
   }
