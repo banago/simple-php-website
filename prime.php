@@ -49,7 +49,7 @@ if ($err) {
   $match = array('type','family','hostname','managementIpAddress','macAddress');
   echo $json['response']['7']['family'] . "\r\n";
   //echo print_r($json) . "\r\n";
-  for ($i1 = 0; $i1 < count($json); $i1++) {
+  for ($i1 = 0; $i1 < count($json['response']); $i1++) {
     $count = count($json);
     echo $count . "\r\n";
     for ($i2 = 0; $i2 < count($match); $i2++) {
