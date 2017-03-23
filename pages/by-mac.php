@@ -115,7 +115,7 @@ if ($err) {
   //echo $dom->saveXML();
   $json = json_encode($xml);
   $array = json_decode($json,TRUE);
-  echo print_r($json, true);
+  echo print_r($array);
 }
 } 
 ?>
