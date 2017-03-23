@@ -130,7 +130,7 @@ if ($err) {
 ?>
 
 <?php>
-if (isset($_POST['nameeee'])) 
+if (isset($_POST['name'])) 
 { 
 	$mac = $_POST['name'];
 	iseMAC($mac);
