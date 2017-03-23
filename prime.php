@@ -48,15 +48,6 @@ if ($err) {
   echo "cURL Error #:" . $err;
 } else {
   $json = json_decode($response, true);
-   echo $json['queryResponse']['entity'][0]['clientsDTO'][] . "\r\n";
-   echo $json['queryResponse']['entity'][0]['clientsDTO'][''] . "\r\n";
-   echo $json['queryResponse']['entity'][0]['clientsDTO'][''] . "\r\n";
-   echo $json['queryResponse']['entity'][0]['clientsDTO'][''] . "\r\n";
-   echo $json['queryResponse']['entity'][0]['clientsDTO'][''] . "\r\n";
-   echo $json['queryResponse']['entity'][0]['clientsDTO'][''] . "\r\n";
-   echo $json['queryResponse']['entity'][0]['clientsDTO'][''] . "\r\n";
-   echo $json['queryResponse']['entity'][0]['clientsDTO'][''] . "\r\n";
-   echo $json['queryResponse']['entity'][0]['clientsDTO'][''] . "\r\n";
   //print_r($json);
   //echo $response;
   //echo $json['vlanId']['associationTime'];
