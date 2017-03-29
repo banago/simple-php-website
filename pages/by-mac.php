@@ -27,28 +27,22 @@ var progressBar = document.getElementById("progress"),
   display = document.getElementById("display");
 
 function upload(data) {
-  var xhr = new XMLHttpRequest();
-  x = "%2200%3A00%3A0C%3A07%3AAC%3A0A%22";
-  xhr.open("get", "isefunctions.php?iseMAC="+x, true);
-  if (xhr.upload) {
-    xhr.upload.onprogress = function(e) {
-      if (e.lengthComputable) {
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://zinoui.com/demo/progress-bar/test.csv?" + Math.floor(Math.random() * 99999), true);
+xhr.responseType = "text";
+xhr.onprogress = function(e) {
+    if (e.lengthComputable) {
         progressBar.max = e.total;
         progressBar.value = e.loaded;
-        display.innerText = Math.floor((e.loaded / e.total) * 100) + '%';
-      }
     }
-    xhr.upload.onloadstart = function(e) {
-      progressBar.value = 0;
-      display.innerText = '0%';
-    }
-    xhr.upload.onloadend = function(e) {
-      progressBar.value = e.loaded;
-      loadBtn.disabled = false;
-      loadBtn.innerHTML = 'Start uploading';
-    }
-  }
-  xhr.send(data);
+};
+xhr.onloadstart = function(e) {
+    progressBar.value = 0;
+};
+xhr.onloadend = function(e) {
+    progressBar.value = e.loaded;
+};
+xhr.send(null);
 }
 
 function buildFormData() {
