@@ -45,7 +45,7 @@ function iseMAC($macAddress){
     //echo $dom->saveXML();
     $json = json_encode($xml);
     $array = json_decode($json,TRUE);
-    echo print_r($array);
+    #echo print_r($array);
     if ($array['http-code'] == 500) {
 	    echo print_r($array);
     } else {
