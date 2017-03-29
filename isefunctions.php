@@ -15,8 +15,8 @@ function iseMAC($macAddress){
   //$macAddress = $name;
   echo "Hello world!";
   //$macAddress = $_POST['name'];	
-  echo "button 1 has been pressed" . '<br/>'; 
-  echo "This is the MAC which will be used" . $macAddress . '<br/>'; 
+  echo "button 1 has been pressed" . "\r\n"; 
+  echo "This is the MAC which will be used" . $macAddress . "\r\n"; 
   //iseAuth();
   $curl = curl_init();
   curl_setopt_array($curl, array(
@@ -46,12 +46,12 @@ function iseMAC($macAddress){
     $json = json_encode($xml);
     $array = json_decode($json,TRUE);
     //echo print_r($array);
-    echo $array['user_name'] . "<br/>";
-    echo $array[$match[0]] . "<br/>";
+    echo $array['user_name'] . "\r\n";
+    echo $array[$match[0]] . "\r\n";
     $match = array('user_name','passed','network_device_name','acs_server','authentication_method','authentication_protocol','identity_group','framed_ip_address','location','device_type');
     for ($i1 = 0; $i1 < 1; $i1++) {
       foreach ($match as $item) {
-			echo $array[$item] . "<br/>";
+			echo $array[$item] . "\r\n";
 		}
 	}
 }
