@@ -66,7 +66,16 @@ function macformat1(){
     		//                               ^ Don't block the rest of the execution.
    		//                                 Don't wait until the request finishes to 
     		//                                 continue.
-    		oReq.send();
+    		oReq.onprogress = function(pe) {
+			if(pe.lengthComputable) {
+				progressBar.max = pe.total;
+				progressBar.value = pe.loaded;
+			}
+		}
+		oReq.onloadend = function(pe) {
+			progressBar.value = pe.loaded;
+		}
+		oReq.send();
 		
 		//window.location.href="prime.php?name=" + xc;
 	
