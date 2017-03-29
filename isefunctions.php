@@ -46,16 +46,19 @@ function iseMAC($macAddress){
     $json = json_encode($xml);
     $array = json_decode($json,TRUE);
     echo print_r($array);
-    echo $array['user_name'] . "\r\n";
-    echo $array[$match[0]] . "\r\n";
-    $match = array('user_name','passed','network_device_name','acs_server','authentication_method','authentication_protocol','identity_group','framed_ip_address','location','device_type');
-    for ($i1 = 0; $i1 < 1; $i1++) {
-      foreach ($match as $item) {
-			echo $array[$item] . "\r\n";
-		}
-	}
-}
-}
+    if ($err) {
+	    echo "cURL Error #:" . $err;
+    } else {
+	    echo $array['user_name'] . "\r\n";
+	    echo $array[$match[0]] . "\r\n";
+	    $match = array('user_name','passed','network_device_name','acs_server','authentication_method','authentication_protocol','identity_group','framed_ip_address','location','device_type');
+	    for ($i1 = 0; $i1 < 1; $i1++) {
+		    foreach ($match as $item) {
+			    echo $array[$item] . "\r\n";
+		    }
+	    }
+    }
+  }
 ?>
 <?php
 if (isset($_GET['iseMAC'])) 
