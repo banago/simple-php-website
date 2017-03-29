@@ -17,51 +17,6 @@ include 'isefunctions.php';
 </form>
 <button onclick="macformat1()">Submit</button>
 
-<progress id="progress" value="0"></progress>
-<button id="button">Start uploading</button>
-<span id="display"></span>
-	
-<script>
-var progressBar = document.getElementById("progress"),
-  loadBtn = document.getElementById("button"),
-  display = document.getElementById("display");
-
-function upload(data) {
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://zinoui.com/demo/progress-bar/test.csv?" + Math.floor(Math.random() * 99999), true);
-xhr.responseType = "text";
-xhr.onprogress = function(e) {
-    if (e.lengthComputable) {
-        progressBar.max = e.total;
-        progressBar.value = e.loaded;
-    }
-};
-xhr.onloadstart = function(e) {
-    progressBar.value = 0;
-};
-xhr.onloadend = function(e) {
-    progressBar.value = e.loaded;
-};
-xhr.send(null);
-}
-
-function buildFormData() {
-  var fd = new FormData();
-
-  for (var i = 0; i < 3000; i += 1) {
-    fd.append('data[]', Math.floor(Math.random() * 999999));
-  }
-
-  return fd;
-}
-
-loadBtn.addEventListener("click", function(e) {
-  this.disabled = true;
-  this.innerHTML = "Uploading...";
-  upload(buildFormData());
-});
-</script>
-		  
 <script>
 function macformat1(){
 	var x,y,ya,z,za,xa,xb,xc,bc1,be1,name,a,b,answer,sp,sp1,sp2;
@@ -112,19 +67,7 @@ function macformat1(){
     		//                               ^ Don't block the rest of the execution.
    		//                                 Don't wait until the request finishes to 
     		//                                 continue.
-    		oReq.onprogress = function(pe) {
-			if(pe.lengthComputable) {
-				progressBar.max = pe.total;
-				progressBar.value = pe.loaded;
-			}
-		}
-		oReq.onloadend = function(pe) {
-			progressBar.value = pe.loaded;
-		}
-		oReq.send();
-		
 		//window.location.href="prime.php?name=" + xc;
-	
 	}else {
 		y = 0;
 	}
