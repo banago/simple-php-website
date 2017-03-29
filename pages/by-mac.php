@@ -62,7 +62,7 @@ function macformat1(){
         	//The actual data is found on this.responseText
         	alert(this.responseText); //Will alert: 42
     		};
-    		oReq.open("get", "isefunctions.php?iseMac="+ya, true);
+    		oReq.open("get", "isefunctions.php?iseMAC="+ya, true);
     		//                               ^ Don't block the rest of the execution.
    		//                                 Don't wait until the request finishes to 
     		//                                 continue.
