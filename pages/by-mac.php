@@ -16,6 +16,57 @@ include 'isefunctions.php';
 
 </form>
 <button onclick="macformat1()">Submit</button>
+
+<progress id="progress" value="0"></progress>
+<button id="button">Start uploading</button>
+<span id="display"></span>
+	
+<script>
+var progressBar = document.getElementById("progress"),
+  loadBtn = document.getElementById("button"),
+  display = document.getElementById("display");
+
+function upload(data) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "https://zinoui.com/demo/progress-bar/upload.php", true);
+  if (xhr.upload) {
+    xhr.upload.onprogress = function(e) {
+      if (e.lengthComputable) {
+        progressBar.max = e.total;
+        progressBar.value = e.loaded;
+        display.innerText = Math.floor((e.loaded / e.total) * 100) + '%';
+      }
+    }
+    xhr.upload.onloadstart = function(e) {
+      progressBar.value = 0;
+      display.innerText = '0%';
+    }
+    xhr.upload.onloadend = function(e) {
+      progressBar.value = e.loaded;
+      loadBtn.disabled = false;
+      loadBtn.innerHTML = 'Start uploading';
+    }
+  }
+  xhr.send(data);
+}
+
+function buildFormData() {
+  var fd = new FormData();
+
+  for (var i = 0; i < 3000; i += 1) {
+    fd.append('data[]', Math.floor(Math.random() * 999999));
+  }
+
+  return fd;
+}
+
+loadBtn.addEventListener("click", function(e) {
+  this.disabled = true;
+  this.innerHTML = "Uploading...";
+  upload(buildFormData());
+});
+</script>
+		  
 <script>
 function macformat1(){
 	var x,y,ya,z,za,xa,xb,xc,bc1,be1,name,a,b,answer,sp,sp1,sp2;
