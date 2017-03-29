@@ -68,6 +68,7 @@ function macformat1(){
    		//                                 Don't wait until the request finishes to 
     		//                                 continue.
 		//window.location.href="prime.php?name=" + xc;
+		oReq.send();
 	}else {
 		y = 0;
 	}
