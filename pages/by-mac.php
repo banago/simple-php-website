@@ -28,7 +28,13 @@ var progressBar = document.getElementById("progress"),
 var x;
 x = "%2200%3A00%3A0C%3A07%3AAC%3A0A%22";
 function upload(data) {
-var xhr = new XMLHttpRequest();
+console.log(this.responseText);
+}
+var xhr = new XMLHttpRequest(); //New request object
+xhr.onload = function() {
+alert(this.responseText); //Will alert: 42
+};
+x = "%2200%3A00%3A0C%3A07%3AAC%3A0A%22";
 xhr.open("GET", "isefunctions.php?iseMAC="+x, true);
 xhr.responseType = "text";
 xhr.onprogress = function(e) {
