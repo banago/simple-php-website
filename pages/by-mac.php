@@ -30,11 +30,8 @@ x = "%2200%3A00%3A0C%3A07%3AAC%3A0A%22";
 function upload(data) {
 console.log(this.responseText);
 }
-var xhr = new XMLHttpRequest(); //New request object
-xhr.onload = function() {
-alert(this.responseText); //Will alert: 42
-};
-xhr.open("GET", "isefunctions.php?iseMACs="+x, true);
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://zinoui.com/demo/progress-bar/test.csv?" + Math.floor(Math.random() * 99999), true);
 xhr.responseType = "text";
 xhr.onprogress = function(e) {
     if (e.lengthComputable) {
@@ -48,7 +45,7 @@ xhr.onloadstart = function(e) {
 xhr.onloadend = function(e) {
     progressBar.value = e.loaded;
 };
-xhr.send(data);
+xhr.send(null);
 }
 
 function buildFormData() {
