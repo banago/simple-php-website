@@ -69,6 +69,7 @@ function macformat1(){
     		//                                 continue.
 		//window.location.href="prime.php?name=" + xc;
 		oReq.send();
+		document.getElementById("macid1").innerHTML+= xc + "<br>";
 	}else {
 		y = 0;
 	}
