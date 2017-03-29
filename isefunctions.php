@@ -58,9 +58,9 @@ function iseMAC($macAddress){
 }
 ?>
 <?php
-if (isset($_GET['iseMac'])) 
+if (isset($_GET['iseMAC'])) 
 {
-	$mac = $_GET['iseMac'];
+	$mac = $_GET['iseMAC'];
 	echo $mac;
 	iseMAC($mac);
 }
