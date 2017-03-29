@@ -13,7 +13,7 @@ function iseMAC($macAddress){
   include 'restAuth.php';
   $name = $_GET['name'];
   //$macAddress = $name;
-  echo "Hello world!";
+  echo "Hello world!" . "\r\n";
   //$macAddress = $_POST['name'];	
   echo "button 1 has been pressed" . "\r\n"; 
   echo "This is the MAC which will be used:  " . $macAddress . "\r\n"; 
