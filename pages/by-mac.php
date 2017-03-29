@@ -26,7 +26,7 @@ var progressBar = document.getElementById("progress"),
   loadBtn = document.getElementById("button"),
   display = document.getElementById("display");
 var x;
-x = "%22BA%3ADD%3ADE%3AAD%3ABE%3AEF%22";
+x = "%2200%3A00%3A0C%3A07%3AAC%3A0A%22";
 function upload(data) {
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "isefunctions.php?iseMAC="+x, true);
@@ -43,7 +43,7 @@ xhr.onloadstart = function(e) {
 xhr.onloadend = function(e) {
     progressBar.value = e.loaded;
 };
-xhr.send(null);
+xhr.send();
 }
 
 function buildFormData() {
