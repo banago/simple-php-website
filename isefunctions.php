@@ -46,8 +46,8 @@ function iseMAC($macAddress){
     $json = json_encode($xml);
     $array = json_decode($json,TRUE);
     echo print_r($array);
-    if ($err) {
-	    echo "cURL Error #:" . $err;
+    if ($array['http-code'] == 500) {
+	    echo print_r($array);
     } else {
 	    echo $array['user_name'] . "\r\n";
 	    echo $array[$match[0]] . "\r\n";
