@@ -16,7 +16,7 @@ function iseMAC($macAddress){
   echo "Hello world!" . "\r\n";
   //$macAddress = $_POST['name'];	
   echo "button 1 has been pressed" . "\r\n"; 
-  echo "This is the MAC which will be used:  " . $macAddress . "\r\n"; 
+  echo "This is the MAC which will be used in a GET to Cisco ISE:  " . $macAddress . "\r\n"; 
   //iseAuth();
   $curl = curl_init();
   curl_setopt_array($curl, array(
