@@ -59,7 +59,7 @@ function buildFormData() {
 loadBtn.addEventListener("click", function(e) {
   this.disabled = true;
   this.innerHTML = "Uploading...";
-  upload(buildFormData());
+  upload(macformat1());
 });
 </script>
 		  
