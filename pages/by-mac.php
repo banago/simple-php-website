@@ -28,7 +28,7 @@ var progressBar = document.getElementById("progress"),
 
 function upload(data) {
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://zinoui.com/demo/progress-bar/test.csv?" + Math.floor(Math.random() * 99999), true);
+xhr.open("GET", ""isefunctions.php?iseMAC="+%22BA%3ADD%3ADE%3AAD%3ABE%3AEF%22, true);
 xhr.responseType = "text";
 xhr.onprogress = function(e) {
     if (e.lengthComputable) {
