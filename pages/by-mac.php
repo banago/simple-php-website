@@ -49,7 +49,7 @@ xhr.onloadstart = function(e) {
 xhr.onloadend = function(e) {
     progressBar.value = e.loaded;
 };
-xhr.send();
+xhr.send(data);
 }
 
 function buildFormData() {
@@ -65,7 +65,7 @@ function buildFormData() {
 loadBtn.addEventListener("click", function(e) {
   this.disabled = true;
   this.innerHTML = "Uploading...";
-  upload(macformat1());
+  upload(buildFormData());
 });
 </script>
 		  
