@@ -49,8 +49,7 @@ function iseMAC($macAddress){
     if ($array['http-code'] == 500) {
 	    echo print_r($array);
     } else {
-	    echo $array['user_name'] . "\r\n";
-	    echo $array[$match[0]] . "\r\n";
+	    #echo $array['user_name'] . "\r\n";
 	    $match = array('user_name','passed','network_device_name','acs_server','authentication_method','authentication_protocol','identity_group','framed_ip_address','location','device_type');
 	    for ($i1 = 0; $i1 < 1; $i1++) {
 		    foreach ($match as $item) {
