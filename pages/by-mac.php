@@ -25,10 +25,11 @@ include 'isefunctions.php';
 var progressBar = document.getElementById("progress"),
   loadBtn = document.getElementById("button"),
   display = document.getElementById("display");
-
+var x;
+x = "%22BA%3ADD%3ADE%3AAD%3ABE%3AEF%22";
 function upload(data) {
 var xhr = new XMLHttpRequest();
-xhr.open("GET", ""isefunctions.php?iseMAC="+%22BA%3ADD%3ADE%3AAD%3ABE%3AEF%22, true);
+xhr.open("GET", "isefunctions.php?iseMAC="+x, true);
 xhr.responseType = "text";
 xhr.onprogress = function(e) {
     if (e.lengthComputable) {
