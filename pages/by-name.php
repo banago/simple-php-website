@@ -60,7 +60,7 @@
     <span class="close">&times;</span>
     <p>Sample Modal Text...</p>
       <?php
-      include 'restAuth.php';
+      //include 'restAuth.php';
       echo "cats cats cacti";
       //echo first();
       ?>
