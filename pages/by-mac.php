@@ -30,13 +30,11 @@ include 'isefunctions.php';
     100% { transform: rotate(360deg); }
 }
 </style>		  
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+
 		  
 </form>
 <button onclick="macformat1()">Submit</button>
-<script>
-$('#loader').show();	
-</script>
+
 <script>
 function macformat1(){
 	var x,y,ya,z,za,xa,xb,xc,bc1,be1,name,a,b,answer,sp,sp1,sp2;
