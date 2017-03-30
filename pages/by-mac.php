@@ -16,7 +16,7 @@ include 'isefunctions.php';
 <div class="spinner"></div>
 		  
 <style>		  
-#spinner {
+.spinner {
     visibility: hidden;
     border: 4px solid #f3f3f3; /* Light grey */
     border-top: 4px solid #3498db; /* Blue */
