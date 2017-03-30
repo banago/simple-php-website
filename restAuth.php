@@ -32,10 +32,11 @@ if ($err) {
 	//echo $response;
   	$json = json_decode($response, true);
 	for ($i = 0; $i < count($json); $i++) {
+		echo "How many response: " . count($json['response']);
 		echo "How many: " . count($json);
    	 	echo $array[$i]['filepath'];
 	}
-  	print_r($json);
+  	//print_r($json);
 }  
 }
 
