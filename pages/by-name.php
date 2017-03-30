@@ -61,7 +61,8 @@
     <p>Sample Modal Text...</p>
       <?php
       include 'restAuth.php';
-      echo "cats cats cacti"
+      echo "cats cats cacti";
+      echo first();
       ?>
   </div>
 
