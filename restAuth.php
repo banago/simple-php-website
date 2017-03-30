@@ -31,8 +31,13 @@ if ($err) {
 } else {
 	//echo $response;
   	$json = json_decode($response, true);
+	$match = array('serialNumber','family','type','inventoryStatusDetail',
+		       'macAddress','role','managementIpAddress','platformId',
+		       'reachabilityStatus','hostname');
 	for ($i = 0; $i < count($json['response']); $i++) {
 		echo "How many response: " . count($json['response']) . "<br>";
+		foreach ($match as $item) {
+			echo $json['response'][$i][$item] . "<br>";
 	}
   	print_r($json);
 }  
