@@ -14,6 +14,8 @@ include 'isefunctions.php';
 <textarea name="textarea" style="width:250px;height:50px;">bA:dd:De:AD:be:ef&#13;&#10;dEDd.BEEF.caFe</textarea><br>
 
 <div class="loader"></div>
+		  
+<style>		  
 .loader {
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */
@@ -27,7 +29,7 @@ include 'isefunctions.php';
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-		  
+</style>		  
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
 		  
 </form>
