@@ -59,7 +59,8 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <p>Sample Modal Text...</p>
-      <?php    
+      <?php
+      include 'restAuth.php';
       echo "cats cats cacti"
       ?>
   </div>
