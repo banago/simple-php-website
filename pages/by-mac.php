@@ -14,11 +14,14 @@ include 'isefunctions.php';
 <textarea name="textarea" style="width:250px;height:50px;">bA:dd:De:AD:be:ef&#13;&#10;dEDd.BEEF.caFe</textarea><br>
 
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+		  
 </form>
 <button onclick="macformat1()">Submit</button>
 
 <script>
 function macformat1(){
+	$('#loader').show();
 	var x,y,ya,z,za,xa,xb,xc,bc1,be1,name,a,b,answer,sp,sp1,sp2;
 	x=document.getElementById("form2");
 	y=x.elements["textarea"].value;
