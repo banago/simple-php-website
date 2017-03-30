@@ -94,7 +94,7 @@ function macformat1(){
 		//window.location.href="prime.php?name=" + xc;
 		oReq.send();
 		document.getElementById("macid1").innerHTML+= xc + "<br>";
-		document.getElementById('spinner').style.visibility = 'visible';
+		$(".spinner").hide();
 		document.getElementById("macid1").innerHTML+= xc + "<br>";
 	}else {
 		y = 0;
