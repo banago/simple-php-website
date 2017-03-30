@@ -39,7 +39,7 @@ include 'isefunctions.php';
 function macformat1(){
 	var x,y,ya,z,za,xa,xb,xc,bc1,be1,name,a,b,answer,sp,sp1,sp2;
 	
-	var spinOne = document.querySelector(".spinOne"); 
+	var spinOne = document.querySelector(".spinner"); 
 	x=document.getElementById("form2");
 	y=x.elements["textarea"].value;
 	
