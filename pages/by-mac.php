@@ -76,7 +76,7 @@ function macformat1(){
 			
 			
 		}
-		document.writeln("<tr><td class="spinner">" + Display + "</td></tr>");
+		
 
     		function reqListener () {
       			console.log(this.responseText);
