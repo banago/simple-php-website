@@ -16,7 +16,8 @@ include 'isefunctions.php';
 <div class="spinner"></div>
 		  
 <style>		  
-.spinner {
+#spinner {
+    visibility: hidden;
     border: 4px solid #f3f3f3; /* Light grey */
     border-top: 4px solid #3498db; /* Blue */
     border-radius: 50%;
@@ -94,8 +95,7 @@ function macformat1(){
 		//window.location.href="prime.php?name=" + xc;
 		oReq.send();
 		document.getElementById("macid1").innerHTML+= xc + "<br>";
-		$(".spinner").hide();
-		hide(document.querySelectorAll('.spinner'));
+		document.getElementById('spinner').style.visibility = 'visible';
 		document.getElementById("macid1").innerHTML+= xc + "<br>";
 	}else {
 		y = 0;
