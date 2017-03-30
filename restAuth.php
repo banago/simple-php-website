@@ -1,3 +1,4 @@
+<?php
 if (isset($_GET['restMac'])) 
 {
 $name = $_GET['restMac'];
