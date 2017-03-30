@@ -18,10 +18,11 @@ include 'isefunctions.php';
 		  
 </form>
 <button onclick="macformat1()">Submit</button>
-
+<script>
+$('#loader').show();	
+</script>
 <script>
 function macformat1(){
-	$('#loader').show();
 	var x,y,ya,z,za,xa,xb,xc,bc1,be1,name,a,b,answer,sp,sp1,sp2;
 	x=document.getElementById("form2");
 	y=x.elements["textarea"].value;
