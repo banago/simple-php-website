@@ -76,8 +76,8 @@ function macformat1(){
 			
 			
 		}
-		document.getElementById("macid1").innerHTML+= spinOne + "<br>";
-		document.getElementById+= spinOne + "<br>";
+		document.writeln("<tr><td class="spinner">" + Display + "</td></tr>");
+
     		function reqListener () {
       			console.log(this.responseText);
     		}
