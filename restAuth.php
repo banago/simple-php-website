@@ -1,6 +1,6 @@
 <?php
   function first($int, $string){ //function parameters, two variables.
-    <?php
+
 
 $curl = curl_init();
 
