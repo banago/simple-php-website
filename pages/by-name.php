@@ -103,9 +103,9 @@ $request->setUrl('https://devnetapi.cisco.com/sandbox/apic_em/api/v1/network-dev
 $request->setMethod(HTTP_METH_GET);
 
 $request->setHeaders(array(
-  'postman-token' => '6a30ecb5-e42e-46e2-e88e-26ddf9c7f11d',
+  'postman-token' => 'bb698b54-d89e-00e2-2c1d-5a0713397277',
   'cache-control' => 'no-cache',
-  'x-auth-token' => 'ST-1974-59fqSJ0BOl24oDtf0Nmx-cas',
+  'x-auth-token' => 'ST-1989-tESpJnucQ7xwwVdB3f9w-cas',
   'content-type' => 'application/json'
 ));
 
@@ -122,4 +122,3 @@ try {
 }
     
     ?>
-    
