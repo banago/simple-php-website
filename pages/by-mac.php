@@ -95,6 +95,7 @@ function macformat1(){
 		oReq.send();
 		document.getElementById("macid1").innerHTML+= xc + "<br>";
 		document.getElementById("macid1").innerHTML+="<div" + "class=" + "\"spinner\">" + "</div>";
+		document.getElementById("macid1").innerHTML+= xc + "<br>";
 	}else {
 		y = 0;
 	}
