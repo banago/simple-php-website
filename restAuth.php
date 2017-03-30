@@ -29,17 +29,10 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  //echo $response;
-  $json = json_decode($response, true);
-  //print_r($json);
-  echo print_r($json) . "\r\n";
- 	for ($i1 = 0; $i1 < count($json['response']); $i1++) {
-		echo count($json['response'];
-			   }
-  
-
-}
-  
+	//echo $response;
+  	$json = json_decode($response, true);
+  	//print_r($json);
+}  
 }
 
 ?>
