@@ -60,7 +60,7 @@
     <span class="close">&times;</span>
     <p>Sample Modal Text...</p>
       <?php    
-      echo "cats cats cacti"s
+      echo "cats cats cacti"
       ?>
   </div>
 
