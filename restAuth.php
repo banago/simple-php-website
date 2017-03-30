@@ -1,28 +1,38 @@
 <?php
   function first($int, $string){ //function parameters, two variables.
-    
-$request = new HttpRequest();
-$request->setUrl('https://devnetapi.cisco.com/sandbox/apic_em/api/v1/network-device');
-$request->setMethod(HTTP_METH_GET);
+    <?php
 
-$request->setHeaders(array(
-  'postman-token' => '6a30ecb5-e42e-46e2-e88e-26ddf9c7f11d',
-  'cache-control' => 'no-cache',
-  'x-auth-token' => 'ST-1974-59fqSJ0BOl24oDtf0Nmx-cas',
-  'content-type' => 'application/json'
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://devnetapi.cisco.com/sandbox/apic_em/api/v1/network-device",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+  CURLOPT_POSTFIELDS => "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}",
+  CURLOPT_HTTPHEADER => array(
+    "cache-control: no-cache",
+    "content-type: application/json",
+    "postman-token: f36c170e-54a8-8412-eabe-5656b6229dfb",
+    "x-auth-token: ST-1989-tESpJnucQ7xwwVdB3f9w-cas"
+  ),
 ));
 
-$request->setBody('{"username":"devnetuser",
-"password":"Cisco123!"
-}');
+$response = curl_exec($curl);
+$err = curl_error($curl);
 
-try {
-  $response = $request->send();
+curl_close($curl);
 
-  echo $response->getBody();
-} catch (HttpException $ex) {
-  echo $ex;
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  //echo $response;
+  $json = json_decode($response, true);
+  print_r($json);
 }
-
-  }
 ?>
+
+
