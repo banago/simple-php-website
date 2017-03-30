@@ -31,13 +31,14 @@ if ($err) {
 } else {
 	//echo $response;
   	$json = json_decode($response, true);
-	$match = array('serialNumber','family','type','inventoryStatusDetail',
-		       'macAddress','role','managementIpAddress','platformId',
-		       'reachabilityStatus','hostname');
+	$match = array("Serial Number :"=>'serialNumber',"Family :"=>'family',"Type :"=>'type',
+		       "Inventory :"=>'inventoryStatusDetail',"MAC :"=>'macAddress',
+		       "Role :"=>'role',"MgmT :"=>'managementIpAddress',
+		       "Platform :"=>'platformId',"Reachablity :"=>'reachabilityStatus','hostname');
 	for ($i = 0; $i < count($json['response']); $i++) {
 		echo "How many response: " . count($json['response']) . "<br>";
-		foreach ($match as $item) {
-			echo $json['response'][$i][$item] . "<br>";
+		foreach ($match as $x => $item) {
+			echo $x . $json['response'][$i][$item] . "<br>";
 		}
 	}
   	print_r($json);
