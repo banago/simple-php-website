@@ -58,7 +58,10 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
+    <p>Sample Modal Text...</p>
+      <?php    
+      echo "cats cats cacti"s
+      ?>
   </div>
 
 </div>
