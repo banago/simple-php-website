@@ -34,12 +34,9 @@ if ($err) {
   //print_r($json);
   echo print_r($json) . "\r\n";
  	for ($i1 = 0; $i1 < count($json['response']); $i1++) {
-    echo count($json['response'];
-               
-    		foreach ($match as $item) {
-			echo $json['queryResponse']['entity'][$i1]['clientsDTO'][$item] . "\r\n";
-		}
-	}
+		echo count($json['response'];
+			   }
+  
 
 }
   
