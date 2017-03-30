@@ -62,7 +62,7 @@
       <?php
       include 'restAuth.php';
       echo "cats cats cacti";
-      //echo first();
+      echo first(1,"omg lol"); //returns omg lol;
       ?>
   </div>
 
