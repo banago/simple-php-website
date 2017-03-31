@@ -1,6 +1,7 @@
 <?php
 function apicRest_1($ticket){ //function parameters, two variables.
-	echo "Ticket : " . $ticket;
+	//Debug
+	//echo "Ticket : " . $ticket;
 	$curl = curl_init();
 	curl_setopt_array($curl, array(
 		CURLOPT_URL => "https://devnetapi.cisco.com/sandbox/apic_em/api/v1/network-device",
