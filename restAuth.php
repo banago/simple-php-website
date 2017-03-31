@@ -43,7 +43,7 @@ if ($err) {
 		echo "How many response: " . $i . "<br>";
 		"<br>";
 		foreach ($match as $x => $item) {
-			echo $x . $json['response'][$i][$item] . "<br>";
+			echo $x ."  " . $json['response'][$i][$item] . "<br>";
 		}
 	}
 	//Debug
