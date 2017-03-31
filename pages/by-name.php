@@ -96,7 +96,8 @@
       include 'restAuth.php';
       //Debug  
       //$ticket = apicTicket_1();
-      echo apicTicket_1();
+      //Debug
+      //echo apicTicket_1();
       echo apicRest_1(apicTicket_1()); //returns Apic results;
       ?>
     </div>
