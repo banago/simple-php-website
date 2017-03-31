@@ -10,11 +10,10 @@
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
-    padding-bottom: 100px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
-    height: 400%; /* Full height */
+    height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -93,11 +92,9 @@
       <h2>Modal Header</h2>
     </div>
     <div class="modal-body">
-      <p>Get Request</p>
       <p>GET Result</p>
       <?php
       include 'restAuth.php';
-      echo "cats cats cacti";
       echo apicRest_1(); //returns Apic results;
       ?>
     </div>
