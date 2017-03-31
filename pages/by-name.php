@@ -9,9 +9,10 @@
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 0; /* Location of the box */
+    padding-bottom: 20; /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
+    width: 50%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
