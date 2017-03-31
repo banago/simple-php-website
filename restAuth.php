@@ -29,6 +29,7 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
+	//Debug
 	//echo $response;
   	$json = json_decode($response, true);
 	$match = array("Serial Number :"=>'serialNumber',"Family :"=>'family',"Type :"=>'type',
@@ -36,13 +37,16 @@ if ($err) {
 		       "Role :"=>'role',"MgmT :"=>'managementIpAddress',
 		       "Platform :"=>'platformId',"Reachablity :"=>'reachabilityStatus','hostname');
 	for ($i = 0; $i < count($json['response']); $i++) {
-		echo "How many response: " . count($json['response']) . "<br>";
+		//Debug
+		//echo "How many response: " . count($json['response']) . "<br>";
+		echo "How many response: " . $i . "<br>";
 		"<br>"
 		foreach ($match as $x => $item) {
 			echo $x . $json['response'][$i][$item] . "<br>";
 		}
 	}
-  	print_r($json);
+	//Debug
+  	//print_r($json);
 }  
 }
 
