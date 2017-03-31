@@ -1,5 +1,5 @@
 <?php
-  function first($int, $string){ //function parameters, two variables.
+  function apicRest_1(){ //function parameters, two variables.
 
 
 $curl = curl_init();
