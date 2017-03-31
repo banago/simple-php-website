@@ -10,6 +10,7 @@
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
+    padding-bottom: 100px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
