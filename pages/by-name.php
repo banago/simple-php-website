@@ -92,8 +92,8 @@
       <h2>Modal Header</h2>
     </div>
     <div class="modal-body">
-      <p>Some text in the Modal Body</p>
-      <p>Some other text...</p>
+      <p>Get Request</p>
+      <p>GET Result</p>
       <?php
       include 'restAuth.php';
       echo "cats cats cacti";
@@ -101,7 +101,7 @@
       ?>
     </div>
     <div class="modal-footer">
-      <h3>Modal Footer</h3>
+      <h3>MODAL END</h3>
     </div>
   </div>
 
