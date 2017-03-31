@@ -94,9 +94,10 @@
       <p>GET Result</p>
       <?php
       include 'restAuth.php';
-      $ticket = apicTicket_1();
+      //Debug  
+      //$ticket = apicTicket_1();
       echo apicTicket_1();
-      echo apicRest_1($ticket); //returns Apic results;
+      echo apicRest_1(apicTicket_1()); //returns Apic results;
       ?>
     </div>
     <div class="modal-footer">
