@@ -21,16 +21,33 @@
 
 /* Modal Content */
 .modal-content {
+    position: relative;
     background-color: #fefefe;
     margin: auto;
-    padding: 20px;
+    padding: 0;
     border: 1px solid #888;
     width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
 }
 
 /* The Close Button */
 .close {
-    color: #aaaaaa;
+    color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -42,11 +59,25 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
 </style>
 </head>
 <body>
 
-<h2>Modal Example</h2>
+<h2>Animated Modal with Header and Footer</h2>
 
 <!-- Trigger/Open The Modal -->
 <button id="myBtn">Open Modal</button>
@@ -56,13 +87,22 @@
 
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Sample Modal Text...</p>
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Modal Header</h2>
+    </div>
+    <div class="modal-body">
+      <p>Some text in the Modal Body</p>
+      <p>Some other text...</p>
       <?php
       include 'restAuth.php';
       echo "cats cats cacti";
-      echo apicRest_1(); //returns omg lol;
+      echo apicRest_1(); //returns Apic results;
       ?>
+    </div>
+    <div class="modal-footer">
+      <h3>Modal Footer</h3>
+    </div>
   </div>
 
 </div>
@@ -94,5 +134,4 @@ window.onclick = function(event) {
     }
 }
 </script>
-
 
