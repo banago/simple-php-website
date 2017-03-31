@@ -76,7 +76,8 @@ function apicTicket_1(){
 		} else {
 		//echo $response;
 		$json = json_decode($response, true);
-		print_r($json);
+		//Debug
+		//print_r($json);
 		return $json['response']['serviceTicket'];
 	}
 }
