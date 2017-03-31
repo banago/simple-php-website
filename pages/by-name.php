@@ -61,7 +61,7 @@
       <?php
       include 'restAuth.php';
       echo "cats cats cacti";
-      echo first(1,"omg lol"); //returns omg lol;
+      echo apicRest_1(); //returns omg lol;
       ?>
   </div>
 
