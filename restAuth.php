@@ -15,7 +15,6 @@ function apicRest_1($ticket){ //function parameters, two variables.
 		CURLOPT_HTTPHEADER => array(
 			"cache-control: no-cache",
 			"content-type: application/json",
-			"postman-token: f36c170e-54a8-8412-eabe-5656b6229dfb",
 			"x-auth-token: " . $ticket
 			),
 		));
@@ -64,7 +63,6 @@ function apicTicket_1(){
   		CURLOPT_HTTPHEADER => array(
 			"cache-control: no-cache",
     			"content-type: application/json",
-    			"postman-token: 6431f474-6293-c546-f7d4-c97f09bf7ec9"
 		),
 	));
 	$response = curl_exec($curl);
