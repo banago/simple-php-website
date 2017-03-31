@@ -41,7 +41,7 @@ if ($err) {
 		//echo "How many response: " . count($json['response']) . "<br>";
 		"<br>";
 		echo "How many response: " . $i . "<br>";
-		echo "<br>";
+		"<br>";
 		foreach ($match as $x => $item) {
 			echo $x . $json['response'][$i][$item] . "<br>";
 		}
