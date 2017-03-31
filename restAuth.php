@@ -35,7 +35,8 @@ if ($err) {
 	$match = array("Serial Number :"=>'serialNumber',"Family :"=>'family',"Type :"=>'type',
 		       "Inventory :"=>'inventoryStatusDetail',"MAC :"=>'macAddress',
 		       "Role :"=>'role',"MgmT :"=>'managementIpAddress',
-		       "Platform :"=>'platformId',"Reachablity :"=>'reachabilityStatus','hostname');
+		       "Platform :"=>'platformId',"Reachablity :"=>'reachabilityStatus',
+		       "HostName :"=>'hostname');
 	for ($i = 0; $i < count($json['response']); $i++) {
 		//Debug
 		//echo "How many response: " . count($json['response']) . "<br>";
