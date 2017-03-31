@@ -10,7 +10,7 @@
     z-index: 1; /* Sit on top */
     padding-top: 0; /* Location of the box */
     left: 0;
-    top: 50;
+    top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
