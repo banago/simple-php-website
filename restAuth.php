@@ -37,6 +37,7 @@ if ($err) {
 		       "Platform :"=>'platformId',"Reachablity :"=>'reachabilityStatus','hostname');
 	for ($i = 0; $i < count($json['response']); $i++) {
 		echo "How many response: " . count($json['response']) . "<br>";
+		"<br>"
 		foreach ($match as $x => $item) {
 			echo $x . $json['response'][$i][$item] . "<br>";
 		}
