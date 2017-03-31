@@ -39,9 +39,9 @@ if ($err) {
 	for ($i = 0; $i < count($json['response']); $i++) {
 		//Debug
 		//echo "How many response: " . count($json['response']) . "<br>";
-		"<br>";
-		echo "How many response: " . $i . "<br>";
-		"<br>";
+		echo "<br>";
+		echo "Item Count: " . $i . "<br>";
+		echo "<br>";
 		foreach ($match as $x => $item) {
 			echo $x ."  " . $json['response'][$i][$item] . "<br>";
 		}
