@@ -1,5 +1,5 @@
 <?php
-function apicRest_1($ticket){ //function parameters, two variables.
+function apicRest_1($ticket){ //function parameters, one variable
 	//Debug
 	//echo "Ticket : " . $ticket;
 	$curl = curl_init();
