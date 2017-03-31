@@ -1,6 +1,6 @@
 <?php
-function apicRest_1(){ //function parameters, two variables.
-	
+function apicRest_1(ticket){ //function parameters, two variables.
+	echo "Ticket : " . $ticket;
 	$curl = curl_init();
 	curl_setopt_array($curl, array(
 		CURLOPT_URL => "https://devnetapi.cisco.com/sandbox/apic_em/api/v1/network-device",
@@ -15,7 +15,7 @@ function apicRest_1(){ //function parameters, two variables.
 			"cache-control: no-cache",
 			"content-type: application/json",
 			"postman-token: f36c170e-54a8-8412-eabe-5656b6229dfb",
-			"x-auth-token: ST-1989-tESpJnucQ7xwwVdB3f9w-cas"
+			"x-auth-token: " . $ticket
 			),
 		));
 	$response = curl_exec($curl);
