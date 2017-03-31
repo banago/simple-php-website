@@ -76,7 +76,7 @@
 </head>
 <body>
 
-<h2>Animated Modal with Header and Footer</h2>
+<h2>APIC-EM REST Request with Animated Modal Header and Footer</h2>
 
 <!-- Trigger/Open The Modal -->
 <button id="myBtn">Open Modal</button>
