@@ -97,6 +97,9 @@ MAC | IP | HOSTNAME : <input type="text" name="data" id="myData"> <br/>
     </div>
     <div class="modal-body">
       <p>APIC-EM Return</p>
+      <script>
+      window.location.href=”index.php?uid=1";
+      </script>
 
       <?php
       include 'restAuth.php';
@@ -130,7 +133,6 @@ var data = document.getElementById("myData");
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
-    window.location.href=”index.php?uid=1";
     modal.style.display = "block";
 }
 
