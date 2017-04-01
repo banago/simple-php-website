@@ -81,7 +81,7 @@
 <!-- Trigger/Open The Modal -->
 <button id="myBtn">Open Modal</button>
     
-<form action="by-ip.php" methos="get">
+<form action="index.php/?page=by-name" methos="get">
 MAC | IP | HOSTNAME : <input type="text" name="data"> <br/>
 <input type="reset" name="reset">
 <input type="submit" name="submit" id="myBtn">
