@@ -136,8 +136,8 @@ btn.onclick = function() {
 }
 
 btn_2.onclick = function() {
-    window.location.href = "http://172.16.8.60/?page=by-name";
     window.location.href = "http://172.16.8.60/?page=by-name&data=" + data;
+    modal.style.display = "block";
     
 }
 
