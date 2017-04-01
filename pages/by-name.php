@@ -81,8 +81,8 @@
 <!-- Trigger/Open The Modal -->
 <button id="myBtn">Open Modal</button>
     
-<form id="myForm">
-MAC | IP | HOSTNAME : <input type="text" name="data"> <br/>
+<form>
+MAC | IP | HOSTNAME : <input type="text" name="data" id="myData"> <br/>
 <input type="reset" name="reset">
 </form>
 
@@ -126,11 +126,11 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
     
 // Get the button that opens the modal
-var form = document.getElementById("myForm");
+var data = document.getElementById("myData");
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
-    
+    window.location.href=”index.php?uid=1";
     modal.style.display = "block";
 }
 
