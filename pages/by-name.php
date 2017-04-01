@@ -83,11 +83,11 @@
     
 
    
-<form name="form" action="" method="get">
-MAC | IP | HOSTNAME : <input type="text" name="?page=by-name&data" id="myData"> <br/>
+<form name="form" action="">
+MAC | IP | HOSTNAME : <input type="text" name="myData" id="myData"> <br/>
 <input type="reset" name="reset">
 <!-- Trigger/ -->
-<button id="myBtn_kk2">Test</button>
+<button id="myBtn_2">Test</button>
 </form>
 
 <!-- The Modal -->
