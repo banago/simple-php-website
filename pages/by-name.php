@@ -80,9 +80,9 @@
 
 <!-- Trigger/Open The Modal -->
 <button id="myBtn">Open Modal</button>
-    
-<form>
-MAC | IP | HOSTNAME : <input type="text" name="data" id="myData"> <br/>
+   
+<form name="form" action="" method="get">
+MAC | IP | HOSTNAME : <input type="text" name="myData" id="myData"> <br/>
 <input type="reset" name="reset">
 </form>
 
@@ -97,12 +97,8 @@ MAC | IP | HOSTNAME : <input type="text" name="data" id="myData"> <br/>
     </div>
     <div class="modal-body">
       <p>APIC-EM Return</p>
-      <script>
-      var jobValue = document.getElementById('txtJob').value
-      
-      </script>
-
       <?php
+      echo $_GET['myData'];
       include 'restAuth.php';
       
       //Debug  
@@ -129,12 +125,8 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
     
-// Get the button that opens the modal
-var data = document.getElementById("myData").value;
-
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
-    window.location.href = "http://172.16.8.88/?page=by-name&?data=" + data;
     modal.style.display = "block";
 }
 
