@@ -100,6 +100,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data"> <br/>
       <p>APIC-EM Return</p>
       <?php
       include 'restAuth.php';
+      echo $_GET['data'];
       //Debug  
       //$ticket = apicTicket_1();
       //Debug
