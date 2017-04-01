@@ -132,10 +132,11 @@ var span = document.getElementsByClassName("close")[0];
 // Get the button that opens the modal
 var data = document.getElementById("myData");
 
-window.location.href = "http://172.16.8.60/?page=by-name&" + data; 
+ 
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
+    window.location.href = "http://172.16.8.60/?page=by-name&?data=" + data;
     modal.style.display = "block";
 }
 
