@@ -61,7 +61,6 @@ function primeMac($mac)
     echo $sitever['17.0.0'];
 }
 
-<?php
 function deviceURL_1($data){
 	$str = $data;
 	$str = preg_replace('/\s+/', '', $str);     //Remove whitespaces
