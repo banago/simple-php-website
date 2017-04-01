@@ -80,6 +80,9 @@
 
 <!-- Trigger/Open The Modal -->
 <button id="myBtn">Open Modal</button>
+<form action="by-ip.php" methos="get">
+Data : <input type="text" name="data">
+</form>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
