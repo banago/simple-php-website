@@ -134,7 +134,7 @@ var data = document.getElementById("myData").value;
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
-    window.location.href = "http://172.16.8.60/?page=by-name&?data=" + data;
+    window.location.href = "http://172.16.8.88/?page=by-name&?data=" + data;
     modal.style.display = "block";
 }
 
