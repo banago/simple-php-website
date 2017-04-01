@@ -123,10 +123,11 @@ var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-    
+var data = document.getElementById("myData").value;
+
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
+    window.location.href = "http://172.16.8.88/?page=by-name&?data=" + data;
     modal.style.display = "block";
 }
 
