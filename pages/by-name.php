@@ -98,9 +98,12 @@ MAC | IP | HOSTNAME : <input type="text" name="data"> <br/>
     </div>
     <div class="modal-body">
       <p>APIC-EM Return</p>
+      <script>
+      window.location.href=”index.php?uid=1";
+      </script>
       <?php
       include 'restAuth.php';
-      echo $_GET['data'];
+      echo $_GET['uid'];
       //Debug  
       //$ticket = apicTicket_1();
       //Debug
