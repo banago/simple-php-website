@@ -98,7 +98,8 @@ MAC | IP | HOSTNAME : <input type="text" name="data" id="myData"> <br/>
     <div class="modal-body">
       <p>APIC-EM Return</p>
       <script>
-      window.location.href=”index.php?uid=1";
+      var jobValue = document.getElementById('txtJob').value
+      
       </script>
 
       <?php
@@ -130,6 +131,8 @@ var span = document.getElementsByClassName("close")[0];
     
 // Get the button that opens the modal
 var data = document.getElementById("myData");
+
+window.location.href = "http://172.16.8.60/?page=by-name&" + data; 
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
