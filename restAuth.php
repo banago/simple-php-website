@@ -46,9 +46,7 @@ function apicRest_1($ticket){ //function parameters, one variable
 		//print_r($json);
 	}  
 }
-?>
 
-<?php
 function primeRest_1($ticket){ //function parameters, one variable
 	//Debug
 	//echo "Ticket : " . $ticket;
@@ -96,9 +94,7 @@ function primeRest_1($ticket){ //function parameters, one variable
 		//print_r($json);
 	}  
 }
-?>
 
-<?php
 function apicTicket_1(){
 	$curl = curl_init();
 	curl_setopt_array($curl, array(
@@ -130,9 +126,7 @@ function apicTicket_1(){
 		return $json['response']['serviceTicket'];
 	}
 }
-?>
 
-<?php
 function primeTicket_1(){
 	$curl = curl_init();
 	curl_setopt_array($curl, array(
