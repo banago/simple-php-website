@@ -83,8 +83,8 @@
     
 
    
-<form name="form" action="">
-MAC | IP | HOSTNAME : <input type="text" name="myData" id="myData"> <br/>
+<form name="form">
+MAC | IP | HOSTNAME : <input type="text" id="myData"> <br/>
 <input type="reset" name="reset">
 <!-- Trigger/ -->
 <button id="myBtn_2">Test</button>
