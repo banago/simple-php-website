@@ -100,7 +100,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data"> <br/>
 
       <?php
       include 'restAuth.php';
-      echo $_GET['uid'];
+      
       //Debug  
       //$ticket = apicTicket_1();
       //Debug
