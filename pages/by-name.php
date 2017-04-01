@@ -80,10 +80,14 @@
 
 <!-- Trigger/Open The Modal -->
 <button id="myBtn">Open Modal</button>
+    
+
    
 <form name="form" action="" method="get">
 MAC | IP | HOSTNAME : <input type="text" name="myData" id="myData"> <br/>
 <input type="reset" name="reset">
+<!-- Trigger/ -->
+<button id="myBtn_2">Test</button>
 </form>
 
 <!-- The Modal -->
@@ -121,14 +125,19 @@ var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
-
+var btn_2 = document.getElementById("myBtn_2");
 // Get the <span> element that closes the modal
 var data = document.getElementById("myData").value;
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
-    window.location.href = "http://172.16.8.88/?page=by-name&?data=" + data;
+  
     modal.style.display = "block";
+}
+
+btn_2.onclick = function() {
+    window.location.href = "http://172.16.8.88/?page=by-name&?data=" + data;
+    
 }
 
 // When the user clicks on <span> (x), close the modal
