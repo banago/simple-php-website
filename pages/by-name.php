@@ -130,7 +130,7 @@ var form = document.getElementById("myForm");
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
-    window.location.href=”index.php?page=by-name";
+    window.location.href=”index.php?uid=1";
     modal.style.display = "block";
 }
 
