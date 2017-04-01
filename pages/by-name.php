@@ -80,14 +80,14 @@
 
 <!-- Trigger/Open The Modal -->
 <button id="myBtn">Open Modal</button>
-    
+<button id="myBtn_2">Test</button>    
 
    
 <form name="form">
 MAC | IP | HOSTNAME : <input type="text" id="myData"> <br/>
 <input type="reset" name="reset">
 <!-- Trigger/ -->
-<button id="myBtn_2">Test</button>
+
 </form>
 
 <!-- The Modal -->
