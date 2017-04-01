@@ -130,9 +130,7 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
     
 // Get the button that opens the modal
-var data = document.getElementById("myData");
-
- 
+var data = document.getElementById("myData").value;
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
