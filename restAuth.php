@@ -206,5 +206,6 @@ function deviceURL_1(){
     $url_encode = urlencode($add_quotes);           // %22macbook_123.user.net%22
     echo $url_encode;
     return $url_encode;
-}	
+}
+}
 ?>
