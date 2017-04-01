@@ -84,7 +84,6 @@
 <form id="myForm">
 MAC | IP | HOSTNAME : <input type="text" name="data"> <br/>
 <input type="reset" name="reset">
-//<input type="submit" name="submit" id="myBtn">
 </form>
 
 <!-- The Modal -->
@@ -98,9 +97,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data"> <br/>
     </div>
     <div class="modal-body">
       <p>APIC-EM Return</p>
-      <script>
-      window.location.href=”index.php?uid=1";
-      </script>
+
       <?php
       include 'restAuth.php';
       echo $_GET['uid'];
