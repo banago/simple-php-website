@@ -117,8 +117,9 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat();
       <span class="close">&times;</span>
       <h2>GET Result</h2>
     </div>
-    <div id="adiv2" class="modal-body">
+    <div class="modal-body">
       <p>APIC-EM Return</p>
+        <div id="adiv2" class="modal-body2">
       
       <?php
       //echo $_GET['myData'];
