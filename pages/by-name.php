@@ -115,9 +115,6 @@ function restmodal(thediv, thefile , thekey) {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
             document.getElementById(thediv).innerHTML = myObj.response.serviceTicket;
-	    var ticket = document.getElementById(thediv).innerHTML = myObj.response.serviceTicket;
-	    document.getElementById('spinner').style.display = "none";
-	    xmlhttp.open('GET', 'restAuth.php?use_ticket'+'=?'ticket, true);
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'=1', true);
