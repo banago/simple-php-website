@@ -138,7 +138,6 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
 <input type="reset" name="reset">
 
 </form>
-<div class="spinner"></div> 
 <div id="adiv"></div>
 
 <!-- The Modal -->
@@ -152,7 +151,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
     </div>
     <div class="modal-body">
       <p>APIC-EM Return</p>
-        <div id="adiv2" class="apic-output">
+        <div id="adiv2" class="spinner">
       
       <?php
       //echo $_GET['myData'];
