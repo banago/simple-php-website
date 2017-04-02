@@ -103,13 +103,14 @@ xmlhttp.send();
 }
 
 function restmodal(thediv, thefile , thekey) {
+    var addSpinner = document.getElementById("spinner");
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
     }  
+    document.getElementById('spinner').style.display = "visible";	
     xmlhttp.onreadystatechange = function() {
-	var addSpinner = document.getElementById("spinner");
     	addSpinner.className +=" spinner";
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
