@@ -85,21 +85,21 @@ if (isset($_GET['data']))
 	    		//echo $mac_colons; 				// Debug
 	    		//echo $mac_dashes;				// Debug
 	    		echo "This is a MAC Address: " . $str . "<br>";
-			echo "Acctual Return: " . url_encode; 		// Debug
+			echo "Acctual Return: " . $url_encode; 		// Debug
 	    		return $url_encode;
 		} elseif ($str_2 == 1) {
 			//echo "it's a ip!!!" . "<br>"; 		// Debug
     			$add_quotes = "\"" . $str . "\"";               // "192.168.1.1"
     			$url_encode = urlencode($add_quotes);           // %22192.168.1.1%22
     			echo "This is a IP Address: " . $str . "<br>";
-			echo "Acctual Return: " . url_encode; 		// Debug
+			echo "Acctual Return: " . $url_encode; 		// Debug
     			return $url_encode;
 		} else { 
     			//echo "it's probably a hostname!!!" . "<br>";	// Debug
 		    	$add_quotes = "\"" . $str . "\"";               // "macbook_123.user.net"
 		    	$url_encode = urlencode($add_quotes);           // %22macbook_123.user.net%22
 		    	echo "This is probably a hostname:  " . $str . "<br>";
-			echo "Acctual Return: " . url_encode; 		// Debug
+			echo "Acctual Return: " . $url_encode; 		// Debug
 		    	return $url_encode;
 		}
 	}
