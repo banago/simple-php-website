@@ -75,16 +75,16 @@
 </style>
 <head>
 <script type="text/javascript">
-function load(thediv, thefile) {
+function findmatch() {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
     }  
     xmlhttp.onreadystatechange = function() {
-        document.getElementById(thediv).innerHTML = xmlhttp.responseText; 
+        document.getElementById('adiv').innerHTML = xmlhttp.responseText; 
     }
-xmlhttp.open('GET', thefile, true);
+xmlhttp.open('GET', 'include.inc.php', true);
 xmlhttp.send();
 }
   
@@ -98,13 +98,14 @@ xmlhttp.send();
 <button id="myBtn">Open Modal</button>  <br>
 
 <input type="submit" onclick="load('adiv','include.inc.php');"> <br>
-<div id="adiv"></div>
-<form name="form">
-MAC | IP | HOSTNAME : <input type="text" id="myData"> <br/>
+
+<form id="search"name="search">
+MAC | IP | HOSTNAME : <input type="text" name="keyword" onkeyup="findmatch();"> <br/>
 <input type="reset" name="reset">
 
-
 </form>
+    
+<div id="adiv"></div>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
