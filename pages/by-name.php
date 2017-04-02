@@ -84,7 +84,6 @@ function findformat(thediv, thefile) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById(thediv).innerHTML = xmlhttp.responseText; 
-            document.getElementById('adiv2').innerHTML = xmlhttp.responseText;
         }
     }
 xmlhttp.open('GET', thefile+'?data='+document.search.data_text.value, true);
