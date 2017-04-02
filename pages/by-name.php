@@ -109,7 +109,7 @@ function restmodal(thediv, thefile , thekey) {
         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
     }  
     xmlhttp.onreadystatechange = function() {
-	var addSpinner = document.getElementById(thediv).innerHTML;
+	var addSpinner = document.getElementById("spinner").innerHTML;
     	addSpinner.classname += "spinner";
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
@@ -151,7 +151,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
     </div>
     <div class="modal-body">
       <p>APIC-EM Return</p>
-	<div id="spinner" class="spinner"></div>
+	<div id="spinner" ></div>
         <div id="adiv2" class="apicdata">
       
       <?php
