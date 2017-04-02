@@ -71,41 +71,38 @@ if (isset($_GET['data']))
 		$str_1 = (preg_match('/^([0-9A-Fa-f]{2}[:\-\.]){5}([0-9A-Fa-f]{2})$/', $str) == 1);
 		$str_2 = (preg_match('/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/', $str) == 1);
 		if ($str_1 == 1) {
-			echo "It's a mac!!!";
-    		//make uppper
-    		$str = strtoupper($str);
-    		//list diliminators
-    		$separator = array(':', '-','.');
-    		//strip dilimintors
-    		$str = str_replace($separator, '', $str);
-   			//split by 2
-    		$split_2 = str_split($str, 2);
-    		//Debug;
-    		//$count = count($split_2);
-	    	//insert new diliinator
-    		//$mac_dashes = implode('-', $split_2);         // A0-B0-C0-D0-E0-F0
-	    	$mac_colons = implode(':', $split_2);           // A0:B0:C0:D0:E0:F0
-	    	$add_quotes = "\"" .$mac_colons . "\"";         // "A0:B0:C0:D0:E0:F0"
-	    	$url_encode = urlencode($add_quotes);           // %2208%3AE8%3A56%3A40%3AF4%3A48%22
-	    	//echo $str;
-	    	//echo $mac_colons;
-	    	//echo $mac_dashes;	
-	    	echo "This is a MAC Address: " . $url_encode . "<br>";
-	    	return $url_encode;
-	} elseif ($str_2 == 1) {
-		echo "it's a ip!!!";
-    	$add_quotes = "\"" .$str. "\"";                 // "192.168.1.1"
-    	$url_encode = urlencode($add_quotes);           // %22192.168.1.1%22
-    	echo "This is a IP Address: " . $url_encode . "<br>";
-    	return $url_encode;
-	} else { 
-    	echo "it's probably a hostname!!!";
-    	$add_quotes = "\"" .$str. "\"";                 // "macbook_123.user.net"
-    	$url_encode = urlencode($add_quotes);           // %22macbook_123.user.net%22
-    	echo "This is probably a hostname:  " . $url_encode . "<br>";
-    	return $url_encode;
+			//echo "It's a mac!!!" . "<br>"; 		// Debug
+    			$str = strtoupper($str); 			// Make uppper
+    			$separator = array(':', '-','.'); 		// Array of diliminators
+    			$str = str_replace($separator, '', $str); 	// Strip dilimintors
+    			$split_2 = str_split($str, 2);			// Split by 2
+    			//$count = count($split_2); 			// Debug
+    			//$mac_dashes = implode('-', $split_2);         // A0-B0-C0-D0-E0-F0
+	    		$mac_colons = implode(':', $split_2);           // A0:B0:C0:D0:E0:F0
+	    		$add_quotes = "\"" . $mac_colons . "\"";        // "A0:B0:C0:D0:E0:F0"
+	    		$url_encode = urlencode($add_quotes);           // %2208%3AE8%3A56%3A40%3AF4%3A48%22
+	    		//echo $str; 					// Debug
+	    		//echo $mac_colons; 				// Debug
+	    		//echo $mac_dashes;				// Debug
+	    		echo "This is a MAC Address: " . $str . "<br>";
+			echo "Acctual Return: " . url_encode; 		// Debug
+	    		return $url_encode;
+		} elseif ($str_2 == 1) {
+			//echo "it's a ip!!!" . "<br>"; 		// Debug
+    			$add_quotes = "\"" . $str . "\"";               // "192.168.1.1"
+    			$url_encode = urlencode($add_quotes);           // %22192.168.1.1%22
+    			echo "This is a IP Address: " . $str . "<br>";
+			echo "Acctual Return: " . url_encode; 		// Debug
+    			return $url_encode;
+		} else { 
+    			//echo "it's probably a hostname!!!" . "<br>";	// Debug
+		    	$add_quotes = "\"" . $str . "\"";               // "macbook_123.user.net"
+		    	$url_encode = urlencode($add_quotes);           // %22macbook_123.user.net%22
+		    	echo "This is probably a hostname:  " . $str . "<br>";
+			echo "Acctual Return: " . url_encode; 		// Debug
+		    	return $url_encode;
+		}
 	}
-}
 	deviceURL_1($_GET['data']);
 }
 ?>
