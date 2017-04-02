@@ -77,17 +77,17 @@
 <script type="text/javascript">
 fuction load(thediv, thefile) {
     if (window.XMLHttpRequest) {
-        xmlhttp = new XMLHttpRequest ();
+        xmlhttp = new XMLHttpRequest();
     } else { 
-        xmlhttp = new ActiveXObject ('Microsoft.XMLHTTP');
-    }
-    
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }  
     xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readySate==4 && xmlhttp.status == 200) {
-            document.getElementById(thediv).innerHTML = xmlhttp.responseText;    
+        if (xmlhttp.readySate == 4 && xmlhttp.status == 200) {
+            document.getElementById(thediv).innerHTML = xmlhttp.responseText; 
+        }
     }
-}
 xmlhttp.open('GET', thefile, true);
+xmlhttp.send();
 }
   
 </script>    
