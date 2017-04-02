@@ -82,8 +82,10 @@ function findformat() {
         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
     }  
     xmlhttp.onreadystatechange = function() {
-        document.getElementById('adiv').innerHTML = xmlhttp.responseText; 
-        document.getElementById('adiv2').innerHTML = xmlhttp.responseText;
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById('adiv').innerHTML = xmlhttp.responseText; 
+            document.getElementById('adiv2').innerHTML = xmlhttp.responseText;
+        }
     }
 xmlhttp.open('GET', 'functions.php?data='+document.search.data_text.value, true);
 xmlhttp.send();
@@ -119,7 +121,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat();
     </div>
     <div class="modal-body">
       <p>APIC-EM Return</p>
-        <div id="adiv2" class="modal-body2">
+        <div id="adiv2" class="apic-output">
       
       <?php
       //echo $_GET['myData'];
