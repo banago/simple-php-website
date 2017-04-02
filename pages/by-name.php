@@ -73,20 +73,38 @@
     color: white;
 }
 </style>
+<head>
+<script type="text/javascript">
+fuction load(thediv, thefile) {
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest ();
+    } else { 
+        xmlhttp = new ActiveXObject ('Microsoft.XMLHTTP');
+    }
+    
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readySate==4 && xmlhttp.status == 200) {
+            document.getElementById(thediv).innerHTML = xmlhttp.responseText;    
+    }
+}
+xmlhttp.open('GET', thefile, true);
+}
+  
+</script>    
 </head>
 <body>
 
 <h2>APIC-EM REST Request with Animated Modal Header and Footer</h2>
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
-<button id="myBtn_2">Test</button>    
+<button id="myBtn">Open Modal</button>  
 
-   
+<input type="submint" onclick="load('adiv','include.inc.php');">
+<div id="adiv"></div>
 <form name="form">
 MAC | IP | HOSTNAME : <input type="text" id="myData"> <br/>
 <input type="reset" name="reset">
-<!-- Trigger/ -->
+
 
 </form>
 
