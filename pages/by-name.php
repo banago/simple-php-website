@@ -75,7 +75,6 @@
 </style>
 <head>
 <script type="text/javascript">
-var test = ""; 
 function findformat(thediv, thefile, thekey) {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
