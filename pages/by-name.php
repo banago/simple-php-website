@@ -99,11 +99,10 @@ function restmodal(thediv, thefile , thekey) {
     }  
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            
             document.getElementById(thediv).innerHTML = xmlhttp.responseText; 
         }
     }
-xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
+xmlhttp.open('GET', thefile+'?'+thekey+'=', true);
 xmlhttp.send();
 }
 
@@ -167,7 +166,8 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
-    document.getElementById("adiv2").innerHTML = "Hello World";
+    document.getElementById("adiv2").innerHTML = restmodal('adiv2','restauth.php','apic_auth');
+    // document.getElementById("adiv2").innerHTML = "Hello World";
     modal.style.display = "block";
 }
 // When the user clicks on <span> (x), close the modal
