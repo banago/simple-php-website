@@ -83,6 +83,7 @@ function findformat() {
     }  
     xmlhttp.onreadystatechange = function() {
         document.getElementById('adiv').innerHTML = xmlhttp.responseText; 
+        document.getElementById('adiv2').innerHTML = xmlhttp.responseText;
     }
 xmlhttp.open('GET', 'functions.php?data='+document.search.data_text.value, true);
 xmlhttp.send();
@@ -116,8 +117,9 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat();
       <span class="close">&times;</span>
       <h2>GET Result</h2>
     </div>
-    <div class="modal-body">
+    <div id="adiv2" class="modal-body">
       <p>APIC-EM Return</p>
+      
       <?php
       //echo $_GET['myData'];
       //include 'restAuth.php';
