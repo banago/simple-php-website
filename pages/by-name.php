@@ -84,7 +84,7 @@ function findmatch() {
     xmlhttp.onreadystatechange = function() {
         document.getElementById('adiv').innerHTML = xmlhttp.responseText; 
     }
-xmlhttp.open('GET', 'include.inc.php?search_text='+document.search.search_text, true);
+xmlhttp.open('GET', 'include.inc.php?search_text='+document.search.search_text.value, true);
 xmlhttp.send();
 }
   
