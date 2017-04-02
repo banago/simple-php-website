@@ -63,7 +63,7 @@ function primeMac($mac)
 
 if (isset($_GET['data'])) 
 {
-	$data =  $_GET['data'];
+	$data = $deviceURL_1($_GET['data']);
 	function deviceURL_1($data){
 		$str = $data;
 		$str = preg_replace('/\s+/', '', $str);     //Remove whitespaces
