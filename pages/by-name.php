@@ -99,7 +99,7 @@ xmlhttp.send();
 
 <input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 
-<form id="data_text"name="data">
+<form id="search"name="search">
 MAC | IP | HOSTNAME : <input type="text" name="data" onkeyup="findformat();"> <br/>
 <input type="reset" name="reset">
 
