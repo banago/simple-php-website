@@ -83,8 +83,8 @@ function findformat(thediv, thefile, thekey) {
     }  
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            var obj = JSON.parse(xmlhttp.responseText);
-            document.getElementById(thediv).innerHTML = obj.Type  + ", " obj.Normalized;
+            myObj = JSON.parse(this.responseText);
+            document.getElementById(thediv).innerHTML = myObj.Type  + ", " myObj.Normalized;
             document.getElementById(thediv).innerHTML = xmlhttp.responseText;
         }
     }
