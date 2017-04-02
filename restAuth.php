@@ -48,7 +48,7 @@ function apicRest_1($ticket){ //function parameters, one variable
 }
 
 if (isset($_GET['use_ticket'])) {
-	echo _GET['use_ticket'];
+	echo $_GET['use_ticket'];
 	function primeRest_1($ticket){ //function parameters, one variable
 		//Debug
 		//echo "Ticket : " . $ticket;
