@@ -88,20 +88,20 @@ if (isset($_GET['data']))
 	    	$url_encode = urlencode($add_quotes);           // %2208%3AE8%3A56%3A40%3AF4%3A48%22
 	    	//echo $str;
 	    	//echo $mac_colons;
-	    	//echo $mac_dashes;
-	    	echo $url_encode;
+	    	//echo $mac_dashes;	
+	    	echo "This is a MAC Address: " . $url_encode . "<br>";
 	    	return $url_encode;
 	} elseif ($str_2 == 1) {
 		echo "it's a ip!!!";
     	$add_quotes = "\"" .$str. "\"";                 // "192.168.1.1"
     	$url_encode = urlencode($add_quotes);           // %22192.168.1.1%22
-    	echo $url_encode;
+    	echo "This is a IP Address: " . $url_encode . "<br>";
     	return $url_encode;
 	} else { 
     	echo "it's probably a hostname!!!";
     	$add_quotes = "\"" .$str. "\"";                 // "macbook_123.user.net"
     	$url_encode = urlencode($add_quotes);           // %22macbook_123.user.net%22
-    	echo $url_encode;
+    	echo "This is probably a hostname:  " . $url_encode . "<br>";
     	return $url_encode;
 	}
 }
