@@ -92,6 +92,8 @@ xmlhttp.send();
 }
 
 function restmodal(thediv, thefile , thekey) {
+    var addSpinner = document.getElementById(thediv).innerHTML;
+    addSpinner.classname += "spinner";
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
