@@ -138,7 +138,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
 <input type="reset" name="reset">
 
 </form>
-    
+<div class="spinner"></div> 
 <div id="adiv"></div>
 
 <!-- The Modal -->
