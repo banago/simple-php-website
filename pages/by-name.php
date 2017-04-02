@@ -84,7 +84,7 @@ function findformat() {
     xmlhttp.onreadystatechange = function() {
         document.getElementById('adiv').innerHTML = xmlhttp.responseText; 
     }
-xmlhttp.open('GET', 'functions.php?data='+document.data.data_text.value, true);
+xmlhttp.open('GET', 'functions.php?data='+document.search.data_text.value, true);
 xmlhttp.send();
 }
   
@@ -99,8 +99,8 @@ xmlhttp.send();
 
 <input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 
-<form id="search"name="search">
-MAC | IP | HOSTNAME : <input type="text" name="data" onkeyup="findformat();"> <br/>
+<form id="search" name="search">
+MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat();"> <br/>
 <input type="reset" name="reset">
 
 </form>
