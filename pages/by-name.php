@@ -75,7 +75,7 @@
 </style>
 <head>
 <script type="text/javascript">
-fuction load(thediv, thefile) {
+function load(thediv, thefile) {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
