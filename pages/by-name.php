@@ -109,7 +109,7 @@ function restmodal(thediv, thefile , thekey) {
         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
     }  
     xmlhttp.onreadystatechange = function() {
-	var addSpinner = document.getElementById("spinner").innerHTML;
+	var addSpinner = document.getElementById("spinner");
     	addSpinner.className +=" spinner";
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
