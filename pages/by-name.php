@@ -102,7 +102,7 @@ function restmodal(thediv, thefile , thekey) {
             document.getElementById(thediv).innerHTML = xmlhttp.responseText; 
         }
     }
-xmlhttp.open('GET', thefile+'?'+thekey+'=', true);
+xmlhttp.open('GET', thefile+'?'+thekey+'=1', true);
 xmlhttp.send();
 }
 
