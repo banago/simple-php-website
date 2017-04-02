@@ -75,6 +75,7 @@
 </style>
 <head>
 <script type="text/javascript">
+var test = ""; 
 function findformat(thediv, thefile) {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
@@ -83,7 +84,8 @@ function findformat(thediv, thefile) {
     }  
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById(thediv).innerHTML = xmlhttp.responseText; 
+            document.getElementById(thediv).innerHTML = xmlhttp.responseText;
+            var test = xmlhttp.responseText;
         }
     }
 xmlhttp.open('GET', thefile+'?data='+document.search.data_text.value, true);
@@ -101,7 +103,7 @@ function restmodal(thediv, thefile) {
             document.getElementById(thediv).innerHTML = xmlhttp.responseText; 
         }
     }
-xmlhttp.open('GET', thefile+'?data='+document.search.data_text.value, true);
+xmlhttp.open('GET', thefile+'?search_text='+document.search.data_text.value, true);
 xmlhttp.send();
 }
   
