@@ -89,9 +89,7 @@ function findformat(thediv, thefile) {
 xmlhttp.open('GET', thefile+'?data='+document.search.data_text.value, true);
 xmlhttp.send();
 }
-</script>     
 
-<script type="text/javascript">
 function restmodal(thediv, thefile) {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
