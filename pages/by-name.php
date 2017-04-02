@@ -82,10 +82,7 @@ function load(thediv, thefile) {
         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
     }  
     xmlhttp.onreadystatechange = function() {
-
-            
         document.getElementById(thediv).innerHTML = xmlhttp.responseText; 
-       
     }
 xmlhttp.open('GET', thefile, true);
 xmlhttp.send();
