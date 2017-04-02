@@ -85,7 +85,6 @@ function findformat(thediv, thefile, thekey) {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
             document.getElementById(thediv).innerHTML = myObj.Type  + ", " + myObj.Normalized;
-            document.getElementById(thediv).innerHTML = xmlhttp.responseText;
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
