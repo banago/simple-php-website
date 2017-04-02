@@ -151,7 +151,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
     </div>
     <div class="modal-body">
       <p>APIC-EM Return</p>
-	<div id="spinner" ></div>
+	<div id="spinner" class="NoTSPinnering"></div>
         <div id="adiv2" class="apicdata">
       
       <?php
