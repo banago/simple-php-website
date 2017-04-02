@@ -99,7 +99,7 @@ xmlhttp.open('GET', thefile, true);
 <!-- Trigger/Open The Modal -->
 <button id="myBtn">Open Modal</button>  
 
-<input type="submint" onclick="load('adiv','include.inc.php');">
+<input type="submit" onclick="load('adiv','include.inc.php');">
 <div id="adiv"></div>
 <form name="form">
 MAC | IP | HOSTNAME : <input type="text" id="myData"> <br/>
