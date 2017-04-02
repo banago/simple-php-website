@@ -114,13 +114,13 @@ xmlhttp.send();
 <h2>APIC-EM REST Request with Animated Modal Header and Footer</h2>
 
 <!-- Trigger/Open The Modal -->
-
+<button id="myBtn" onclick="restmodal('adiv2','include.inc.php','search_text');">Open Modal</button>  <br>
 
 <input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 
 <form id="search" name="search">
 MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('adiv','functions.php','data');"> <br/>
-<button id="myBtn" onclick="restmodal('adiv2','include.inc.php','search_text');">Open Modal</button>  <br>
+
 <input type="reset" name="reset">
 
 </form>
