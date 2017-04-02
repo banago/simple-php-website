@@ -104,12 +104,12 @@ xmlhttp.send();
 
 function restmodal(thediv, thefile , thekey) {
     var addSpinner = document.getElementById("spinner");
+    document.getElementById('spinner').style.display = "visible";
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
     }  
-    document.getElementById('spinner').style.display = "visible";	
     xmlhttp.onreadystatechange = function() {
     	addSpinner.className +=" spinner";
         if (this.readyState == 4 && this.status == 200) {
