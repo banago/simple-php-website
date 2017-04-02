@@ -90,6 +90,22 @@ function findformat(thediv, thefile) {
 xmlhttp.open('GET', thefile+'?data='+document.search.data_text.value, true);
 xmlhttp.send();
 }
+    
+<script type="text/javascript">
+function restmodal(thediv, thefile) {
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else { 
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }  
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById(thediv).innerHTML = xmlhttp.responseText; 
+        }
+    }
+xmlhttp.open('GET', thefile+'?data='+document.search.data_text.value, true);
+xmlhttp.send();
+}
   
 </script>    
 </head>
@@ -98,7 +114,7 @@ xmlhttp.send();
 <h2>APIC-EM REST Request with Animated Modal Header and Footer</h2>
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>  <br>
+<button id="myBtn" onclick="restmodal('adiv2','include.inc.php)">Open Modal</button>  <br>
 
 <input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 
