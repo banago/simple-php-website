@@ -75,7 +75,7 @@
 </style>
 <head>
 <script type="text/javascript">
-function findformat() {
+function findformat(thediv, thefile) {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
@@ -83,11 +83,11 @@ function findformat() {
     }  
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById('adiv').innerHTML = xmlhttp.responseText; 
+            document.getElementById(thediv).innerHTML = xmlhttp.responseText; 
             document.getElementById('adiv2').innerHTML = xmlhttp.responseText;
         }
     }
-xmlhttp.open('GET', 'functions.php?data='+document.search.data_text.value, true);
+xmlhttp.open('GET', thefile+'?data='+document.search.data_text.value, true);
 xmlhttp.send();
 }
   
@@ -103,7 +103,7 @@ xmlhttp.send();
 <input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 
 <form id="search" name="search">
-MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat();"> <br/>
+MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('adiv','functions.php');"> <br/>
 <input type="reset" name="reset">
 
 </form>
