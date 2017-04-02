@@ -151,7 +151,8 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
     </div>
     <div class="modal-body">
       <p>APIC-EM Return</p>
-        <div id="adiv2" class="spinner">
+	<div class="spinner"></div>
+        <div id="adiv2" class="apicdata">
       
       <?php
       //echo $_GET['myData'];
