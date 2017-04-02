@@ -127,6 +127,7 @@ if (isset($_GET['get_ticket'])) {
 			echo $response;
 		}
 	}
+	primeTicket_1();
 }
 	
 if (isset($_GET['apic_response'])) {	
