@@ -14,18 +14,6 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -66,6 +54,7 @@
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
 }
+
 /* The Close Button */
 .close {
     color: white;
