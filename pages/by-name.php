@@ -120,14 +120,14 @@ MAC | IP | HOSTNAME : <input type="text" id="myData"> <br/>
     <div class="modal-body">
       <p>APIC-EM Return</p>
       <?php
-      echo $_GET['myData'];
-      include 'restAuth.php';
+      //echo $_GET['myData'];
+      //include 'restAuth.php';
       
       //Debug  
       //$ticket = apicTicket_1();
       //Debug
       //echo apicTicket_1();
-      echo apicRest_1(apicTicket_1()); //returns Apic results;
+      //echo apicRest_1(apicTicket_1()); //returns Apic results;
       ?>
     </div>
     <div class="modal-footer">
