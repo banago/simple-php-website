@@ -103,17 +103,18 @@ xmlhttp.send();
 }
 
 function restmodal(thediv, thefile , thekey) {
-    var addSpinner = document.getElementById(thediv).innerHTML;
-    addSpinner.classname += "spinner";
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
     }  
     xmlhttp.onreadystatechange = function() {
+	var addSpinner = document.getElementById(thediv).innerHTML;
+    	addSpinner.classname += "spinner";
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
             document.getElementById(thediv).innerHTML = myObj.response.serviceTicket;
+	    addSpinner.classname += "spinner";
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'=1', true);
