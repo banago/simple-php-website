@@ -77,16 +77,18 @@ if (isset($_GET['data']))
     			$str = str_replace($separator, '', $str); 	// Strip dilimintors
     			$split_2 = str_split($str, 2);			// Split by 2
     			//$count = count($split_2); 			// Debug
-    			//$mac_dashes = implode('-', $split_2);         // A0-B0-C0-D0-E0-F0
+    			$mac_dashes = implode('-', $split_2);        	// A0-B0-C0-D0-E0-F0
 	    		$mac_colons = implode(':', $split_2);           // A0:B0:C0:D0:E0:F0
 	    		$add_quotes = "\"" . $mac_colons . "\"";        // "A0:B0:C0:D0:E0:F0"
 	    		$url_encode = urlencode($add_quotes);           // %2208%3AE8%3A56%3A40%3AF4%3A48%22
-	    		//echo $str; 					// Debug
+	    		$arr = array('Type' => 'MAC','Colons' => $mac_colons, 'URL Encoded' => $url_encode);
+			//echo $str; 					// Debug
 	    		//echo $mac_colons; 				// Debug
 	    		//echo $mac_dashes;				// Debug
-	    		echo "This is a MAC Address: " . $mac_colons . "<br>";
-			echo "Acctual Return: " . $url_encode; 		// Debug
-	    		return $url_encode;
+	    		//echo "This is a MAC Address: " . $mac_colons . "<br>";
+			//echo "Acctual Return: " . $url_encode; 		// Debug
+			echo json_encode($arr);
+	    		//return $url_encode;
 		} elseif ($str_2 == 1) {
 			//echo "it's a ip!!!" . "<br>"; 		// Debug
     			$add_quotes = "\"" . $str . "\"";               // "192.168.1.1"
