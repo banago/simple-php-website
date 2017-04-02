@@ -84,7 +84,7 @@ if (isset($_GET['data']))
 	    		//echo $str; 					// Debug
 	    		//echo $mac_colons; 				// Debug
 	    		//echo $mac_dashes;				// Debug
-	    		echo "This is a MAC Address: " . $str . "<br>";
+	    		echo "This is a MAC Address: " . $mac_colons . "<br>";
 			echo "Acctual Return: " . $url_encode; 		// Debug
 	    		return $url_encode;
 		} elseif ($str_2 == 1) {
