@@ -81,7 +81,7 @@ if (isset($_GET['data']))
 	    		$mac_colons = implode(':', $split_2);           // A0:B0:C0:D0:E0:F0
 	    		$add_quotes = "\"" . $mac_colons . "\"";        // "A0:B0:C0:D0:E0:F0"
 	    		$url_encode = urlencode($add_quotes);           // %2208%3AE8%3A56%3A40%3AF4%3A48%22
-	    		$arr = array('Input' => $data,'Type' => 'MAC','Colons' => $mac_colons, 'Normalized' => $add_quotes, 'URL Encoded' => $url_encode);
+	    		$arr = array('Input' => $data,'Type' => 'MAC','Colons' => $mac_colons, 'Normalized' => $add_quotes, 'Encoded' => $url_encode);
 			//echo $str; 					// Debug
 	    		//echo $mac_colons; 				// Debug
 	    		//echo $mac_dashes;				// Debug
@@ -91,13 +91,13 @@ if (isset($_GET['data']))
 			//echo "it's a ip!!!" . "<br>"; 		// Debug
     			$add_quotes = "\"" . $str . "\"";               // "192.168.1.1"
     			$url_encode = urlencode($add_quotes);           // %22192.168.1.1%22
-			$arr = array('Input' => $data,'Type' => 'IP','Normalized' => $add_quotes,'URL Encoded' => $url_encode);
+			$arr = array('Input' => $data,'Type' => 'IP','Normalized' => $add_quotes,'Encoded' => $url_encode);
 			echo json_encode($arr);
 		} else { 
     			//echo "it's probably a hostname!!!" . "<br>";	// Debug
 		    	$add_quotes = "\"" . $str . "\"";               // "macbook_123.user.net"
 		    	$url_encode = urlencode($add_quotes);           // %22macbook_123.user.net%22
-			$arr = array('Input' => $data,'Type' => 'HostName','Normalized' => $add_quotes,'URL Encoded' => $url_encode);
+			$arr = array('Input' => $data,'Type' => 'HostName','Normalized' => $add_quotes,'Encoded' => $url_encode);
 			echo json_encode($arr);
 		}
 	}
