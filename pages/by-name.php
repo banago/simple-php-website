@@ -114,7 +114,6 @@ function restmodal(thediv, thefile , thekey) {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
             document.getElementById(thediv).innerHTML = myObj.response.serviceTicket;
-	    addSpinner.className +=" spinner";
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'=1', true);
