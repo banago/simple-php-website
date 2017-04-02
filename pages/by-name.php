@@ -84,7 +84,7 @@ function findmatch() {
     xmlhttp.onreadystatechange = function() {
         document.getElementById('adiv').innerHTML = xmlhttp.responseText; 
     }
-xmlhttp.open('GET', 'include.inc.php', true);
+xmlhttp.open('GET', 'include.inc.php?search_text='+document.search.search_text, true);
 xmlhttp.send();
 }
   
@@ -100,7 +100,7 @@ xmlhttp.send();
 <input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 
 <form id="search"name="search">
-MAC | IP | HOSTNAME : <input type="text" name="keyword" onkeyup="findmatch();"> <br/>
+MAC | IP | HOSTNAME : <input type="text" name="search_text" onkeyup="findmatch();"> <br/>
 <input type="reset" name="reset">
 
 </form>
