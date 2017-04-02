@@ -76,7 +76,19 @@
 <head>
 <script type="text/javascript">
 function load(thediv, thefile) {
-alert('Works.');
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else { 
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }  
+    xmlhttp.onreadystatechange = function() {
+
+            
+        document.getElementById(thediv).innerHTML = xmlhttp.responseText; 
+       
+    }
+xmlhttp.open('GET', thefile, true);
+xmlhttp.send();
 }
   
 </script>    
