@@ -99,7 +99,8 @@ function restmodal(thediv, thefile , thekey) {
     }  
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById(thediv).innerHTML = xmlhttp.responseText; 
+            myObj = JSON.parse(this.responseText);
+            document.getElementById(thediv).innerHTML = myObj.serviceTicket
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'=1', true);
