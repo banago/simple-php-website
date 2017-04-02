@@ -124,7 +124,7 @@ if (isset($_GET['get_ticket'])) {
 			$json = json_decode($response, true);
 			//Debug
 			//print_r($json);
-			echo $json;
+			echo $response;
 		}
 	}
 }
@@ -158,7 +158,7 @@ if (isset($_GET['apic_response'])) {
 			$json = json_decode($response, true);
 			//Debug
 			//print_r($json);
-			echo $json;
+			echo $response;
 		}
 	}
 }
