@@ -100,7 +100,7 @@ function restmodal(thediv, thefile , thekey) {
     }  
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            modal.style.display = "block";
+            
             document.getElementById(thediv).innerHTML = xmlhttp.responseText; 
         }
     }
