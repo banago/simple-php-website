@@ -75,7 +75,7 @@
 </style>
 <head>
 <script type="text/javascript">
-function findmatch() {
+function findformat() {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
@@ -84,7 +84,7 @@ function findmatch() {
     xmlhttp.onreadystatechange = function() {
         document.getElementById('adiv').innerHTML = xmlhttp.responseText; 
     }
-xmlhttp.open('GET', 'include.inc.php?search_text='+document.search.search_text.value, true);
+xmlhttp.open('GET', 'functions.php?data='+document.search.search_text.value, true);
 xmlhttp.send();
 }
   
@@ -100,7 +100,7 @@ xmlhttp.send();
 <input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 
 <form id="search"name="search">
-MAC | IP | HOSTNAME : <input type="text" name="search_text" onkeyup="findmatch();"> <br/>
+MAC | IP | HOSTNAME : <input type="text" name="data" onkeyup="findformat();"> <br/>
 <input type="reset" name="reset">
 
 </form>
