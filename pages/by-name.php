@@ -97,9 +97,9 @@ xmlhttp.open('GET', thefile, true);
 <h2>APIC-EM REST Request with Animated Modal Header and Footer</h2>
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>  
+<button id="myBtn">Open Modal</button>  <br>
 
-<input type="submit" onclick="load('adiv','include.inc.php');">
+<input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 <div id="adiv"></div>
 <form name="form">
 MAC | IP | HOSTNAME : <input type="text" id="myData"> <br/>
