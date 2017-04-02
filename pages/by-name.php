@@ -76,7 +76,7 @@
 <head>
 <script type="text/javascript">
 var test = ""; 
-function findformat(thediv, thefile) {
+function findformat(thediv, thefile, thekey) {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
@@ -88,11 +88,11 @@ function findformat(thediv, thefile) {
             var test = xmlhttp.responseText;
         }
     }
-xmlhttp.open('GET', thefile+'?data='+document.search.data_text.value, true);
+xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
 
-function restmodal(thediv, thefile) {
+function restmodal(thediv, thefile , thekey) {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
@@ -103,7 +103,7 @@ function restmodal(thediv, thefile) {
             document.getElementById(thediv).innerHTML = xmlhttp.responseText; 
         }
     }
-xmlhttp.open('GET', thefile+'?search_text='+document.search.data_text.value, true);
+xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
   
@@ -114,12 +114,13 @@ xmlhttp.send();
 <h2>APIC-EM REST Request with Animated Modal Header and Footer</h2>
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn" onclick="restmodal('adiv2','include.inc.php');">Open Modal</button>  <br>
+
 
 <input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 
 <form id="search" name="search">
-MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('adiv','functions.php');"> <br/>
+MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('adiv','functions.php','data');"> <br/>
+<button id="myBtn" onclick="restmodal('adiv2','include.inc.php','search_text');">Open Modal</button>  <br>
 <input type="reset" name="reset">
 
 </form>
