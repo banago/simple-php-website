@@ -29,7 +29,7 @@
         <?php pageContent(); ?>
     </article>
 
-    <footer><small>&copy;<?php echo date('Y'); ?> <?php siteName(); ?>. All rights reserved.</small></footer>
+    <footer><small>&copy;<?php echo date('Y'); ?> <?php siteName(); ?>. All rights reserved.<?php siteVersion(); ?></small></footer>
 </div>
 </body>
 </html>
