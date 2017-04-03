@@ -116,9 +116,31 @@ function restmodal(thediv, thefile , thekey) {
             myObj = JSON.parse(this.responseText);
 	    document.getElementById('spinner').style.display = "none";
             document.getElementById(thediv).innerHTML = myObj.response.serviceTicket;
+	    var aaa = myObj.response.serviceTicket;
+	    apicreturn1('test1', 'restAuth.php' , 'use_ticket', aaa);
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'=1', true);
+xmlhttp.send();
+}
+
+function apicreturn1(thediv, thefile , thekey , data) {
+    var addSpinner = document.getElementById("spinner");
+    document.getElementById('spinner').style.display = "block";
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else { 
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }  
+    xmlhttp.onreadystatechange = function() {
+    	addSpinner.className +=" spinner";
+        if (this.readyState == 4 && this.status == 200) {
+            myObj = JSON.parse(this.responseText);
+	    document.getElementById('spinner').style.display = "none";
+            document.getElementById(thediv).innerHTML = myObj.response.serviceTicket;
+        }
+    }
+xmlhttp.open('GET', thefile+'?'+thekey+'='+data, true);
 xmlhttp.send();
 }
 
@@ -152,7 +174,8 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
     </div>
     <div class="modal-body">
       <p>APIC-EM Return</p>
-        <div id="spinner" class="NoTSPinnering"></div><div id="adiv2" class="apicdata">
+        <div id="spinner" class="NoTSPinnering"></div>
+	    <div id="adiv2" class="apicdata">
       
       <?php
       //echo $_GET['myData'];
@@ -164,7 +187,8 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
       //echo apicTicket_1();
       //echo apicRest_1(apicTicket_1()); //returns Apic results;
       ?>
-    </div>
+    		</div>
+	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
       <h3>MODAL END</h3>
     </div>
