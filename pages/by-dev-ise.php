@@ -163,8 +163,6 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
       <p>APIC-EM Return</p>
         <div id="spinner" class="spinner"></div>
 	    <div id="adiv2" class="apicdata">
-      
-
     		</div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
@@ -182,9 +180,10 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
+var input = document.getElementsByById("search");
 btn.onclick = function() {
-    document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
-    // document.getElementById("adiv2").innerHTML = "Hello World";
+    // document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
+    document.getElementById("adiv2").innerHTML = input;
     modal.style.display = "block";
 }
 // When the user clicks on <span> (x), close the modal
