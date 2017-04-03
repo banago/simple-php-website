@@ -125,7 +125,6 @@ xmlhttp.send();
 }
 
 function apicreturn1(thediv, thefile , thekey , data) {
-    var addSpinner = document.getElementById("spinner");
     document.getElementById('spinner').style.display = "block";
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
@@ -134,7 +133,6 @@ function apicreturn1(thediv, thefile , thekey , data) {
     }  
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-		document.getElementById('spinner').style.display = "none";
 		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
         }
     }
