@@ -137,17 +137,13 @@ xmlhttp.send();
 <body>
 
 <h2>APIC-EM REST Request with Animated Modal Header and Footer</h2>
-
-<!-- Trigger/Open The Modal -->
-
-
-<input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 <form id="search" name="search">
 MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('adiv','functions.php','data');"> <br/>
-<button id="myBtn" type="button">Open Modal</button>  <br>
+ <!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
+<button id="myBtn" type="button">Open Modal</button>
 <input type="reset" name="reset">
-
 </form>
+<!-- This DIV returns the users input after proccessing it through the php file -->
 <div id="adiv"></div>
 
 <!-- The Modal -->
