@@ -16,9 +16,11 @@
         <h2><?php siteName(); ?></h2>
         <nav class="menu">
             <a href="/" title="Home">Home</a> |    
-            <a href="/?page=by-ip">IP</a> |
-            <a href="/?page=by-mac">By MAC</a> |
-            <a href="/?page=by-name">By Name</a>
+            <a href="/?page=by-ise">Stable ISE</a> |
+            <a href="/?page=by-prime">Stable PRIME</a> |
+            <a href="/?page=by-dev-ise">Dev ISE</a>
+            <a href="/?page=by-dev-prime">Dev PRIME</a>
+            <a href="/?page=by-dev-apic">Dev APIC-EM</a>
         </nav>
     </header>    
 
