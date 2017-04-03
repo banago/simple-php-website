@@ -144,7 +144,7 @@ xmlhttp.send();
 <input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 <form id="search" name="search">
 MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('adiv','functions.php','data');"> <br/>
-<input type="button" onclick="restmodal('adiv2','restAuth.php','get_ticket');" value="Submit form">
+<button id="myBtn2">Open Modal2</button>
 <input type="reset" name="reset">
 
 </form>
