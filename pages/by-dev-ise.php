@@ -197,7 +197,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
 
 <script>
 // Get the modal
-var modal = document.getElementById('myModal');
+var modal = document.getElementById('myBtn');
 // Get the button that opens the modal
 var btn = document.getElementById("search");
 // Get the <span> element that closes the modal
