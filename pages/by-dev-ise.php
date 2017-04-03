@@ -164,16 +164,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
         <div id="spinner" class="spinner"></div>
 	    <div id="adiv2" class="apicdata">
       
-      <?php
-      //echo $_GET['myData'];
-      //include 'restAuth.php';
-      
-      //Debug  
-      //$ticket = apicTicket_1();
-      //Debug
-      //echo apicTicket_1();
-      //echo apicRest_1(apicTicket_1()); //returns Apic results;
-      ?>
+
     		</div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
