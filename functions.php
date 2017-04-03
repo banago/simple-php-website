@@ -49,7 +49,7 @@ function pageContent()
 }
 function siteVersion()
 {
-     $sitever = "17.0.0";
+     $sitever = " Version: 17.0.0";
     echo $sitever;
 }
 
