@@ -116,6 +116,7 @@ function restmodal(thediv, thefile , thekey) {
             myObj = JSON.parse(this.responseText);
 	    document.getElementById('spinner').style.display = "none";
             document.getElementById(thediv).innerHTML = myObj.response.serviceTicket;
+	    document.getElementById(thediv).innerHTML = ""; 
 	    apicreturn1('test1', 'restAuth.php' , 'use_ticket', myObj.response.serviceTicket);
         }
     }
@@ -133,7 +134,6 @@ function apicreturn1(thediv, thefile , thekey , theticket) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 		document.getElementById('spinner').style.display = "none";
-		document.getElementById(thediv).innerHTML = ""; 
 		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
         }
     }
