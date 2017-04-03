@@ -86,7 +86,7 @@ if (isset($_GET['use_ticket'])) {
 				//Debug
 				//echo "How many response: " . count($json['response']) . "<br>";
 				echo "<br>";
-				echo "Item Count: " . $i . "<br>";
+				echo "Array Element: " . $i . "<br>";
 				echo "<br>";
 				foreach ($match as $x => $item) {
 					echo $x ."  " . $json['response'][$i][$item] . "<br>";
