@@ -42,18 +42,15 @@
     animation-name: animatetop;
     animation-duration: 0.4s
 }
-
 /* Add Animation */
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
     to {top:0; opacity:1}
 }
-
 @keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
 }
-
 /* The Close Button */
 .close {
     color: white;
@@ -61,22 +58,18 @@
     font-size: 28px;
     font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
-
 .modal-header {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
 }
-
 .modal-body {padding: 2px 16px;}
-
 .modal-footer {
     padding: 2px 16px;
     background-color: #5cb85c;
@@ -100,7 +93,6 @@ function findformat(thediv, thefile, thekey) {
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
-
 function restmodal(thediv, thefile , thekey) {
     //var addSpinner = document.getElementById("spinner");  //var used to add spinner
     document.getElementById('spinner').style.display = "block";
@@ -124,7 +116,6 @@ function restmodal(thediv, thefile , thekey) {
 xmlhttp.open('GET', thefile+'?'+thekey+'=1', true);
 xmlhttp.send();
 }
-
 function apicreturn1(thediv, thefile , thekey , theticket) {
     document.getElementById('spinner').style.display = "block";	
     if (window.XMLHttpRequest) {
@@ -141,8 +132,6 @@ function apicreturn1(thediv, thefile , thekey , theticket) {
 xmlhttp.open('GET', thefile+'?'+thekey+'='+theticket, true);
 xmlhttp.send();
 }
-
-
 </script>    
 </head>
 <body>
@@ -150,11 +139,13 @@ xmlhttp.send();
 <h2>APIC-EM REST Request with Animated Modal Header and Footer</h2>
 
 <!-- Trigger/Open The Modal -->
- <button id="myBtn" onclick="restmodal('adiv2','include.inc.php','search_text');">Open Modal</button>  <br> 
+<!-- <button id="myBtn" onclick="restmodal('adiv2','include.inc.php','search_text');">Open Modal</button>  <br> -->
 
 <input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 <form id="search" name="search">
+<!--  MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('adiv','functions.php','data');"> <br/> -->
 MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('adiv','functions.php','data');"> <br/>
+<button id="myBtn">Open Modal</button>  <br>
 <input type="reset" name="reset">
 
 </form>
@@ -173,6 +164,17 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
       <p>APIC-EM Return</p>
         <div id="spinner" class="spinner"></div>
 	    <div id="adiv2" class="apicdata">
+      
+      <?php
+      //echo $_GET['myData'];
+      //include 'restAuth.php';
+      
+      //Debug  
+      //$ticket = apicTicket_1();
+      //Debug
+      //echo apicTicket_1();
+      //echo apicRest_1(apicTicket_1()); //returns Apic results;
+      ?>
     		</div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
@@ -184,7 +186,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
 
 <script>
 // Get the modal
-var modal = document.getElementById('myBtn');
+var modal = document.getElementById('myModal');
 // Get the button that opens the modal
 var btn = document.getElementById("search");
 // Get the <span> element that closes the modal
@@ -192,6 +194,7 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
     document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
+    // document.getElementById("adiv2").innerHTML = "Hello World";
     modal.style.display = "block";
 }
 // When the user clicks on <span> (x), close the modal
