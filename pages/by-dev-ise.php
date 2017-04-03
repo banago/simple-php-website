@@ -183,7 +183,7 @@ var span = document.getElementsByClassName("close")[0];
 var input = document.getElementsByById("search");
 btn.onclick = function() {
     // document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
-    document.getElementById("adiv2").innerHTML = input;
+    document.getElementById("adiv2").innerHTML = "Test";
     modal.style.display = "block";
 }
 // When the user clicks on <span> (x), close the modal
