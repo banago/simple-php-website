@@ -144,7 +144,7 @@ xmlhttp.send();
 <input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 <form id="search" name="search">
 MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('adiv','functions.php','data');"> <br/>
-<input type="button" onclick="myFunction()" value="Submit form">
+<input type="button" onclick="restmodal('adiv2','restAuth.php','get_ticket');" value="Submit form">
 <input type="reset" name="reset">
 
 </form>
@@ -184,7 +184,7 @@ var form_1 = document.getElementById("search");
 var input_1 = form_1.value;
 btn.onclick = function() {
     // document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
-    document.getElementById("adiv2").innerHTML = input_1;
+    //document.getElementById("adiv2").innerHTML = input_1;
     modal.style.display = "block";
 }
 // When the user clicks on <span> (x), close the modal
