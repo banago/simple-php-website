@@ -139,13 +139,12 @@ xmlhttp.send();
 <h2>APIC-EM REST Request with Animated Modal Header and Footer</h2>
 
 <!-- Trigger/Open The Modal -->
-<!-- <button id="myBtn" onclick="restmodal('adiv2','include.inc.php','search_text');">Open Modal</button>  <br> -->
+<button id="myBtn" onclick="restmodal('adiv2','include.inc.php','search_text');">Open Modal</button>  <br>
 
 <input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 <form id="search" name="search">
-<!--  MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('adiv','functions.php','data');"> <br/> -->
 MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('adiv','functions.php','data');"> <br/>
-<button id="myBtn">Open Modal</button>  <br>
+
 <input type="reset" name="reset">
 
 </form>
@@ -188,7 +187,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
 // Get the modal
 var modal = document.getElementById('myModal');
 // Get the button that opens the modal
-var btn = document.getElementById("search");
+var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
