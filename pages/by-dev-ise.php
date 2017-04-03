@@ -192,7 +192,6 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
     document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
-    // document.getElementById("adiv2").innerHTML = "Hello World";
     modal.style.display = "block";
 }
 // When the user clicks on <span> (x), close the modal
