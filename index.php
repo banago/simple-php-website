@@ -18,8 +18,8 @@
             <a href="/" title="Home">Home</a> |    
             <a href="/?page=by-ise">ISE</a> |
             <a href="/?page=by-prime">PRIME</a> |
-            <a href="/?page=by-dev-ise">Dev ISE</a>
-            <a href="/?page=by-dev-prime">Dev PRIME</a>
+            <a href="/?page=by-dev-ise">Dev ISE</a> |
+            <a href="/?page=by-dev-prime">Dev PRIME</a> |
             <a href="/?page=by-dev-apic">Dev APIC-EM</a>
         </nav>
     </header>    
