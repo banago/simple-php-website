@@ -102,8 +102,8 @@ xmlhttp.send();
 }
 
 function restmodal(thediv, thefile , thekey) {
-    var addSpinner = document.getElementById("spinner");
-    //document.getElementById('spinner').style.display = "block";
+    //var addSpinner = document.getElementById("spinner");  //var used to add spinner
+    document.getElementById('spinner').style.display = "block";
     document.getElementById(thediv).innerHTML = "";
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
@@ -111,7 +111,7 @@ function restmodal(thediv, thefile , thekey) {
         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
     }  
     xmlhttp.onreadystatechange = function() {
-    	addSpinner.className +=" spinner";
+    	//addSpinner.className +=" spinner";	//uses var to add spinner
 	document.getElementById(thediv).innerHTML = "";
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
@@ -172,7 +172,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
     </div>
     <div class="modal-body">
       <p>APIC-EM Return</p>
-        <div id="spinner" class="NoTSPinnering"></div>
+        <div id="spinner" class="spinner"></div>
 	    <div id="adiv2" class="apicdata">
       
       <?php
