@@ -117,7 +117,7 @@ function restmodal(thediv, thefile , thekey) {
 	    document.getElementById('spinner').style.display = "none";
             document.getElementById(thediv).innerHTML = myObj.response.serviceTicket;
 	    var aaa = myObj.response.serviceTicket;
-	    apicreturn1('test1', 'restAuth.php' , 'use_ticket', aaa);
+	    apicreturn1('test1', 'restAuth.php' , 'use_ticket', myObj.response.serviceTicket);
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'=1', true);
@@ -125,7 +125,6 @@ xmlhttp.send();
 }
 
 function apicreturn1(thediv, thefile , thekey , data) {
-    document.getElementById('spinner').style.display = "block";
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
