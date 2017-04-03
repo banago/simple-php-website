@@ -135,6 +135,7 @@ function apicreturn1(thediv, thefile , thekey , data) {
     xmlhttp.onreadystatechange = function() {
     	addSpinner.className +=" spinner";
         if (this.readyState == 4 && this.status == 200) {
+		document.getElementById('spinner').style.display = "none";
 		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
         }
     }
