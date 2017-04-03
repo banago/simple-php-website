@@ -173,17 +173,6 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
       <p>APIC-EM Return</p>
         <div id="spinner" class="spinner"></div>
 	    <div id="adiv2" class="apicdata">
-      
-      <?php
-      //echo $_GET['myData'];
-      //include 'restAuth.php';
-      
-      //Debug  
-      //$ticket = apicTicket_1();
-      //Debug
-      //echo apicTicket_1();
-      //echo apicRest_1(apicTicket_1()); //returns Apic results;
-      ?>
     		</div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
@@ -195,7 +184,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('a
 
 <script>
 // Get the modal
-var modal = document.getElementById('myBt11n');
+var modal = document.getElementById('myBtn');
 // Get the button that opens the modal
 var btn = document.getElementById("search");
 // Get the <span> element that closes the modal
