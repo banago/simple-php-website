@@ -184,12 +184,8 @@ var form_1 = document.getElementById("search");
 var input_1 = form_1.value;
 btn.onclick = function() {
     // document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
-    //document.getElementById("adiv2").innerHTML = input_1;
-    //modal.style.display = "block";
-    var theDiv = document.getElementById("adiv");
-    //var myJsonString = JSON.stringify(theDiv);
-    var myObj = JSON.parse(theDiv);
-    alert("The content is " + myObj);
+    document.getElementById("adiv2").innerHTML = input_1;
+    modal.style.display = "block";
 }
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
