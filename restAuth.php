@@ -134,12 +134,11 @@ if (isset($_GET['get_ticket'])) {
 	apicTicket_1();
 }
 if (isset($_GET['iseTicket_1'])){
-	function iseTicket_1(){
-		$auth ="";
-		$arr = array('Ticket' => $auth);
-		echo json_encode($arr);
-	}
-}	
-
+        function iseTicket_1(){
+                $auth =""; // Populate with a ticket
+                $arr = array('Ticket' => $auth);
+                echo json_encode($arr);
+        }
+}
 ?>
 
