@@ -116,7 +116,6 @@ function restmodal(thediv, thefile , thekey) {
             myObj = JSON.parse(this.responseText);
 	    document.getElementById('spinner').style.display = "none";
             document.getElementById(thediv).innerHTML = myObj.response.serviceTicket;
-	    //var aaa = myObj.response.serviceTicket;
 	    apicreturn1('test1', 'restAuth.php' , 'use_ticket', myObj.response.serviceTicket);
         }
     }
@@ -124,7 +123,8 @@ xmlhttp.open('GET', thefile+'?'+thekey+'=1', true);
 xmlhttp.send();
 }
 
-function apicreturn1(thediv, thefile , thekey , data) {
+function apicreturn1(thediv, thefile , thekey , theticket) {
+    document.getElementById('spinner').style.display = "block";	
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
@@ -132,10 +132,11 @@ function apicreturn1(thediv, thefile , thekey , data) {
     }  
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+		document.getElementById('spinner').style.display = "none";
 		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
         }
     }
-xmlhttp.open('GET', thefile+'?'+thekey+'='+data, true);
+xmlhttp.open('GET', thefile+'?'+thekey+'='+theticket, true);
 xmlhttp.send();
 }
 
