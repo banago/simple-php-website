@@ -49,8 +49,8 @@ function pageContent()
 }
 function siteVersion()
 {
-    global $sitever;
-    echo $sitever['17.0.0'];
+     $sitever = "17.0.0";
+    echo $sitever;
 }
 
 function primeMac($mac)
