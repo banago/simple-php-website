@@ -116,7 +116,7 @@ function restmodal(thediv, thefile , thekey) {
             myObj = JSON.parse(this.responseText);
 	    document.getElementById('spinner').style.display = "none";
             document.getElementById(thediv).innerHTML = myObj.response.serviceTicket;
-	    var aaa = myObj.response.serviceTicket;
+	    //var aaa = myObj.response.serviceTicket;
 	    apicreturn1('test1', 'restAuth.php' , 'use_ticket', myObj.response.serviceTicket);
         }
     }
