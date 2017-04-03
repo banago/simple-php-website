@@ -187,8 +187,9 @@ btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = input_1;
     //modal.style.display = "block";
     var theDiv = document.getElementById("adiv");
-    var myJsonString = JSON.stringify(theDiv);
-    alert("The content is " + myJsonString.innerHTML);
+    //var myJsonString = JSON.stringify(theDiv);
+    myObj = JSON.parse(theDiv);
+    alert("The content is " + myObj.innerHTML);
 }
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
