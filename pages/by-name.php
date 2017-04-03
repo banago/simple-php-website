@@ -104,7 +104,7 @@ xmlhttp.send();
 
 function restmodal(thediv, thefile , thekey) {
     var addSpinner = document.getElementById("spinner");
-    document.getElementById('spinner').style.display = "block";
+    //document.getElementById('spinner').style.display = "block";
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
