@@ -139,7 +139,7 @@ xmlhttp.send();
 <h2>APIC-EM REST Request with Animated Modal Header and Footer</h2>
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn" onclick="restmodal('adiv2','include.inc.php','search_text');">Open Modal</button>  <br>
+<button id="myBtn">Open Modal</button>  <br>
 
 <input type="submit" onclick="load('adiv','include.inc.php');"> <br>
 <form id="search" name="search">
@@ -183,7 +183,7 @@ var span = document.getElementsByClassName("close")[0];
 var form_1 = document.getElementById("search");
 var input_1 = form_1.value;
 btn.onclick = function() {
-    // document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
+    document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
     //document.getElementById("adiv2").innerHTML = input_1;
     modal.style.display = "block";
 }
