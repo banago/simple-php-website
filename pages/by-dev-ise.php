@@ -180,7 +180,7 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
-var input = document.getElementsById("search");
+var input = document.getElementById("search");
 btn.onclick = function() {
     // document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
     // document.getElementById("adiv2").innerHTML = "Test";
