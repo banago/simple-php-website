@@ -106,7 +106,7 @@ function encoded_1(thediv, thefile, thekey) {
 		    myUrl = "https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true";
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
-		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAdd', myUrl);
+		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    } else {
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = "Unfortunately the application only supports MAC addresses";
