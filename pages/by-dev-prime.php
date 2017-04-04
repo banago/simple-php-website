@@ -113,8 +113,11 @@ function encoded_1(thediv, thefile, thekey) {
 		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    }
 		else {
+		    var supported_1 = "MAC ";
+		    var supported_2 = "IP ";
+		    supported_1.bold().fontcolor("red");
 		    document.getElementById('spinner').style.display = "none";
-		    document.getElementById(thediv).innerHTML = "Unfortunately this application only supports "+bold("MAC ")+"and "+bold("IP ")+"addresses" ;
+		    document.getElementById(thediv).innerHTML = "Unfortunately this application only supports "+supported_1+"addresses" ;
 	    }     
         }
     } 
