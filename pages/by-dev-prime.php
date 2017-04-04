@@ -115,7 +115,7 @@ function encoded_1(thediv, thefile, thekey) {
 		else {
 		    var supported_1 = "MAC ";
 		    var supported_2 = "IP ";
-		    supported_1.bold().fontcolor("red");
+		    supported_1 = supported_1.bold().fontcolor("red");
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = "Unfortunately this application only supports "+supported_1+"addresses" ;
 	    }     
