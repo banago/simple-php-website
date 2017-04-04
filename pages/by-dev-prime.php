@@ -103,8 +103,10 @@ function encoded_1(thediv, thefile, thekey) {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
 	    if (myObj.Type == "MAC") {
+		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
 	    } else {
+		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = "Unfortunately the application only supports MAC addresses";
 	    }     
         }
