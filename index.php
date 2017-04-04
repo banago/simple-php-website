@@ -20,7 +20,7 @@
             <a href="/?page=by-prime">PRIME</a> |
             <a href="/?page=by-dev-ise">Dev ISE</a> |
             <a href="/?page=by-dev-prime">Dev PRIME</a> |
-            <a href="/?page=by-dev-apic">Dev APIC-EM</a>
+            <a href="/?page=by-dev-apic">Dev APIC</a>
         </nav>
     </header>    
 
