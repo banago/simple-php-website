@@ -1,4 +1,5 @@
 <?php
+include 'restAuth.php';    // tickets tokons and secure data
 if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
 {
 $data = $_GET['primeData'];
