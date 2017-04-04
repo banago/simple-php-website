@@ -90,6 +90,9 @@ function findformat(thediv, thefile, thekey) {
             document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;
         }
     }
+xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
+xmlhttp.send();
+}
 function encoded_1(thediv, thefile, thekey) {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
