@@ -4,9 +4,9 @@ if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
 {
 $data = $_GET['primeData'];
 $addr = $_GET['primeAddress'];
-echo "This mac was passed" . $name . "\r\n";
+//echo "This mac was passed" . $name . "\r\n";  // debug
 $data = "(" . $data . ")";
-echo $addr . $data . "\r\n";
+// echo $addr . $data . "\r\n"; //debug
    $curl = curl_init();
    $somevar = $_GET["uid"];
    curl_setopt_array($curl, array(
@@ -29,18 +29,16 @@ if ($err) {
   echo "cURL Error #:" . $err;
 } else {
         $json = json_decode($response, true);
-        //print_r($json);
-        //echo $response;
-        //echo $json['vlanId']['associationTime'];
+        //print_r($json);  // debug
+        //echo $response;  // debug
+        //echo $json['vlanId']['associationTime']; // debug
         $match = array("NAS Interface :"=>'clientInterface',"NAS Connection Type :"=>'connectionType',
                                    "NAS IP :"=>'deviceIpAddress',"NAS Name :"=>'deviceName',
                                    "Device Type :"=>'deviceType',"Device IP :"=>'ipAddress',
                                    "MAC Address :"=>'macAddress',"Device Security Policy :"=>'securityPolicyStatus',
                                    "Device OUI :"=>'vendor',"Device VLAN"=>'vlan');
-
-    //$match = array('connectionType','deviceIpAddress','deviceName','deviceType','vendor','ipAddress','macAddress','securityPolicyStatus','userName');
-    //echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";
-    //echo print_r($json) . "\r\n";
+    //echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";   // debug
+    //echo print_r($json) . "\r\n";    // debug
         for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
                 //Debug
                 //echo "How many response: " . count($json['response']) . "<br>";
@@ -51,6 +49,6 @@ if ($err) {
                         echo $x ."  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>";
                 }
         }
-        }
+}
 }
 ?>
