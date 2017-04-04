@@ -138,7 +138,7 @@ xmlhttp.send();
 
 <h2>APIC-EM REST Request with Animated Modal Header and Footer</h2>
 <form id="search" name="search">
-MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('adiv','functions.php','data');"> <br/>
+MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeyup="findformat('adiv','functions.php','data');"> <br/>
  <!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
 <button id="myBtn" type="button">Open Modal</button>
 <input type="reset" name="reset">
@@ -178,7 +178,7 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
-    document.getElementById("adiv2").innerHTML = document.getElementById("search").value;
+    document.getElementById("adiv2").innerHTML = document.getElementById("uniqueID").value;
     //document.getElementById("adiv2").innerHTML = input_1;
     modal.style.display = "block";
 }
