@@ -103,7 +103,7 @@ function encoded_1(thediv, thefile, thekey) {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
 	    if (myObj.Type == "MAC") {
-		    myUrl = "https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true&macAddress=eq";
+		    myUrl = "https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true";
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
 		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAdd', myUrl);
