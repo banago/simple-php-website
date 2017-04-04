@@ -103,9 +103,10 @@ function encoded_1(thediv, thefile, thekey) {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
 	    if (myObj.Type == "MAC") {
+		    myUrl = "https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true&macAddress";
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
-		    primereturn_1(thediv, 'prime.php' , 'primeMac', myObj.Encoded);
+		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAdd', myUrl);
 	    } else {
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = "Unfortunately the application only supports MAC addresses";
@@ -154,7 +155,7 @@ function apicreturn1(thediv, thefile , thekey , theticket) {
 xmlhttp.open('GET', thefile+'?'+thekey+'='+theticket, true);
 xmlhttp.send();
 }
-function primereturn_1(thediv, thefile , thekey , theticket) {
+function primereturn_1(thediv, thefile , thekey_1 , theticket, thekey_2, theurl) {
     document.getElementById('spinner').style.display = "block";	
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
@@ -167,7 +168,7 @@ function primereturn_1(thediv, thefile , thekey , theticket) {
 		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
         }
     }
-xmlhttp.open('GET', thefile+'?'+thekey+'='+theticket, true);
+xmlhttp.open('GET', thefile+'?'+thekey_1+'='+theticket+'&'+thekey_2+'='+theurl, true);
 xmlhttp.send();
 }
 </script>    
