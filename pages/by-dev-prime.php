@@ -105,6 +105,7 @@ function encoded_1(thediv, thefile, thekey) {
 	    if (myObj.Type == "MAC") {
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
+		    primereturn_1(thediv, 'prime.php' , 'primeMac', myObj.Encoded);
 	    } else {
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = "Unfortunately the application only supports MAC addresses";
@@ -138,6 +139,22 @@ xmlhttp.open('GET', thefile+'?'+thekey+'=1', true);
 xmlhttp.send();
 }
 function apicreturn1(thediv, thefile , thekey , theticket) {
+    document.getElementById('spinner').style.display = "block";	
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else { 
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }  
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+		document.getElementById('spinner').style.display = "none";
+		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
+        }
+    }
+xmlhttp.open('GET', thefile+'?'+thekey+'='+theticket, true);
+xmlhttp.send();
+}
+function primereturn_1(thediv, thefile , thekey , theticket) {
     document.getElementById('spinner').style.display = "block";	
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
