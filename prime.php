@@ -22,8 +22,8 @@ echo $addr . $data . "\r\n";
    $curl = curl_init();
    $somevar = $_GET["uid"];
    curl_setopt_array($curl, array(
-      CURLOPT_SSL_VERIFYPEER => false,
-      CURLOPT_SSL_VERIFYHOST => false,
+      CURLOPT_SSL_VERIFYPEER => false,    //disables ssl server cert verify check
+      CURLOPT_SSL_VERIFYHOST => false,    //disables ssk host cert verify check
       CURLOPT_URL => $primeAddress . $data,
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => "",
@@ -31,7 +31,7 @@ echo $addr . $data . "\r\n";
       CURLOPT_TIMEOUT => 300,
       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
       CURLOPT_CUSTOMREQUEST => "GET",
-      CURLOPT_HTTPHEADER => $primeAuth, //restAuth contains the auth Tokens
+      CURLOPT_HTTPHEADER => $primeAuth, //restAuth contains the auth Tokens. This also need to be update to return JSON instead of include
 ));
 
 $response = curl_exec($curl);
