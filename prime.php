@@ -36,7 +36,7 @@ if ($err) {
                                    "NAS IP :"=>'deviceIpAddress',"NAS Name :"=>'deviceName',
                                    "Device Type :"=>'deviceType',"Device IP :"=>'ipAddress',
                                    "MAC Address :"=>'macAddress',"Device Security Policy :"=>'securityPolicyStatus',
-                                   "Device OUI :"=>'vendor',"Device VLAN"=>'vlan');
+                                   "Device OUI :"=>'vendor',"Device VLAN:"=>'vlan');
     //echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";   // debug
     //echo print_r($json) . "\r\n";    // debug
         for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
