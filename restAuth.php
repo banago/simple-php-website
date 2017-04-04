@@ -136,15 +136,15 @@ if (isset($_GET['get_ticket'])) {
 if (isset($_GET['iseTicket_1'])){
         function iseTicket_1(){
                 $auth =""; 	// populate with a ticket
-                $arr = array('Ticket' => $auth);
-                echo json_encode($arr);
+                $arr = array('Ticket' => $auth);	// create array for JSON
+                echo json_encode($arr);		// return JSON
         }
 }
 if (isset($_GET['primeTicket_1'])){
         function iseTicket_1(){
                 $auth =""; 	// populate with a ticket
-                $arr = array('Ticket' => $auth);
-                echo json_encode($arr);
+                $arr = array('Ticket' => $auth);	// create array for JSON
+                echo json_encode($arr);		// return JSON
         }
 	iseTicket_1();
 }
