@@ -44,11 +44,11 @@ if ($err) {
         //print_r($json);
         //echo $response;
         //echo $json['vlanId']['associationTime'];
-        $match = array("Interface :"=>'clientInterface',"Connection Type :"=>'connectionType',
+        $match = array("NAS Interface :"=>'clientInterface',"NAS Connection Type :"=>'connectionType',
                                    "NAS IP :"=>'deviceIpAddress',"NAS Name :"=>'deviceName',
                                    "Device Type :"=>'deviceType',"Device IP :"=>'ipAddress',
-                                   "MAC Address :"=>'macAddress',"Security Policy :"=>'securityPolicyStatus',
-                                   "OUI :"=>'vendor',"Device VLAN"=>'vlan');
+                                   "MAC Address :"=>'macAddress',"Device Security Policy :"=>'securityPolicyStatus',
+                                   "Device OUI :"=>'vendor',"Device VLAN"=>'vlan');
 
     //$match = array('connectionType','deviceIpAddress','deviceName','deviceType','vendor','ipAddress','macAddress','securityPolicyStatus','userName');
     //echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";
