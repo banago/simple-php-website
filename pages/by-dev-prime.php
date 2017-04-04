@@ -177,7 +177,8 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
-    document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
+    //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
+    document.getElementById("adiv2").innerHTML = document.getElementById("search").value;
     //document.getElementById("adiv2").innerHTML = input_1;
     modal.style.display = "block";
 }
