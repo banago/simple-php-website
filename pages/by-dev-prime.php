@@ -114,7 +114,7 @@ function encoded_1(thediv, thefile, thekey) {
 	    }
 		else {
 		    document.getElementById('spinner').style.display = "none";
-		    document.getElementById(thediv).innerHTML = "Unfortunately this application only supports "+str.bold("MAC ")+"and "+str.bold("IP ")+"addresses";
+		    document.getElementById(thediv).innerHTML = "Unfortunately this application only supports ;
 	    }     
         }
     } 
