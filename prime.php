@@ -12,21 +12,22 @@ echo json_encode(42) . "\r\n"; //In the end, you need to echo the result.
 
                       //You can json_encode() any value in PHP, arrays, strings,
                       //even objects.
-if (isset($_GET['primeMac'])) 
+if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
 {
-$name = $_GET['primeMac'];
+$data = $_GET['primeData'];
+$addr = $_GET['primeAddress'];
 echo "This mac was passed" . $name . "\r\n";
 
 
-$macAddress = "(" . '%2220%3A47%3A47%3AC3%3A0F%3A8B%22' . ")";
-	//'(%2220%3A47%3A47%3AC3%3A0F%3A8B%22)';
-echo $iseAddress . $macAddress . "\r\n";
+$data = "(" . $data . ")";
+        //'(%2220%3A47%3A47%3AC3%3A0F%3A8B%22)';
+echo $addr . $data . "\r\n";
    $curl = curl_init();
    $somevar = $_GET["uid"];
    curl_setopt_array($curl, array(
       CURLOPT_SSL_VERIFYPEER => false,
       CURLOPT_SSL_VERIFYHOST => false,
-      CURLOPT_URL => $primeAddress . $macAddress,
+      CURLOPT_URL => $primeAddress . $data,
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => "",
       CURLOPT_MAXREDIRS => 10,
@@ -35,6 +36,7 @@ echo $iseAddress . $macAddress . "\r\n";
       CURLOPT_CUSTOMREQUEST => "GET",
       CURLOPT_HTTPHEADER => $primeAuth,
 ));
+
 $response = curl_exec($curl);
 $err = curl_error($curl);
 curl_close($curl);
