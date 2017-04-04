@@ -118,7 +118,7 @@ function encoded_1(thediv, thefile, thekey) {
 		    supported_1 = supported_1.bold().fontcolor("red");
 		    supported_2 = supported_2.bold().fontcolor("red");
 		    document.getElementById('spinner').style.display = "none";
-		    document.getElementById(thediv).innerHTML = "Unfortunately this application only supports "+supported_1+supported_2+"addresses" ;
+		    document.getElementById(thediv).innerHTML = "Unfortunately this application only supports "+supported_1+"and"+supported_2+"addresses" ;
 	    }     
         }
     } 
