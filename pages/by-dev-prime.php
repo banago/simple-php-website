@@ -103,11 +103,16 @@ function encoded_1(thediv, thefile, thekey) {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
 	    if (myObj.Type == "MAC") {
-		    myUrl = "https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true";
+		    myUrl = "https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true&macAddress=eq";
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
 		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
-	    } else {
+	    } else if (myObj.Type == "IP") {
+		    myUrl = "https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true&ipAddress=eq";
+		    document.getElementById('spinner').style.display = "none";
+		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
+	    }
+		else {
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = "Unfortunately the application only supports MAC addresses";
 	    }     
