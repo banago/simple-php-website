@@ -102,7 +102,11 @@ function encoded_1(thediv, thefile, thekey) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
-            document.getElementById(thediv).innerHTML = myObj.Encoded;
+	    if (myObj.Type == "MAC") {
+		    document.getElementById(thediv).innerHTML = myObj.Encoded;
+	    } else {
+		    document.getElementById(thediv).innerHTML = "Unfortunately the application only supports MAC addresses";
+	    }     
         }
     } 
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
