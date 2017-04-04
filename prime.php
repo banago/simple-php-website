@@ -24,7 +24,7 @@ echo $addr . $data . "\r\n";
    curl_setopt_array($curl, array(
       CURLOPT_SSL_VERIFYPEER => false,    //disables ssl server cert verify check
       CURLOPT_SSL_VERIFYHOST => false,    //disables ssk host cert verify check
-      CURLOPT_URL => $primeAddress . $data,
+      CURLOPT_URL => $addr . $data,
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => "",
       CURLOPT_MAXREDIRS => 10,
