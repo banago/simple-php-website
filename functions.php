@@ -68,7 +68,7 @@ if (isset($_GET['data']))
 	function deviceURL_1($data){
 		$str = $data;
 		$str = preg_replace('/\s+/', '', $str);     //Remove whitespaces
-		$str_1 = (preg_match('/^([0-9A-Fa-f]{2}[:\-\.]){5}([0-9A-Fa-f]{2})$/', $str) == 1);
+		$str_1 = (preg_match('/^([0-9A-Fa-f]{2}[:\-\.]){5}([0-9A-Fa-f]{2})$/', $str) == 1) | (preg_match('/^([0-9A-Fa-f]{4}[:\-\.]){2}([0-9A-Fa-f]{4})$/', $str) == 1);
 		$str_2 = (preg_match('/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/', $str) == 1);
 		if ($str_1 == 1) {
 			//echo "It's a mac!!!" . "<br>"; 		// Debug
