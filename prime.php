@@ -17,10 +17,7 @@ if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
 $data = $_GET['primeData'];
 $addr = $_GET['primeAddress'];
 echo "This mac was passed" . $name . "\r\n";
-
-
 $data = "(" . $data . ")";
-        //'(%2220%3A47%3A47%3AC3%3A0F%3A8B%22)';
 echo $addr . $data . "\r\n";
    $curl = curl_init();
    $somevar = $_GET["uid"];
@@ -34,7 +31,7 @@ echo $addr . $data . "\r\n";
       CURLOPT_TIMEOUT => 300,
       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
       CURLOPT_CUSTOMREQUEST => "GET",
-      CURLOPT_HTTPHEADER => $primeAuth,
+      CURLOPT_HTTPHEADER => $primeAuth, //restAuth contains the auth Tokens
 ));
 
 $response = curl_exec($curl);
