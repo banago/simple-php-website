@@ -43,52 +43,29 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  $json = json_decode($response, true);
-  //print_r($json);
-  //echo $response;
-  //echo $json['vlanId']['associationTime'];
-	$match = array('connectionType','deviceIpAddress','deviceName','deviceType','vendor','ipAddress','macAddress','securityPolicyStatus','userName');
-	echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";
-  	echo print_r($json) . "\r\n";
- 	for ($i1 = 0; $i1 < count($json['queryResponse']['entity']['0']); $i1++) {
-    		foreach ($match as $item) {
-			echo $json['queryResponse']['entity'][$i1]['clientsDTO'][$item] . "\r\n";
-		}
-	}
-}
-}
+        $json = json_decode($response, true);
+        //print_r($json);
+        //echo $response;
+        //echo $json['vlanId']['associationTime'];
+        $match = array("Interface :"=>'clientInterface',"Connection Type :"=>'connectionType',
+                                   "NAS IP :"=>'deviceIpAddress',"NAS Name :"=>'deviceName',
+                                   "Device Type :"=>'deviceType',"Device IP :"=>'ipAddress',
+                                   "MAC Address :"=>'macAddress',"Security Policy :"=>'securityPolicyStatus',
+                                   "OUI :"=>'vendor',"Device VLAN"=>'vlan');
 
-?>
-<?php
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-  CURLOPT_SSL_VERIFYPEER => false,
-  CURLOPT_URL => "https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/MACAddress/34:17:EB:A6:28:E5",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 300,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_HTTPHEADER => array(
-    "authorization: Basic aXNlX3Jlc3Q6UGFzc3dvcmQx",
-    "cache-control: no-cache",
-    "postman-token: d669f1e7-db3c-82e6-9376-df64cf021df1"
-  ),
-));
-
-function test_input($data) {
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-curl_close($curl);
-
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
-}
+    //$match = array('connectionType','deviceIpAddress','deviceName','deviceType','vendor','ipAddress','macAddress','securityPolicyStatus','userName');
+    //echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";
+    //echo print_r($json) . "\r\n";
+        for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
+                //Debug
+                //echo "How many response: " . count($json['response']) . "<br>";
+                echo "<br>";
+                echo "Array Element: " . $i . "<br>";
+                echo "<br>";
+                foreach ($match as $x => $item) {
+                        echo $x ."  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>";
+                }
+        }
+        }
 }
 ?>
