@@ -146,6 +146,7 @@ if (isset($_GET['primeTicket_1'])){
                 $arr = array('Ticket' => $auth);
                 echo json_encode($arr);
         }
+	iseTicket_1();
 }
 ?>
 
