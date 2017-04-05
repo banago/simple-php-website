@@ -53,5 +53,4 @@ if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
       }
    }   
 }
-}
 ?>
