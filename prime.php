@@ -27,7 +27,7 @@ if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
    curl_close($curl);
    if ($err) {
       echo "cURL Error #:" . $err;
-   } elseif ($array['http-code'] != 200) { 
+   } elseif ($array['http-code'] == 500) { 
       echo print_r($array);
    } else {
       $json = json_decode($response, true);
