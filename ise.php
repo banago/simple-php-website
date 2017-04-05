@@ -39,7 +39,7 @@ if (isset($_GET['iseData']) & isset($_GET['iseAddress']))
     	$json = json_encode($xml);
     	$array = json_decode($json,TRUE);
     	#echo print_r($array);
-	    #echo $array['user_name'] . "\r\n";
+	    #echo $array['user_name'] . "<br>";
         $match = array("EndPoint User Name :"=>'user_name',"EndPoint Authentication Status :"=>'passed',
                         "NAS Name :"=>'network_device_name',"Device Auth Server :"=>'acs_server',
                         "Device Auth Method :"=>'authentication_method',"Device Auth Protochol :"=>'authentication_protocol',
@@ -49,7 +49,7 @@ if (isset($_GET['iseData']) & isset($_GET['iseAddress']))
 	    for ($i1 = 0; $i1 < 1; $i1++) {
 		    foreach ($match as $x => $item) {
 		    	echo $x ."  " . echo $array[$item] . "<br>";
-			    //echo $array[$item] . "\r\n";
+			    //echo $array[$item] . "<br>";
 		    }
 	    }
     }
