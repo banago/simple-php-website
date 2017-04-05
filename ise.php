@@ -24,22 +24,31 @@ if (isset($_GET['iseData']) & isset($_GET['iseAddress']))
   	$response = curl_exec($curl);
   	$err = curl_error($curl);
   	curl_close($curl);
+	$xml = new SimpleXMLElement($response);
   	if ($err) {
     	echo "cURL Error #:" . $err;
+	//echo $xml->asXML();
+	$dom = new DOMDocument('1.0');
+	$dom->preserveWhiteSpace = false;
+	$dom->formatOutput = true;
+	$dom->loadXML($xml->asXML());
+	//echo $dom->saveXML();
+	$json = json_encode($xml);
+	$array = json_decode($json,TRUE);
   	} elseif ($array['http-code'] == 401 || $array['http-code'] == 500) {
 		echo print_r($array);
   	} else {
 		// echo $response;	// debug
-    		$xml = new SimpleXMLElement($response);
+    		//$xml = new SimpleXMLElement($response);
     		//echo $xml->asXML();
-   		$dom = new DOMDocument('1.0');
-    		$dom->preserveWhiteSpace = false;
-    		$dom->formatOutput = true;
-    		$dom->loadXML($xml->asXML());
+   		//$dom = new DOMDocument('1.0');
+    		//$dom->preserveWhiteSpace = false;
+    		//$dom->formatOutput = true;
+    		//$dom->loadXML($xml->asXML());
     		//echo $dom->saveXML();
-    		$json = json_encode($xml);
-    		$array = json_decode($json,TRUE);
-    		echo print_r($array);
+    		//$json = json_encode($xml);
+    		//$array = json_decode($json,TRUE);
+    		//echo print_r($array);
 	    	#echo $array['user_name'] . "<br>";
         	$match = array("EndPoint User Name :"=>'user_name',"EndPoint Authentication Status :"=>'passed',
                         "NAS Name :"=>'network_device_name',"Device Auth Server :"=>'acs_server',
