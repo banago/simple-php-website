@@ -184,7 +184,7 @@ xmlhttp.send();
 </head>
 <body>
 
-<h2>APIC-EM REST Request with Animated Modal Header and Footer</h2>
+<h2>ISE REST Request with Animated Modal Header and Footer</h2>
 <form id="search" name="search">
 MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeyup="findformat('adiv','functions.php','data_2');"> <br/>
  <!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
@@ -204,7 +204,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeyup=
       <h2>GET Result</h2>
     </div>
     <div class="modal-body">
-      <p>APIC-EM Return</p>
+      <p>ISE Return</p>
         <div id="spinner" class="spinner"></div>
 	    <div id="adiv2" class="apicdata">
     		</div>
