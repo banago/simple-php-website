@@ -58,7 +58,7 @@ function primeMac($mac)
     $name = $_GET['name'];
     echo "This would have been passed to prime " . $mac;
     echo "This is what was passed through GET" . $name;
-    echo $sitever['17.0.0'];
+    echo $sitever['17.0.1'];
 }
 
 if (isset($_GET['data'])) 
