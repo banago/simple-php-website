@@ -107,9 +107,12 @@ function encoded_1(thediv, thefile, thekey) {
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
 		    primereturn_1(thediv, 'ise.php' , 'iseData', myObj.Encoded,'iseAddress', myUrl);
 	    } else if (myObj.Type == "IP") {
-		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
+		    var supported_1 = " MAC ";
+		    var supported_2 = " IP ";
+		    supported_1 = supported_1.bold().fontcolor("red");
+		    supported_2 = supported_2.bold().fontcolor("red");
 		    document.getElementById('spinner').style.display = "none";
-		    primereturn_1(thediv, 'ise.php' , 'iseData', myObj.Encoded,'iseAddress', myUrl);
+		    document.getElementById(thediv).innerHTML = "Unfortunately this application only supports "+supported_1+"and"+supported_2+"addresses" ;
 	    }
 		else {
 		    var supported_1 = " MAC ";
