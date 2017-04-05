@@ -123,7 +123,7 @@ if (isset($_GET['data_2']))
 	    		$mac_colons = implode(':', $split_2);           // A0:B0:C0:D0:E0:F0
 	    		//$add_quotes = "\"" . $mac_colons . "\"";        // "A0:B0:C0:D0:E0:F0"
 	    		$url_encode = urlencode($mac_colons);           // %2208%3AE8%3A56%3A40%3AF4%3A48%22
-	    		$arr = array('Input' => $data,'Type' => 'MAC','Colons' => $mac_colons, 'Normalized' => $add_quotes, 'Encoded' => $url_encode);	//creates an array for the JSON encoder
+	    		$arr = array('Input' => $data,'Type' => 'MAC','Colons' => $mac_colons, 'Normalized' => $mac_colons, 'Encoded' => $url_encode);	//creates an array for the JSON encoder
 			//echo $str; 					// Debug
 	    		//echo $mac_colons; 				// Debug
 	    		//echo $mac_dashes;				// Debug
