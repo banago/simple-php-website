@@ -183,7 +183,7 @@ xmlhttp.send();
 </head>
 <body>
 
-<h2>ISE REST Request with Animated Modal Header and Footer</h2>
+<h2>ISE REST Request</h2>
 <form id="search" name="search">
 MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeyup="findformat('adiv','functions.php','data_2');"> <br/>
  <!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
