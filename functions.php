@@ -103,7 +103,7 @@ if (isset($_GET['data']))
 	}
 	deviceURL_1($_GET['data']);
 }
-if (isset($_GET['data_1'])) 
+if (isset($_GET['data_2'])) 
 {
 	//$get_data = $_GET['data'];
 	
@@ -143,6 +143,6 @@ if (isset($_GET['data_1']))
 			echo json_encode($arr);		// returns JSON
 		}
 	}
-	deviceURL_1($_GET['data_1']);
+	deviceURL_1($_GET['data_2']);
 }
 ?>
