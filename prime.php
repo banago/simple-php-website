@@ -31,8 +31,8 @@ if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
       echo print_r($array);
    } else {
       $json = json_decode($response, true);
-      //print_r($json);  // debug
-      //echo $response;  // debug
+      print_r($json);  // debug
+      echo $response;  // debug
       //echo $json['vlanId']['associationTime']; // debug
       $match = array("NAS Interface :"=>'clientInterface',"NAS Connection Type :"=>'connectionType',
                       "NAS IP :"=>'deviceIpAddress',"NAS Name :"=>'deviceName',
