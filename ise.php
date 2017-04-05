@@ -54,5 +54,4 @@ if (isset($_GET['iseData']) & isset($_GET['iseAddress']))
 	    }
     }
 }
-}
 ?>
