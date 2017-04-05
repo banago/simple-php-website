@@ -48,7 +48,7 @@ if (isset($_GET['iseData']) & isset($_GET['iseAddress']))
 	    //$match = array('user_name','passed','network_device_name','acs_server','authentication_method','authentication_protocol','identity_group','framed_ip_address','location','device_type');
 	    for ($i1 = 0; $i1 < 1; $i1++) {
 		    foreach ($match as $x => $item) {
-		    	echo $x ."  " . echo $array[$item] . "<br>";
+		    	echo $x . "  " . echo $array[$item] . "<br>";
 			    //echo $array[$item] . "<br>";
 		    }
 	    }
