@@ -206,7 +206,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeyup=
       <h2>ISE GET Result</h2>
     </div>
     <div class="modal-body">
-      <p>Result</p>
+      <p><center>Result</center></p>
         <div id="spinner" class="spinner"></div>
 	    <div id="adiv2" class="apicdata">
     		</div>
