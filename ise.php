@@ -53,18 +53,16 @@ if (isset($_GET['iseData']) & isset($_GET['iseAddress']))
     		//$array = json_decode($json,TRUE);
     		echo print_r($array);
 	    	#echo $array['user_name'] . "<br>";
-        	$match = array("EndPoint Auth Status :" => "passed");
-			//"EndPoint Authentication Status :"=>'passed',
-                        //"NAS Name :"=>'network_device_name',"Device Auth Server :"=>'acs_server',
-                        //"Device Auth Method :"=>'authentication_method',"Device Auth Protochol :"=>'authentication_protocol',
-                        //"Device Idendity Group :"=>'identity_group',"Device IP :"=>'framed_ip_address',
-                        //"Device Location :"=>'location',"Device Type :"=>'device_type');	    	
+        	$match = array("EndPoint Auth Status :" => "passed",
+			"EndPoint Authentication Status :"=>'passed',
+                        "NAS Name :"=>'network_device_name',"Device Auth Server :"=>'acs_server',
+                        "Device Auth Method :"=>'authentication_method',"Device Auth Protochol :"=>'authentication_protocol',
+                        "Device Idendity Group :"=>'identity_group',"Device IP :"=>'framed_ip_address',
+                        "Device Location :"=>'location',"Device Type :"=>'device_type');	    	
 	    
 	    for ($i1 = 0; $i1 < 1; $i1++) {
 		foreach ($match as $x => $item) {
-			//echo $x . "  " . echo $array[$item] . "<br>";
-		
-			echo $x ."  " . $array[$item] . "<br>";
+				echo $x ."  " . $array[$item] . "<br>";
 		}    
 	    }
     
