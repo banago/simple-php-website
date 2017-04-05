@@ -27,6 +27,8 @@ $err = curl_error($curl);
 curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
+} elseif ($array['http-code'] != 200) { 
+  echo print_r($array);
 } else {
         $json = json_decode($response, true);
         //print_r($json);  // debug
