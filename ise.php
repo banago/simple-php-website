@@ -62,7 +62,7 @@ if (isset($_GET['iseData']) & isset($_GET['iseAddress']))
 	    for ($i1 = 0; $i1 < 1; $i1++) {
 		foreach ($match as $x => $item) {
 			//echo $x . "  " . echo $array[$item] . "<br>";
-			echo $x;
+			echo $x . "  " . echo $array[$item] . "<br>" ;
 		}    
 	    }
     
