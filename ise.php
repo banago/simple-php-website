@@ -51,7 +51,7 @@ if (isset($_GET['iseData']) & isset($_GET['iseAddress']))
     		//echo $dom->saveXML();
     		//$json = json_encode($xml);
     		//$array = json_decode($json,TRUE);
-    		//echo print_r($array);
+    		echo print_r($array);
 	    	#echo $array['user_name'] . "<br>";
         	$match = array("EndPoint User Name :"=>'user_name',"EndPoint Authentication Status :"=>'passed',
                         "NAS Name :"=>'network_device_name',"Device Auth Server :"=>'acs_server',
