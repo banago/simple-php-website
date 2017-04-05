@@ -87,9 +87,41 @@ function findformat(thediv, thefile, thekey) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
-            document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green") + " : " + myObj.Normalized + "<br>" + myObj.Encoded;
+            document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;
         }
     }
+xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
+xmlhttp.send();
+}
+function encoded_1(thediv, thefile, thekey) {
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else { 
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }  
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myObj = JSON.parse(this.responseText);
+	    if (myObj.Type == "MAC") {
+		    myUrl = encodeURIComponent("https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/MACAddress/");
+		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById(thediv).innerHTML = myObj.Encoded;
+		    primereturn_1(thediv, 'ise.php' , 'iseData', myObj.Encoded,'iseAddress', myUrl);
+	    } else if (myObj.Type == "IP") {
+		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
+		    document.getElementById('spinner').style.display = "none";
+		    primereturn_1(thediv, 'ise.php' , 'iseData', myObj.Encoded,'iseAddress', myUrl);
+	    }
+		else {
+		    var supported_1 = " MAC ";
+		    var supported_2 = " IP ";
+		    supported_1 = supported_1.bold().fontcolor("red");
+		    supported_2 = supported_2.bold().fontcolor("red");
+		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById(thediv).innerHTML = "Unfortunately this application only supports "+supported_1+"and"+supported_2+"addresses" ;
+	    }     
+        }
+    } 
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
@@ -132,13 +164,29 @@ function apicreturn1(thediv, thefile , thekey , theticket) {
 xmlhttp.open('GET', thefile+'?'+thekey+'='+theticket, true);
 xmlhttp.send();
 }
+function primereturn_1(thediv, thefile , thekey_1 , theticket, thekey_2, theurl) {
+    document.getElementById('spinner').style.display = "block";	
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else { 
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }  
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+		document.getElementById('spinner').style.display = "none";
+		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
+        }
+    }
+xmlhttp.open('GET', thefile+'?'+thekey_1+'='+theticket+'&'+thekey_2+'='+theurl, true);
+xmlhttp.send();
+}
 </script>    
 </head>
 <body>
 
 <h2>APIC-EM REST Request with Animated Modal Header and Footer</h2>
 <form id="search" name="search">
-MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('adiv','functions.php','data');"> <br/>
+MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeyup="findformat('adiv','functions.php','data');"> <br/>
  <!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
 <button id="myBtn" type="button">Open Modal</button>
 <input type="reset" name="reset">
@@ -175,9 +223,12 @@ var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-// When the user clicks the button, open the modal 
+// When the user clicks the button, open the modal
+//var formvalue_1 = document.getElementById("uniqueID").value;
 btn.onclick = function() {
-    document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_iseTicket');
+    //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
+    document.getElementById("adiv2").innerHTML = encoded_1('adiv2','functions.php','data');
+    //document.getElementById("adiv2").innerHTML = document.getElementById("uniqueID").value;
     //document.getElementById("adiv2").innerHTML = input_1;
     modal.style.display = "block";
 }
