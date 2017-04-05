@@ -26,7 +26,7 @@ if (isset($_GET['iseData']) & isset($_GET['iseAddress']))
   	curl_close($curl);
   	if ($err) {
     	echo "cURL Error #:" . $err;
-  	} elseif ($array['http-code'] == 401) {
+  	} elseif ($array['http-code'] == 401 || $array['http-code'] == 500) {
 		echo print_r($array);
   	} else {
     	$xml = new SimpleXMLElement($response);
