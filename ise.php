@@ -29,18 +29,19 @@ if (isset($_GET['iseData']) & isset($_GET['iseAddress']))
   	} elseif ($array['http-code'] == 401 || $array['http-code'] == 500) {
 		echo print_r($array);
   	} else {
-    	$xml = new SimpleXMLElement($response);
-    	//echo $xml->asXML();
+		echo $response;	// debug
+    		$xml = new SimpleXMLElement($response);
+    		//echo $xml->asXML();
    		$dom = new DOMDocument('1.0');
-    	$dom->preserveWhiteSpace = false;
-    	$dom->formatOutput = true;
-    	$dom->loadXML($xml->asXML());
-    	//echo $dom->saveXML();
-    	$json = json_encode($xml);
-    	$array = json_decode($json,TRUE);
-    	#echo print_r($array);
-	    #echo $array['user_name'] . "<br>";
-        $match = array("EndPoint User Name :"=>'user_name',"EndPoint Authentication Status :"=>'passed',
+    		$dom->preserveWhiteSpace = false;
+    		$dom->formatOutput = true;
+    		$dom->loadXML($xml->asXML());
+    		//echo $dom->saveXML();
+    		$json = json_encode($xml);
+    		$array = json_decode($json,TRUE);
+    		#echo print_r($array);
+	    	#echo $array['user_name'] . "<br>";
+        	$match = array("EndPoint User Name :"=>'user_name',"EndPoint Authentication Status :"=>'passed',
                         "NAS Name :"=>'network_device_name',"Device Auth Server :"=>'acs_server',
                         "Device Auth Method :"=>'authentication_method',"Device Auth Protochol :"=>'authentication_protocol',
                         "Device Idendity Group :"=>'identity_group',"Device IP :"=>'framed_ip_address',
