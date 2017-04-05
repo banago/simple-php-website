@@ -1,6 +1,5 @@
-<p>This is <b>by dev ise</b> page. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-</p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-	
+<p>This is <b>by dev ise</b> page. 
+<p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>	
 <style>
 .spinner {
     border: 4px solid #f3f3f3; /* Light grey */
@@ -201,16 +200,16 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeyup=
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      <h2>GET Result</h2>
+      <h2>ISE GET Result</h2>
     </div>
     <div class="modal-body">
-      <p>ISE Return</p>
+      <p>Result</p>
         <div id="spinner" class="spinner"></div>
 	    <div id="adiv2" class="apicdata">
     		</div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
-      <h3>MODAL END</h3>
+      <h3>END</h3>
     </div>
   </div>
 
