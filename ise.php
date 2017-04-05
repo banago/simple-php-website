@@ -43,12 +43,13 @@ if (isset($_GET['iseData']) & isset($_GET['iseAddress']))
   	} else {
     		// echo print_r($array);	// debug
 	    	#echo $array['user_name'] . "<br>";	// debug
-        	$match = array("EndPoint Auth Status :" => 'passed',
-			"EndPoint Authentication Status :"=>'passed',
-                        "NAS Name :"=>'network_device_name',"Device Auth Server :"=>'acs_server',
-                        "Device Auth Method :"=>'authentication_method',"Device Auth Protochol :"=>'authentication_protocol',
-                        "Device Idendity Group :"=>'identity_group',"Device IP :"=>'framed_ip_address',
-                        "Device Location :"=>'location',"Device Type :"=>'device_type');	    	
+        	$match = array("EndPoint Auth Status :" => 'passed',"EndPoint User :" => 'user_name',
+			"EndPoint Authentication Status :"=>'passed',"EndPoint Auth Server :"=>'acs_server',
+                        "EndPoint Auth Method :"=>'authentication_method',"EndPoint Auth Protocol :"=>'authentication_protocol',
+                        "EndPoint Idendity Group :"=>'identity_group',"EndPoint IP :"=>'framed_ip_address',
+                        "EndPoint Location :"=>'location',"EndPoint Type :"=>'device_type',
+			"EndPoint Auth(Z) :"=>'selected_azn_profiles',"EndPoint SGT :"=>'cts_security_group',     
+			"NAS IP :" => 'nas_ip_address',"NAS Name :"=>'network_device_name');	    	
 	    for ($i1 = 0; $i1 < 1; $i1++) {
 		foreach ($match as $x => $item) {
 				echo $x ."  " . $array[$item] . "<br>";
