@@ -103,11 +103,11 @@ if (isset($_GET['data']))
 	}
 	deviceURL_1($_GET['data']);
 }
-if (isset($_GET['data'])) 
+if (isset($_GET['data_1'])) 
 {
 	//$get_data = $_GET['data'];
 	
-	function deviceURL_1($data_2){
+	function deviceURL_1($data){
 		$str = $data;
 		$str = preg_replace('/\s+/', '', $str);     //Remove whitespaces
 		$str_1 = (preg_match('/^([0-9A-Fa-f]{2}[:\-\.]){5}([0-9A-Fa-f]{2})$/', $str) == 1) | (preg_match('/^([0-9A-Fa-f]{4}[:\-\.]){2}([0-9A-Fa-f]{4})$/', $str) == 1);	// matches EUI-64 MAC format and other format conventions
@@ -143,6 +143,6 @@ if (isset($_GET['data']))
 			echo json_encode($arr);		// returns JSON
 		}
 	}
-	deviceURL_1($_GET['data']);
+	deviceURL_1($_GET['data_1']);
 }
 ?>
