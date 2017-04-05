@@ -64,7 +64,7 @@ if (isset($_GET['iseData']) & isset($_GET['iseAddress']))
 		foreach ($match as $x => $item) {
 			//echo $x . "  " . echo $array[$item] . "<br>";
 		
-			echo $x ."  " . $json[$item] . "<br>";
+			echo $x ."  " . $array[$item] . "<br>";
 		}    
 	    }
     
