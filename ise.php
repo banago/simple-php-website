@@ -4,9 +4,9 @@ if (isset($_GET['iseData']) & isset($_GET['iseAddress']))
 {
 	$data = $_GET['iseData'];
 	$addr = $_GET['iseAddress'];
-	//echo "This mac was passed" . $name . "\r\n";  // debug
+	echo "This mac was passed" . $name . "\r\n";  // debug
 	$data = "(" . $data . ")";
-	// echo $addr . $data . "\r\n"; //debug
+	 echo $addr . $data . "\r\n"; //debug
 	$curl = curl_init();
 	$somevar = $_GET["uid"];
 	curl_setopt_array($curl, array(
