@@ -188,7 +188,8 @@ xmlhttp.open('GET', thefile+'?'+thekey_1+'='+theticket+'&'+thekey_2+'='+theurl, 
 xmlhttp.send();
 }
 function primereturn_2(thediv, thefile, thekey) {
-    document.getElementById('spinner').style.display = "block";	
+  	document.getElementById('spinner').style.display = "block";
+	document.getElementById(thediv).innerHTML = "";
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
