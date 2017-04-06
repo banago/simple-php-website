@@ -135,7 +135,7 @@ function encoded_1(thediv, thefile, thekey) {
 
 		
 		    nameresolution(thediv,'functions.php','hostName_1');
-		    document.getElementById(thediv).innerHTML = test()+test+document.search.data_text.value;
+		    document.getElementById(thediv).innerHTML = test+document.search.data_text.value;
 		    //primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    } else {
 		    var supported_1 = " MAC ";
