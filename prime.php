@@ -41,7 +41,7 @@ if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
                       "Device OUI :"=>'vendor',"Device VLAN:"=>'vlan');
       //echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";   // debug
       //echo print_r($json) . "\r\n";    // debug
-      if isset($json['queryResponse']['entity']){
+      if (isset($json['queryResponse']['entity'])) {
          for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
              //Debug
             //echo "How many response: " . count($json['response']) . "<br>";
