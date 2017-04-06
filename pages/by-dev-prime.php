@@ -127,8 +127,8 @@ function encoded_1(thediv, thefile, thekey) {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
 		
-		    var name = nameresolution('functions.php',myObj.Encoded);
-		    document.getElementById(thediv).innerHTML = name+document.search.data_text.value;
+		    
+		    document.getElementById(thediv).innerHTML = nameresolution('functions.php',myObj.Encoded)+document.search.data_text.value;
 		    //primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    } else {
 		    var supported_1 = " MAC ";
