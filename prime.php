@@ -36,9 +36,9 @@ if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
       //echo $json['vlanId']['associationTime']; // debug
       $match = array("NAS Interface :"=>'clientInterface',"NAS Connection Type :"=>'connectionType',
                       "NAS IP :"=>'deviceIpAddress',"NAS Name :"=>'deviceName',
-                      "Device Type :"=>'deviceType',"Device IP :"=>'ipAddress',
-                      "MAC Address :"=>'macAddress',"Device Security Policy :"=>'securityPolicyStatus',
-                      "Device OUI :"=>'vendor',"Device VLAN:"=>'vlan');
+                      "EndPoint Type :"=>'deviceType',"EndPoint IP :"=>'ipAddress',
+                      "EndPoint MAC :"=>'macAddress',"EndPoint NAC Status :"=>'securityPolicyStatus',
+                      "EndPoint OUI :"=>'vendor',"EndPoint VLAN:"=>'vlan');
       //echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";   // debug
       //echo print_r($json) . "\r\n";    // debug
       if (isset($json['queryResponse']['entity'])) {
@@ -49,7 +49,7 @@ if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
             echo "Array Element: " . $i . "<br>";
             echo "<br>";
             foreach ($match as $x => $item) {
-               echo $x ."  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>";
+               echo "<b>" . $x . "</b>" ."  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>";
             }
          }
       } else {
