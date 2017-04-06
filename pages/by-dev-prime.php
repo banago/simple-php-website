@@ -92,7 +92,7 @@ function findformat(thediv, thefile, thekey) {
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
-function nameresolution(thediv,thefile, thekey) {
+function nameresolution(thediv, thefile, thekey) {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
@@ -101,6 +101,7 @@ function nameresolution(thediv,thefile, thekey) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 	    myObj = JSON.parse(this.responseText);
+	    document.getElementById(thediv).innerHTML = myObj;
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
