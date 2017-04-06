@@ -157,15 +157,15 @@ if (isset($_GET['hostName_1'])){
 			$ip = gethostbyname($host . $fpi);	// gets the IPv4 address of the host
 			$arr = array('IPv4' => $ip);	 // create array for JSON
 			echo json_encode($arr);		// return JSON
-		} elseif ($ip = gethostbyname($host . $nwfcs) != $failure) {
+		} elseif ($ip = gethostbyname($host . $nwfcs) != $host . $nwfcs) {
 			$ip = gethostbyname($host . $nwfcs);	// gets the IPv4 address of the host
 			$arr = array('IPv4' => $ip);	 // create array for JSON
 			echo json_encode($arr);		// return JSON
-		} elseif ($ip = gethostbyname($host . $fce) != $failure) {
+		} elseif ($ip = gethostbyname($host . $fce) != $host . $fce) {
 			$ip = gethostbyname($host . $fce);	// gets the IPv4 address of the host
 			$arr = array('IPv4' => $ip);	 // create array for JSON
 			echo json_encode($arr);		// return JSON
-		} elseif ($ip = gethostbyname($host . $agc) != $failure) {
+		} elseif ($ip = gethostbyname($host . $agc) != $host . $agc) {
 			$ip = gethostbyname($host . $agc);	// gets the IPv4 address of the host
 			$arr = array('IPv4' => $ip);	 // create array for JSON
 			echo json_encode($arr);		// return JSON
