@@ -182,6 +182,7 @@ xmlhttp.open('GET', thefile+'?'+thekey_1+'='+theticket+'&'+thekey_2+'='+theurl, 
 xmlhttp.send();
 }
 function primereturn_2(thediv, thefile, thekey) {
+    document.getElementById('spinner').style.display = "block";	
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
@@ -191,6 +192,7 @@ function primereturn_2(thediv, thefile, thekey) {
         if (this.readyState == 4 && this.status == 200) {
 		myObj = JSON.parse(this.responseText);
 	    if (myObj.hasOwnProperty('IPv4')) {
+		    document.getElementById('spinner').style.display = "none";
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById(thediv).innerHTML = xmlhttp.responseText;
 		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.IPv4,'primeAddress', myUrl);
