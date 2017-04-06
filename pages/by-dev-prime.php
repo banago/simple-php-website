@@ -104,23 +104,28 @@ function encoded_1(thediv, thefile, thekey) {
 	    if (myObj.Type == "MAC") {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&macAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
 		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    } else if (myObj.Type == "IP") {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    }  else if (myObj.Type == "HostName") {
 		    document.getElementById('spinner').style.display = "none";
-		    document.getElementById(thediv).innerHTML = ""; 
+		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    primereturn_2(thediv,'functions.php','hostName_1');
 	    } else {
+		    // catch all else error messages
 		    var supported_1 = " MAC ";
 		    var supported_2 = " IP ";
+		    var supported_3 = " HostName ";
 		    supported_1 = supported_1.bold().fontcolor("red");
 		    supported_2 = supported_2.bold().fontcolor("red");
+		    supported_3 = supported_2.bold().fontcolor("red");
 		    document.getElementById('spinner').style.display = "none";
-		    document.getElementById(thediv).innerHTML = "Unfortunately this application only supports "+supported_1+"and"+supported_2+"addresses" ;
+		    document.getElementById(thediv).innerHTML = "Unfortunately this application only supports "+supported_1+"and"+supported_2+"addresses"+"or a"+supported_3 ;
 	    }     
         }
     } 
