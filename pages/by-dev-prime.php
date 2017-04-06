@@ -237,7 +237,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      <h2>PRIME GET Result</h2>
+      <h2><center>PRIME GET Result</center></h2>
     </div>
     <div class="modal-body">
       <p>Result</p>
