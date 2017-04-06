@@ -112,6 +112,7 @@ function encoded_1(thediv, thefile, thekey) {
 		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    }  else if (myObj.Type == "HostName") {
 		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById(thediv).innerHTML = ""; 
 		    primereturn_2(thediv,'functions.php','hostName_1');
 	    } else {
 		    var supported_1 = " MAC ";
