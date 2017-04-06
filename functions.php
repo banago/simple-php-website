@@ -147,8 +147,8 @@ if (isset($_GET['data_2']))
 }
 if (isset($_GET['hostName_1'])){
         function resolveHost_1($host){
-		if ($ip = gethostbyname($host . ".fpii.fpir.pvt") != $ip) {
-			$ip = gethostbyname($host . "fpi.fpir.pvt");	// gets the IPv4 address of the host
+		if ($ip = gethostbyname($host . ".fpi.fpir.pvt") != $ip) {
+			$ip = gethostbyname($host . ".fpi.fpir.pvt");	// gets the IPv4 address of the host
 			$arr = array('IPv4' => $ip);	 // create array for JSON
 			echo json_encode($arr);		// return JSON
 		}
