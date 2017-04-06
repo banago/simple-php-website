@@ -151,7 +151,7 @@ if (isset($_GET['hostName_1'])){
 		$nwfcs = ".nfcs.fpir.pvt";	// DNS suffix
 		$fce = ".fce.fpir.pvt";		// DNS suffix
 		$agc = ".agcountry.fpir.pvt"	// DNS suffix
-		$failure = $host . $fpi;	// if submitted name is returned assume failure
+		
 		$message = "Unable to resolve: ";
 		if ($ip = gethostbyname($host . $fpi) != $host . $fpi) {
 			$ip = gethostbyname($host . $fpi);	// gets the IPv4 address of the host
