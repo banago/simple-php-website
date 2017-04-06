@@ -102,6 +102,7 @@ function nameresolution(thediv, thefile, thekey) {
         if (this.readyState == 4 && this.status == 200) {
 	    myObj = JSON.parse(this.responseText);
 	    document.getElementById('adiv').innerHTML = myObj.IPv4;
+	    return myObj;
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
@@ -128,7 +129,8 @@ function encoded_1(thediv, thefile, thekey) {
 	    }  else if (myObj.Type == "HostName") {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
-		    myObj = JSON.parse(nameresolution(thediv,'functions.php','hostName_1'));
+		    myObj = nameresolution(thediv,'functions.php','hostName_1');
+		    myObj = JSON.parse(myObj);
 		
 		    nameresolution(thediv,'functions.php','hostName_1');
 		    document.getElementById(thediv).innerHTML = myObj.IPv4+document.search.data_text.value;
