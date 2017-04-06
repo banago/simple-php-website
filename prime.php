@@ -31,7 +31,7 @@ if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
       echo print_r($array);
    } else {
       $json = json_decode($response, true);
-      print_r($json);  // debug
+      //print_r($json);  // debug
       //echo $response;  // debug
       //echo $json['vlanId']['associationTime']; // debug
       $match = array("NAS Interface :"=>'clientInterface',"NAS Connection Type :"=>'connectionType',
@@ -41,16 +41,18 @@ if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
                       "Device OUI :"=>'vendor',"Device VLAN:"=>'vlan');
       //echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";   // debug
       //echo print_r($json) . "\r\n";    // debug
-      for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
-         //Debug
-         //echo "How many response: " . count($json['response']) . "<br>";
-         echo "<br>";
-         echo "Array Element: " . $i . "<br>";
-         echo "<br>";
-         foreach ($match as $x => $item) {
-            echo $x ."  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>";
+      if isset($json['queryResponse']['entity']){
+         for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
+             //Debug
+            //echo "How many response: " . count($json['response']) . "<br>";
+            echo "<br>";
+            echo "Array Element: " . $i . "<br>";
+            echo "<br>";
+            foreach ($match as $x => $item) {
+               echo $x ."  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>";
+            }
          }
-      }
+      }     
    }   
 }
 ?>
