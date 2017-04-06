@@ -1,5 +1,10 @@
-<p>This is the <b>by dev prime</b> page. 
-<p>Cisco Prime Infrastructure provides complete lifecycle management of converged wired and wireless networks.</p>	
+<p>Cisco Prime Infrastructure provides complete lifecycle management of converged wired and wireless networks.</p>
+<p><b>Whats New!<b/></p> <br/>
+<ul>
+  <li>Search by HostName!</li>
+  <li>Working best button</li>
+  <li>Syle and bug fixes</li>
+</ul>  	
 <style>
 .spinner {
     border: 4px solid #f3f3f3; /* Light grey */
