@@ -92,28 +92,6 @@ function findformat(thediv, thefile, thekey) {
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
-function nameresolution(thediv, thefile, thekey) {
-    if (window.XMLHttpRequest) {
-        xmlhttp = new XMLHttpRequest();
-    } else { 
-        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
-    }  
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-	    	myObj = JSON.parse(this.responseText);
-	    	
-	    if (myObj.hasOwnProperty('IPv4')) {
-		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
-		    document.getElementById(thediv).innerHTML = xmlhttp.responseText;
-		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.IPv4,'primeAddress', myUrl);
-	    } else {
-		    document.getElementById(thediv).innerHTML = myObj.Failure;
-	    }
-        }
-    }
-xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
-xmlhttp.send();
-}
 function encoded_1(thediv, thefile, thekey) {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
@@ -134,8 +112,7 @@ function encoded_1(thediv, thefile, thekey) {
 		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    }  else if (myObj.Type == "HostName") {
 		    document.getElementById('spinner').style.display = "none";
-		    nameresolution(thediv,'functions.php','hostName_1');
-		    //primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
+		    primereturn_2(thediv,'functions.php','hostName_1');
 	    } else {
 		    var supported_1 = " MAC ";
 		    var supported_2 = " IP ";
@@ -202,6 +179,27 @@ function primereturn_1(thediv, thefile , thekey_1 , theticket, thekey_2, theurl)
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey_1+'='+theticket+'&'+thekey_2+'='+theurl, true);
+xmlhttp.send();
+}
+function primereturn_2(thediv, thefile, thekey) {
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else { 
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }  
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+		myObj = JSON.parse(this.responseText);
+	    if (myObj.hasOwnProperty('IPv4')) {
+		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
+		    document.getElementById(thediv).innerHTML = xmlhttp.responseText;
+		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.IPv4,'primeAddress', myUrl);
+	    } else {
+		    document.getElementById(thediv).innerHTML = myObj.Failure;
+	    }
+        }
+    }
+xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
 </script>    
