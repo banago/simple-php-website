@@ -53,7 +53,7 @@ if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
             }
          }
       } else {
-         echo "Unable to locate record for : " . $data;
+         echo "Unable to locate record for : " . "<font color=\"red\">" . $data . "</font>";
       }
    }   
 }
