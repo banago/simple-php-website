@@ -147,11 +147,32 @@ if (isset($_GET['data_2']))
 }
 if (isset($_GET['hostName_1'])){
         function resolveHost_1($host){
-		$fpi = ".fpi.fpir.pvt";		// fpi suffix
+		$fpi = ".fpi.fpir.pvt";		// DNS suffix
+		$nwfcs = ".nfcs.fpir.pvt";	// DNS suffix
+		$fce = ".fce.fpir.pvt";		// DNS suffix
+		$agc = ".agcountry.fpir.pvt"	// DNS suffix
 		$failure = $host . $fpi;	// if submitted name is returned assume failure
-		if ($ip = gethostbyname($host . $fpi) != $failure) {
+		$message = "Unable to resolve: ";
+		if ($ip = gethostbyname($host . $fpi) != $host . $fpi) {
 			$ip = gethostbyname($host . $fpi);	// gets the IPv4 address of the host
 			$arr = array('IPv4' => $ip);	 // create array for JSON
+			echo json_encode($arr);		// return JSON
+		} elseif ($ip = gethostbyname($host . $nwfcs) != $failure) {
+			$ip = gethostbyname($host . $nwfcs);	// gets the IPv4 address of the host
+			$arr = array('IPv4' => $ip);	 // create array for JSON
+			echo json_encode($arr);		// return JSON
+		} elseif ($ip = gethostbyname($host . $fce) != $failure) {
+			$ip = gethostbyname($host . $fce);	// gets the IPv4 address of the host
+			$arr = array('IPv4' => $ip);	 // create array for JSON
+			echo json_encode($arr);		// return JSON
+		} elseif ($ip = gethostbyname($host . $agc) != $failure) {
+			$ip = gethostbyname($host . $agc);	// gets the IPv4 address of the host
+			$arr = array('IPv4' => $ip);	 // create array for JSON
+			echo json_encode($arr);		// return JSON
+		} else {
+			$failure = $message . $host;
+			$ip = gethostbyname($host . $nwfcs);	// gets the IPv4 address of the host
+			$arr = array('Failure' => $failure);	 // create array for JSON
 			echo json_encode($arr);		// return JSON
 		}
         }
