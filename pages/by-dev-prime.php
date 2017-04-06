@@ -101,10 +101,7 @@ function nameresolution(thediv, thefile, thekey) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 	    myObj = JSON.parse(this.responseText);
-	    document.getElementById('adiv').innerHTML = myObj.IPv4;
-	    var returnedObject = {};
-	    returnedObject["value1"] = myObj.IPv4;
-	    return returnedObject;
+	    document.getElementById(thediv).innerHTML = xmlhttp.responseText
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
