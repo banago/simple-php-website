@@ -130,7 +130,7 @@ function encoded_1(thediv, thefile, thekey) {
 		    document.getElementById('spinner').style.display = "none";
 		
 		    nameresolution(thediv,'functions.php','hostName');
-		    document.getElementById(thediv).innerHTML = nameresolution(thediv,'functions.php',myObj.Encoded)+document.search.data_text.value;
+		    document.getElementById(thediv).innerHTML = nameresolution(thediv,'functions.php','hostName')+document.search.data_text.value;
 		    //primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    } else {
 		    var supported_1 = " MAC ";
