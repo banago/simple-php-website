@@ -216,7 +216,7 @@ xmlhttp.send();
 
 <h2>PRIME REST Request</h2>
 <form id="search" name="search">
-MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data')};"> <br/>
+MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data')};">
  <!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
 <button id="myBtn" type="button">Open Modal</button>
 <input type="reset" name="reset">
