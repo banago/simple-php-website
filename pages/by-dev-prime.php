@@ -263,8 +263,8 @@ btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = input_1;
     modal.style.display = "block";
 }
-// When the user clicks the button, open the modal
-btn.onclick = function() {
+// When the user clicks the button, reset adiv
+rst.onclick = function() {
 	document.getElementById('adiv').innerHTML = "";
 }
 // When the user clicks on <span> (x), close the modal
