@@ -133,9 +133,9 @@ function encoded_1(thediv, thefile, thekey) {
 		    document.getElementById('spinner').style.display = "none";
 		    var test = nameresolution(thediv,'functions.php','hostName_1');
 
-		
+	
 		    nameresolution(thediv,'functions.php','hostName_1');
-		    document.getElementById(thediv).innerHTML = test+document.search.data_text.value;
+		    document.getElementById(thediv).innerHTML = test.value1+document.search.data_text.value;
 		    //primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    } else {
 		    var supported_1 = " MAC ";
