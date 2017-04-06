@@ -126,9 +126,9 @@ function encoded_1(thediv, thefile, thekey) {
 	    }  else if (myObj.Type == "HostName") {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
-		    myObj = JSON.parse(nameresolution('functions.php','hostName'));
-		    var name = nameresolution('functions.php','hostName');
-		    document.getElementById(thediv).innerHTML = name+document.search.data_text.value+myObj;
+		
+		    var name = nameresolution('functions.php',myObj.Encoded);
+		    document.getElementById(thediv).innerHTML = name+document.search.data_text.value;
 		    //primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    } else {
 		    var supported_1 = " MAC ";
