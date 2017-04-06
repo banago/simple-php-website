@@ -92,7 +92,7 @@ function findformat(thediv, thefile, thekey) {
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
-function nameresolution(thefile, thekey) {
+function nameresolution(thediv,thefile, thekey) {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
@@ -100,6 +100,7 @@ function nameresolution(thefile, thekey) {
     }  
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+	    myObj = JSON.parse(this.responseText);
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
@@ -128,7 +129,7 @@ function encoded_1(thediv, thefile, thekey) {
 		    document.getElementById('spinner').style.display = "none";
 		
 		    
-		    document.getElementById(thediv).innerHTML = nameresolution('functions.php',myObj.Encoded)+document.search.data_text.value;
+		    document.getElementById(thediv).innerHTML = nameresolution(thediv,'functions.php',myObj.Encoded)+document.search.data_text.value;
 		    //primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    } else {
 		    var supported_1 = " MAC ";
