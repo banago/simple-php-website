@@ -219,7 +219,7 @@ xmlhttp.send();
 MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data')};">
  <!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
 <button id="myBtn" type="button">Open Modal</button>
-<input type="reset" name="reset">
+<input id="myRst" type="reset" name="reset">
 </form>
 <!-- This DIV returns the users input after proccessing it through the php file -->
 <div id="adiv"></div>
@@ -253,14 +253,19 @@ var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
+// When presses resets a div
+var rst = document.getElementById("myRst");
 // When the user clicks the button, open the modal
-//var formvalue_1 = document.getElementById("uniqueID").value;
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
     document.getElementById("adiv2").innerHTML = encoded_1('adiv2','functions.php','data');
     //document.getElementById("adiv2").innerHTML = document.getElementById("uniqueID").value;
     //document.getElementById("adiv2").innerHTML = input_1;
     modal.style.display = "block";
+}
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+	document.getElementById('adiv').innerHTML = "";
 }
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
