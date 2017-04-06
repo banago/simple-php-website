@@ -145,4 +145,14 @@ if (isset($_GET['data_2']))
 	}
 	deviceURL_1($_GET['data_2']);
 }
+if (isset($_GET['hostName_1'])){
+        function resolveHost_1($host){
+                $ip = gethostbyname($host);	// resolves hostnames to an IPv4 address
+		$auth =""; 	
+                $arr = array('IPv4' => $ip);	// create array for JSON
+                echo json_encode($arr);		// return JSON
+		
+        }
+	resolveHost_1($_GET['hostName_1']);
+}
 ?>
