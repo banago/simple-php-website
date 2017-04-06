@@ -101,9 +101,13 @@ function nameresolution(thediv, thefile, thekey) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 	    	myObj = JSON.parse(this.responseText);
-	    	document.getElementById(thediv).innerHTML = xmlhttp.responseText
+	    	
 	    if (myObj.hasOwnProperty('IPv4')) {
-		    document.getElementById(thediv).innerHTML = "catsasasdf";
+		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
+		    document.getElementById(thediv).innerHTML = xmlhttp.responseText;
+		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.IPv4,'primeAddress', myUrl);
+	    } else {
+		    document.getElementById(thediv).innerHTML = myObj.Failure;
 	    }
         }
     }
@@ -129,7 +133,6 @@ function encoded_1(thediv, thefile, thekey) {
 		    document.getElementById('spinner').style.display = "none";
 		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    }  else if (myObj.Type == "HostName") {
-		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
 		    nameresolution(thediv,'functions.php','hostName_1');
 		    //primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
