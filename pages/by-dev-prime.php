@@ -129,7 +129,7 @@ function encoded_1(thediv, thefile, thekey) {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
 		
-		    
+		    nameresolution(thediv,'functions.php','hostName');
 		    document.getElementById(thediv).innerHTML = nameresolution(thediv,'functions.php',myObj.Encoded)+document.search.data_text.value;
 		    //primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    } else {
