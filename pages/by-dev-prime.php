@@ -72,7 +72,7 @@
 .modal-body {padding: 2px 16px;}
 
 .modal-footer {
-    padding: 2px 16px;
+    padding: -1px 16px;
     background-color: #5cb85c;
     color: white;
 }
