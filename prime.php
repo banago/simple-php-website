@@ -37,7 +37,7 @@ if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
       $match = array("NAS Interface :"=>'clientInterface',"NAS Connection Type :"=>'connectionType',
                       "NAS IP :"=>'deviceIpAddress',"NAS Name :"=>'deviceName',
                       "EndPoint Type :"=>'deviceType',"EndPoint IP :"=>'ipAddress',
-                      "EndPoint MAC :"=>'macAddress',"EndPoint NAC Status :"=>'securityPolicyStatus',
+                      "EndPoint MAC :"=>'macAddress',"EndPoint NAC :"=>'securityPolicyStatus',
                       "EndPoint OUI :"=>'vendor',"EndPoint VLAN:"=>'vlan');
       //echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";   // debug
       //echo print_r($json) . "\r\n";    // debug
