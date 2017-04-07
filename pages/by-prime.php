@@ -1,5 +1,10 @@
-<p>This is the <b>by dev prime</b> page. 
-<p>Cisco Prime Infrastructure provides complete lifecycle management of converged wired and wireless networks.</p>	
+<p>Cisco Prime Infrastructure provides complete lifecycle management of converged wired and wireless networks.</p>
+<p><b>Whats New!</b></p>
+<ul>
+  <li>Search by HostName!</li>
+  <li>Working best button</li>
+  <li>Syle and bug fixes</li>
+</ul>  	
 <style>
 .spinner {
     border: 4px solid #f3f3f3; /* Light grey */
@@ -18,7 +23,6 @@
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 0; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -26,29 +30,21 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
 }
 /* Modal Content */
 .modal-content {
-    position: relative;
+    position: fixed;
+    bottom: 0;
     background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 30%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
+    width: 100%;
+    -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
+    animation-name: slideIn;
     animation-duration: 0.4s
-}
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
 }
 /* The Close Button */
 .close {
@@ -70,9 +66,26 @@
 }
 .modal-body {padding: 2px 16px;}
 .modal-footer {
-    padding: 2px 16px;
+    padding: -1px 16px;
     background-color: #5cb85c;
     color: white;
+}
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
 }
 </style>
 <head>
@@ -86,7 +99,7 @@ function findformat(thediv, thefile, thekey) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
-            document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;
+            document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized;
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
@@ -104,20 +117,28 @@ function encoded_1(thediv, thefile, thekey) {
 	    if (myObj.Type == "MAC") {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&macAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
 		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
 	    } else if (myObj.Type == "IP") {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.Encoded,'primeAddress', myUrl);
-	    }
-		else {
+	    }  else if (myObj.Type == "HostName") {
+		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
+		    primereturn_2(thediv,'functions.php','hostName_1');
+	    } else {
+		    // catch all else error messages
 		    var supported_1 = " MAC ";
 		    var supported_2 = " IP ";
+		    var supported_3 = " HostName ";
 		    supported_1 = supported_1.bold().fontcolor("red");
 		    supported_2 = supported_2.bold().fontcolor("red");
+		    supported_3 = supported_2.bold().fontcolor("red");
 		    document.getElementById('spinner').style.display = "none";
-		    document.getElementById(thediv).innerHTML = "Unfortunately this application only supports "+supported_1+"and"+supported_2+"addresses" ;
+		    document.getElementById(thediv).innerHTML = "Unfortunately this application only supports "+supported_1+"and"+supported_2+"addresses"+"or a"+supported_3 ;
 	    }     
         }
     } 
@@ -179,16 +200,40 @@ function primereturn_1(thediv, thefile , thekey_1 , theticket, thekey_2, theurl)
 xmlhttp.open('GET', thefile+'?'+thekey_1+'='+theticket+'&'+thekey_2+'='+theurl, true);
 xmlhttp.send();
 }
+function primereturn_2(thediv, thefile, thekey) {
+  	document.getElementById('spinner').style.display = "block";
+	document.getElementById(thediv).innerHTML = "";
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else { 
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }  
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+		myObj = JSON.parse(this.responseText);
+	    if (myObj.hasOwnProperty('IPv4')) {
+		    document.getElementById('spinner').style.display = "none";
+		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
+		    document.getElementById(thediv).innerHTML = xmlhttp.responseText;
+		    primereturn_1(thediv, 'prime.php' , 'primeData', myObj.IPv4,'primeAddress', myUrl);
+	    } else {
+		    document.getElementById(thediv).innerHTML = myObj.Failure;
+	    }
+        }
+    }
+xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
+xmlhttp.send();
+}
 </script>    
 </head>
 <body>
 
 <h2>PRIME REST Request</h2>
 <form id="search" name="search">
-MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeyup="findformat('adiv','functions.php','data');"> <br/>
+MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data')};">
  <!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
 <button id="myBtn" type="button">Open Modal</button>
-<input type="reset" name="reset">
+<input id="myRst" type="reset" name="reset">
 </form>
 <!-- This DIV returns the users input after proccessing it through the php file -->
 <div id="adiv"></div>
@@ -200,13 +245,16 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeyup=
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      <h2>PRIME GET Result</h2>
+      <h2><center>PRIME GET Result</center></h2>
     </div>
-    <div class="modal-body">
+    <div class="modal-body" align="center">
       <p>Result</p>
-        <div id="spinner" class="spinner"></div>
-	    <div id="adiv2" class="apicdata">
-    		</div>
+        <div id="spinner" align="center" class="spinner"></div>
+	    <div style="text-align: center;">
+		    <div id="adiv2" class="apicdata" style="display: inline-block; text-align: left">
+			    Content<br /> style="font-size:20px">
+		    </div>	    
+	    </div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
       <h3><center>END</center></h3>
@@ -222,14 +270,19 @@ var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
+// When presses resets a div
+var rst = document.getElementById("myRst");
 // When the user clicks the button, open the modal
-//var formvalue_1 = document.getElementById("uniqueID").value;
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
     document.getElementById("adiv2").innerHTML = encoded_1('adiv2','functions.php','data');
     //document.getElementById("adiv2").innerHTML = document.getElementById("uniqueID").value;
     //document.getElementById("adiv2").innerHTML = input_1;
     modal.style.display = "block";
+}
+// When the user clicks the button, reset adiv
+rst.onclick = function() {
+	document.getElementById('adiv').innerHTML = "";
 }
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
