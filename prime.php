@@ -52,10 +52,12 @@ if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
                echo "<b>" . $x . "</b>" ."  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>";
             }
          }
-         echo "</b>" . "</b>";
+         echo "<p>" . "</p>";
+         echo "<p>" . "</p>";
       } else {
          echo "Unable to locate record for : " . "<font color=\"red\">" . $data . "</font>";
-         echo "<b>" . "<b>";
+         echo "<p>" . "</p>";
+         echo "<p>" . "</p>";
       }
    }   
 }
