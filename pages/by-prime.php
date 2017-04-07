@@ -18,6 +18,7 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+/* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
