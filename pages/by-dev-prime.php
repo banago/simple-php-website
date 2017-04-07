@@ -263,7 +263,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
 	    <div style="text-align: center;">
 		    <div id="adiv2" class="apicdata" style="display: inline-block; text-align: left">
 			    Content<br /> style="font-size:20px">
-		    </div>	    
+		    </div><br>	    
 	    </div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
