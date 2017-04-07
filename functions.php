@@ -149,7 +149,7 @@ if (isset($_GET['hostName_1'])){
         function resolveHost_1($host){
 		$fpi = ".fpi.fpir.pvt";		// DNS suffix
 		$nwfcs = ".nfcs.fpir.pvt";	// DNS suffix
-		$fce = ".fce.fpir.pvt";		// DNS suffix
+		$fce = ".farmcrediteast.fpir.pvt";		// DNS suffix
 		$agc = ".agcountry.fpir.pvt";	// DNS suffix
 		$failure = $host . $fpi;	// if submitted name is returned assume failure
 		$message = "Unable to resolve: ";
