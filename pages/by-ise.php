@@ -1,7 +1,7 @@
 <p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>	
 <p><b>Whats New!</b></p>
 <ul>
-  <li>Working Rest button!</li>
+  <li>Working Rest button</li>
   <li>Syle and bug fixes</li>
 </ul>  	
 <style>
@@ -22,6 +22,7 @@
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -29,22 +30,34 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    -webkit-animation-name: fadeIn; /* Fade in the background */
-    -webkit-animation-duration: 0.4s;
-    animation-name: fadeIn;
-    animation-duration: 0.4s
 }
+
 /* Modal Content */
 .modal-content {
-    position: fixed;
-    bottom: 0;
+    position: relative;
     background-color: #fefefe;
-    width: 100%;
-    -webkit-animation-name: slideIn;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
-    animation-name: slideIn;
+    animation-name: animatetop;
     animation-duration: 0.4s
 }
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
 /* The Close Button */
 .close {
     color: white;
@@ -52,39 +65,26 @@
     font-size: 28px;
     font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
+
 .modal-header {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
 }
+
 .modal-body {padding: 2px 16px;}
+
 .modal-footer {
     padding: -1px 16px;
     background-color: #5cb85c;
     color: white;
-}
-/* Add Animation */
-@-webkit-keyframes slideIn {
-    from {bottom: -300px; opacity: 0} 
-    to {bottom: 0; opacity: 1}
-}
-@keyframes slideIn {
-    from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
-}
-@-webkit-keyframes fadeIn {
-    from {opacity: 0} 
-    to {opacity: 1}
-}
-@keyframes fadeIn {
-    from {opacity: 0} 
-    to {opacity: 1}
 }
 </style>
 <head>
@@ -98,7 +98,7 @@ function findformat(thediv, thefile, thekey) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
-            document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized;
+            document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
@@ -202,7 +202,7 @@ xmlhttp.send();
 <form id="search" name="search">
 MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data_2')};">
  <!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
-<button id="myBtn" type="button">Open Modal</button>
+<button id="myBtn" type="button">Submit</button>
 <input id="myRst" type="reset" name="reset">
 </form>
 <!-- This DIV returns the users input after proccessing it through the php file -->
