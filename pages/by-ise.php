@@ -1,5 +1,9 @@
-<p>This is the  <b>by dev ise</b> page. 
 <p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>	
+<p><b>Whats New!</b></p>
+<ul>
+  <li>Working best button</li>
+  <li>Syle and bug fixes</li>
+</ul>  	
 <style>
 .spinner {
     border: 4px solid #f3f3f3; /* Light grey */
@@ -18,7 +22,6 @@
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 0; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -26,29 +29,21 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
 }
 /* Modal Content */
 .modal-content {
-    position: relative;
+    position: fixed;
+    bottom: 0;
     background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 30%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
+    width: 100%;
+    -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
+    animation-name: slideIn;
     animation-duration: 0.4s
-}
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
 }
 /* The Close Button */
 .close {
@@ -70,9 +65,26 @@
 }
 .modal-body {padding: 2px 16px;}
 .modal-footer {
-    padding: 2px 16px;
+    padding: -1px 16px;
     background-color: #5cb85c;
     color: white;
+}
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
 }
 </style>
 <head>
@@ -86,7 +98,7 @@ function findformat(thediv, thefile, thekey) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
-            document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;
+            document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized;
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
@@ -188,10 +200,10 @@ xmlhttp.send();
 
 <h2>ISE REST Request</h2>
 <form id="search" name="search">
-MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeyup="findformat('adiv','functions.php','data_2');"> <br/>
+MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data_2')};">
  <!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
 <button id="myBtn" type="button">Open Modal</button>
-<input type="reset" name="reset">
+<input id="myRst" type="reset" name="reset">
 </form>
 <!-- This DIV returns the users input after proccessing it through the php file -->
 <div id="adiv"></div>
@@ -205,14 +217,17 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeyup=
       <span class="close">&times;</span>
       <h2>ISE GET Result</h2>
     </div>
-    <div class="modal-body">
+    <div class="modal-body" align="center">
       <p>Result</p>
-        <div id="spinner" class="spinner"></div>
-	    <div id="adiv2" class="apicdata">
-    		</div>
+        <div id="spinner" align="center" class="spinner"></div>
+	    <div style="text-align: center;">
+		    <div id="adiv2" class="apicdata" style="display: inline-block; text-align: left">
+			    Content<br /> style="font-size:20px">
+		    </div>
+	    </div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
-      <h3><center>END</center></h3>
+      <h3>END</h3>
     </div>
   </div>
 
@@ -225,6 +240,8 @@ var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
+// When presses resets a div
+var rst = document.getElementById("myRst");
 // When the user clicks the button, open the modal
 //var formvalue_1 = document.getElementById("uniqueID").value;
 btn.onclick = function() {
@@ -233,6 +250,10 @@ btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = document.getElementById("uniqueID").value;
     //document.getElementById("adiv2").innerHTML = input_1;
     modal.style.display = "block";
+}
+// When the user clicks the button, reset adiv
+rst.onclick = function() {
+	document.getElementById('adiv').innerHTML = "";
 }
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
