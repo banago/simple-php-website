@@ -260,7 +260,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
     <div class="modal-body">
       <p>Result</p>
         <div id="spinner" class="spinner"></div>
-	    <div id="adiv2" class="apicdata">
+	    <div id="adiv2" class="apicdata" align="center">
     		</div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
