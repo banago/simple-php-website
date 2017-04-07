@@ -2,7 +2,7 @@
 <p><b>Whats New!</b></p>
 <ul>
   <li>Search by HostName!</li>
-  <li>Working best button</li>
+  <li>Working Reset button</li>
   <li>Syle and bug fixes</li>
 </ul>  	
 <style>
