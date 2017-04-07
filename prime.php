@@ -49,7 +49,7 @@ if (isset($_GET['primeData']) & isset($_GET['primeAddress']))
             echo "Array Element: " . $i . "<br>";
             echo "<br>";
             foreach ($match as $x => $item) {
-               echo "<b>" . $x . "</b>" ."  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>";
+               echo "<b>" . $x . "</b>" . "  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>";
             }
          }
          echo "<p>" . "</p>";
