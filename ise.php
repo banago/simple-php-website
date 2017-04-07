@@ -52,7 +52,7 @@ if (isset($_GET['iseData']) & isset($_GET['iseAddress']))
 			"NAS IP :" => 'nas_ip_address',"NAS Name :"=>'network_device_name');	    	
 	    for ($i1 = 0; $i1 < 1; $i1++) {
 		foreach ($match as $x => $item) {
-				echo $x ."  " . $array[$item] . "<br>";
+				 echo "<b>" . $x . "</b>" . "  " . $array[$item] . "<br>";
 		}    
 	    }
     
