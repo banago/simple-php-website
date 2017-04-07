@@ -257,11 +257,14 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
       <span class="close">&times;</span>
       <h2><center>PRIME GET Result</center></h2>
     </div>
-    <div class="modal-body">
+    <div class="modal-body" align="center">
       <p>Result</p>
-        <div id="spinner" class="spinner"></div>
-	    <div id="adiv2" class="apicdata" align="center" style="font-size:20px">
-    		</div>
+        <div id="spinner" align="center" class="spinner"></div>
+	    <div style="text-align: center;">
+		    <div id="adiv2" class="apicdata" style="display: inline-block; text-align: left">
+			    Content<br /> style="font-size:20px">
+		    </div>	    
+	    </div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
       <h3><center>END</center></h3>
