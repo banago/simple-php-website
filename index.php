@@ -17,7 +17,7 @@
             font-size: 16px;
             color: white;
             text-align: center;
-            padding: 14px 16px;
+            padding: 10px 16px;
             text-decoration: none;
         }
         .dropdown {
