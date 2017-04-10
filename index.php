@@ -71,7 +71,7 @@
                 <a href="/?page=by-ise">ISE</a>
                 <a href="/?page=by-prime">PRIME</a>
                 <div class="dropdown">
-                    <button class="dropbtn" onclick="myFunction('11')">DEV</button>
+                    <button class="dropbtn" onclick="myFunction(1)">DEV</button>
                     <div class="dropdown-content" id="myDropdown_1">
                         <a href="/?page=by-dev-ise">Dev ISE</a>
                         <a href="/?page=by-dev-prime">Dev PRIME</a>
@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="dropbtn" onclick="myFunction('22')">UTIL</button>
+                    <button class="dropbtn" onclick="myFunction(2)">UTIL</button>
                     <div class="dropdown-content" id="myDropdown_2">
                         <a href="/?page=by-dev-ise">Dev ISE2</a>
                         <a href="/?page=by-dev-prime">Dev PRIME2</a>
@@ -101,9 +101,9 @@
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction(a) {
-    if (a == "1123") {
+    if (a == 1) {
         document.getElementById("myDropdown_1").classList.toggle("show");   
-    } else if (a == "123") {
+    } else if (a == 2) {
         document.getElementById("myDropdown_2").classList.toggle("show");
     }
     
