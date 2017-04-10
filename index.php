@@ -84,6 +84,12 @@
                         <a href="/?page=by-dev-ise">Dev ISE</a>
                         <a href="/?page=by-dev-prime">Dev PRIME</a>
                         <a href="/?page=by-dev-apic">Dev APIC</a>    
+                    </div>
+                    <button class="dropbtn" onclick="myFunction()">TOOLS</button>
+                    <div class="dropdown-content" id="myDropdown_2">
+                        <a href="/?page=by-dev-ise">Dev ISE</a>
+                        <a href="/?page=by-dev-prime">Dev PRIME</a>
+                        <a href="/?page=by-dev-apic">Dev APIC</a>    
                     </div>  
                 </div> 
             </div>
