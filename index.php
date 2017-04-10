@@ -101,9 +101,9 @@
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction(a) {
-    if (a = 1) {
+    if (a = "1123") {
         document.getElementById("myDropdown_1").classList.toggle("show");   
-    } else if (a = 2) {
+    } else if (a = "123") {
         document.getElementById("myDropdown_2").classList.toggle("show");
     }
     
