@@ -72,7 +72,7 @@
                 <a href="/?page=by-prime">PRIME</a>
                 <div class="dropdown">
                     <button class="dropbtn" onclick="myFunction()">DEV</button>
-                    <div class="dropdown-content" id="myDropdown">
+                    <div class="dropdown-content" id="myDropdown_1">
                         <a href="/?page=by-dev-ise">Dev ISE</a>
                         <a href="/?page=by-dev-prime">Dev PRIME</a>
                         <a href="/?page=by-dev-apic">Dev APIC</a>    
@@ -93,7 +93,7 @@
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById("myDropdown_1").classList.toggle("show");
 }
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(e) {
