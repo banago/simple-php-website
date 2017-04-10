@@ -79,17 +79,17 @@
                 <a href="/?page=by-ise">ISE</a>
                 <a href="/?page=by-prime">PRIME</a>
                 <div class="dropdown">
-                    <button class="dropbtn" onclick="myFunction(DEV)">DEV</button>
+                    <button class="dropbtn" onclick="myFunction(1)">DEV</button>
                     <div class="dropdown-content" id="myDropdown_1">
                         <a href="/?page=by-dev-ise">Dev ISE</a>
                         <a href="/?page=by-dev-prime">Dev PRIME</a>
                         <a href="/?page=by-dev-apic">Dev APIC</a>    
                     </div>
-                    <button class="dropbtn" onclick="myFunction(UTILS)">TOOLS</button>
+                    <button class="dropbtn" onclick="myFunction(2)">TOOLS</button>
                     <div class="dropdown-content" id="myDropdown_2">
-                        <a href="/?page=by-dev-ise">Dev ISE</a>
-                        <a href="/?page=by-dev-prime">Dev PRIME</a>
-                        <a href="/?page=by-dev-apic">Dev APIC</a>    
+                        <a href="/?page=by-dev-ise">Dev ISE2</a>
+                        <a href="/?page=by-dev-prime">Dev PRIME2</a>
+                        <a href="/?page=by-dev-apic">Dev APIC2</a>    
                     </div>  
                 </div> 
             </div>
@@ -107,9 +107,9 @@
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction(d1) {
-    if (d1 = "DEV") {
+    if (d1 = 1) {
         document.getElementById("myDropdown_1").classList.toggle("show");
-    }else if (d1 = "UTILS") {
+    }else if (d1 = 2) {
         document.getElementById("myDropdown_2").classList.toggle("show");
     }
     
