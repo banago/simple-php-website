@@ -102,9 +102,11 @@
 toggle between hiding and showing the dropdown content */
 function myFunction(d1) {
     if (d1 == 1) {
-        document.getElementById("myDropdown_1").classList.toggle("show");   
+        document.getElementById("myDropdown_1").classList.toggle("show");
+        document.getElementById("myDropdown_2").classList.remove('show');
     } else if (d1 == 2) {
         document.getElementById("myDropdown_2").classList.toggle("show");
+        document.getElementById("myDropdown_1").classList.remove('show');
     }
     
 }
