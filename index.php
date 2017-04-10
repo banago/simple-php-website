@@ -30,7 +30,7 @@
             border: none;
             outline: none;
             color: white;
-            padding: 14px 16px;
+            padding: 12px 16px;
             background-color: inherit;
         }
         .container a:hover, .dropdown:hover .dropbtn {
