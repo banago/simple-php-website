@@ -33,7 +33,7 @@
             border: none;
             outline: none;
             color: white;
-            padding: 12px 16px;
+            padding: 10px 16px;
             background-color: inherit;
         }
 
