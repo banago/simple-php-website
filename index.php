@@ -12,7 +12,6 @@
             background-color: #333;
             font-family: Arial;
         }
-
         .container a {
             float: left;
             font-size: 16px;
@@ -21,12 +20,10 @@
             padding: 14px 16px;
             text-decoration: none;
         }
-
         .dropdown {
             float: left;
             overflow: hidden;
         }
-
         .dropdown .dropbtn {
             cursor: pointer;
             font-size: 16px;    
@@ -36,11 +33,9 @@
             padding: 10px 16px;
             background-color: inherit;
         }
-
         .container a:hover, .dropdown:hover .dropbtn {
             background-color: red;
         }
-
         .dropdown-content {
             display: none;
             position: absolute;
@@ -49,7 +44,6 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
-
         .dropdown-content a {
             float: none;
             color: black;
@@ -58,11 +52,9 @@
             display: block;
             text-align: left;
         }
-
         .dropdown-content a:hover {
             background-color: #ddd;
         }
-
         .show {
             display: block;
         }
@@ -78,15 +70,14 @@
                 <a href="/" title="Home">HOME</a>
                 <a href="/?page=by-ise">ISE</a>
                 <a href="/?page=by-prime">PRIME</a>
-                <div class="dropdown_1">
-                    <button class="dropbtn" onclick="myFunction(1)">DEV</button>
-                    <div class="dropdown-content" id="myDropdown_1">
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="myFunction()">Dev</button>
+                    <div class="dropdown-content" id="myDropdown">
                         <a href="/?page=by-dev-ise">Dev ISE</a>
                         <a href="/?page=by-dev-prime">Dev PRIME</a>
                         <a href="/?page=by-dev-apic">Dev APIC</a>    
-                    </div>               
-                </div>
-                
+                    </div>  
+                </div> 
             </div>
         </nav>
     </header>    
@@ -101,24 +92,15 @@
 <script>
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function myFunction(d1) {
-    if (d1 = 1) {
-        document.getElementById("myDropdown_1").classList.toggle("show");
-    }else if (d1 = 2) {
-        document.getElementById("myDropdown_2").classList.toggle("show");
-    }
-    
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
 }
-
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(e) {
   if (!e.target.matches('.dropbtn')) {
-    var myDropdown_1 = document.getElementById("myDropdown_1");
-    var myDropdown_2 = document.getElementById("myDropdown_2");
-      if (myDropdown_1.classList.contains('show')) {
-        myDropdown_1.classList.remove('show');
-      }else if (myDropdown_2.classList.contains('show')) {
-          myDropdown_2.classList.remove('show');
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
       }
   }
 }
