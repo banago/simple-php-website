@@ -71,7 +71,7 @@
                 <a href="/?page=by-ise">ISE</a>
                 <a href="/?page=by-prime">PRIME</a>
                 <div class="dropdown">
-                    <button class="dropbtn" onclick="myFunction()">Dev</button>
+                    <button class="dropbtn" onclick="myFunction()">DEV</button>
                     <div class="dropdown-content" id="myDropdown">
                         <a href="/?page=by-dev-ise">Dev ISE</a>
                         <a href="/?page=by-dev-prime">Dev PRIME</a>
