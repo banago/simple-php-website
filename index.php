@@ -100,10 +100,10 @@
 <script>
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function myFunction(a) {
-    if (a == 1) {
+function myFunction(d1) {
+    if (d1 == 1) {
         document.getElementById("myDropdown_1").classList.toggle("show");   
-    } else if (a == 2) {
+    } else if (d1 == 2) {
         document.getElementById("myDropdown_2").classList.toggle("show");
     }
     
