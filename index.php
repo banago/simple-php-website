@@ -112,8 +112,11 @@ function myFunction(a) {
 window.onclick = function(e) {
   if (!e.target.matches('.dropbtn')) {
     var myDropdown_1 = document.getElementById("myDropdown_1");
+    var myDropdown_2 = document.getElementById("myDropdown_2");
       if (myDropdown_1.classList.contains('show')) {
-        myDropdown_1.classList.remove('show');
+          myDropdown_1.classList.remove('show');
+      } else if (myDropdown_2.classList.contains('show')) {
+          myDropdown_2.classList.remove('show');
       }
   }
 }
