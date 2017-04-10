@@ -33,7 +33,7 @@
             border: none;
             outline: none;
             color: white;
-            padding: 14px 16px;
+            padding: 1px 16px;
             background-color: inherit;
         }
 
@@ -75,11 +75,11 @@
         <h2><?php siteName(); ?></h2>
         <nav class="menu">
             <div class="container">
-                <a href="/" title="Home">Home</a>
+                <a href="/" title="Home">HOME</a>
                 <a href="/?page=by-ise">ISE</a>
                 <a href="/?page=by-prime">PRIME</a>
                 <div class="dropdown">
-                    <button class="dropbtn" onclick="myFunction()">Dropdown</button>
+                    <button class="dropbtn" onclick="myFunction()">Dev</button>
                     <div class="dropdown-content" id="myDropdown">
                         <a href="/?page=by-dev-ise">Dev ISE</a>
                         <a href="/?page=by-dev-prime">Dev PRIME</a>
