@@ -247,7 +247,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
       <h2><center>PRIME GET Result</center></h2>
     </div>
     <div class="modal-body" align="center">
-      <p>Result</p>
+      <p>LAST DETECTED ON</p>
         <div id="spinner" align="center" class="spinner"></div>
 	    <div style="text-align: center;">
 		    <div id="adiv2" class="apicdata" style="display: inline-block; text-align: left">
