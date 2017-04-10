@@ -78,19 +78,21 @@
                 <a href="/" title="Home">HOME</a>
                 <a href="/?page=by-ise">ISE</a>
                 <a href="/?page=by-prime">PRIME</a>
-                <div class="dropdown">
+                <div class="dropdown_1">
                     <button class="dropbtn" onclick="myFunction(1)">DEV</button>
                     <div class="dropdown-content" id="myDropdown_1">
                         <a href="/?page=by-dev-ise">Dev ISE</a>
                         <a href="/?page=by-dev-prime">Dev PRIME</a>
                         <a href="/?page=by-dev-apic">Dev APIC</a>    
-                    </div>
-                    <button class="dropbtn" onclick="myFunction(2)">TOOLS</button>
+                    </div>               
+                </div>
+                <div class="dropdown_2">
+                    <button class="dropbtn" onclick="myFunction(2)">DEV</button>
                     <div class="dropdown-content" id="myDropdown_2">
                         <a href="/?page=by-dev-ise">Dev ISE2</a>
                         <a href="/?page=by-dev-prime">Dev PRIME2</a>
                         <a href="/?page=by-dev-apic">Dev APIC2</a>    
-                    </div>  
+                    </div>               
                 </div> 
             </div>
         </nav>
