@@ -21,7 +21,8 @@ function myCurl($curlHeader, $curlPost, $curlData, $curlAddress) {
     if ($err) {
         echo "cURL Error #:" . $err;
     } else {
-        return $response;
+	    return $response;
+	    echo "CATS";
     } 
 }
 
@@ -30,7 +31,7 @@ if (isset($_GET['curlData']) & isset($_GET['curlAddress'])) {
     $curlPost = "";
     $curlData = $_GET['curlData'];
     $curlAddress = $_GET['curlAddress'];       
-    $reponse = $myCurl($curlAuth, $curlData, $curlAddress);
+    $reponse = myCurl($curlAuth, $curlData, $curlAddress);
     if ($array['http-code'] == 500) {
         echo print_r($array);
     } else { 
