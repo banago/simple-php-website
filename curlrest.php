@@ -7,7 +7,8 @@ function myCurl() {
     );
     $curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
     $curlData = "/ticket";
-    $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";   
+    $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
+	$curlCustom = "POST";
     $curl = curl_init();    
 	echo $curlAddress . $curlData . "\r\n"; //debug
     curl_setopt_array($curl, array(
@@ -19,7 +20,7 @@ function myCurl() {
         CURLOPT_MAXREDIRS => 10,
         CURLOPT_TIMEOUT => 300,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_CUSTOMREQUEST => $curlCustom,
         CURLOPT_POSTFIELDS => $curlPost,
         CURLOPT_HTTPHEADER => $curlHeader, //restAuth contains the auth Tokens. This also need to be update to return JSON instead of include
     ));
