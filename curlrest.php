@@ -22,10 +22,7 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
     if ($err) {
         echo "cURL Error #:" . $err;
     } else {
-		//print_r($response);	// debug
-	    echo "CATSf";
-	    return $response;
-	    
+	    return $response;    
     } 
 }
 
@@ -82,11 +79,7 @@ function apicTicket_1(){
 	$curlCustom = "POST";  
     $response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
     $json = json_decode($response, true);
-	//Debug
-	print_r($json);
-	echo $response;
-	//echo $curlPost;
-	//print_r($curlHeader);
+	print_r($json);	// debug
 }
 apicTicket_1();
 ?>
