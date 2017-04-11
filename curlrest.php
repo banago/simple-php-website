@@ -22,7 +22,7 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
     if ($err) {
         echo "cURL Error #:" . $err;
     } else {
-		//print_r($response);	// debug
+		print_r($response);	// debug
 	    return $response;
 	    echo "CATSf";
     } 
