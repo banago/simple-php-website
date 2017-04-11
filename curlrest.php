@@ -24,7 +24,7 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
     } else {
 		//print_r($response);	// debug
 	    echo "CATSf";
-	    return curl_exec($curl);
+	    return $response;
 	    
     } 
 }
@@ -80,7 +80,7 @@ function apicTicket_1(){
     $curlData = "/ticket";
     $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
 	$curlCustom = "POST";  
-    $reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
+    $response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
     $json = json_decode($response, true);
 	//Debug
 	print_r($json);
