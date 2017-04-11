@@ -1,6 +1,6 @@
 <?php
 include 'restAuth.php';    // tickets tokons and secure data
-function myCurl($curlAuth, $curlData, $curlAddress) {
+function myCurl($curlHeader, $curlPost, $curlData, $curlAddress) {
     $curl = curl_init();    // echo $addr . $data . "\r\n"; //debug
     curl_setopt_array($curl, array(
         CURLOPT_SSL_VERIFYPEER => false,    //disables ssl server cert verify check
@@ -12,7 +12,8 @@ function myCurl($curlAuth, $curlData, $curlAddress) {
         CURLOPT_TIMEOUT => 300,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "GET",
-        CURLOPT_HTTPHEADER => $curlAuth, //restAuth contains the auth Tokens. This also need to be update to return JSON instead of include
+        CURLOPT_POSTFIELDS => $curlPost,
+        CURLOPT_HTTPHEADER => $curlHeader, //restAuth contains the auth Tokens. This also need to be update to return JSON instead of include
     ));
     $response = curl_exec($curl);
     $err = curl_error($curl);
@@ -25,10 +26,11 @@ function myCurl($curlAuth, $curlData, $curlAddress) {
 }
 
 if (isset($_GET['curlData']) & isset($_GET['curlAddress'])) {
-    $curlAuth = $apicAuth;
+    $curlHeader = $apicAuth;
+    $curlPost = "";
     $curlData = $_GET['curlData'];
     $curlAddress = $_GET['curlAddress'];       
-    $reponse = $myCurl($curlAuth, $curlData, $curlAddress)
+    $reponse = $myCurl($curlAuth, $curlData, $curlAddress);
     if ($array['http-code'] == 500) {
         echo print_r($array);
     } else { 
@@ -65,5 +67,18 @@ if (isset($_GET['curlData']) & isset($_GET['curlAddress'])) {
     }   
 }
 //  Deconstruct to create a new ticket getting function......
-
+function apicTicket_1(){
+    $curlHeader = array(
+        "cache-control: no-cache",	
+        "content-type: application/json",		
+    );
+    $curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
+    $curlData = "";
+    $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket";  
+    $reponse = $myCurl($curlHeader, $curlPost, $curlData, $curlAddress); 
+    $json = json_decode($response, true);
+	//Debug
+	//print_r($json);
+	echo $response;
+}
 ?>
