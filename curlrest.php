@@ -81,6 +81,7 @@ function apicTicket_1(){
 	//Debug
 	print_r($json);
 	echo $response;
+	echo "cats cats";
 }
 apicTicket_1();
 ?>
