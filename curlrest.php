@@ -74,14 +74,14 @@ function apicTicket_1(){
         "content-type: application/json",		
     );
     $curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
-    $curlData = "";
-    $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket";  
+    $curlData = "/ticket";
+    $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";  
     $reponse = myCurl($curlHeader, $curlPost, $curlData, $curlAddress); 
     $json = json_decode($response, true);
 	//Debug
 	print_r($json);
 	echo $response;
-	echo "cats cats";
+	print_r($curlHeader);
 }
 apicTicket_1();
 ?>
