@@ -1,6 +1,13 @@
 <?php
 include 'restAuth.php';    // tickets tokons and secure data
-function myCurl($curlHeader, $curlPost, $curlData, $curlAddress) {
+function myCurl() {
+    $curlHeader = array(
+        "cache-control: no-cache",	
+        "content-type: application/json",		
+    );
+    $curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
+    $curlData = "/ticket";
+    $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";   
     $curl = curl_init();    // echo $addr . $data . "\r\n"; //debug
     curl_setopt_array($curl, array(
         CURLOPT_SSL_VERIFYPEER => false,    //disables ssl server cert verify check
@@ -25,7 +32,7 @@ function myCurl($curlHeader, $curlPost, $curlData, $curlAddress) {
 	    echo "CATS";
     } 
 }
-
+myCurl();
 if (isset($_GET['curlData']) & isset($_GET['curlAddress'])) {
     $curlHeader = $apicAuth;
     $curlPost = "";
