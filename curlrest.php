@@ -89,8 +89,8 @@ function apicTicket_1(){
 	//Debug
 	print_r($json);
 	echo $response;
-	echo $curlPost;
-	print_r($curlHeader);
+	//echo $curlPost;
+	//print_r($curlHeader);
 }
 apicTicket_1();
 ?>
