@@ -82,7 +82,7 @@ function apicTicket_1(){
     $reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
     $json = json_decode($response, true);
 	//Debug
-	print_r($json);
+	print_r($response);
 	echo $response;
 	//echo $curlPost;
 	//print_r($curlHeader);
