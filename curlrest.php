@@ -81,5 +81,5 @@ function apicTicket_1(){
 	//print_r($json);
 	echo $response;
 }
-$apicTicket_1();
+apicTicket_1();
 ?>
