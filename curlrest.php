@@ -76,18 +76,19 @@ if (isset($_GET['curlData']) & isset($_GET['curlAddress'])) {
 }
 //  Deconstruct to create a new ticket getting function......
 function apicTicket_1(){
-    $curlHeader = array(
-        "cache-control: no-cache",	
-        "content-type: application/json",		
-    );
-    $curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
-    $curlData = "/ticket";
-    $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";  
-    $reponse = myCurl($curlHeader, $curlPost, $curlData, $curlAddress); 
-    $json = json_decode($response, true);
+	$curlHeader = array(
+		"cache-control: no-cache",	
+		"content-type: application/json",		
+	);
+	$curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
+    	$curlData = "/ticket";
+    	$curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";  
+    	$reponse = myCurl($curlHeader, $curlPost, $curlData, $curlAddress); 
+    	$json = json_decode($response, true);
 	//Debug
 	print_r($json);
 	echo $response;
+	echo $curlPost;
 	print_r($curlHeader);
 }
 apicTicket_1();
