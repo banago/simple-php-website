@@ -92,5 +92,5 @@ function apicTicket_1(){
 	//echo $curlPost;
 	//print_r($curlHeader);
 }
-apicTicket_1();
+#apicTicket_1();
 ?>
