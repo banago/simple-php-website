@@ -30,6 +30,7 @@ function myCurl() {
     if ($err) {
         echo "cURL Error #:" . $err;
     } else {
+		print_r($response);
 	    return $response;
 	    echo "CATSf";
     } 
