@@ -104,4 +104,5 @@ class Rest {
 
 class Apic extends Rest {
 }
+$apic_one = new Apic():
 ?>
