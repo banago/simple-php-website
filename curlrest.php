@@ -1,14 +1,7 @@
 <?php
 include 'restAuth.php';    // tickets tokons and secure data
-function myCurl() {
-    $curlHeader = array(
-        "cache-control: no-cache",	
-        "content-type: application/json",		
-    );
-    $curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
-    $curlData = "/ticket";
-    $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
-	$curlCustom = "POST";
+function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
+    
     $curl = curl_init();    
 	echo $curlAddress . $curlData . "\r\n"; //debug
     curl_setopt_array($curl, array(
@@ -22,7 +15,7 @@ function myCurl() {
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => $curlCustom,
         CURLOPT_POSTFIELDS => $curlPost,
-        CURLOPT_HTTPHEADER => $curlHeader, //restAuth contains the auth Tokens. This also need to be update to return JSON instead of include
+        CURLOPT_HTTPHEADER => $curlHTTP, //restAuth contains the auth Tokens. This also need to be update to return JSON instead of include
     ));
     $response = curl_exec($curl);
     $err = curl_error($curl);
@@ -35,7 +28,7 @@ function myCurl() {
 	    echo "CATSf";
     } 
 }
-myCurl();
+
 if (isset($_GET['curlData']) & isset($_GET['curlAddress'])) {
     $curlHeader = $apicAuth;
     $curlPost = "";
@@ -79,20 +72,21 @@ if (isset($_GET['curlData']) & isset($_GET['curlAddress'])) {
 }
 //  Deconstruct to create a new ticket getting function......
 function apicTicket_1(){
-	$curlHeader = array(
-		"cache-control: no-cache",	
-		"content-type: application/json",		
-	);
-	$curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
-    	$curlData = "/ticket";
-    	$curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";  
-    	$reponse = myCurl($curlHeader, $curlPost, $curlData, $curlAddress); 
-    	$json = json_decode($response, true);
+	$curlHTTP = array(
+        "cache-control: no-cache",	
+        "content-type: application/json",		
+    );
+    $curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
+    $curlData = "/ticket";
+    $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
+	$curlCustom = "POST";  
+    $reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
+    $json = json_decode($response, true);
 	//Debug
 	print_r($json);
 	echo $response;
 	//echo $curlPost;
 	//print_r($curlHeader);
 }
-#apicTicket_1();
+apicTicket_1();
 ?>
