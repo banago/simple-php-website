@@ -79,7 +79,9 @@ class Rest {
       }    
     }    
   }
-  function __get(){
+  function __get($name){
+	  echo "Asked for " . $name . "<br/>";
+	  return $this->$name;
   }
   function __set($name,$value) {
     switch($name) {
