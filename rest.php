@@ -5,6 +5,7 @@ class Rest {
   protected $auth;
   protected $url;
   protected $data;
+ 
   
   function getFormat(){
   }
@@ -20,8 +21,32 @@ class Rest {
       CURLOPT_CUSTOMREQUEST => "GET",
       CURLOPT_POSTFIELDS => "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}",
       CURLOPT_HTTPHEADER => array(
-        
-    
+        "cache-control: no-cache",
+        "content-type: application/json",
+        "x-auth-token: " . $ticket
+      ),
+    ));
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+    curl_close($curl);
+    if ($err) {
+      echo "cURL Error #:" . $err;
+    } else {
+      $json = json_decode($response, true);
+      $match = array("Serial Number :"=>'serialNumber',"Family :"=>'family',"Type :"=>'type',
+                     "Inventory :"=>'inventoryStatusDetail',"MAC :"=>'macAddress',
+                     "Role :"=>'role',"MgmT :"=>'managementIpAddress',
+                     "Platform :"=>'platformId',"Reachablity :"=>'reachabilityStatus',
+                     "HostName :"=>'hostname');
+      for ($i = 0; $i < count($json['response']); $i++) {
+        echo "<br>";
+        echo "Array Element: " . $i . "<br>";
+        echo "<br>";
+        foreach ($match as $x => $item) {
+          echo $x ."  " . $json['response'][$i][$item] . "<br>";
+        }
+      }    
+    }    
   }
   function __get(){
   }
