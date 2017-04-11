@@ -9,6 +9,37 @@ class Rest {
   
   function getFormat(){
   }
+  function getApicTicket(){
+    function apicTicket_1(){
+		$curl = curl_init();
+		curl_setopt_array($curl, array(
+			CURLOPT_URL => "https://devnetapi.cisco.com/sandbox/apic_em/api/v1/ticket",
+  		CURLOPT_RETURNTRANSFER => true,
+  		CURLOPT_ENCODING => "",
+  		CURLOPT_MAXREDIRS => 10,
+  		CURLOPT_TIMEOUT => 30,
+  		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  		CURLOPT_CUSTOMREQUEST => "POST",
+  		CURLOPT_POSTFIELDS => "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}",
+  		CURLOPT_HTTPHEADER => array(
+			"cache-control: no-cache",
+    	"content-type: application/json",
+			),
+		));
+		$response = curl_exec($curl);
+		$err = curl_error($curl);
+		curl_close($curl);
+		if ($err) {
+			echo "cURL Error #:" . $err;
+			} else {
+			//echo $response;
+			$json = json_decode($response, true);
+			//Debug
+			//print_r($json);
+			return $response;
+		}
+	}
+  }
   function __construct(){
     $curl = curl_init();
     curl_setopt_array($curl, array(
@@ -23,7 +54,7 @@ class Rest {
       CURLOPT_HTTPHEADER => array(
         "cache-control: no-cache",
         "content-type: application/json",
-        "x-auth-token: " . $ticket
+        "x-auth-token: " . getApicTicket()
       ),
     ));
     $response = curl_exec($curl);
@@ -51,13 +82,6 @@ class Rest {
   function __get(){
   }
   function __set($name,$value) {
-    
-    
-    
-    
-    
-    
-    
     switch($name) {
       case "atuh": 
         $this->auth = $value;
