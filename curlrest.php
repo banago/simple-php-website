@@ -8,7 +8,8 @@ function myCurl() {
     $curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
     $curlData = "/ticket";
     $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";   
-    $curl = curl_init();    // echo $addr . $data . "\r\n"; //debug
+    $curl = curl_init();    
+	echo $curlAddress . $curlData . "\r\n"; //debug
     curl_setopt_array($curl, array(
         CURLOPT_SSL_VERIFYPEER => false,    //disables ssl server cert verify check
         CURLOPT_SSL_VERIFYHOST => false,    //disables ssk host cert verify check
