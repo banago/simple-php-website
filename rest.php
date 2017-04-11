@@ -42,6 +42,7 @@ class Rest {
   }
   function __construct(){
     $curl = curl_init();
+	  $ticket = getApicTicket();
     curl_setopt_array($curl, array(
       CURLOPT_URL => "https://devnetapi.cisco.com/sandbox/apic_em/api/v1/network-device",
       CURLOPT_RETURNTRANSFER => true,
@@ -54,7 +55,7 @@ class Rest {
       CURLOPT_HTTPHEADER => array(
         "cache-control: no-cache",
         "content-type: application/json",
-        "x-auth-token: " . getApicTicket()
+        "x-auth-token: " . $ticket
       ),
     ));
     $response = curl_exec($curl);
