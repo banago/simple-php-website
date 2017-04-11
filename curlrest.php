@@ -30,7 +30,7 @@ function myCurl() {
         echo "cURL Error #:" . $err;
     } else {
 	    return $response;
-	    echo "CATS";
+	    echo "CATSf";
     } 
 }
 myCurl();
