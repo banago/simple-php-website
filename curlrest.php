@@ -24,7 +24,7 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
     } else {
 		//print_r($response);	// debug
 	    echo "CATSf";
-	    return $response;
+	    echo $response;
 	    
     } 
 }
