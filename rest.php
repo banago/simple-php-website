@@ -42,7 +42,7 @@ class Rest {
   }
   function __construct(){
     $curl = curl_init();
-	  $ticket = getApicTicket();
+	  $ticket = $getApicTicket();
     curl_setopt_array($curl, array(
       CURLOPT_URL => "https://devnetapi.cisco.com/sandbox/apic_em/api/v1/network-device",
       CURLOPT_RETURNTRANSFER => true,
