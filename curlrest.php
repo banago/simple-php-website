@@ -68,22 +68,24 @@ if (isset($_GET['$curlAddress']) & isset($_GET['$curlData'])
 	}   
 }
 //  Deconstruct to create a new ticket getting function......
-function apicTicket_1(){
-	$curlHTTP = array(
-        "cache-control: no-cache",	
-        "content-type: application/json",		
-    );
-    $curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
-    $curlData = "/ticket";
-    $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
-    $curlCustom = "POST";  
-    $response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
-    $json = json_decode($response, true);
+if (isset($_GET['$apicTicket_1']) {
+	function apicTicket_1(){
+		$curlHTTP = array(
+        		"cache-control: no-cache",	
+        		"content-type: application/json");
+    	$curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
+    	$curlData = "/ticket";
+    	$curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
+    	$curlCustom = "POST";  
+    	$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
+    	$json = json_decode($response, true);
 	//print_r($json);	// debug
 	$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
 		     'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
 	echo json_encode($arr);		// return JSON
+	}
+	apicTicket_1();
 }
-apicTicket_1();
+
 ?>
 
