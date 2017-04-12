@@ -1,5 +1,5 @@
 <?php
-include 'restAuth.php';    // tickets tokons and secure data
+//include 'restAuth.php';    // tickets tokons and secure data
 function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
     	$curl = curl_init();    
 	//echo $curlAddress . $curlData . "\r\n"; // debug
@@ -92,7 +92,7 @@ if (isset($_GET['primeTicket_1'])) {
                 $arr = array('serviceTicket' => $auth);	// create array for JSON
                 echo json_encode($arr);		// return JSON
         }
-	primeTicket_1();
+	this.primeTicket_1();
 }
 ?>
 
