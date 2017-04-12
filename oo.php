@@ -15,7 +15,7 @@ class demo {
 
   function __construct( ($param) {
 
-    echo "Constructor called with parameter ".$parm."<br />"; 
+    echo "Constructor called with parameter ".$param."<br />"; 
 
   }
 }
