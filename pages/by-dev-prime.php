@@ -18,6 +18,7 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+/* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -39,7 +40,7 @@
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 40%;
+    width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -82,7 +83,7 @@
 .modal-body {padding: 2px 16px;}
 
 .modal-footer {
-    padding: -1px 16px;
+    padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
 }
