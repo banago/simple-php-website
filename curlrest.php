@@ -31,41 +31,41 @@ if (isset($_GET['$curlAddress']) & isset($_GET['$curlData'])
 	& isset($_GET['$curlHTTP'])) {
 	$curlAddress = $_GET['$curlAddress'];
 	$curlData = $_GET['$curlData'];
-    $curlHTTP = array($_GET['$curlCustom']);
+    	$curlHTTP = array($_GET['$curlCustom']);
 	$curlCustom = $_GET['$curlPost'];
-    $curlPost = $_GET['$curlHTTP']; 
-    $reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
-    if ($array['http-code'] == 500) {
-        echo print_r($array);
-    } else { 
-        $json = json_decode($response, true);
-        //print_r($json);  // debug
-        //echo $response;  // debug
-        //echo $json['vlanId']['associationTime']; // debug
-        $match = array("NAS Interface :"=>'clientInterface',"NAS Connection Type :"=>'connectionType',    
-                       "NAS IP :"=>'deviceIpAddress',"NAS Name :"=>'deviceName',                    
-                       "EndPoint Type :"=>'deviceType',"EndPoint IP :"=>'ipAddress',                      
-                       "EndPoint MAC :"=>'macAddress',"EndPoint NAC :"=>'securityPolicyStatus',
-                       "EndPoint OUI :"=>'vendor',"EndPoint VLAN:"=>'vlan');
-        //echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";   // debug
-        //echo print_r($json) . "\r\n";    // debug
-        if (isset($json['queryResponse']['entity'])) { 
-            for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
-                //Debug
-                //echo "How many response: " . count($json['response']) . "<br>";
-                echo "<br>";
-                echo "Array Element: " . $i . "<br>";  
-                echo "<br>";    
-                foreach ($match as $x => $item) {
-                    echo "<b>" . $x . "</b>" . "  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>";    
-                } 
-            }   
-            echo "<p>" . "</p>" . "<p>" . "</p>"; 
-        } else {
-            echo "Unable to locate record for : " . "<font color=\"red\">" . $data . "</font>";
-            echo "<p>" . "</p>" . "<p>" . "</p>"; ; 
-        }
-    }   
+    	$curlPost = $_GET['$curlHTTP']; 
+    	$reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
+    	if ($array['http-code'] == 500) {
+        	echo print_r($array);
+    	} else { 
+        	$json = json_decode($response, true);
+        	//print_r($json);  // debug
+        	//echo $response;  // debug
+        	//echo $json['vlanId']['associationTime']; // debug
+        	$match = array("NAS Interface :"=>'clientInterface',"NAS Connection Type :"=>'connectionType',    
+			       "NAS IP :"=>'deviceIpAddress',"NAS Name :"=>'deviceName',                    
+                       		"EndPoint Type :"=>'deviceType',"EndPoint IP :"=>'ipAddress',                      
+                       		"EndPoint MAC :"=>'macAddress',"EndPoint NAC :"=>'securityPolicyStatus',
+                       		"EndPoint OUI :"=>'vendor',"EndPoint VLAN:"=>'vlan');
+        	//echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";   // debug
+        	//echo print_r($json) . "\r\n";    // debug
+        	if (isset($json['queryResponse']['entity'])) { 
+            		for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
+                		//Debug
+                		//echo "How many response: " . count($json['response']) . "<br>";
+                		echo "<br>";
+                		echo "Array Element: " . $i . "<br>";  
+                		echo "<br>";    
+                	foreach ($match as $x => $item) {
+                    		echo "<b>" . $x . "</b>" . "  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>";    
+                	} 
+            	}   
+            	echo "<p>" . "</p>" . "<p>" . "</p>"; 
+        	} else {
+            		echo "Unable to locate record for : " . "<font color=\"red\">" . $data . "</font>";
+            		echo "<p>" . "</p>" . "<p>" . "</p>"; ; 
+        	}
+	}   
 }
 //  Deconstruct to create a new ticket getting function......
 function apicTicket_1(){
