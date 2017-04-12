@@ -122,7 +122,7 @@ function encoded_1(thediv, thefile, thekey) {
 	    } else if (myObj.Type == "IP") {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
-		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
+		    //document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    primereturn_3(thediv, 'curl.php' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , '' , 'curlPost' , 'GET');
 	    }  else if (myObj.Type == "HostName") {
 		    document.getElementById('spinner').style.display = "none";
@@ -236,6 +236,7 @@ function primereturn_3(thediv, thefile , thekey_1 , theval_1, thekey_2, theval_2
 		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
         }
     }
+    document.getElementById(thediv).innerHTML = thefile+'?'+thekey_1+'='+theval_1+'&'+thekey_2+'='+theval_2+'&'+thekey_3+'='+theval_3+'&'+thekey_4+'='+theval_4;
 xmlhttp.open('GET', thefile+'?'+thekey_1+'='+theval_1+'&'+thekey_2+'='+theval_2+'&'+thekey_3+'='+theval_3+'&'+thekey_4+'='+theval_4, true);
 xmlhttp.send();
 }
