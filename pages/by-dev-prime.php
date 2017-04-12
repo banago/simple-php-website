@@ -259,7 +259,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
 	    </div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
-      <h3><center>-</center></h3>
+      <h3><center>_____-_____</center></h3>
     </div>
   </div>
 
