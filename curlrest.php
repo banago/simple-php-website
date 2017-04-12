@@ -93,9 +93,7 @@ if (isset($_GET['primeTicket_1'])) {
                 	return json_encode($arr);		// return JSON
         	}	
 	$json = json_decode(primeTicket_1());
-	print_r($json);
-	echo 
-	
+	print_r($json); 
 }
 ?>
 
