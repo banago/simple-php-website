@@ -26,14 +26,14 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
     } 
 }
 
-if (isset($_GET['$curlAddress']) & isset($_GET['$curlData'])
-	& isset($_GET['$curlCustom']) & isset($_GET['$curlPost'])
-	& isset($_GET['$curlHTTP'])) {
-	$curlAddress = $_GET['$curlAddress'];
-	$curlData = $_GET['$curlData'];
-    	$curlHTTP = array($_GET['$curlCustom']);
-	$curlCustom = $_GET['$curlPost'];
-    	$curlPost = $_GET['$curlHTTP']; 
+if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
+	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])
+	& isset($_GET['curlHTTP'])) {
+	$curlAddress = $_GET['curlAddress'];
+	$curlData = $_GET['curlData'];
+    	$curlHTTP = array($_GET['curlCustom']);
+	$curlCustom = $_GET['curlPost'];
+    	$curlPost = $_GET['curlHTTP']; 
     	$reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
     	if ($array['http-code'] == 500) {
         	echo print_r($array);
