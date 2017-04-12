@@ -52,6 +52,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
         	if (isset($json['queryResponse']['entity'])) { 
             		for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
                 		//Debug
+				echo "test test test test";
                 		//echo "How many response: " . count($json['response']) . "<br>";
                 		echo "<br>";
                 		echo "Array Element: " . $i . "<br>";  
