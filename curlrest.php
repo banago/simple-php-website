@@ -50,7 +50,7 @@ if (isset($_GET['curlData']) & isset($_GET['curlAddress'])) {
             for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
                 //Debug
                 //echo "How many response: " . count($json['response']) . "<br>";
-                echo "<br>";
+                echo "<b r>";
                 echo "Array Element: " . $i . "<br>";  
                 echo "<br>";    
                 foreach ($match as $x => $item) {
