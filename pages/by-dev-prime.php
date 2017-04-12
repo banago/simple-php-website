@@ -276,8 +276,8 @@ var span = document.getElementsByClassName("close")[0];
 var rst = document.getElementById("myRst");
 // When the user clicks the button, open the modal
 btn.onclick = function() {
-	modal.style.display = "block";
     document.getElementById("adiv2").innerHTML = encoded_1('adiv2','functions.php','data');
+    modal.style.display = "block";
     
 }
 // When the user clicks the button, reset adiv
@@ -293,5 +293,6 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+	modal.style.display = "none";
 }
 </script>
