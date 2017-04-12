@@ -91,8 +91,11 @@ if (isset($_GET['primeTicket_1'])) {
 			$cache_1 ="cache-control: no-cache"; 	// populate with needed information
                 	$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
                 	echo json_encode($arr);		// return JSON
-        	}
-		primeTicket_1();
+        	}	
+	primeTicket_1();
+	$test = primeTicket_1();
+	echo $test['serviceTicket'];
+	
 }
 ?>
 
