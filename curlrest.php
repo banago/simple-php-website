@@ -92,7 +92,7 @@ if (isset($_GET['primeTicket_1'])) {
                 	$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
                 	return json_encode($arr);		// return JSON
         	}	
-	$json = json_decode(primeTicket_1());
+	$json = json_decode(primeTicket_1(), true);
 	print_r($json);
 	echo "adfasfa   " . $json['serviceTicket']['serviceCache'];
 }
