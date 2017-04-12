@@ -125,11 +125,8 @@ function encoded_1(thediv, thefile, thekey) {
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    primereturn_1(thediv, 'curlrest.php' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    }  else if (myObj.Type == "HostName") {
-		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
-		    var resolve = encodeURIComponent(hostnameresolver_1(thediv,'functions.php','hostName_1'));
-		    document.getElementById(thediv).innerHTML = "cccccc123123";
 		    //primereturn_1(thediv, 'curlrest.php' , 'curlAddress', myUrl , 'curlData' , resolve , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    } else {
 		    // catch all else error messages
@@ -214,12 +211,11 @@ function hostnameresolver_1(thediv, thefile, thekey) {
         if (this.readyState == 4 && this.status == 200) {
 		myObj = JSON.parse(this.responseText);
 	    if (myObj.hasOwnProperty('IPv4')) {
-		    //document.getElementById('spinner').style.display = "none";
-		    //myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
-		    //document.getElementById(thediv).innerHTML = xmlhttp.responseText;
+		    document.getElementById('spinner').style.display = "none";
+		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
+		    document.getElementById(thediv).innerHTML = xmlhttp.responseText;
 		    //primereturn_1(thediv, 'prime.php' , 'primeData', myObj.IPv4,'primeAddress', myUrl);
-		    document.getElementById(thediv).innerHTML = myObj.IPv4;
-		    return myObj.IPv4;
+		    primereturn_1(thediv, 'curlrest.php' , 'curlAddress', myUrl , 'curlData' , resolve , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    } else {
 		    document.getElementById(thediv).innerHTML = myObj.Failure;
 	    }
