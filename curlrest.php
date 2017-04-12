@@ -53,20 +53,17 @@ if (isset($_GET['$curlAddress']) & isset($_GET['$curlData'])
             for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
                 //Debug
                 //echo "How many response: " . count($json['response']) . "<br>";
-                echo "<b r>";
+                echo "<br>";
                 echo "Array Element: " . $i . "<br>";  
                 echo "<br>";    
                 foreach ($match as $x => $item) {
                     echo "<b>" . $x . "</b>" . "  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>";    
                 } 
-        
             }   
-            echo "<p>" . "</p>";
-            echo "<p>" . "</p>";
+            echo "<p>" . "</p>" . "<p>" . "</p>"; 
         } else {
             echo "Unable to locate record for : " . "<font color=\"red\">" . $data . "</font>";
-            echo "<p>" . "</p>"; 
-            echo "<p>" . "</p>";
+            echo "<p>" . "</p>" . "<p>" . "</p>"; ; 
         }
     }   
 }
