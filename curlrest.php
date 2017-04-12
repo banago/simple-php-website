@@ -19,12 +19,12 @@ function primeTicket_2(){
                 return json_encode($arr);		// return JSON
         }	
 function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
-    	$curl = curl_init();    
-	echo "curlAddress  " . $curlAddress . "<br>";
-	echo "curlData  " .  $curlData . "<br>";
-	echo "curlCustom  " .   print_r($curlCustom) . "<br>";
-	echo "curlPost  " .   $curlPost . "<br>";
-	echo "curlHTTP  " .   print_r($curlHTTP) . "<br>";
+    	echo "curlAddress myCurl  ::" . $curlAddress . "<br>";
+	echo "curlData myCurl  ::" .  $curlData . "<br>";
+	echo "curlCustom myCurl  ::" .   print_r($curlCustom) . "<br>";
+	echo "curlPost myCurl  ::" .   $curlPost . "<br>";
+	echo "curlHTTP myCurl  ::" .   print_r($curlHTTP) . "<br>";
+	$curl = curl_init();    
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
         	CURLOPT_SSL_VERIFYHOST => false,    // disables ssk host cert verify check
@@ -56,11 +56,11 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	$curlPost = $_GET['curlPost'];
     	$curlHTTP = json_decode(primeTicket_2(), true);
 	$curlHTTP = array($curlHTTP['serviceTicket']);
-	echo $curlAddress . "<br>";
-	echo $curlData . "<br>";
-	echo print_r($curlCustom) . "<br>";
-	echo $curlPost . "<br>";
-	echo print_r($curlHTTP) . "<br>";
+    	echo "curlAddress myPrime  ::" . $curlAddress . "<br>";
+	echo "curlData myPrime  ::" .  $curlData . "<br>";
+	echo "curlCustom myPrime  ::" .   print_r($curlCustom) . "<br>";
+	echo "curlPost myPrime  ::" .   $curlPost . "<br>";
+	echo "curlHTTP myPrime  ::" .   print_r($curlHTTP) . "<br>";
     	$reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP[0]);
     	if ($array['http-code'] == 500) {
         	echo print_r($array);
