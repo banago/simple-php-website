@@ -63,7 +63,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	echo "curlCustom myPrime  ::" .  $curlCustom . "<br>";
 	echo "curlPost myPrime  ::" .   $curlPost . "<br>";
 	echo "curlHTTP myPrime  ::" .   $curlHTTP . "<br>";
-    	$reponse = myCurl($curlAddress, $curlData, $curlCustom[0], $curlPost, $curlHTTP);
+    	$reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
     	if ($array['http-code'] == 500) {
         	echo print_r($array);
     	} else { 
