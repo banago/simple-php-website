@@ -55,7 +55,7 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
 if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$curlAddress = $_GET['curlAddress'];
-	$curlData = $_GET['curlData'];
+	$curlData = ."(" .$_GET['curlData'] . ")";
 	$curlCustom =$_GET['curlCustom'];
 	$curlPost = $_GET['curlPost'];
     	$curlHTTP = json_decode(primeTicket_2(), true);
