@@ -35,7 +35,7 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
         	CURLOPT_MAXREDIRS => 10,
         	CURLOPT_TIMEOUT => 300,
         	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        	
+        	CURLOPT_CUSTOMREQUEST => "",
         	CURLOPT_POSTFIELDS => $curlPost,
         	CURLOPT_HTTPHEADER => array($curlHTTP), // restAuth contains the auth Tokens. This also need to be update to return JSON instead of include
     	));
@@ -47,6 +47,7 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
     } else {
 	    $json = json_decode($response, true);
 	    echo print_r($json);
+	    echo "RESPONSE   " .  $response;
 	    return $response;    
     } 
 }
