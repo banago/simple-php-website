@@ -127,7 +127,7 @@ function encoded_1(thediv, thefile, thekey) {
 	    }  else if (myObj.Type == "HostName") {
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
-		    //primereturn_1(thediv, 'curlrest.php' , 'curlAddress', myUrl , 'curlData' , resolve , 'curlCustom' , 'GET' , 'curlPost' , '');
+		    hostnameresolver_1(thediv,'functions.php','hostName_1');
 	    } else {
 		    // catch all else error messages
 		    var supported_1 = " MAC ";
