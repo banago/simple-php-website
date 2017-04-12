@@ -1,7 +1,4 @@
 <?php
-//include 'restAuth.php';    // tickets tokons and secure data
-
-
 function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
     	//echo "curlAddress myCurl  ::" . $curlAddress . "<br>";	// debug
 	//echo "curlData myCurl  ::" .  $curlData . "<br>";	// debug
@@ -64,9 +61,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
         	//echo print_r($json) . "\r\n";    // debug
         	if (isset($json['queryResponse']['entity'])) { 
             		for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
-                		//Debug
-				echo "test test test test";
-                		//echo "How many response: " . count($json['response']) . "<br>";
+                		//echo "How many response: " . count($json['response']) . "<br>";	// debug
                 		echo "<br>";
                 		echo "Array Element: " . $i . "<br>";  
                 		echo "<br>";    
