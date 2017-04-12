@@ -44,8 +44,8 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
     if ($err) {
         echo "cURL Error #:" . $err;
     } else {
-	    echo print_r($response);
-	    echo "asdfas ";
+	    $json = json_decode($response, true);
+	    echo print_r($json);
 	    return $response;    
     } 
 }
