@@ -123,7 +123,7 @@ function encoded_1(thediv, thefile, thekey) {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
 		    //document.getElementById(thediv).innerHTML = ""; 	//clears the div
-		    primereturn_3(thediv, 'curlrest.php' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , '' , 'curlPost' , 'GET');
+		    primereturn_3(thediv, 'curlrest.php' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    }  else if (myObj.Type == "HostName") {
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
