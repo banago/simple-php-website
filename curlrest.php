@@ -45,6 +45,7 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
         echo "cURL Error #:" . $err;
     } else {
 	    echo print_r($response);
+	    echo "asdfas ";
 	    return $response;    
     } 
 }
