@@ -27,13 +27,12 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
 }
 
 if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
-	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])
-	& isset($_GET['curlHTTP'])) {
+	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$curlAddress = $_GET['curlAddress'];
 	$curlData = $_GET['curlData'];
-    	$curlHTTP = array($_GET['curlCustom']);
-	$curlCustom = $_GET['curlPost'];
-    	$curlPost = $_GET['curlHTTP']; 
+	$curlCustom = array($_GET['curlCustom'];
+	$curlPost = $_GET['curlPost'];
+    	$curlHTTP = primeTicket_1();
     	$reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
     	if ($array['http-code'] == 500) {
         	echo print_r($array);
@@ -92,7 +91,7 @@ if (isset($_GET['primeTicket_1'])) {
                 $arr = array('serviceTicket' => $auth);	// create array for JSON
                 echo json_encode($arr);		// return JSON
         }
-	this.primeTicket_1();
+	primeTicket_1();
 }
 ?>
 
