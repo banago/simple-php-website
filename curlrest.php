@@ -33,6 +33,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	$curlCustom = array($_GET['curlCustom']);
 	$curlPost = $_GET['curlPost'];
     	$curlHTTP = primeTicket_1();
+	$curlHTTP = array($curlHTTP['serviceTicket'],$curlHTTP['serviceCache']);
     	$reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
     	if ($array['http-code'] == 500) {
         	echo print_r($array);
@@ -90,11 +91,12 @@ if (isset($_GET['primeTicket_1'])) {
                 	$auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
 			$cache_1 ="cache-control: no-cache"; 	// populate with needed information
                 	$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
-                	return json_encode($arr);		// return JSON
+                	return json_encode($arr, true);		// return JSON
         	}	
 	$json = json_decode(primeTicket_1(), true);
 	print_r($json);
-	echo "adfasfa   " . $json['serviceTicket']."more bladakdsf" . $json['serviceCache'];
+	//echo "adfasfa   " . $json['serviceTicket']."more bladakdsf" . $json['serviceCache'];
+	return $json;
 }
 ?>
 
