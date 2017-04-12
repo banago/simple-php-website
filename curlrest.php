@@ -1,21 +1,21 @@
 <?php
 include 'restAuth.php';    // tickets tokons and secure data
 function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
-    $curl = curl_init();    
+    	$curl = curl_init();    
 	//echo $curlAddress . $curlData . "\r\n"; // debug
-    curl_setopt_array($curl, array(
-        CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
-        CURLOPT_SSL_VERIFYHOST => false,    // disables ssk host cert verify check
-        CURLOPT_URL => $curlAddress . $curlData,
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => "",
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 300,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => $curlCustom,
-        CURLOPT_POSTFIELDS => $curlPost,
-        CURLOPT_HTTPHEADER => $curlHTTP, // restAuth contains the auth Tokens. This also need to be update to return JSON instead of include
-    ));
+	curl_setopt_array($curl, array(
+		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
+        	CURLOPT_SSL_VERIFYHOST => false,    // disables ssk host cert verify check
+        	CURLOPT_URL => $curlAddress . $curlData,
+        	CURLOPT_RETURNTRANSFER => true,
+        	CURLOPT_ENCODING => "",
+        	CURLOPT_MAXREDIRS => 10,
+        	CURLOPT_TIMEOUT => 300,
+        	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        	CURLOPT_CUSTOMREQUEST => $curlCustom,
+        	CURLOPT_POSTFIELDS => $curlPost,
+        	CURLOPT_HTTPHEADER => $curlHTTP, // restAuth contains the auth Tokens. This also need to be update to return JSON instead of include
+    	));
     $response = curl_exec($curl);
     $err = curl_error($curl);
     curl_close($curl);
@@ -76,10 +76,10 @@ function apicTicket_1(){
     $curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
     $curlData = "/ticket";
     $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
-	$curlCustom = "POST";  
+    $curlCustom = "POST";  
     $response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
     $json = json_decode($response, true);
-	//print_r($json);	// debug
+	print_r($json);	// debug
 	$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
 		     'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['response']['version']);	// create array for JSON
 	echo json_encode($arr);		// return JSON
