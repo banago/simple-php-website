@@ -215,7 +215,7 @@ function hostnameresolver_1(thediv, thefile, thekey) {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById(thediv).innerHTML = xmlhttp.responseText;
 		    //primereturn_1(thediv, 'prime.php' , 'primeData', myObj.IPv4,'primeAddress', myUrl);
-		    primereturn_1(thediv, 'curlrest.php' , 'curlAddress', myUrl , 'curlData' , resolve , 'curlCustom' , 'GET' , 'curlPost' , '');
+		    primereturn_1(thediv, 'curlrest.php' , 'curlAddress', myUrl , 'curlData' , myObj.IPv4 , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    } else {
 		    document.getElementById(thediv).innerHTML = myObj.Failure;
 	    }
