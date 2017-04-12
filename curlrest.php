@@ -53,7 +53,11 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
     	$curlHTTP = json_decode(primeTicket_2(), true);
 	$curlHTTP = array($curlHTTP['serviceTicket'],$curlHTTP['serviceCache']);
     	$reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
-	echo "test test test test";
+	echo $curlAddress . "<br>";
+	echo $curlData . "<br>";
+	echo $curlCustom . "<br>";
+	echo $curlPost . "<br>";
+	echo $curlHTTP . "<br>";
     	if ($array['http-code'] == 500) {
         	echo print_r($array);
     	} else { 
