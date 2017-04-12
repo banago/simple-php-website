@@ -20,8 +20,11 @@ function primeTicket_2(){
         }	
 function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
     	$curl = curl_init();    
-	echo $curlAddress . $curlData . $curlCustom . $curlPost . "<br>"; // debug
-	echo print_r($curlHTTP) . "<br>";
+	echo "curlAddress  " . $curlAddress . "<br>";
+	echo "curlData  " .  $curlData . "<br>";
+	echo "curlCustom  " .   print_r($curlCustom) . "<br>";
+	echo "curlPost  " .   $curlPost . "<br>";
+	echo "curlHTTP  " .   print_r($curlHTTP) . "<br>";
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
         	CURLOPT_SSL_VERIFYHOST => false,    // disables ssk host cert verify check
@@ -55,7 +58,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	$curlHTTP = array($curlHTTP['serviceTicket']);
 	echo $curlAddress . "<br>";
 	echo $curlData . "<br>";
-	echo $curlCustom . "<br>";
+	echo print_r($curlCustom) . "<br>";
 	echo $curlPost . "<br>";
 	echo print_r($curlHTTP) . "<br>";
     	$reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP[0]);
