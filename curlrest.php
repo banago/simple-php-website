@@ -34,7 +34,7 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
         	CURLOPT_MAXREDIRS => 10,
         	CURLOPT_TIMEOUT => 300,
         	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        	CURLOPT_CUSTOMREQUEST => $curlCustom,
+        	CURLOPT_CUSTOMREQUEST => array($curlCustom),
         	CURLOPT_POSTFIELDS => $curlPost,
         	CURLOPT_HTTPHEADER => array($curlHTTP), // restAuth contains the auth Tokens. This also need to be update to return JSON instead of include
     	));
