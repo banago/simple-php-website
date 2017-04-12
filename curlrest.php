@@ -94,7 +94,7 @@ if (isset($_GET['primeTicket_1'])) {
         	}	
 	primeTicket_1();
 	$test = primeTicket_1();
-	echo "TESTTEST     " . $test['serviceTicket'];
+	print_r($test);
 	
 }
 ?>
