@@ -24,6 +24,7 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
 	echo "curlCustom myCurl  ::" .  $curlCustom . "<br>";
 	echo "curlPost myCurl  ::" .   $curlPost . "<br>";
 	echo "curlHTTP myCurl  ::" .   $curlHTTP . "<br>";
+	echo "FULLLcurlAddress myCurl  ::" .   $curlAddress . $curlData . "<br>";
 	$curl = curl_init();    
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
