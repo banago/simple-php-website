@@ -50,7 +50,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	$curlData = $_GET['curlData'];
 	$curlCustom = array($_GET['curlCustom']);
 	$curlPost = $_GET['curlPost'];
-    	$curlHTTP = json_decode(primeTicket_2(), true);
+    	//$curlHTTP = json_decode(primeTicket_2(), true);
 	//$curlHTTP = array($curlHTTP['serviceTicket'],$curlHTTP['serviceCache']);
 	echo $curlAddress . "<br>";
 	echo $curlData . "<br>";
