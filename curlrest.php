@@ -29,7 +29,7 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
     if ($err) {
         echo "cURL Error #:" . $err;
     } else {
-	    echo "RESPONSE   " .  $response;
+	    //echo "RESPONSE   " .  $response;	// debug
 	    return $response;    
     } 
 }
