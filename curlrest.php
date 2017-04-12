@@ -55,12 +55,12 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	$curlCustom = array($_GET['curlCustom']);
 	$curlPost = $_GET['curlPost'];
     	$curlHTTP = json_decode(primeTicket_2(), true);
-	$curlHTTP = array($curlHTTP['serviceTicket']);
+	$curlHTTP = $curlHTTP['serviceTicket'];
     	echo "curlAddress myPrime  ::" . $curlAddress . "<br>";
 	echo "curlData myPrime  ::" .  $curlData . "<br>";
 	echo "curlCustom myPrime  ::" .   print_r($curlCustom[0]) . "<br>";
 	echo "curlPost myPrime  ::" .   $curlPost . "<br>";
-	echo "curlHTTP myPrime  ::" .   print_r($curlHTTP) . "<br>";
+	echo "curlHTTP myPrime  ::" .   $curlHTTP . "<br>";
     	$reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP[0]);
     	if ($array['http-code'] == 500) {
         	echo print_r($array);
