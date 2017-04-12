@@ -31,7 +31,7 @@ if (isset($_GET['$curlAddress']) & isset($_GET['$curlData'])
 	& isset($_GET['$curlHTTP'])) {
 	$curlAddress = $_GET['$curlAddress'];
 	$curlData = $_GET['$curlData'];
-    $curlHTTP = array($_GET['$curlCustom']));
+    $curlHTTP = array($_GET['$curlCustom']);
 	$curlCustom = $_GET['$curlPost'];
     $curlPost = $_GET['$curlHTTP']; 
     $reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
