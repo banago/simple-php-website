@@ -20,7 +20,7 @@ function primeTicket_2(){
         }	
 function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
     	$curl = curl_init();    
-	echo $curlAddress . $curlData . $curlCustom . $curlPost  "<br>"; // debug
+	echo $curlAddress . $curlData . $curlCustom . $curlPost . "<br>"; // debug
 	echo print_r($curlHTTP) . "<br>";
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
