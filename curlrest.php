@@ -12,19 +12,14 @@ if (isset($_GET['primeTicket_1'])) {
 	//echo "adfasfa   " . $json['serviceTicket']."more bladakdsf" . $json['serviceCache'];
 	return $json;
 }
-function primeTicket_2(){
-                $auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
-		$cache_1 ="cache-control: no-cache"; 	// populate with needed information
-                $arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
-                return json_encode($arr);		// return JSON
-        }	
+
 function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
-    	echo "curlAddress myCurl  ::" . $curlAddress . "<br>";
-	echo "curlData myCurl  ::" .  $curlData . "<br>";
-	echo "curlCustom myCurl  ::" .  $curlCustom . "<br>";
-	echo "curlPost myCurl  ::" .   $curlPost . "<br>";
-	echo "curlHTTP myCurl  ::" .   $curlHTTP . "<br>";
-	echo "FULLLcurlAddress myCurl  ::" .   $curlAddress . $curlData . "<br>";
+    	//echo "curlAddress myCurl  ::" . $curlAddress . "<br>";	// debug
+	//echo "curlData myCurl  ::" .  $curlData . "<br>";	// debug
+	//echo "curlCustom myCurl  ::" .  $curlCustom . "<br>";	// debug
+	//echo "curlPost myCurl  ::" .   $curlPost . "<br>";	// debug
+	//echo "curlHTTP myCurl  ::" .   $curlHTTP . "<br>";	// debug
+	//echo "FULLLcurlAddress myCurl  ::" .   $curlAddress . $curlData . "<br>"; // debug
 	$curl = curl_init();    
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
@@ -56,7 +51,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	$curlData = "(" . $_GET['curlData'] . ")";
 	$curlCustom =$_GET['curlCustom'];
 	$curlPost = $_GET['curlPost'];
-    	$curlHTTP = json_decode(primeTicket_2(), true);
+    	$curlHTTP = json_decode(primeTicket_1(), true);
 	$curlHTTP = $curlHTTP['serviceTicket'];
     	echo "curlAddress myPrime  ::" . $curlAddress . "<br>";
 	echo "curlData myPrime  ::" .  $curlData . "<br>";
@@ -116,6 +111,11 @@ if (isset($_GET['apicTicket_1'])) {
 	}
 	apicTicket_1();
 }
-
+function primeTicket_1(){
+                $auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
+		$cache_1 ="cache-control: no-cache"; 	// populate with needed information
+                $arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
+                return json_encode($arr);		// return JSON
+        }	
 ?>
 
