@@ -1,9 +1,9 @@
 <p>Cisco Prime Infrastructure provides complete lifecycle management of converged wired and wireless networks.</p>
 <p><b>Whats New!</b></p>
 <ul>
+  <li>PHP backend refactored for code reusability</li>
   <li>Search by HostName!</li>
-  <li>Working Reset button</li>
-  <li>Syle and bug fixes</li>
+  <li>Style and bug fixes</li>
 </ul>  	
 <style>
 .spinner {
