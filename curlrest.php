@@ -94,7 +94,7 @@ if (isset($_GET['primeTicket_1'])) {
         	}	
 	$json = json_decode(primeTicket_1(), true);
 	print_r($json);
-	echo "adfasfa   " . $json['serviceTicket']['serviceCache'];
+	echo "adfasfa   " . $json['serviceTicket']."more bladakdsf" . $json['serviceCache'];
 }
 ?>
 
