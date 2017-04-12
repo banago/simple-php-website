@@ -79,9 +79,9 @@ function apicTicket_1(){
     $curlCustom = "POST";  
     $response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
     $json = json_decode($response, true);
-	print_r($json);	// debug
+	//print_r($json);	// debug
 	$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
-		     'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['response']['version']);	// create array for JSON
+		     'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
 	echo json_encode($arr);		// return JSON
 }
 apicTicket_1();
