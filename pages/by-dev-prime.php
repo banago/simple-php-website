@@ -129,8 +129,8 @@ function encoded_1(thediv, thefile, thekey) {
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    var resolve = encodeURIComponent(hostnameresolver_1(thediv,'functions.php','hostName_1'));
-		    document.getElementById(thediv).innerHTML = "cccccc"+resolve;
-		    primereturn_1(thediv, 'curlrest.php' , 'curlAddress', myUrl , 'curlData' , resolve , 'curlCustom' , 'GET' , 'curlPost' , '');
+		    document.getElementById(thediv).innerHTML = "cccccc123123";
+		    //primereturn_1(thediv, 'curlrest.php' , 'curlAddress', myUrl , 'curlData' , resolve , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    } else {
 		    // catch all else error messages
 		    var supported_1 = " MAC ";
