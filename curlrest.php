@@ -68,7 +68,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	}   
 }
 //  Deconstruct to create a new ticket getting function......
-if (isset($_GET['$apicTicket_1'])) {
+if (isset($_GET['apicTicket_1'])) {
 	function apicTicket_1(){
 		$curlHTTP = array(
         		"cache-control: no-cache",	
