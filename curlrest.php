@@ -86,6 +86,13 @@ if (isset($_GET['$apicTicket_1'])) {
 	}
 	apicTicket_1();
 }
-
+if (isset($_GET['primeTicket_1'])) {
+	        function primeTicket_1(){
+                $auth ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
+                $arr = array('serviceTicket' => $auth);	// create array for JSON
+                echo json_encode($arr);		// return JSON
+        }
+	primeTicket_1();
+}
 ?>
 
