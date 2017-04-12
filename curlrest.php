@@ -80,6 +80,8 @@ function apicTicket_1(){
     $response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
     $json = json_decode($response, true);
 	print_r($json);	// debug
+	$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 'sessionTimeout' => $json['response']['sessionTimeout']);	// create array for JSON
+	echo json_encode($arr);		// return JSON
 }
 apicTicket_1();
 ?>
