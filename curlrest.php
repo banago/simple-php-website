@@ -58,7 +58,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	$curlHTTP = array($curlHTTP['serviceTicket']);
     	echo "curlAddress myPrime  ::" . $curlAddress . "<br>";
 	echo "curlData myPrime  ::" .  $curlData . "<br>";
-	echo "curlCustom myPrime  ::" .   print_r($curlCustom) . "<br>";
+	echo "curlCustom myPrime  ::" .   print_r($curlCustom[0]) . "<br>";
 	echo "curlPost myPrime  ::" .   $curlPost . "<br>";
 	echo "curlHTTP myPrime  ::" .   print_r($curlHTTP) . "<br>";
     	$reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP[0]);
