@@ -30,7 +30,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$curlAddress = $_GET['curlAddress'];
 	$curlData = $_GET['curlData'];
-	$curlCustom = array($_GET['curlCustom'];
+	$curlCustom = array($_GET['curlCustom']);
 	$curlPost = $_GET['curlPost'];
     	$curlHTTP = primeTicket_1();
     	$reponse = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
