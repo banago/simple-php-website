@@ -44,6 +44,7 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
     if ($err) {
         echo "cURL Error #:" . $err;
     } else {
+	    echo print_r($response);
 	    return $response;    
     } 
 }
