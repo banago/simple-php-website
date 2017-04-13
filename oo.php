@@ -1,5 +1,5 @@
 <?php
-class demo {
+class curlauth {
 
   private $attribute1;
 
@@ -18,7 +18,16 @@ class demo {
     echo "Constructor called with parameter ".$param."<br />"; 
 
   }
+  function __get($name){
+    return $this->$name;
+  }
+  function __set($name,$value){
+    return $this->$name = $value;
+  }
 }
-$a = new demo("Blak");  
-$b = new demo("kalB"); 
+$a = new curlauth("Blak");  
+$b = new curlauth("kalB"); 
+$a->attribute = 5;
+echo $a->attribute;
+
 ?>         
