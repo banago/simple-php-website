@@ -32,6 +32,7 @@ class curlauth {
     //echo "Constructor called with parameter ".$param."<br />";
     //$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
 	  $this->apicTicket_1();
+	  return apicTicket_1();
 
   }
   function __get($name){
@@ -127,7 +128,7 @@ class curlauth {
 	}
 }
 $a = new curlauth("Blak");
-echo "TEST  " . $a;
+echo "TEST  " . $a->apicTicket_1();
 //$b = new curlauth("kalB"); 
 //$a->attribute = 5;
 //$b->attribute = 15;
