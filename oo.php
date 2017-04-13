@@ -132,7 +132,7 @@ class curlauth {
 	}
 }
 $a = new curlauth("Blak");
-//echo $a->ticket;
+echo "attemping to print  " . print_r($a->ticket);
 //echo json_decode($a->ticket,yes);
 //$b = new curlauth("kalB"); 
 //$a->attribute = 5;
