@@ -78,7 +78,7 @@ class curlauth {
     } 
   }
   function primeCurl_1() {
-	  //$response = $this->myCurl();
+	  $response = $this->myCurl();
     if ($array['http-code'] == 500) {
         echo print_r($array);
     } else {
