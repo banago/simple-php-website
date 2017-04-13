@@ -127,7 +127,7 @@ class curlauth {
 								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
 		//echo json_encode($arr);		// return JSON
 		//$ticket = json_encode($arr);
-		$ticket = "Changed";
+		$this->$ticket = "Changed";
 		print_r($ticket);
 	}
 }
