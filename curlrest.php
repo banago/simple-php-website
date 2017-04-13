@@ -67,7 +67,9 @@ function myTime($format,$offset) {
 	$nextWeek = time() + (99 * 0 * 20* 100) . "<br />";
 	echo date("H:i:s", strtotime('-'.$offset.' minutes')) . "<br />"; 
 	$notepad = "https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/AuthList/2017-04-10 18:35:00/null";
-	$this->time = "holder";
+	$date = date($format.':i:s');
+	$time = date("H:i:s", strtotime('-'.$offset.' minutes'));
+	$this->time = $date." ".$time;
 }
 function apicCurl_1() {
    $response = $this->myCurl();
@@ -211,6 +213,7 @@ function iseCurl_1() {
 }
 
 $a = new curlauth("111");
+echo $a->time;
 //$b = new curlauth("primeTicket_1");
 //$ticket = json_decode($a->ticket, true);
 //print_r($a->ticket);
