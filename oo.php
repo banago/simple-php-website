@@ -165,7 +165,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	$c->curlData = "(" . $_GET['curlData'] . ")";
 	$c->curlCustom =$_GET['curlCustom'];
 	$c->curlPost = $_GET['curlPost'];
-	//$c->primeCurl_1();
+	$c->primeCurl_1();
 	
 }
 
