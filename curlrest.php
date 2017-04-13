@@ -189,7 +189,9 @@ function iseCurl_1() {
 		$this->ticket = json_encode($arr);
 		$this->ticket = json_decode($this->ticket, true);
 		print_r($this->ticket);
-		//$this->curlHTTP = $this->ticket['serviceTicket']
+		$combined = "x-auth-token: ".$this->ticket['serviceTicket'];
+		echo "THIS IS THE KEY      " . 	$combined;
+		$this->curlHTTP = array($combined)
 		//print_r($this->ticket);	// debug
 		//$this->ticket = json_decode($this->ticket,true);	// debug
 		//print_r($this->ticket);	// debug
