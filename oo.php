@@ -34,7 +34,7 @@ class curlauth {
     //echo "Constructor called with parameter ".$param."<br />";
     //$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
 	  $this->apicTicket_1();
-	  return $this->apicTicket_1();
+	  //return $this->apicTicket_1();
 
   }
   function __get($name){
