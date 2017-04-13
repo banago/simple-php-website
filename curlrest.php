@@ -59,9 +59,34 @@ class curlauth {
 	    return $response;    
     } 
   }
-	function iseCurl_1() {
-	  $response = $this->myCurl();
-		//echo $response;	// debug
+function apicCurl_1() {
+   $response = $this->myCurl();
+    if ($array['http-code'] == 500) {
+        echo print_r($array);
+    } else {
+	// echo print_r($array);	// debug
+	#echo $array['user_name'] . "<br>";	// debug
+	$match = array("Serial Number :"=>'serialNumber',"Family :"=>'family',"Type :"=>'type',
+			       "Inventory :"=>'inventoryStatusDetail',"MAC :"=>'macAddress',
+			       "Role :"=>'role',"MgmT :"=>'managementIpAddress',
+			       "Platform :"=>'platformId',"Reachablity :"=>'reachabilityStatus',
+			       "HostName :"=>'hostname');	    	
+	for ($i1 = 0; $i1 < 1; $i1++) {
+	for ($i = 0; $i < count($json['response']); $i++) {
+		//Debug
+		//echo "How many response: " . count($json['response']) . "<br>";
+		echo "<br>";
+		echo "Array Element: " . $i . "<br>";
+		echo "<br>";
+		foreach ($match as $x => $item) {
+			echo $x ."  " . $json['response'][$i][$item] . "<br>";		
+		}		
+	}
+    }  
+}
+function iseCurl_1() {
+   $response = $this->myCurl();
+    //echo $response;	// debug
     $xml = new SimpleXMLElement($response);
     //echo $xml->asXML();	// debug
     $dom = new DOMDocument('1.0');
@@ -180,19 +205,22 @@ if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']
 	echo $_GET['Type'] . "<br />";	// debug
 	$a->curlAddress = $_GET['curlAddress'];
 	//echo $_GET['curlAddress'] . "<br />";	// debug
-	if ($_GET['Type'] == "primeTicket_1") {
-		$a->curlData = "(" . $_GET['curlData'] . ")";
-	} elseif ($_GET['Type'] == "iseTicket_1") {
-		$a->curlData = $_GET['curlData'];
-	} elseif ($_GET['Type'] == "iseTicket_1") {
-		$a->curlData = $_GET['curlData'];
-	}
 	//echo $_GET['curlData'] . "<br />";	// debug
 	$a->curlCustom =$_GET['curlCustom'];
 	//echo $_GET['curlCustom'] . "<br />";	// debug
 	$a->curlPost = $_GET['curlPost'];
 	//echo $_GET['curlPost'] . "<br />";	// debug
-	$a->primeCurl_1();
+	
+	if ($_GET['Type'] == "primeTicket_1") {
+		$a->curlData = "(" . $_GET['curlData'] . ")";
+		$a->primeCurl_1();
+	} elseif ($_GET['Type'] == "iseTicket_1") {
+		$a->curlData = $_GET['curlData'];
+		$a->iseCurl_1();
+	} elseif ($_GET['Type'] == "apicTicket_1") {
+		$a->curlData = $_GET['curlData'];
+		$a->apicCurl_1();
+	}
 	
 }
 
