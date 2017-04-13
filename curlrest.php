@@ -65,7 +65,7 @@ function myTime($format,$offset) {
 	echo date('Y-m-d') . "<br />";
 	echo date($format.':i:s') . "<br />";
 	$nextWeek = time() + (99 * 0 * 20* 100) . "<br />";
-	echo date("H:i:s", strtotime('-'.$offset." minutes')) . "<br />"; 
+	echo date("H:i:s", strtotime('-'.$offset.' minutes')) . "<br />"; 
 	$notepad = "https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/AuthList/2017-04-10 18:35:00/null";
 	$this->time = "holder";
 }
