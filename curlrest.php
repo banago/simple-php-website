@@ -62,14 +62,13 @@ class curlauth {
     } 
   }
 function myTime($format,$offset) {
-	echo date('Y-m-d') . "<br />";
-	echo date($format.':i:s') . "<br />";
-	$nextWeek = time() + (99 * 0 * 20* 100) . "<br />";
-	echo date("H:i:s", strtotime('-'.$offset.' minutes')) . "<br />"; 
-	$notepad = "https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/AuthList/2017-04-10 18:35:00/null";
-	$date = date('Y-m-d');
-	$time = date("H:i:s", strtotime('-'.$offset.' minutes'));
-	$this->time = $date." ".$time;
+	echo date('Y-m-d') . "<br />";	// debug data output
+	echo date($format.':i:s') . "<br />";	// debug time output
+	echo date("H:i:s", strtotime('-'.$offset.' minutes')) . "<br />"; 	// debug time ofset
+	$notepad = "https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/AuthList/2017-04-10 18:35:00/null";	// just a note to self
+	$date = date('Y-m-d');	// creates current data
+	$time = date("H:i:s", strtotime('-'.$offset.' minutes'));	// creates current time - offset time
+	$this->time = $date." ".$time;	// populates attribute with correctl formated time
 }
 function apicCurl_1() {
    $response = $this->myCurl();
