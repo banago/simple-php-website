@@ -47,12 +47,12 @@ class curlauth {
     return $this->$name = $value;
   }
   function myCurl() {
-    	//echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
-	//echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
-	//echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
-	//echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
-	//echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
-	//echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $curlData . "<br>"; // debug
+    	echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
+	echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
+	echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
+	echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
+	echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
+	echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $curlData . "<br>"; // debug
 	$curl = curl_init();    
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
@@ -77,7 +77,8 @@ class curlauth {
 	    return $response;    
     } 
   }
-  function primeCurl_1($response) {
+  function primeCurl_1() {
+	  //$response = $this->myCurl();
     if ($array['http-code'] == 500) {
         echo print_r($array);
     } else {
@@ -164,6 +165,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	$c->curlData = "(" . $_GET['curlData'] . ")";
 	$c->curlCustom =$_GET['curlCustom'];
 	$c->curlPost = $_GET['curlPost'];
+	$c->primeCurl_1();
 	
 }
 
