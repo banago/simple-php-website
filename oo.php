@@ -126,16 +126,18 @@ class curlauth {
 		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
 								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
 		//echo json_encode($arr);		// return JSON
-// 		/print_r($this->ticket);		// debug
+				// debug
 		$this->ticket = json_encode($arr);
-		echo "from Class     "  . json_decode($this->ticket,true);
+		print_r($this->ticket);
+		$this->ticket = json_decode($this->ticket,true);
+		echo "from Class     "  . $this->ticket;
 		
 	}
 }
 $a = new curlauth("Blak");
-echo "attemping to print  " . print_r($a->ticket);
-echo "decoding   " .  json_decode($a->ticket,true);
-echo "decoding somemore   " .  json_decode($a->ticket['response']['serviceTicket'],true);
+//echo "attemping to print  " . print_r($a->ticket);
+//echo "decoding   " .  json_decode($a->ticket,true);
+//echo "decoding somemore   " .  json_decode($a->ticket['response']['serviceTicket'],true);
 //echo json_decode($a->ticket,yes);
 //$b = new curlauth("kalB"); 
 //$a->attribute = 5;
