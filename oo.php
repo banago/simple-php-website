@@ -130,7 +130,7 @@ class curlauth {
 		$this->ticket = json_encode($arr);
 		print_r($this->ticket);
 		$this->ticket = json_decode($this->ticket,true);
-		echo "from Class     "  . $this->ticket;
+		print_r($this->ticket);
 		
 	}
 }
