@@ -111,7 +111,7 @@ function encoded_1(thediv, thefile, thekey) {
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
-		    apicreturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , ''/v1 , 'curlCustom' , 'GET' , 'curlPost' , '');
+		    apicreturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , '/v1' , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    } else if (myObj.Type == "IP") {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
