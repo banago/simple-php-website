@@ -129,7 +129,8 @@ $b = new curlauth("kalB");
 $a->attribute = 5;
 $b->attribute = 15;
 echo $a->attribute;
-echo $a->attribute;
+echo $b->attribute;
+$a->primeTicket_1();
 $a->$curlAddress = "this is a big test";
 echo $a->$curlAddress;
 if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
@@ -139,7 +140,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	$c->curlData = "(" . $_GET['curlData'] . ")";
 	$c->curlCustom =$_GET['curlCustom'];
 	$c->curlPost = $_GET['curlPost'];
-  $c->curlHTTP = json_decode(primeTicket_1(), true);
+  	$c->curlHTTP = json_decode(primeTicket_1(), true);
 	$c->curlHTTP = $curlHTTP['serviceTicket'];
 }
 
