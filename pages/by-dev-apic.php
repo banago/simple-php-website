@@ -19,7 +19,7 @@
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 0; /* Location of the box */
+    padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -71,7 +71,7 @@
 }
 .modal-body {padding: 2px 16px;}
 .modal-footer {
-    padding: 2px 16px;
+    padding: -1px 16px;
     background-color: #5cb85c;
     color: white;
 }
@@ -189,7 +189,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+document.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
