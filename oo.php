@@ -128,13 +128,15 @@ class curlauth {
 		//echo json_encode($arr);		// return JSON
 				// debug
 		$this->ticket = json_encode($arr);
-		print_r($this->ticket);
-		$this->ticket = json_decode($this->ticket,true);
-		print_r($this->ticket);
+		//print_r($this->ticket);	// debug
+		//$this->ticket = json_decode($this->ticket,true);	// debug
+		//print_r($this->ticket);	// debug
 		
 	}
 }
 $a = new curlauth("Blak");
+$ticket = json_decode($a->ticket, true);
+print_r($ticket);
 //echo "attemping to print  " . print_r($a->ticket);
 //echo "decoding   " .  json_decode($a->ticket,true);
 //echo "decoding somemore   " .  json_decode($a->ticket['response']['serviceTicket'],true);
