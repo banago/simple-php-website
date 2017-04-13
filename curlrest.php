@@ -59,6 +59,38 @@ class curlauth {
 	    return $response;    
     } 
   }
+	function iseCurl_1() {
+	  $response = $this->myCurl();
+		//echo $response;	// debug
+    $xml = new SimpleXMLElement($response);
+    //echo $xml->asXML();
+   	$dom = new DOMDocument('1.0');
+    $dom->preserveWhiteSpace = false;
+    $dom->formatOutput = true;
+    $dom->loadXML($xml->asXML());
+    //echo $dom->saveXML();
+    $json = json_encode($xml);
+    $array = json_decode($json,TRUE);
+    //echo print_r($array);
+    if ($array['http-code'] == 500) {
+        echo print_r($array);
+    } else {
+			// echo print_r($array);	// debug
+	    #echo $array['user_name'] . "<br>";	// debug
+      $match = array("EndPoint Auth Status :" => 'passed',"EndPoint User :" => 'user_name',
+			"EndPoint Authentication Status :"=>'passed',"EndPoint Auth Server :"=>'acs_server',
+                        "EndPoint Auth Method :"=>'authentication_method',"EndPoint Auth Protocol :"=>'authentication_protocol',
+                        "EndPoint Idendity Group :"=>'identity_group',"EndPoint IP :"=>'framed_ip_address',
+                        "EndPoint Location :"=>'location',"EndPoint Type :"=>'device_type',
+			"EndPoint Auth(Z) :"=>'selected_azn_profiles',"EndPoint SGT :"=>'cts_security_group',     
+			"NAS IP :" => 'nas_ip_address',"NAS Name :"=>'network_device_name');	    	
+	    for ($i1 = 0; $i1 < 1; $i1++) {
+				foreach ($match as $x => $item) {
+				 echo "<b>" . $x . "</b>" . "  " . $array[$item] . "<br>";
+				}    
+	    }
+    }  
+  }
   function primeCurl_1() {
 	  $response = $this->myCurl();
     if ($array['http-code'] == 500) {
