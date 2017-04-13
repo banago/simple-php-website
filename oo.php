@@ -130,7 +130,7 @@ $a->attribute = 5;
 $b->attribute = 15;
 echo $a->attribute;
 echo $b->attribute;
-$a->primeTicket_1();
+echo $a->primeTicket_1();
 $a->$curlAddress = "this is a big test";
 echo $a->$curlAddress;
 if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
