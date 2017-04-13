@@ -183,7 +183,9 @@ if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']
 	if ($_GET['Type'] == "primeTicket_1") {
 		$a->curlData = "(" . $_GET['curlData'] . ")";
 	} elseif ($_GET['Type'] == "iseTicket_1") {
-		$a->curlData = $_GET['curlData'] ;
+		$a->curlData = $_GET['curlData'];
+	} elseif ($_GET['Type'] == "iseTicket_1") {
+		$a->curlData = $_GET['curlData'];
 	}
 	//echo $_GET['curlData'] . "<br />";	// debug
 	$a->curlCustom =$_GET['curlCustom'];
