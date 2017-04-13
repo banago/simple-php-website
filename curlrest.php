@@ -14,6 +14,8 @@ class curlauth {
 		  $this->apicTicket_1();
 	  } elseif ($function == "primeTicket_1") {
 		  $this->primeTicket_1();
+	  } elseif ($function == "oseTicket_1") {
+		  $this->iseTicket_1();
 	  }
 	  //echo "Constructor called with parameter ".$param."<br />";
 	  //$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
@@ -22,10 +24,10 @@ class curlauth {
   }
   function __get($name){
     return $this->$name;
-  }
+  }	// used to get properties
   function __set($name,$value){
     return $this->$name = $value;
-  }
+  }	// used to set properties
   function myCurl() {
     	//echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
 	//echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
@@ -90,6 +92,17 @@ class curlauth {
       }  
     }  
   }
+	function iseTicket_1(){
+   		$auth_1 ="B3_3@5y"; 	// populate with a ticket
+		$cache_1 ="cache-control: no-cache"; 	// populate with needed information
+    		$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
+    		//return json_encode($arr);		// return JSON
+		$arr = json_encode($arr);	// encode as JSON
+		$arr = json_decode($arr,true);	// decode as jSON
+		$this->curlHTTP = array($arr['serviceTicket']);
+		//print_r($arr);	// debug
+		//print_r($this->curlHTTP);	// debug
+	}
 	function primeTicket_1(){
    		$auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
 		$cache_1 ="cache-control: no-cache"; 	// populate with needed information
@@ -129,9 +142,9 @@ class curlauth {
 //print_r($a->ticket);
 //print_r($b->ticket);
 
-if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
+if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
-	$a = new curlauth("primeTicket_1");
+	$a = new curlauth($_GET['Type']);
 	$a->curlAddress = $_GET['curlAddress'];
 	$a->curlData = "(" . $_GET['curlData'] . ")";
 	$a->curlCustom =$_GET['curlCustom'];
