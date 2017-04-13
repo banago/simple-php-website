@@ -118,8 +118,8 @@ class curlauth {
 		$this->curlCustom = "POST";
 		$this->curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
 		$this->curlHTTP = array(
-        		//"cache-control: no-cache",	
-        		//"content-type: application/json");
+        		"cache-control: no-cache",	
+        		"content-type: application/json");
     		$response = $this->myCurl();
 		$json = json_decode($response, true);
 		//print_r($json);	// debug
