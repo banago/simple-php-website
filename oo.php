@@ -113,15 +113,15 @@ class curlauth {
     		return json_encode($arr);		// return JSON        
 	}
 	function apicTicket_1(){
-		$curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
-		$curlData = "/ticket";
-		$curlCustom = "POST";
-		$curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
-		$curlHTTP = array(
+		$this->$curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
+		$this->$curlData = "/ticket";
+		$this->$curlCustom = "POST";
+		$this->$curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
+		$this->$curlHTTP = array(
         		"cache-control: no-cache",	
         		"content-type: application/json");
-    		$response = $this->myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
-		$json = json_decode($response, true);
+    		$this->$response = $this->myCurl($this->$curlAddress, $this->$curlData, $this->$curlCustom, $this->$curlPost, $this->$curlHTTP);
+		$json = json_decode($this->$response, true);
 		//print_r($json);	// debug
 		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
 								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
