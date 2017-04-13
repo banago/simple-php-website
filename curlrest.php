@@ -206,25 +206,26 @@ function iseCurl_1() {
 //print_r($a->ticket);
 //print_r($b->ticket);
 
-if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
-	$a = new curlauth($_GET['Type']);
+if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) 
+    & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
+	$a = new curlauth($_GET['Type']);	// sets class property
 	//echo $_GET['Type'] . "<br />";	// debug
-	$a->curlAddress = $_GET['curlAddress'];
+	$a->curlAddress = $_GET['curlAddress'];	// sets class property
 	//echo $_GET['curlAddress'] . "<br />";	// debug
 	//echo $_GET['curlData'] . "<br />";	// debug
-	$a->curlCustom =$_GET['curlCustom'];
+	$a->curlCustom =$_GET['curlCustom'];	// sets class property
 	//echo $_GET['curlCustom'] . "<br />";	// debug
-	$a->curlPost = $_GET['curlPost'];
+	$a->curlPost = $_GET['curlPost'];	// sets class property
 	//echo $_GET['curlPost'] . "<br />";	// debug
 		if ($_GET['Type'] == "primeTicket_1") {
-		$a->curlData = "(" . $_GET['curlData'] . ")";
-		$a->primeCurl_1();
+		$a->curlData = "(" . $_GET['curlData'] . ")";	// formats user input
+		$a->primeCurl_1();	// calls the correct function based on the GET type
 	} elseif ($_GET['Type'] == "iseTicket_1") {
-		$a->curlData = $_GET['curlData'];
-		$a->iseCurl_1();
+		$a->curlData = $_GET['curlData'];	// formats user input
+		$a->iseCurl_1();	// calls the correct function based on the GET Type
 	} elseif ($_GET['Type'] == "apicTicket_1") {
-		$a->curlData = $_GET['curlData'];
-		$a->apicCurl_1();
+		$a->curlData = $_GET['curlData'];	// formats user input
+		$a->apicCurl_1();	// calls the correct function based on the GET tpe
 	}	
 }
 ?>
