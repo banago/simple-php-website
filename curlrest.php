@@ -64,7 +64,7 @@ function apicCurl_1() {
     if ($array['http-code'] == 500) {
         echo print_r($array);
     } else {
-	// echo print_r($array);	// debug
+	echo print_r($response);	// debug
 	#echo $array['user_name'] . "<br>";	// debug
 	$match = array("Serial Number :"=>'serialNumber',"Family :"=>'family',"Type :"=>'type',
 			       "Inventory :"=>'inventoryStatusDetail',"MAC :"=>'macAddress',
@@ -122,7 +122,7 @@ function iseCurl_1() {
         echo print_r($array);
     } else {
       $json = json_decode($response, true);
-      //print_r($json);  // debug
+      print_r($json);  // debug
       //echo $response;  // debug
       //echo $json['vlanId']['associationTime']; // debug
       $match = array("NAS Interface :"=>'clientInterface',"NAS Connection Type :"=>'connectionType',
