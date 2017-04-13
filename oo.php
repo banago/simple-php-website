@@ -29,7 +29,10 @@ class curlauth {
 
   }
 
-  function __construct() {
+  function __construct($function) {
+	  if ($function == "apicTicket_1") {
+		  $this->apicTicket_1();
+	  }
 
     //echo "Constructor called with parameter ".$param."<br />";
     //$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
@@ -134,7 +137,7 @@ class curlauth {
 		
 	}
 }
-$a = new curlauth("Blak");
+$a = new curlauth("apicTicket_1");
 $ticket = json_decode($a->ticket, true);
 print_r($ticket);
 //echo "attemping to print  " . print_r($a->ticket);
@@ -156,8 +159,6 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	$c->curlData = "(" . $_GET['curlData'] . ")";
 	$c->curlCustom =$_GET['curlCustom'];
 	$c->curlPost = $_GET['curlPost'];
- 	$c->curlHTTP = json_decode(primeTicket_1(), true);
-	$c->curlHTTP = $curlHTTP['serviceTicket'];
 }
 
 ?>
