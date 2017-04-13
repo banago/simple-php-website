@@ -143,7 +143,7 @@ class curlauth {
 	}
 }
 $a = new curlauth("primeTicket_1");
-$ticket = json_decode($a->ticket, true);
+//$ticket = json_decode($a->ticket, true);
 print_r($ticket);
 //echo "attemping to print  " . print_r($a->ticket);
 //echo "decoding   " .  json_decode($a->ticket,true);
