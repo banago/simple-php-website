@@ -83,7 +83,7 @@ function apicCurl_1() {
 		}		
 	}
     }  
-}
+}}
 function iseCurl_1() {
    $response = $this->myCurl();
     //echo $response;	// debug
@@ -193,7 +193,7 @@ function iseCurl_1() {
 		
 	}
 }
-}
+
 //$a = new curlauth("apicTicket_1");
 //$b = new curlauth("primeTicket_1");
 //$ticket = json_decode($a->ticket, true);
