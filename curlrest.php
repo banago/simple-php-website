@@ -63,20 +63,20 @@ class curlauth {
 	  $response = $this->myCurl();
 		//echo $response;	// debug
     $xml = new SimpleXMLElement($response);
-    //echo $xml->asXML();
+    //echo $xml->asXML();	// debug
     $dom = new DOMDocument('1.0');
     $dom->preserveWhiteSpace = false;
     $dom->formatOutput = true;
     $dom->loadXML($xml->asXML());
-    echo $dom->saveXML();
+    //echo $dom->saveXML();	// debug
     $json = json_encode($xml);
     $array = json_decode($json,TRUE);
-    echo print_r($array);
+    //echo print_r($array);	// debug
     if ($array['http-code'] == 500) {
         echo print_r($array);
     } else {
-			// echo print_r($array);	// debug
-	    #echo $array['user_name'] . "<br>";	// debug
+	// echo print_r($array);	// debug
+	#echo $array['user_name'] . "<br>";	// debug
       $match = array("EndPoint Auth Status :" => 'passed',"EndPoint User :" => 'user_name',
 			"EndPoint Authentication Status :"=>'passed',"EndPoint Auth Server :"=>'acs_server',
                         "EndPoint Auth Method :"=>'authentication_method',"EndPoint Auth Protocol :"=>'authentication_protocol',
