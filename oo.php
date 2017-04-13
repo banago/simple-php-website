@@ -126,8 +126,8 @@ class curlauth {
 		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
 								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
 		//echo json_encode($arr);		// return JSON
-		//$ticket = json_encode($arr);
-		$ticket = "Changed";
+		$ticket = json_encode($arr);
+		//$ticket = "Changed";
 		print_r($ticket);
 	}
 }
