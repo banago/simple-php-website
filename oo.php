@@ -14,6 +14,10 @@ class curlauth {
   protected $curlPost;
   
   protected $curlHTTP;
+	
+	protected $response;
+	
+	
 
   function operation1 () {
 
@@ -23,9 +27,10 @@ class curlauth {
 
   }
 
-  function __construct($param) {
+  function __construct() {
 
-    echo "Constructor called with parameter ".$param."<br />"; 
+    //echo "Constructor called with parameter ".$param."<br />";
+    //$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
 
   }
   function __get($name){
@@ -65,8 +70,7 @@ class curlauth {
 	    return $response;    
     } 
   }
-  function primeCurl_1() {
-    $response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
+  function primeCurl_1($response) {
     if ($array['http-code'] == 500) {
         echo print_r($array);
     } else {
@@ -98,6 +102,27 @@ class curlauth {
       }  
     }  
   }
+	function primeTicket_1(){
+    $auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
+		$cache_1 ="cache-control: no-cache"; 	// populate with needed information
+    $arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
+    return json_encode($arr);		// return JSON        
+	}
+	function apicTicket_1(){
+		$curlHTTP = array(
+        		"cache-control: no-cache",	
+        		"content-type: application/json");
+    $curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
+    $curlData = "/ticket";
+    $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
+    $curlCustom = "POST";  
+    $response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
+    $json = json_decode($response, true);
+		//print_r($json);	// debug
+		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
+								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
+		echo json_encode($arr);		// return JSON
+	}
 }
 $a = new curlauth("Blak");  
 $b = new curlauth("kalB"); 
@@ -107,4 +132,16 @@ echo $a->attribute;
 echo $a->attribute;
 $a->$curlAddress = "this is a big test";
 echo $a->$curlAddress;
-?>         
+if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
+	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
+	$c = new curlauth();
+	$c->curlAddress = $_GET['curlAddress'];
+	$c->curlData = "(" . $_GET['curlData'] . ")";
+	$c->curlCustom =$_GET['curlCustom'];
+	$c->curlPost = $_GET['curlPost'];
+  $c->curlHTTP = json_decode(primeTicket_1(), true);
+	$c->curlHTTP = $curlHTTP['serviceTicket'];
+}
+
+?>
+
