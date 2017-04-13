@@ -209,16 +209,6 @@ if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']
 	//echo $_GET['curlCustom'] . "<br />";	// debug
 	$a->curlPost = $_GET['curlPost'];
 	//echo $_GET['curlPost'] . "<br />";	// debug
-	if ($_GET['Type'] == "primeTicket_1") {
-		$a->curlData = "(" . $_GET['curlData'] . ")";
-		$a->primeCurl_1();
-	} elseif ($_GET['Type'] == "iseTicket_1") {
-		$a->curlData = $_GET['curlData'];
-		$a->iseCurl_1();
-	} elseif ($_GET['Type'] == "apicTicket_1") {
-		$a->curlData = $_GET['curlData'];
-		$a->apicCurl_1();
-	}	
 }
 ?>
 
