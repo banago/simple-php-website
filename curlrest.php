@@ -187,6 +187,9 @@ function iseCurl_1() {
 		//echo json_encode($arr);		// return JSON
 				// debug
 		$this->ticket = json_encode($arr);
+		$this->ticket = json_decode($this->ticket, true);
+		print_r($this->ticket);
+		//$this->curlHTTP = $this->ticket['serviceTicket']
 		//print_r($this->ticket);	// debug
 		//$this->ticket = json_decode($this->ticket,true);	// debug
 		//print_r($this->ticket);	// debug
