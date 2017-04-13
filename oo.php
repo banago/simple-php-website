@@ -144,8 +144,10 @@ class curlauth {
 	}
 }
 $a = new curlauth("apicTicket_1");
+$b = new curlauth("primeTicket_1");
 //$ticket = json_decode($a->ticket, true);
 print_r($a->ticket);
+print_r($b->ticket);
 //echo "attemping to print  " . print_r($a->ticket);
 //echo "decoding   " .  json_decode($a->ticket,true);
 //echo "decoding somemore   " .  json_decode($a->ticket['response']['serviceTicket'],true);
