@@ -131,7 +131,7 @@ class curlauth {
 	}
 }
 $a = new curlauth("Blak");
-echo $a->ticket;
+//echo $a->ticket;
 //$b = new curlauth("kalB"); 
 //$a->attribute = 5;
 //$b->attribute = 15;
