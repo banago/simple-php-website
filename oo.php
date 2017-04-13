@@ -35,13 +35,10 @@ class curlauth {
 	  } elseif ($function == "primeTicket_1") {
 		  $this->primeTicket_1();
 	  }
-  }
-
-    //echo "Constructor called with parameter ".$param."<br />";
-    //$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
-	  $this->apicTicket_1();
+	  //echo "Constructor called with parameter ".$param."<br />";
+	  //$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
+	  //$this->apicTicket_1();
 	  //return $this->apicTicket_1();
-
   }
   function __get($name){
     return $this->$name;
