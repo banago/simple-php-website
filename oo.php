@@ -133,8 +133,8 @@ class curlauth {
 }
 $a = new curlauth("Blak");
 echo "attemping to print  " . print_r($a->ticket);
-echo "decoding   " .  json_decode($a->ticket);
-echo "decoding   " .  json_decode($a->ticket['serviceTicket']);
+echo "decoding   " .  json_decode($a->ticket,true);
+echo "decoding   " .  json_decode($a->ticket['serviceTicket'],true);
 //echo json_decode($a->ticket,yes);
 //$b = new curlauth("kalB"); 
 //$a->attribute = 5;
