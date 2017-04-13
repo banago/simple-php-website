@@ -32,7 +32,10 @@ class curlauth {
   function __construct($function) {
 	  if ($function == "apicTicket_1") {
 		  $this->apicTicket_1();
+	  } elseif ($function == "primeTicket_1") {
+		  $this->primeTicket_1();
 	  }
+  }
 
     //echo "Constructor called with parameter ".$param."<br />";
     //$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
