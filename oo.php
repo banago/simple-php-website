@@ -5,17 +5,15 @@ class curlauth {
 
   protected $attribute2;
   
-  protected $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
+  protected $curlAddress;
   
-  protected $curlData = "/ticket";
+  protected $curlData;
   
-  protected $curlCustom = "POST";
+  protected $curlCustom;
   
-  protected $curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
+  protected $curlPost;
   
-  protected $curlHTTP =  array(
-        		"cache-control: no-cache",	
-        		"content-type: application/json");
+  protected $curlHTTP;
 	
   protected $ticket="Cats on everything";
 	
@@ -45,7 +43,7 @@ class curlauth {
   function __set($name,$value){
     return $this->$name = $value;
   }
-  function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
+  function myCurl() {
     	echo "curlAddress myCurl  ::" . $curlAddress . "<br>";	// debug
 	echo "curlData myCurl  ::" .  $curlData . "<br>";	// debug
 	echo "curlCustom myCurl  ::" .  $curlCustom . "<br>";	// debug
@@ -56,15 +54,15 @@ class curlauth {
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
         	CURLOPT_SSL_VERIFYHOST => false,    // disables ssk host cert verify check
-        	CURLOPT_URL => $curlAddress . $curlData,
+        	CURLOPT_URL => $this->curlAddress . $this->curlData,
         	CURLOPT_RETURNTRANSFER => true,
         	CURLOPT_ENCODING => "",
         	CURLOPT_MAXREDIRS => 10,
         	CURLOPT_TIMEOUT => 300,
         	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        	CURLOPT_CUSTOMREQUEST => $curlCustom,
-        	CURLOPT_POSTFIELDS => $curlPost,
-        	CURLOPT_HTTPHEADER => $curlHTTP, // restAuth contains the auth Tokens. This also need to be update to return JSON instead of include
+        	CURLOPT_CUSTOMREQUEST => $this->curlCustom,
+        	CURLOPT_POSTFIELDS => $this->curlPost,
+        	CURLOPT_HTTPHEADER => $this->curlHTTP, // restAuth contains the auth Tokens. This also need to be update to return JSON instead of include
     	));
     $response = curl_exec($curl);
     $err = curl_error($curl);
@@ -115,14 +113,14 @@ class curlauth {
     		return json_encode($arr);		// return JSON        
 	}
 	function apicTicket_1(){
-		//$this->$curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
-		//$this->$curlData = "/ticket";
-		//$this->$curlCustom = "POST";
-		//$this->$curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
-		//$this->$curlHTTP = array(
+		$this->curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
+		$this->curlData = "/ticket";
+		$this->curlCustom = "POST";
+		$this->curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
+		$this->curlHTTP = array(
         		//"cache-control: no-cache",	
         		//"content-type: application/json");
-    		$response = $this->myCurl($this->curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
+    		$response = $this->myCurl();
 		$json = json_decode($response, true);
 		//print_r($json);	// debug
 		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
