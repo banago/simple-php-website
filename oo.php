@@ -117,7 +117,7 @@ class curlauth {
     		$curlData = "/ticket";
     		$curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
     		$curlCustom = "POST";  
-    		$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
+    		$response = $this->myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
 		$json = json_decode($response, true);
 		//print_r($json);	// debug
 		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
