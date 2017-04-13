@@ -116,7 +116,7 @@ function restmodal(thediv, thefile , thekey) {
 xmlhttp.open('GET', thefile+'?'+thekey+'=1', true);
 xmlhttp.send();
 }
-function apicreturn1(thediv, thefile , thekey , theticket) {
+function primereturn_1(thediv, thefile , thekey_1 , theval_1, thekey_2, theval_2, thekey_3 , theval_3 , thekey_4 , theval_4) {
     document.getElementById('spinner').style.display = "block";	
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
@@ -129,6 +129,9 @@ function apicreturn1(thediv, thefile , thekey , theticket) {
 		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
         }
     }
+    xmlhttp.open('GET', thefile+'?'+thekey_1+'='+theval_1+'&'+thekey_2+'='+theval_2+'&'+thekey_3+'='+theval_3+'&'+thekey_4+'='+theval_4, true);
+    	xmlhttp.send();	
+}
 xmlhttp.open('GET', thefile+'?'+thekey+'='+theticket, true);
 xmlhttp.send();
 }
