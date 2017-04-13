@@ -122,8 +122,8 @@ class curlauth {
 		//$this->$curlHTTP = array(
         		//"cache-control: no-cache",	
         		//"content-type: application/json");
-    		$response = $this->myCurl($this->$curlAddress, $this->$curlData, $this->$curlCustom, $this->$curlPost, $this->$curlHTTP);
-		$json = json_decode($this->$response, true);
+    		$response = $this->myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
+		$json = json_decode($response, true);
 		//print_r($json);	// debug
 		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
 								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
