@@ -67,7 +67,7 @@ class curlauth {
     if ($err) {
         echo "cURL Error #:" . $err;
     } else {
-	    //echo "RESPONSE   " .  $response;	// debug
+	    echo "RESPONSE   " .  $response;	// debug
 	    return $response;    
     } 
   }
