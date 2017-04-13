@@ -241,7 +241,6 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
-
   <!-- Modal content -->
   <div class="modal-content">
     <div class="modal-header">
@@ -258,7 +257,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
 	    </div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
-      <h3><center>_____-_____</center></h3>
+      <h3><center>____-_-____</center></h3>
     </div>
   </div>
 
