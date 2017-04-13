@@ -126,14 +126,14 @@ class curlauth {
 	}
 }
 $a = new curlauth("Blak");  
-$b = new curlauth("kalB"); 
-$a->attribute = 5;
-$b->attribute = 15;
-echo $a->attribute;
-echo $b->attribute;
-echo $a->primeTicket_1();
-$a->$curlAddress = "this is a big test";
-echo $a->$curlAddress;
+//$b = new curlauth("kalB"); 
+//$a->attribute = 5;
+//$b->attribute = 15;
+//echo $a->attribute;
+//echo $b->attribute;
+//echo $a->primeTicket_1();
+//$a->$curlAddress = "this is a big test";
+//echo $a->$curlAddress;
 if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$c = new curlauth();
