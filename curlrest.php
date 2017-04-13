@@ -222,6 +222,5 @@ if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']
 	}
 	
 }
-
 ?>
 
