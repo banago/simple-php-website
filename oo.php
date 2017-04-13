@@ -15,6 +15,8 @@ class curlauth {
   
   protected $curlHTTP;
 	
+  protected $tickiet;
+	
   protected $response;
 	
 	
@@ -124,11 +126,11 @@ class curlauth {
 		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
 								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
 		//echo json_encode($arr);		// return JSON
-		return json_encode($arr);	
+		$tickiet = json_encode($arr);	
 	}
 }
 $a = new curlauth("Blak");
-echo print_r($a);
+echo $a->ticket;
 //$b = new curlauth("kalB"); 
 //$a->attribute = 5;
 //$b->attribute = 15;
