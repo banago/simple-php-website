@@ -15,7 +15,7 @@ class curlauth {
   
   protected $curlHTTP;
 	
-	protected $response;
+  protected $response;
 	
 	
 
@@ -31,6 +31,7 @@ class curlauth {
 
     //echo "Constructor called with parameter ".$param."<br />";
     //$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
+	  apicTicket_1();
 
   }
   function __get($name){
@@ -104,7 +105,7 @@ class curlauth {
   }
 	function primeTicket_1(){
     $auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
-		$cache_1 ="cache-control: no-cache"; 	// populate with needed information
+	$cache_1 ="cache-control: no-cache"; 	// populate with needed information
     $arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
     return json_encode($arr);		// return JSON        
 	}
@@ -112,12 +113,12 @@ class curlauth {
 		$curlHTTP = array(
         		"cache-control: no-cache",	
         		"content-type: application/json");
-    $curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
-    $curlData = "/ticket";
-    $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
-    $curlCustom = "POST";  
-    $response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
-    $json = json_decode($response, true);
+    		$this->$curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
+    		$this->$curlData = "/ticket";
+    		$this->$curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
+    		$this->$curlCustom = "POST";  
+    		$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
+		$this->$json = json_decode($response, true);
 		//print_r($json);	// debug
 		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
 								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
@@ -140,7 +141,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	$c->curlData = "(" . $_GET['curlData'] . ")";
 	$c->curlCustom =$_GET['curlCustom'];
 	$c->curlPost = $_GET['curlPost'];
-  $c->curlHTTP = json_decode(primeTicket_1(), true);
+ 	$c->curlHTTP = json_decode(primeTicket_1(), true);
 	$c->curlHTTP = $curlHTTP['serviceTicket'];
 }
 
