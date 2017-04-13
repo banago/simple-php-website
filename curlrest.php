@@ -180,7 +180,11 @@ if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']
 	echo $_GET['Type'] . "<br />";	// debug
 	$a->curlAddress = $_GET['curlAddress'];
 	echo $_GET['curlAddress'] . "<br />";	// debug
-	$a->curlData = "(" . $_GET['curlData'] . ")";
+	if ($_GET['Type'] == "primeTicket_1") {
+		$a->curlData = "(" . $_GET['curlData'] . ")";
+	} elseif ($_GET['Type'] == "iseTicket_1") {
+		$a->curlData = $_GET['curlData'] ;
+	}
 	echo $_GET['curlData'] . "<br />";	// debug
 	$a->curlCustom =$_GET['curlCustom'];
 	echo $_GET['curlCustom'] . "<br />";	// debug
