@@ -7,7 +7,7 @@ class curlauth {
   
   protected $curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
   
-  protected $curlData = $curlData = "/ticket";
+  protected $curlData = "/ticket";
   
   protected $curlCustom = "POST";
   
