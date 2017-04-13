@@ -62,7 +62,7 @@ class curlauth {
 function apicCurl_1() {
    $response = $this->myCurl();
     if ($array['http-code'] == 500) {
-        echo print_r($array);
+        //echo print_r($array);		// debug
     } else {
 	 $json = json_decode($response,true);
 	//echo print_r($response);	// debug
