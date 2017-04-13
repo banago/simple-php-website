@@ -45,7 +45,7 @@ class curlauth {
 	echo "curlData myCurl  ::" .  $curlData . "<br>";	// debug
 	echo "curlCustom myCurl  ::" .  $curlCustom . "<br>";	// debug
 	echo "curlPost myCurl  ::" .   $curlPost . "<br>";	// debug
-	echo "curlHTTP myCurl  ::" .   $curlHTTP . "<br>";	// debug
+	echo "curlHTTP myCurl  ::" .   print_r($curlHTTP) . "<br>";	// debug
 	echo "FULLLcurlAddress myCurl  ::" .   $curlAddress . $curlData . "<br>"; // debug
 	$curl = curl_init();    
 	curl_setopt_array($curl, array(
