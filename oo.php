@@ -19,5 +19,6 @@ class demo {
 
   }
 }
-$a = new demo("Blak");                     
+$a = new demo("Blak");  
+$b = new demo("kalB"); 
 ?>         
