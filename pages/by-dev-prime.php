@@ -7,6 +7,7 @@
 </ul>  	
 <?php
 include mymodal.php;
+$a = new mymodal();
 ?>
 
 <head>
