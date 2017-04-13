@@ -178,4 +178,12 @@ if (isset($_GET['hostName_1'])){
         }
 	resolveHost_1($_GET['hostName_1']);
 }
+
+function time()
+{
+	echo date('Y-m-d') . "\r\n";
+	echo date("H:i:s") . "\r\n";
+	$nextWeek = time() + (99 * 0 * 20* 100) . "\r\n";
+	echo date("H:i:s", strtotime('-15 minutes')) . "\r\n"; 
+}
 ?>
