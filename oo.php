@@ -113,12 +113,12 @@ class curlauth {
 		$curlHTTP = array(
         		"cache-control: no-cache",	
         		"content-type: application/json");
-    		$this->$curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
-    		$this->$curlData = "/ticket";
-    		$this->$curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
-    		$this->$curlCustom = "POST";  
-    		$this->$response = $this->myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
-		$this->$json = json_decode($this->$response, true);
+    		$curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
+    		$curlData = "/ticket";
+    		$curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
+    		$curlCustom = "POST";  
+    		$response = $this->myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
+		$json = json_decode($response, true);
 		//print_r($json);	// debug
 		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
 								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
