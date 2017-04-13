@@ -179,12 +179,5 @@ if (isset($_GET['hostName_1'])){
 	resolveHost_1($_GET['hostName_1']);
 }
 
-function time()
-{
-	echo date('Y-m-d') . "\r\n";
-	echo date("H:i:s") . "\r\n";
-	$nextWeek = time() + (99 * 0 * 20* 100) . "\r\n";
-	echo date("H:i:s", strtotime('-15 minutes')) . "\r\n"; 
-	$notepad = "https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/AuthList/2017-04-10 18:35:00/null";
-}
+
 ?>
