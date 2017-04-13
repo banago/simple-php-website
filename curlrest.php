@@ -145,6 +145,7 @@ class curlauth {
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new curlauth($_GET['Type']);
+	echo $_GET['Type'];
 	$a->curlAddress = $_GET['curlAddress'];
 	$a->curlData = "(" . $_GET['curlData'] . ")";
 	$a->curlCustom =$_GET['curlCustom'];
