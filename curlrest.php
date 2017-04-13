@@ -14,7 +14,7 @@ class curlauth {
 		  $this->apicTicket_1();
 	  } elseif ($function == "primeTicket_1") {
 		  $this->primeTicket_1();
-	  } elseif ($function == "oseTicket_1") {
+	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
 	  }
 	  //echo "Constructor called with parameter ".$param."<br />";
@@ -147,9 +147,13 @@ if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']
 	$a = new curlauth($_GET['Type']);
 	echo $_GET['Type'];
 	$a->curlAddress = $_GET['curlAddress'];
+	echo $_GET['curlAddress'];
 	$a->curlData = "(" . $_GET['curlData'] . ")";
+	echo $_GET['curlData'];
 	$a->curlCustom =$_GET['curlCustom'];
+	echo $_GET['curlCustom'];
 	$a->curlPost = $_GET['curlPost'];
+	echo $_GET['curlPost'];
 	$a->primeCurl_1();
 	
 }
