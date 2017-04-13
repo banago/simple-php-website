@@ -1,9 +1,9 @@
 <?php
 class curlauth {
 
-  private $attribute1;
+  protected $attribute1;
 
-  private $attribute2;
+  protected $attribute2;
 
   function operation1 () {
 
