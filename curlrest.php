@@ -29,12 +29,12 @@ class curlauth {
     return $this->$name = $value;
   }	// used to set properties
   function myCurl() {
-    	echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
-	echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
-	echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
-	echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
-	echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
-	echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $this->curlData . "<br>"; // debug
+    	//echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
+	//echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
+	//echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
+	//echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
+	//echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
+	//echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $this->curlData . "<br>"; // debug
 	$curl = curl_init();    
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
