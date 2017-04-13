@@ -119,12 +119,12 @@ function encoded_1(thediv, thefile, thekey) {
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
-		    primereturn_1(thediv, 'curlrest.php' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
+		    primereturn_1(thediv, 'curlrest.php' , 'Type' , 'PrimeTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    } else if (myObj.Type == "IP") {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
-		    primereturn_1(thediv, 'curlrest.php' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
+		    primereturn_1(thediv, 'curlrest.php' , 'Type' , 'PrimeTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    }  else if (myObj.Type == "HostName") {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 		    document.getElementById('spinner').style.display = "none";
@@ -185,7 +185,7 @@ function apicreturn1(thediv, thefile , thekey , theticket) {
 xmlhttp.open('GET', thefile+'?'+thekey+'='+theticket, true);
 xmlhttp.send();
 }
-function primereturn_1(thediv, thefile , thekey_1 , theval_1, thekey_2, theval_2, thekey_3 , theval_3 , thekey_4 , theval_4) {
+function primereturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theval_1, thekey_2, theval_2, thekey_3 , theval_3 , thekey_4 , theval_4) {
     document.getElementById('spinner').style.display = "block";	
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
@@ -198,7 +198,7 @@ function primereturn_1(thediv, thefile , thekey_1 , theval_1, thekey_2, theval_2
 		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
         }
     }
-    xmlhttp.open('GET', thefile+'?'+thekey_1+'='+theval_1+'&'+thekey_2+'='+theval_2+'&'+thekey_3+'='+theval_3+'&'+thekey_4+'='+theval_4, true);
+    xmlhttp.open('GET', thefile+'?'+thetype+'='+thetypeval+'&'+thekey_1+'='+theval_1+'&'+thekey_2+'='+theval_2+'&'+thekey_3+'='+theval_3+'&'+thekey_4+'='+theval_4, true);
     	xmlhttp.send();	
 }
 function hostnameresolver_1(thediv, thefile, thekey, myUrl) {
