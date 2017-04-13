@@ -1,24 +1,51 @@
 <?php
-function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
-    	//echo "curlAddress myCurl  ::" . $curlAddress . "<br>";	// debug
-	//echo "curlData myCurl  ::" .  $curlData . "<br>";	// debug
-	//echo "curlCustom myCurl  ::" .  $curlCustom . "<br>";	// debug
-	//echo "curlPost myCurl  ::" .   $curlPost . "<br>";	// debug
-	//echo "curlHTTP myCurl  ::" .   $curlHTTP . "<br>";	// debug
-	//echo "FULLLcurlAddress myCurl  ::" .   $curlAddress . $curlData . "<br>"; // debug
+class curlauth {
+	protected $attribute1;
+	protected $attribute2;
+	protected $curlAddress;
+	protected $curlData;
+	protected $curlCustom;
+	protected $curlPost;
+	protected $curlHTTP;
+	protected $ticket;
+	protected $response;
+  function __construct($function) {
+	  if ($function == "apicTicket_1") {
+		  $this->apicTicket_1();
+	  } elseif ($function == "primeTicket_1") {
+		  $this->primeTicket_1();
+	  }
+	  //echo "Constructor called with parameter ".$param."<br />";
+	  //$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
+	  //$this->apicTicket_1();
+	  //return $this->apicTicket_1();
+  }
+  function __get($name){
+    return $this->$name;
+  }
+  function __set($name,$value){
+    return $this->$name = $value;
+  }
+  function myCurl() {
+    	//echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
+	//echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
+	//echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
+	//echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
+	//echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
+	//echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $this->curlData . "<br>"; // debug
 	$curl = curl_init();    
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
         	CURLOPT_SSL_VERIFYHOST => false,    // disables ssk host cert verify check
-        	CURLOPT_URL => $curlAddress . $curlData,
+        	CURLOPT_URL => $this->curlAddress . $this->curlData,
         	CURLOPT_RETURNTRANSFER => true,
         	CURLOPT_ENCODING => "",
         	CURLOPT_MAXREDIRS => 10,
         	CURLOPT_TIMEOUT => 300,
         	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        	CURLOPT_CUSTOMREQUEST => $curlCustom,
-        	CURLOPT_POSTFIELDS => $curlPost,
-        	CURLOPT_HTTPHEADER => array($curlHTTP), // restAuth contains the auth Tokens. This also need to be update to return JSON instead of include
+        	CURLOPT_CUSTOMREQUEST => $this->curlCustom,
+        	CURLOPT_POSTFIELDS => $this->curlPost,
+        	CURLOPT_HTTPHEADER => $this->curlHTTP, // restAuth contains the auth Tokens. This also need to be update to return JSON instead of include
     	));
     $response = curl_exec($curl);
     $err = curl_error($curl);
@@ -29,89 +56,89 @@ function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
 	    //echo "RESPONSE   " .  $response;	// debug
 	    return $response;    
     } 
+  }
+  function primeCurl_1() {
+	  $response = $this->myCurl();
+    if ($array['http-code'] == 500) {
+        echo print_r($array);
+    } else {
+      $json = json_decode($response, true);
+      //print_r($json);  // debug
+      //echo $response;  // debug
+      //echo $json['vlanId']['associationTime']; // debug
+      $match = array("NAS Interface :"=>'clientInterface',"NAS Connection Type :"=>'connectionType',
+                     "NAS IP :"=>'deviceIpAddress',"NAS Name :"=>'deviceName',
+                     "EndPoint Type :"=>'deviceType',"EndPoint IP :"=>'ipAddress',                      
+                     "EndPoint MAC :"=>'macAddress',"EndPoint NAC :"=>'securityPolicyStatus',
+                     "EndPoint OUI :"=>'vendor',"EndPoint VLAN:"=>'vlan');
+      //echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";   // debug
+      //echo print_r($json) . "\r\n";    // debug
+      if (isset($json['queryResponse']['entity'])) {
+        for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
+          //echo "How many response: " . count($json['response']) . "<br>";	// debug
+          echo "<br>";
+          echo "Array Element: " . $i . "<br>";  
+          echo "<br>";    
+          foreach ($match as $x => $item) {
+            echo "<b>" . $x . "</b>" . "  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>"; 
+          }
+        }
+        echo "<p>" . "</p>" . "<p>" . "</p>";
+      } else {
+          echo "Unable to locate record for : " . "<font color=\"red\">" . $data . "</font>";
+          echo "<p>" . "</p>" . "<p>" . "</p>";
+      }  
+    }  
+  }
+	function primeTicket_1(){
+   		$auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
+		$cache_1 ="cache-control: no-cache"; 	// populate with needed information
+    		$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
+    		//return json_encode($arr);		// return JSON
+		$arr = json_encode($arr);	// encode as JSON
+		$arr = json_decode($arr,true);	// decode as jSON
+		$this->curlHTTP = array($arr['serviceTicket']);
+		//print_r($arr);	// debug
+		//print_r($this->curlHTTP);	// debug
+	}
+	function apicTicket_1(){
+		$this->curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
+		$this->curlData = "/ticket";
+		$this->curlCustom = "POST";
+		$this->curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
+		$this->curlHTTP = array(
+        		"cache-control: no-cache",	
+        		"content-type: application/json");
+    		$response = $this->myCurl();
+		$json = json_decode($response, true);
+		//print_r($json);	// debug
+		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
+								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
+		//echo json_encode($arr);		// return JSON
+				// debug
+		$this->ticket = json_encode($arr);
+		//print_r($this->ticket);	// debug
+		//$this->ticket = json_decode($this->ticket,true);	// debug
+		//print_r($this->ticket);	// debug
+		
+	}
 }
+//$a = new curlauth("apicTicket_1");
+//$b = new curlauth("primeTicket_1");
+//$ticket = json_decode($a->ticket, true);
+//print_r($a->ticket);
+//print_r($b->ticket);
 
 if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
-	$curlAddress = $_GET['curlAddress'];
-	$curlData = "(" . $_GET['curlData'] . ")";
-	$curlCustom =$_GET['curlCustom'];
-	$curlPost = $_GET['curlPost'];
-    	$curlHTTP = json_decode(primeTicket_1(), true);
-	$curlHTTP = $curlHTTP['serviceTicket'];
-    	//echo "curlAddress myPrime  ::" . $curlAddress . "<br>";	// debug
-	//echo "curlData myPrime  ::" .  $curlData . "<br>";	// debug
-	//echo "curlCustom myPrime  ::" .  $curlCustom . "<br>";	// debug
-	//echo "curlPost myPrime  ::" .   $curlPost . "<br>";	// debug
-	//echo "curlHTTP myPrime  ::" .   $curlHTTP . "<br>";	// debug
-    	$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
-    	if ($array['http-code'] == 500) {
-        	echo print_r($array);
-    	} else { 
-        	$json = json_decode($response, true);
-        	//print_r($json);  // debug
-        	//echo $response;  // debug
-        	//echo $json['vlanId']['associationTime']; // debug
-        	$match = array("NAS Interface :"=>'clientInterface',"NAS Connection Type :"=>'connectionType',    
-			       "NAS IP :"=>'deviceIpAddress',"NAS Name :"=>'deviceName',                    
-                       		"EndPoint Type :"=>'deviceType',"EndPoint IP :"=>'ipAddress',                      
-                       		"EndPoint MAC :"=>'macAddress',"EndPoint NAC :"=>'securityPolicyStatus',
-                       		"EndPoint OUI :"=>'vendor',"EndPoint VLAN:"=>'vlan');
-        	//echo $json['queryResponse']['entity']['0']['clientsDTO']['securityPolicyStatus'] . "\r\n";   // debug
-        	//echo print_r($json) . "\r\n";    // debug
-        	if (isset($json['queryResponse']['entity'])) { 
-            		for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
-                		//echo "How many response: " . count($json['response']) . "<br>";	// debug
-                		echo "<br>";
-                		echo "Array Element: " . $i . "<br>";  
-                		echo "<br>";    
-                	foreach ($match as $x => $item) {
-                    		echo "<b>" . $x . "</b>" . "  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>";    
-                	} 
-            	}   
-            	echo "<p>" . "</p>" . "<p>" . "</p>"; 
-        	} else {
-            		echo "Unable to locate record for : " . "<font color=\"red\">" . $data . "</font>";
-            		echo "<p>" . "</p>" . "<p>" . "</p>"; ; 
-        	}
-	}   
+	$a = new curlauth("primeTicket_1");
+	$a->curlAddress = $_GET['curlAddress'];
+	$a->curlData = "(" . $_GET['curlData'] . ")";
+	$a->curlCustom =$_GET['curlCustom'];
+	$a->curlPost = $_GET['curlPost'];
+	$a->primeCurl_1();
+	
 }
-//  Deconstruct to create a new ticket getting function......
-if (isset($_GET['apicTicket_1'])) {
-	function apicTicket_1(){
-		$curlHTTP = array(
-        		"cache-control: no-cache",	
-        		"content-type: application/json");
-    	$curlPost = "{\"username\":\"devnetuser\",\n\"password\":\"Cisco123!\"\n}";
-    	$curlData = "/ticket";
-    	$curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
-    	$curlCustom = "POST";  
-    	$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
-    	$json = json_decode($response, true);
-	//print_r($json);	// debug
-	$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
-		     'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
-	echo json_encode($arr);		// return JSON
-	}
-	apicTicket_1();
-}
-if (isset($_GET['primeTicket_1'])) {
-	        function primeTicket_1_test(){
-                	$auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
-			$cache_1 ="cache-control: no-cache"; 	// populate with needed information
-                	$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
-                	return json_encode($arr);		// return JSON
-        	}	
-	$json = json_decode(primeTicket_1_test(), true);
-	print_r($json);
-	//echo "adfasfa   " . $json['serviceTicket']."more bladakdsf" . $json['serviceCache'];
-	return $json;
-}
-function primeTicket_1(){
-                $auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
-		$cache_1 ="cache-control: no-cache"; 	// populate with needed information
-                $arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
-                return json_encode($arr);		// return JSON        
-}	
+
 ?>
 
