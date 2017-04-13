@@ -140,7 +140,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	$c->curlData = "(" . $_GET['curlData'] . ")";
 	$c->curlCustom =$_GET['curlCustom'];
 	$c->curlPost = $_GET['curlPost'];
-  	$c->curlHTTP = json_decode(primeTicket_1(), true);
+  $c->curlHTTP = json_decode(primeTicket_1(), true);
 	$c->curlHTTP = $curlHTTP['serviceTicket'];
 }
 
