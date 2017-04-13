@@ -122,10 +122,12 @@ class curlauth {
 		//print_r($json);	// debug
 		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
 								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
-		echo json_encode($arr);		// return JSON
+		//echo json_encode($arr);		// return JSON
+		return json_encode($arr);	
 	}
 }
-$a = new curlauth("Blak");  
+$a = new curlauth("Blak");
+echo "TEST  " . json_decode($a);
 //$b = new curlauth("kalB"); 
 //$a->attribute = 5;
 //$b->attribute = 15;
