@@ -199,10 +199,9 @@ function iseCurl_1() {
 //print_r($a->ticket);
 //print_r($b->ticket);
 
-if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData'])
-	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
+if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new curlauth($_GET['Type']);
-	echo $_GET['Type'] . "<br />";	// debug
+	//echo $_GET['Type'] . "<br />";	// debug
 	$a->curlAddress = $_GET['curlAddress'];
 	//echo $_GET['curlAddress'] . "<br />";	// debug
 	//echo $_GET['curlData'] . "<br />";	// debug
@@ -219,8 +218,7 @@ if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']
 	} elseif ($_GET['Type'] == "apicTicket_1") {
 		$a->curlData = $_GET['curlData'];
 		$a->apicCurl_1();
-	}
-	
+	}	
 }
 ?>
 
