@@ -114,9 +114,10 @@ class curlauth {
 		$cache_1 ="cache-control: no-cache"; 	// populate with needed information
     		$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
     		//return json_encode($arr);		// return JSON
-		$arr = json_encode($arr);
-		$arr = json_decode($arr,true);
+		$arr = json_encode($arr);	// encode as JSON
+		$arr = json_decode($arr,true);	// decode as jSON
 		$this->ticket = $arr['serviceTicket'];
+		print_r($arr);	// debug
 		print_r($this->ticket);	// debug
 	}
 	function apicTicket_1(){
