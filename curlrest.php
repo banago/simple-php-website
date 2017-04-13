@@ -182,16 +182,16 @@ function iseCurl_1() {
         		"content-type: application/json");
     		$response = $this->myCurl();
 		$json = json_decode($response, true);
-		print_r($json);	// debug
+		//print_r($json);	// debug
 		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
 								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
 		//echo json_encode($arr);		// return JSON
 				// debug
 		$this->ticket = json_encode($arr);
 		$this->ticket = json_decode($this->ticket, true);
-		print_r($this->ticket);
+		//print_r($this->ticket);	// debug
 		$combined = "x-auth-token: ".$this->ticket['serviceTicket'];
-		echo "THIS IS THE KEY      " . 	$combined;
+		//echo "THIS IS THE KEY      " . 	$combined;	// debug
 		$this->curlHTTP = array($combined);
 		//print_r($this->ticket);	// debug
 		//$this->ticket = json_decode($this->ticket,true);	// debug
