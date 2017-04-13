@@ -115,6 +115,7 @@ class curlauth {
     		$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
     		//return json_encode($arr);		// return JSON
 		$arr = json_encode($arr);
+		$arr = json_decode($arr,true);
 		$this->ticket = $arr['serviceTicket'];
 		print_r($this->ticket);	// debug
 	}
