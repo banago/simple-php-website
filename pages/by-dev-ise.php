@@ -208,30 +208,27 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
 </form>
 <!-- This DIV returns the users input after proccessing it through the php file -->
 <div id="adiv"></div>
-
 <!-- The Modal -->
 <div id="myModal" class="modal">
-
   <!-- Modal content -->
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      <h2>ISE GET Result</h2>
+      <h2><center>PRIME GET Result</center></h2>
     </div>
     <div class="modal-body" align="center">
-      <p>Result</p>
+      <p>LAST DETECTED ON</p>
         <div id="spinner" align="center" class="spinner"></div>
 	    <div style="text-align: center;">
 		    <div id="adiv2" class="apicdata" style="display: inline-block; text-align: left">
 			    Content<br /> style="font-size:20px">
-		    </div>
+		    </div>	    
 	    </div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
-      <h3>END</h3>
+      <h3><center>____-_-____</center></h3>
     </div>
   </div>
-
 </div>
 
 <script>
