@@ -145,15 +145,15 @@ class curlauth {
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new curlauth($_GET['Type']);
-	echo $_GET['Type'];
+	echo $_GET['Type'] . "<br />";
 	$a->curlAddress = $_GET['curlAddress'];
-	echo $_GET['curlAddress'];
+	echo $_GET['curlAddress'] . "<br />";
 	$a->curlData = "(" . $_GET['curlData'] . ")";
-	echo $_GET['curlData'];
+	echo $_GET['curlData'] . "<br />";
 	$a->curlCustom =$_GET['curlCustom'];
-	echo $_GET['curlCustom'];
+	echo $_GET['curlCustom'] . "<br />";
 	$a->curlPost = $_GET['curlPost'];
-	echo $_GET['curlPost'];
+	echo $_GET['curlPost'] . "<br />";
 	$a->primeCurl_1();
 	
 }
