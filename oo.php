@@ -52,7 +52,7 @@ class curlauth {
 	echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
 	echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
 	echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
-	echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $curlData . "<br>"; // debug
+	echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $this->curlData . "<br>"; // debug
 	$curl = curl_init();    
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
@@ -119,7 +119,7 @@ class curlauth {
 		$arr = json_decode($arr,true);	// decode as jSON
 		$this->ticket = array($arr['serviceTicket']);
 		//print_r($arr);	// debug
-		//print_r($this->ticket);	// debug
+		print_r($this->ticket);	// debug
 	}
 	function apicTicket_1(){
 		$this->curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
