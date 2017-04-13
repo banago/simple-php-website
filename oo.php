@@ -116,7 +116,7 @@ class curlauth {
     		//return json_encode($arr);		// return JSON
 		$arr = json_encode($arr);	// encode as JSON
 		$arr = json_decode($arr,true);	// decode as jSON
-		$this->ticket = $arr['serviceTicket'];
+		$this->ticket = array($arr['serviceTicket']);
 		//print_r($arr);	// debug
 		//print_r($this->ticket);	// debug
 	}
