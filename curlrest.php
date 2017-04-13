@@ -210,7 +210,7 @@ function iseCurl_1() {
 	}
 }
 
-$a = new curlauth();
+$a = new curlauth("111");
 //$b = new curlauth("primeTicket_1");
 //$ticket = json_decode($a->ticket, true);
 //print_r($a->ticket);
