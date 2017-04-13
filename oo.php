@@ -41,12 +41,12 @@ class curlauth {
     return $this->$name = $value;
   }
   function myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP) {
-    	echo "curlAddress myCurl  ::" . $curlAddress . "<br>";	// debug
-	echo "curlData myCurl  ::" .  $curlData . "<br>";	// debug
-	echo "curlCustom myCurl  ::" .  $curlCustom . "<br>";	// debug
-	echo "curlPost myCurl  ::" .   $curlPost . "<br>";	// debug
-	echo "curlHTTP myCurl  ::" .   print_r($curlHTTP) . "<br>";	// debug
-	echo "FULLLcurlAddress myCurl  ::" .   $curlAddress . $curlData . "<br>"; // debug
+    	//echo "curlAddress myCurl  ::" . $curlAddress . "<br>";	// debug
+	//echo "curlData myCurl  ::" .  $curlData . "<br>";	// debug
+	//echo "curlCustom myCurl  ::" .  $curlCustom . "<br>";	// debug
+	//echo "curlPost myCurl  ::" .   $curlPost . "<br>";	// debug
+	//echo "curlHTTP myCurl  ::" .   print_r($curlHTTP) . "<br>";	// debug
+	//echo "FULLLcurlAddress myCurl  ::" .   $curlAddress . $curlData . "<br>"; // debug
 	$curl = curl_init();    
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
@@ -67,7 +67,7 @@ class curlauth {
     if ($err) {
         echo "cURL Error #:" . $err;
     } else {
-	    echo "RESPONSE   " .  $response;	// debug
+	    //echo "RESPONSE   " .  $response;	// debug
 	    return $response;    
     } 
   }
