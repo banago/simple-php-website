@@ -102,6 +102,9 @@ class curlauth {
 $a = new curlauth("Blak");  
 $b = new curlauth("kalB"); 
 $a->attribute = 5;
+$b->attribute = 15;
 echo $a->attribute;
-
+echo $a->attribute;
+$a->$curlAddress = "this is a big test";
+echo $a->$curlAddress;
 ?>         
