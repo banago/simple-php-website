@@ -18,7 +18,7 @@ class curlauth {
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
 	  }
-	  function myTime("H",15);
+	  $this->myTime("H",15);
 	  //echo "Constructor called with parameter ".$param."<br />";
 	  //$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
 	  //$this->apicTicket_1();
