@@ -127,7 +127,7 @@ class curlauth {
 	}
 }
 $a = new curlauth("Blak");
-echo "TEST  " . json_decode($a, true);
+echo "TEST  " . $a;
 //$b = new curlauth("kalB"); 
 //$a->attribute = 5;
 //$b->attribute = 15;
