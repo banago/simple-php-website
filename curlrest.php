@@ -29,12 +29,12 @@ class curlauth {
     return $this->$name = $value;
   }	// used to set properties
   function myCurl() {
-    	//echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
-	//echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
-	//echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
-	//echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
-	//echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
-	//echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $this->curlData . "<br>"; // debug
+    	echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
+	echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
+	echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
+	echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
+	echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
+	echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $this->curlData . "<br>"; // debug
 	$curl = curl_init();    
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
@@ -156,7 +156,7 @@ class curlauth {
         		"content-type: application/json");
     		$response = $this->myCurl();
 		$json = json_decode($response, true);
-		//print_r($json);	// debug
+		print_r($json);	// debug
 		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
 								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
 		//echo json_encode($arr);		// return JSON
@@ -177,7 +177,7 @@ class curlauth {
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new curlauth($_GET['Type']);
-	//echo $_GET['Type'] . "<br />";	// debug
+	echo $_GET['Type'] . "<br />";	// debug
 	$a->curlAddress = $_GET['curlAddress'];
 	//echo $_GET['curlAddress'] . "<br />";	// debug
 	if ($_GET['Type'] == "primeTicket_1") {
