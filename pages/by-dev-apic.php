@@ -1,6 +1,10 @@
-<p>This is <b>by dev apic</b> page. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-</p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-	
+<p>Cisco APIC-EM provides something.</p>
+<p><b>Whats New!</b></p>
+<ul>
+  <li>Hmmmmm not sure, thi is just prime</li>
+  <li>Search by HostName!</li>
+  <li>Interface design changes and bug fixes</li>
+</ul>  	
 <style>
 .spinner {
     border: 4px solid #f3f3f3; /* Light grey */
@@ -87,9 +91,50 @@ function findformat(thediv, thefile, thekey) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
-            document.getElementById(thediv).innerHTML = myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;
+            document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;
         }
     }
+xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
+xmlhttp.send();
+}
+function encoded_1(thediv, thefile, thekey) {
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else { 
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }  
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myObj = JSON.parse(this.responseText);
+	    if (myObj.Type == "MAC") {
+		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&macAddress=eq");
+		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
+		    document.getElementById(thediv).innerHTML = myObj.Encoded;
+		    primereturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
+	    } else if (myObj.Type == "IP") {
+		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
+		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
+		    primereturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
+	    }  else if (myObj.Type == "HostName") {
+		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
+		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
+		    hostnameresolver_1(thediv,'functions.php','hostName_1',myUrl);
+	    } else {
+		    // catch all else error messages
+		    var supported_1 = " MAC ";
+		    var supported_2 = " IP ";
+		    var supported_3 = " HostName ";
+		    supported_1 = supported_1.bold().fontcolor("red");
+		    supported_2 = supported_2.bold().fontcolor("red");
+		    supported_3 = supported_2.bold().fontcolor("red");
+		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById(thediv).innerHTML = "Unfortunately this application only supports "+supported_1+"and"+supported_2+"addresses"+"or a"+supported_3 ;
+	    }     
+        }
+    } 
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
@@ -116,7 +161,7 @@ function restmodal(thediv, thefile , thekey) {
 xmlhttp.open('GET', thefile+'?'+thekey+'=1', true);
 xmlhttp.send();
 }
-function primereturn_1(thediv, thefile , thekey_1 , theval_1, thekey_2, theval_2, thekey_3 , theval_3 , thekey_4 , theval_4) {
+function apicreturn1(thediv, thefile , thekey , theticket) {
     document.getElementById('spinner').style.display = "block";	
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
@@ -129,43 +174,81 @@ function primereturn_1(thediv, thefile , thekey_1 , theval_1, thekey_2, theval_2
 		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
         }
     }
-    xmlhttp.open('GET', thefile+'?'+thekey_1+'='+theval_1+'&'+thekey_2+'='+theval_2+'&'+thekey_3+'='+theval_3+'&'+thekey_4+'='+theval_4, true);
+xmlhttp.open('GET', thefile+'?'+thekey+'='+theticket, true);
+xmlhttp.send();
+}
+function primereturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theval_1, thekey_2, theval_2, thekey_3 , theval_3 , thekey_4 , theval_4) {
+    document.getElementById('spinner').style.display = "block";	
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else { 
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }  
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+		document.getElementById('spinner').style.display = "none";
+		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open('GET', thefile+'?'+thetype+'='+thetypeval+'&'+thekey_1+'='+theval_1+'&'+thekey_2+'='+theval_2+'&'+thekey_3+'='+theval_3+'&'+thekey_4+'='+theval_4, true);
     	xmlhttp.send();	
 }
-xmlhttp.open('GET', thefile+'?'+thekey+'='+theticket, true);
+function hostnameresolver_1(thediv, thefile, thekey, myUrl) {
+  	document.getElementById('spinner').style.display = "block";
+	document.getElementById(thediv).innerHTML = "";
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else { 
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }  
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+		myObj = JSON.parse(this.responseText);
+	    if (myObj.hasOwnProperty('IPv4')) {
+		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById(thediv).innerHTML = xmlhttp.responseText;
+		    primereturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.IPv4 , 'curlCustom' , 'GET' , 'curlPost' , '');
+	    } else {
+		    document.getElementById(thediv).innerHTML = myObj.Failure;
+	    }
+        }
+    }
+xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
 </script>    
 </head>
 <body>
 
-<h2>APIC-EM REST Request with Animated Modal Header and Footer</h2>
+<h2>PRIME REST Request</h2>
 <form id="search" name="search">
-MAC | IP | HOSTNAME : <input type="text" name="data_text" onkeyup="findformat('adiv','functions.php','data');"> <br/>
+MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data')};">
  <!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
-<button id="myBtn" type="button">Open Modal</button>
-<input type="reset" name="reset">
+<button id="myBtn" type="button">Sumbit</button>
+<input id="myRst" type="reset" name="reset">
 </form>
 <!-- This DIV returns the users input after proccessing it through the php file -->
 <div id="adiv"></div>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
-
   <!-- Modal content -->
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      <h2>GET Result</h2>
+      <h2><center>APIC-EM GET Result</center></h2>
     </div>
-    <div class="modal-body">
-      <p>APIC-EM Return</p>
-        <div id="spinner" class="spinner"></div>
-	    <div id="adiv2" class="apicdata">
-    		</div>
+    <div class="modal-body" align="center">
+      <p>LAST DETECTED ON</p>
+        <div id="spinner" align="center" class="spinner"></div>
+	    <div style="text-align: center;">
+		    <div id="adiv2" class="apicdata" style="display: inline-block; text-align: left">
+			    Content<br /> style="font-size:20px">
+		    </div>	    
+	    </div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
-      <h3>MODAL END</h3>
+      <h3><center>____-_-____</center></h3>
     </div>
   </div>
 
@@ -178,11 +261,17 @@ var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-// When the user clicks the button, open the modal 
+// When presses resets a div
+var rst = document.getElementById("myRst");
+// When the user clicks the button, open the modal
 btn.onclick = function() {
-    document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
-    //document.getElementById("adiv2").innerHTML = input_1;
+    document.getElementById("adiv2").innerHTML = encoded_1('adiv2','functions.php','data');
     modal.style.display = "block";
+    
+}
+// When the user clicks the button, reset adiv
+rst.onclick = function() {
+	document.getElementById('adiv').innerHTML = "";
 }
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
