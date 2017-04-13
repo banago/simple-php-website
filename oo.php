@@ -47,12 +47,12 @@ class curlauth {
     return $this->$name = $value;
   }
   function myCurl() {
-    	echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
-	echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
-	echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
-	echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
-	echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
-	echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $this->curlData . "<br>"; // debug
+    	//echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
+	//echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
+	//echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
+	//echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
+	//echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
+	//echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $this->curlData . "<br>"; // debug
 	$curl = curl_init();    
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
@@ -119,7 +119,7 @@ class curlauth {
 		$arr = json_decode($arr,true);	// decode as jSON
 		$this->curlHTTP = array($arr['serviceTicket']);
 		//print_r($arr);	// debug
-		print_r($this->curlHTTP);	// debug
+		//print_r($this->curlHTTP);	// debug
 	}
 	function apicTicket_1(){
 		$this->curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
@@ -143,8 +143,8 @@ class curlauth {
 		
 	}
 }
-$a = new curlauth("apicTicket_1");
-$b = new curlauth("primeTicket_1");
+//$a = new curlauth("apicTicket_1");
+//$b = new curlauth("primeTicket_1");
 //$ticket = json_decode($a->ticket, true);
 print_r($a->ticket);
 print_r($b->ticket);
@@ -162,12 +162,12 @@ print_r($b->ticket);
 //echo $a->$curlAddress;
 if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
-	$c = new curlauth("primeTicket_1");
-	$c->curlAddress = $_GET['curlAddress'];
-	$c->curlData = "(" . $_GET['curlData'] . ")";
-	$c->curlCustom =$_GET['curlCustom'];
-	$c->curlPost = $_GET['curlPost'];
-	$c->primeCurl_1();
+	$a = new curlauth("primeTicket_1");
+	$a->curlAddress = $_GET['curlAddress'];
+	$a->curlData = "(" . $_GET['curlData'] . ")";
+	$a->curlCustom =$_GET['curlCustom'];
+	$a->curlPost = $_GET['curlPost'];
+	$a->primeCurl_1();
 	
 }
 
