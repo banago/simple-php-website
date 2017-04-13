@@ -9,6 +9,7 @@ class curlauth {
 	protected $curlHTTP;
 	protected $ticket;
 	protected $response;
+	protected $time;
   function __construct($function) {
 	  if ($function == "apicTicket_1") {
 		  $this->apicTicket_1();
@@ -17,6 +18,7 @@ class curlauth {
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
 	  }
+	  function myTime("H",15);
 	  //echo "Constructor called with parameter ".$param."<br />";
 	  //$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
 	  //$this->apicTicket_1();
@@ -59,6 +61,14 @@ class curlauth {
 	    return $response;    
     } 
   }
+function myTime($format,$offset) {
+	echo date('Y-m-d') . "\r\n";
+	echo date('$format:i:s') . "\r\n";
+	$nextWeek = time() + (99 * 0 * 20* 100) . "\r\n";
+	echo date("H:i:s", strtotime('-$offset minutes')) . "\r\n"; 
+	$notepad = "https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/AuthList/2017-04-10 18:35:00/null";
+	$this->time = "holder";
+}
 function apicCurl_1() {
    $response = $this->myCurl();
     if ($array['http-code'] == 500) {
