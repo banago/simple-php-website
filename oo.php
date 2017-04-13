@@ -104,10 +104,10 @@ class curlauth {
     }  
   }
 	function primeTicket_1(){
-    $auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
-	$cache_1 ="cache-control: no-cache"; 	// populate with needed information
-    $arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
-    return json_encode($arr);		// return JSON        
+   		$auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
+		$cache_1 ="cache-control: no-cache"; 	// populate with needed information
+    		$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
+    		return json_encode($arr);		// return JSON        
 	}
 	function apicTicket_1(){
 		$curlHTTP = array(
@@ -117,8 +117,8 @@ class curlauth {
     		$this->$curlData = "/ticket";
     		$this->$curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
     		$this->$curlCustom = "POST";  
-    		$this->$response = $this->myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP); 
-		$this->$json = json_decode($response, true);
+    		$this->$response = $this->myCurl($this->$curlAddress, $this->$curlData, $this->$curlCustom, $this->$curlPost, $this->$curlHTTP); 
+		$this->$json = json_decode($this->$response, true);
 		//print_r($json);	// debug
 		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
 								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
