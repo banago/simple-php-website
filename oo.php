@@ -15,7 +15,7 @@ class curlauth {
   
   protected $curlHTTP;
 	
-  protected $ticket;
+  protected $ticket="Cats on everything";
 	
   protected $response;
 	
