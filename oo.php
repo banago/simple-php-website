@@ -117,8 +117,8 @@ class curlauth {
 		$arr = json_encode($arr);	// encode as JSON
 		$arr = json_decode($arr,true);	// decode as jSON
 		$this->ticket = $arr['serviceTicket'];
-		print_r($arr);	// debug
-		print_r($this->ticket);	// debug
+		//print_r($arr);	// debug
+		//print_r($this->ticket);	// debug
 	}
 	function apicTicket_1(){
 		$this->curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
@@ -164,6 +164,7 @@ if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	$c->curlData = "(" . $_GET['curlData'] . ")";
 	$c->curlCustom =$_GET['curlCustom'];
 	$c->curlPost = $_GET['curlPost'];
+	
 }
 
 ?>
