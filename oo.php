@@ -159,7 +159,7 @@ print_r($a->ticket);
 //echo $a->$curlAddress;
 if (isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
-	$c = new curlauth();
+	$c = new curlauth("primeTicket_1");
 	$c->curlAddress = $_GET['curlAddress'];
 	$c->curlData = "(" . $_GET['curlData'] . ")";
 	$c->curlCustom =$_GET['curlCustom'];
