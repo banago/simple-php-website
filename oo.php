@@ -65,7 +65,7 @@ class curlauth {
 	    return $response;    
     } 
   }
-  function myPrime_1() {
+  function primeCurl_1() {
     $response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
     if ($array['http-code'] == 500) {
         echo print_r($array);
