@@ -64,7 +64,7 @@ function apicCurl_1() {
     if ($array['http-code'] == 500) {
         echo print_r($array);
     } else {
-	 $response = json_decode($response,true);
+	 $json = json_decode($response,true);
 	//echo print_r($response);	// debug
 	#echo $array['user_name'] . "<br>";	// debug
 	$match = array("Serial Number :"=>'serialNumber',"Family :"=>'family',"Type :"=>'type',
