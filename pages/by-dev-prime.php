@@ -6,7 +6,7 @@
   <li>Interface design changes and bug fixes</li>
 </ul>  	
 <?php
-include mymodal.php;
+include modal.php;
 $a = new mymodal();
 ?>
 
