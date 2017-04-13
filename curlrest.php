@@ -29,12 +29,12 @@ class curlauth {
     return $this->$name = $value;
   }	// used to set properties
   function myCurl() {
-    	//echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
-	//echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
-	//echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
-	//echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
-	//echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
-	//echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $this->curlData . "<br>"; // debug
+    	echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
+	echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
+	echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
+	echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
+	echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
+	echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $this->curlData . "<br>"; // debug
 	$curl = curl_init();    
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
@@ -132,8 +132,8 @@ class curlauth {
 		$arr = json_encode($arr);	// encode as JSON
 		$arr = json_decode($arr,true);	// decode as jSON
 		$this->curlHTTP = array($arr['serviceTicket']);
-		//print_r($arr);	// debug
-		//print_r($this->curlHTTP);	// debug
+		print_r($arr);	// debug
+		print_r($this->curlHTTP);	// debug
 	}
 	function primeTicket_1(){
    		$auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
@@ -177,15 +177,15 @@ class curlauth {
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData'])
 	& isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new curlauth($_GET['Type']);
-	//echo $_GET['Type'] . "<br />";	// debug
+	echo $_GET['Type'] . "<br />";	// debug
 	$a->curlAddress = $_GET['curlAddress'];
-	//echo $_GET['curlAddress'] . "<br />";	// debug
+	echo $_GET['curlAddress'] . "<br />";	// debug
 	$a->curlData = "(" . $_GET['curlData'] . ")";
-	//echo $_GET['curlData'] . "<br />";	// debug
+	echo $_GET['curlData'] . "<br />";	// debug
 	$a->curlCustom =$_GET['curlCustom'];
-	//echo $_GET['curlCustom'] . "<br />";	// debug
+	echo $_GET['curlCustom'] . "<br />";	// debug
 	$a->curlPost = $_GET['curlPost'];
-	//echo $_GET['curlPost'] . "<br />";	// debug
+	echo $_GET['curlPost'] . "<br />";	// debug
 	$a->primeCurl_1();
 	
 }
