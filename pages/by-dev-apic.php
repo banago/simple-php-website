@@ -44,7 +44,7 @@ function encoded_1(thediv, thefile, thekey) {
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    apicreturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    } else if (myObj.Type == "HostName") {
-		    if (myObj.Encoded.length >=5 ){
+		    if (myObj.Encoded.length >=100 ){
 			    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 			    var a = document.getElementById(thediv).innerHTML = ""; 	//clears the div
 			    apicreturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , ''); 
