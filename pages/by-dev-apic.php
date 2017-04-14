@@ -159,7 +159,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
       <p>LAST DETECTED ON</p>
         <div id="spinner" align="center" class="spinner"></div>
 	    <div style="text-align: center;">
-		    <div id="adiv2" class="pagination" style="display: inline-block; text-align: left overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+		    <div id="adiv2" class="pagination" style="left overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px; display: inline-block; text-align:">
 			    Content<br /> style="font-size:20px">
 
 		    </div>	    
