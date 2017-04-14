@@ -27,6 +27,7 @@
 }
 /* Modal Content */
 .modal-content {
+    overflow-y: initial;
     position: relative;
     background-color: #fefefe;
     margin: auto;
