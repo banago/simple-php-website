@@ -164,11 +164,14 @@ if (isset($_GET['hostName_1'])){
 			echo "DFSDFD    " . $match[1];
 			if ($match[1] == $arr['IPv4']) {
 				echo json_encode($arr);		// return JSON
+				echo "PING AND DNS ARE EQUAL";
 			} elseif (empty($match[1])){
 				echo json_encode($arr);	
+				echo "PING FAILED, USING DNS VALUE";
 			} else {
 				$arr = array('IPv4' => $match[1]);	 // create array for JSON
 				echo json_encode($arr);
+				echo "PING AND DNS ARE NOT EQUAL USING PING VALUE";
 			}
 			
 		} elseif ($ip = gethostbyname($host . $nwfcs) != $host . $nwfcs) {
