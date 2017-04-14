@@ -194,6 +194,7 @@ var rst = document.getElementById("myRst");
 btn.onclick = function() {
     document.getElementById("adiv2").innerHTML = encoded_1('adiv2','functions.php','data');
     modal.style.display = "block";
+    spinner.style.display = "block";
     
 }
 // When the user clicks the button, reset adiv
