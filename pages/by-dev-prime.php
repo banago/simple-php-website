@@ -5,11 +5,7 @@
   <li>Search by HostName!</li>
   <li>Interface design changes and bug fixes</li>
 </ul>  	
-<?php
-include 'modal.php';
-$a = new mymodal();
-?>
-
+<link rel="stylesheet" type="text/css" href="mystyle.css">
 <head>
 <script type="text/javascript">
 function findformat(thediv, thefile, thekey) {
