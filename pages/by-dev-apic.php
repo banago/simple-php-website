@@ -125,7 +125,7 @@ function hostnameresolver_1(thediv, thefile, thekey, myUrl) {
 	    if (myObj.hasOwnProperty('IPv4')) {
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = xmlhttp.responseText;
-		    primereturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.IPv4 , 'curlCustom' , 'GET' , 'curlPost' , '');
+		    primereturn_1(thediv, 'curlrest.php' , 'Type' , 'primeTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.IPv4 , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    } else {
 		    document.getElementById(thediv).innerHTML = myObj.Failure;
 	    }
