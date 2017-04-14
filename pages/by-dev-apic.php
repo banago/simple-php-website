@@ -47,8 +47,7 @@ function encoded_1(thediv, thefile, thekey) {
 		    if (myObj.hasOwnProperty('Encoded')){
 			    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 			    document.getElementById(thediv).innerHTML = ""; 	//clears the div
-			    apicreturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
-			    
+			    apicreturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , ''); 
 		    }
 		    myUrl = encodeURIComponent("https://devnetapi.cisco.com/sandbox/apic_em/api/v1");
 		    document.getElementById('spinner').style.display = "none";
