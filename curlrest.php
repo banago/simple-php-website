@@ -88,7 +88,7 @@ function apicCurl_1() {
 		//Debug
 		//echo "How many response: " . count($json['response']) . "<br>";
 		echo "<br>";
-		echo "Array Element: " . $i . "<br>";
+		echo "Record Number: " . $i . "<br>";
 		echo "<br>";
 		foreach ($match as $x => $item) {
 			echo $x ."  " . $json['response'][$i][$item] . "<br>";		
