@@ -163,9 +163,14 @@ if (isset($_GET['hostName_1'])){
 			//print_r($match);	// debug
 			echo "DFSDFD    " . $match[1];
 			if ($match[1] == $arr['IPv4']) {
-				echo "CATS CATS CATS";
+				echo json_encode($arr);		// return JSON
+			} elseif (empty($match[1])){
+				echo json_encode($arr);	
+			} else {
+				$arr = array('IPv4' => $match[1]);	 // create array for JSON
+				echo json_encode($arr);
 			}
-			echo json_encode($arr);		// return JSON
+			
 		} elseif ($ip = gethostbyname($host . $nwfcs) != $host . $nwfcs) {
 			$ip = gethostbyname($host . $nwfcs);	// gets the IPv4 address of the host
 			$arr = array('IPv4' => $ip);	 // create array for JSON
