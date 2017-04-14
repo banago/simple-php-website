@@ -146,14 +146,13 @@ if (isset($_GET['data_2']))
 }
 if (isset($_GET['hostName_1'])){
         function resolveHost_1($host){
-		$fpi = ".fpi.fpir.pvt";		// DNS suffix
-		$nwfcs = ".nfcs.fpir.pvt";	// DNS suffix
-		$fce = ".farmcrediteast.fpir.pvt";		// DNS suffix
-		$agc = ".agcountry.fpir.pvt";	// DNS suffix
-		$dns_1 = array(".fpi.fpir.pvt", ".nfcs.fpir.pvt", ".farmcrediteast.fpir.pvt", ".agcountry.fpir.pvt"); 
-		$failure = $host . $fpi;	// if submitted name is returned assume failure
+		$dns_1 = array(".fpi.fpir.pvt", ".nfcs.fpir.pvt", ".farmcrediteast.fpir.pvt", 
+			       ".agcountry.fpir.pvt", ".yankee.fpir.pvt", ".fpi.pvt", 
+			       ".fpicorelab.fpir.pvt", "fcc.fpir.pvt", ".nextgen.fpir.pvt", 
+			       ".farmcreditwest.fpir.pvt"); 	// DNS search suffix's
 		$message = "Unable to resolve: ";
 		foreach ($dns_1 as $suffix) {
+			$failure = $host . $suffix;	// if submitted name is returned assume failure
 			if ($ip = gethostbyname($host . $suffix) != $host . $suffix) {
 				$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
 				$arr = array('IPv4' => $ip);	 // create array for JSON
