@@ -211,8 +211,8 @@ function iseCurl_1() {
 	}
 }
 
-$a = new curlauth("111");
-echo $a->time;
+//$a = new curlauth("111");
+//echo $a->time;
 //$b = new curlauth("primeTicket_1");
 //$ticket = json_decode($a->ticket, true);
 //print_r($a->ticket);
