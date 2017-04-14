@@ -3,6 +3,7 @@
 <ul>
   <li>PHP backend refactored Now Object oriented</li>
   <li>Interface design changes and bug fixes</li>
+  <li>CSS moved to external file</li>
   <li>Search by HostName!</li>
 </ul>  	
 <link rel="stylesheet" type="text/css" href="mystyle.css">
