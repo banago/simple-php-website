@@ -1,10 +1,9 @@
 <p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>	
 <p><b>Whats New!</b></p>
 <ul>
-  <li>PHP backend refactored Now Object oriented</li>
-  <li>Interface design changes and bug fixes</li>
-  <li>Search by HostName!</li>
-</ul> 	
+  <li>Working Rest button</li>
+  <li>Syle and bug fixes</li>
+</ul>  	
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 <head>
 <script type="text/javascript">
@@ -36,7 +35,7 @@ function encoded_1(thediv, thefile, thekey) {
 		    myUrl = encodeURIComponent("https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/MACAddress/");
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
-		    curleturn_1(thediv, 'curlrest.php' , 'Type' , 'iseTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
+		    isereturn_1(thediv, 'curlrest.php' , 'Type' , 'iseTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
 		    
 	    } else if (myObj.Type == "IP") {
 		    var supported_1 = " MAC ";
@@ -82,8 +81,23 @@ function restmodal(thediv, thefile , thekey) {
 xmlhttp.open('GET', thefile+'?'+thekey+'=1', true);
 xmlhttp.send();
 }
-
-function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theval_1, thekey_2, theval_2, thekey_3 , theval_3 , thekey_4 , theval_4) {
+function apicreturn1(thediv, thefile , thekey , theticket) {
+    document.getElementById('spinner').style.display = "block";	
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else { 
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }  
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+		document.getElementById('spinner').style.display = "none";
+		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
+        }
+    }
+xmlhttp.open('GET', thefile+'?'+thekey+'='+theticket, true);
+xmlhttp.send();
+}
+function isereturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theval_1, thekey_2, theval_2, thekey_3 , theval_3 , thekey_4 , theval_4) {
     document.getElementById('spinner').style.display = "block";	
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
@@ -130,7 +144,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
 	    </div>
 	    <div id="test1" class="teest12"></div>
     <div class="modal-footer">
-      <h3><center>___\__-_-__/___</center></h3>
+      <h3><center>____-_-____</center></h3>
     </div>
   </div>
 </div>
