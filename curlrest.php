@@ -31,12 +31,12 @@ class curlauth {
     return $this->$name = $value;
   }	// used to set properties
   function myCurl() {
-    	//echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
-	//echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
-	//echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
-	//echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
-	//echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
-	//echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $this->curlData . "<br>"; // debug
+    	echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
+	echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
+	echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
+	echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
+	echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
+	echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $this->curlData . "<br>"; // debug
 	$curl = curl_init();    
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
@@ -108,11 +108,11 @@ function iseCurl_1() {
     //echo $dom->saveXML();	// debug
     $json = json_encode($xml);
     $array = json_decode($json,TRUE);
-    //echo print_r($array);	// debug
+    echo print_r($array);	// debug
     if ($array['http-code'] == 500) {
         echo print_r($array);
     } else {
-	// echo print_r($array);	// debug
+	echo print_r($array);	// debug
 	#echo $array['user_name'] . "<br>";	// debug
       $match = array("EndPoint Auth Status :" => 'passed',"EndPoint User :" => 'user_name',
 			"EndPoint Authentication Status :"=>'passed',"EndPoint Auth Server :"=>'acs_server',
@@ -221,7 +221,7 @@ function iseCurl_1() {
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) 
     & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new curlauth($_GET['Type']);	// sets class property
-	//echo $_GET['Type'] . "<br />";	// debug
+	echo $_GET['Type'] . "<br />";	// debug
 	$a->curlAddress = $_GET['curlAddress'];	// sets class property
 	//echo $_GET['curlAddress'] . "<br />";	// debug
 	//echo $_GET['curlData'] . "<br />";	// debug
