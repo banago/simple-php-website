@@ -161,7 +161,7 @@ if (isset($_GET['hostName_1'])){
 			//print_r($result);
 			preg_match( '/\)(.*?)\)/', $output[0], $match );
 			echo "TJHIS    " . $output[0];
-			echo "DFSDFD    " . $match;
+			echo "DFSDFD    " . $match[1];
 			echo json_encode($arr);		// return JSON
 		} elseif ($ip = gethostbyname($host . $nwfcs) != $host . $nwfcs) {
 			$ip = gethostbyname($host . $nwfcs);	// gets the IPv4 address of the host
