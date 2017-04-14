@@ -161,8 +161,8 @@ if (isset($_GET['hostName_1'])){
 			//print_r($result);	// debug
 			preg_match( '/\((.*?)\)/', $output[0], $match );	// matches IP address
 			//print_r($match);	// debug
-			echo "DFSDFD    " . $match[1];
-			if ($match[1] == $arr['IPv4']) {
+			//echo "PING RETURN    " . $match[1];	// debug
+			if ($match[1] == $arr['IP2v4']) {
 				echo json_encode($arr);		// return JSON
 				echo "PING AND DNS ARE EQUAL";
 			} elseif (empty($match[1])){
