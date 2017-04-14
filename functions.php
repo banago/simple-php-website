@@ -157,8 +157,9 @@ if (isset($_GET['hostName_1'])){
 			$ip = gethostbyname($host . $fpi);	// gets the IPv4 address of the host
 			$arr = array('IPv4' => $ip);	 // create array for JSON
 			exec("/bin/ping -c 2 " . $ip, $output, $result);
-			print_r($output);
-			print_r($result);
+			//print_r($output);
+			//print_r($result);
+			echo strchr($output[0],preg_match('/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/');
 			echo "TJHIS    " . $output[0];
 			echo json_encode($arr);		// return JSON
 		} elseif ($ip = gethostbyname($host . $nwfcs) != $host . $nwfcs) {
