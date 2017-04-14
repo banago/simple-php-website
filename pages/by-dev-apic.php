@@ -150,8 +150,8 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
 <!-- The Modal -->
 <div id="myModal" class="modal">
   <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;"> 
+  <div class="modal-content" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+    <div class="modal-header"> 
       <span class="close">&times;</span>
       <h2><center>APIC-EM GET Result</center></h2>
     </div>
