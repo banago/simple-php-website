@@ -106,7 +106,6 @@ if (isset($_GET['data']))
 if (isset($_GET['data_2'])) 
 {
 	//$get_data = $_GET['data'];
-	
 	function deviceURL_1($data){
 		$str = $data;
 		$str = preg_replace('/\s+/', '', $str);     //Remove whitespaces
@@ -172,8 +171,7 @@ if (isset($_GET['hostName_1'])){
 				$arr = array('IPv4' => $match[1]);	 // create array for JSON
 				echo json_encode($arr);		// return JSON
 				//echo "PING AND DNS ARE NOT EQUAL USING PING VALUE"; // debug
-			}
-			
+			}	
 		} elseif ($ip = gethostbyname($host . $nwfcs) != $host . $nwfcs) {
 			$ip = gethostbyname($host . $nwfcs);	// gets the IPv4 address of the host
 			$arr = array('IPv4' => $ip);	 // create array for JSON
