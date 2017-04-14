@@ -152,7 +152,7 @@ if (isset($_GET['hostName_1'])){
 			       ".farmcreditwest.fpir.pvt"); 	// DNS search suffix's
 		$message = "Unable to resolve: ";
 		foreach ($dns_1 as $suffix) {
-			$failure = $host . $suffix;	// if submitted name is returned assume failure
+			$failure = $message . $host;	// if submitted name is returned assume failure
 			if ($ip = gethostbyname($host . $suffix) != $host . $suffix) {
 				$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
 				$arr = array('IPv4' => $ip);	 // create array for JSON
@@ -177,7 +177,7 @@ if (isset($_GET['hostName_1'])){
 					break;
 				} 
 			} else if ($ip = gethostbyname($host . $suffix) == $host . $suffix) {
-			  $failure = $message . $host;
+			  //$failure = $message . $host;
 			  $arr = array('Failure' => $failure);	 // create array for JSON
 			  echo json_encode($arr);		// return JSON
 			  break;
