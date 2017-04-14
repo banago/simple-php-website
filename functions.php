@@ -150,8 +150,32 @@ if (isset($_GET['hostName_1'])){
 		$nwfcs = ".nfcs.fpir.pvt";	// DNS suffix
 		$fce = ".farmcrediteast.fpir.pvt";		// DNS suffix
 		$agc = ".agcountry.fpir.pvt";	// DNS suffix
+		$dns_1 = array(".fpi.fpir.pvt", ".nfcs.fpir.pvt", ".farmcrediteast.fpir.pvt", ".agcountry.fpir.pvt"); 
 		$failure = $host . $fpi;	// if submitted name is returned assume failure
 		$message = "Unable to resolve: ";
+		foreach ($dns_1 as $suffix) {
+			if ($ip = gethostbyname($host . $suffix) != $host . $suffix) {
+				$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
+				$arr = array('IPv4' => $ip);	 // create array for JSON
+				exec("/bin/ping -c 2 " . $ip, $output, $result);
+				//print_r($output);	// debug
+				//print_r($result);	// debug
+				preg_match( '/\((.*?)\)/', $output[0], $match );	// matches IP address
+				//print_r($match);	// debug
+				//echo "PING RETURN    " . $match[1];	// debug
+				if ($match[1] == $arr['IPv4']) {
+					echo json_encode($arr);		// return JSON
+					//echo "PING AND DNS ARE EQUAL";	//debug
+				} elseif (empty($match[1])){
+					echo json_encode($arr);		// return JSON
+					//echo "PING FAILED, USING DNS VALUE";	// debug
+				} else {
+				$arr = array('IPv4' => $match[1]);	 // create array for JSON
+				echo json_encode($arr);		// return JSON
+				//echo "PING AND DNS ARE NOT EQUAL USING PING VALUE"; // debug
+				}
+			}
+		}
 		if ($ip = gethostbyname($host . $fpi) != $host . $fpi) {
 			$ip = gethostbyname($host . $fpi);	// gets the IPv4 address of the host
 			$arr = array('IPv4' => $ip);	 // create array for JSON
