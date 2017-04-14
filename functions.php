@@ -163,16 +163,16 @@ if (isset($_GET['hostName_1'])){
 				preg_match( '/\((.*?)\)/', $output[0], $match );	// matches IP address
 				//print_r($match);	// debug
 				//echo "PING RETURN    " . $match[1];	// debug
-				if ($match[1] == $arr['IP1v4']) {
+				if ($match[1] == $arr['IPv4']) {
 					echo json_encode($arr);		// return JSON
-					echo "PING AND DNS ARE EQUAL";	//debug
+					//echo "PING AND DNS ARE EQUAL";	//debug
 				} elseif (empty($match[1])){
 					echo json_encode($arr);		// return JSON
-					echo "PING FAILED, USING DNS VALUE";	// debug
+					//echo "PING FAILED, USING DNS VALUE";	// debug
 				} else {
 				$arr = array('IPv4' => $match[1]);	 // create array for JSON
 				echo json_encode($arr);		// return JSON
-				echo "PING AND DNS ARE NOT EQUAL USING PING VALUE"; // debug
+				//echo "PING AND DNS ARE NOT EQUAL USING PING VALUE"; // debug
 				}
 			}
 		}
