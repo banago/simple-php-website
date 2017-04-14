@@ -46,14 +46,7 @@ function encoded_1(thediv, thefile, thekey) {
 	    } else if (myObj.Type == "HostName") {
 		    if (myObj.Encoded.length <= 0){
 			    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
-			    document.getElementById(thediv).innerHTML = ""; 	//clears the div
-			    document.getElementById(thediv).innerHTML = <a href="#">&laquo;</a>
-			    document.getElementById(thediv).innerHTML = <a href="#"class="active">1</a>
-			    document.getElementById(thediv).innerHTML = <a href="#">3</a>
-			    document.getElementById(thediv).innerHTML = <a href="#">4</a>
-			    document.getElementById(thediv).innerHTML = <a href="#">5</a>
-			    document.getElementById(thediv).innerHTML = <a href="#">6</a>
-			    document.getElementById(thediv).innerHTML = <a href="#">&raquo;</a>
+			    var a = document.getElementById(thediv).innerHTML = ""; 	//clears the div
 			    apicreturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , ''); 
 		    } else {
 		    myUrl = encodeURIComponent("https://devnetapi.cisco.com/sandbox/apic_em/api/v1");
