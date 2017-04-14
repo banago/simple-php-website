@@ -180,8 +180,9 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
   </div>
 
 </div>
-
+<link rel="stylesheet" type="text/css" href="mystyle.css">
 <script>
+	
 // Get the modal
 var modal = document.getElementById('myModal');
 // Get the button that opens the modal
