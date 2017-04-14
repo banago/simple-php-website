@@ -237,7 +237,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
 </form>
 <!-- This DIV returns the users input after proccessing it through the php file -->
 <div id="adiv"></div>
-<div id="spinner111" align="center" class="spinner111"></div>
+<div id="spinner" align="center" class="spinner"></div>
 <!-- The Modal -->
 <div id="myModal" class="modal">
 
