@@ -176,44 +176,6 @@ if (isset($_GET['hostName_1'])){
 				}
 			}
 		}
-		if ($ip = gethostbyname($host . $fpi) != $host . $fpi) {
-			$ip = gethostbyname($host . $fpi);	// gets the IPv4 address of the host
-			$arr = array('IPv4' => $ip);	 // create array for JSON
-			exec("/bin/ping -c 2 " . $ip, $output, $result);
-			//print_r($output);	// debug
-			//print_r($result);	// debug
-			preg_match( '/\((.*?)\)/', $output[0], $match );	// matches IP address
-			//print_r($match);	// debug
-			//echo "PING RETURN    " . $match[1];	// debug
-			if ($match[1] == $arr['IPv4']) {
-				echo json_encode($arr);		// return JSON
-				//echo "PING AND DNS ARE EQUAL";	//debug
-			} elseif (empty($match[1])){
-				echo json_encode($arr);		// return JSON
-				//echo "PING FAILED, USING DNS VALUE";	// debug
-			} else {
-				$arr = array('IPv4' => $match[1]);	 // create array for JSON
-				echo json_encode($arr);		// return JSON
-				//echo "PING AND DNS ARE NOT EQUAL USING PING VALUE"; // debug
-			}	
-		} elseif ($ip = gethostbyname($host . $nwfcs) != $host . $nwfcs) {
-			$ip = gethostbyname($host . $nwfcs);	// gets the IPv4 address of the host
-			$arr = array('IPv4' => $ip);	 // create array for JSON
-			echo json_encode($arr);		// return JSON
-		} elseif ($ip = gethostbyname($host . $fce) != $host . $fce) {
-			$ip = gethostbyname($host . $fce);	// gets the IPv4 address of the host
-			$arr = array('IPv4' => $ip);	 // create array for JSON
-			echo json_encode($arr);		// return JSON
-		} elseif ($ip = gethostbyname($host . $agc) != $host . $agc) {
-			$ip = gethostbyname($host . $agc);	// gets the IPv4 address of the host
-			$arr = array('IPv4' => $ip);	 // create array for JSON
-			echo json_encode($arr);		// return JSON
-		} else {
-			$failure = $message . $host;
-			$ip = gethostbyname($host . $nwfcs);	// gets the IPv4 address of the host
-			$arr = array('Failure' => $failure);	 // create array for JSON
-			echo json_encode($arr);		// return JSON
-		}
         }
 	resolveHost_1($_GET['hostName_1']);
 }
