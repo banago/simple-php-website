@@ -44,16 +44,17 @@ function encoded_1(thediv, thefile, thekey) {
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    apicreturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    } else if (myObj.Type == "HostName") {
-		    if (myObj.hasOwnProperty('Encoded')){
+		    if (myObj.Encoded.length > 0){
 			    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
 			    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 			    apicreturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , ''); 
-		    }
+		    } else {
 		    myUrl = encodeURIComponent("https://devnetapi.cisco.com/sandbox/apic_em/api/v1");
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
 		    apicreturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , '/network-device' , 'curlCustom' , 'GET' , 'curlPost' , '');
+		    }
 	    } else {
 		    // catch all else error messages
 		    var supported_1 = " MAC ";
