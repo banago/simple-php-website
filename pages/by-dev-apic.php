@@ -36,23 +36,23 @@ function encoded_1(thediv, thefile, thekey) {
 
 	    if (myObj.Type == "MAC") {
 		    myUrl = encodeURIComponent("https://devnetapi.cisco.com/sandbox/apic_em/api/v1");
-		    document.getElementById('spinner').cssId.display = "none";
+		    document.getElementById('spinner')[0].cssId.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
 		    apicreturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , '/network-device' , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    } else if (myObj.Type == "IP") {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
-		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById('spinner')[0].style.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    primereturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    } else if (document.forms["search"]["data_text"].value == "") {
 		    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
-		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById('spinner')[0].style.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    hostnameresolver_1(thediv,'functions.php','hostName_1',myUrl);
 	    } else if (myObj) {
 		    myUrl = encodeURIComponent("https://devnetapi.cisco.com/sandbox/apic_em/api/v1");
-		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById('spinner')[0].style.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
 		    apicreturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , '/network-device' , 'curlCustom' , 'GET' , 'curlPost' , '');
@@ -74,7 +74,7 @@ xmlhttp.send();
 }
 function restmodal(thediv, thefile , thekey) {
     //var addSpinner = document.getElementById("spinner");  //var used to add spinner
-    document.getElementById('spinner').style.display = "block";
+    document.getElementById('spinner')[0].style.display = "block";
     document.getElementById(thediv).innerHTML = "";
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
@@ -86,7 +86,7 @@ function restmodal(thediv, thefile , thekey) {
 	document.getElementById(thediv).innerHTML = "";
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
-	    document.getElementById('spinner').style.display = "none";
+	    document.getElementById('spinner')[0].style.display = "none";
             document.getElementById(thediv).innerHTML = myObj.response.serviceTicket;
 	    document.getElementById(thediv).innerHTML = ""; 
 	    apicreturn1('test1', 'restAuth.php' , 'use_ticket', myObj.response.serviceTicket);
@@ -96,7 +96,7 @@ xmlhttp.open('GET', thefile+'?'+thekey+'=1', true);
 xmlhttp.send();
 }
 function apicreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theval_1, thekey_2, theval_2, thekey_3 , theval_3 , thekey_4 , theval_4) {
-    document.getElementById('spinner').style.display = "block";	
+    document.getElementById('spinner')[0].style.display = "block";	
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
@@ -104,7 +104,7 @@ function apicreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
     }  
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-		document.getElementById('spinner').style.display = "none";
+		document.getElementById('spinner')[0].style.display = "none";
 		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
         }
     }
@@ -112,7 +112,7 @@ function apicreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
     	xmlhttp.send();	
 }
 function hostnameresolver_1(thediv, thefile, thekey, myUrl) {
-  	document.getElementById('spinner').style.display = "block";
+  	document.getElementById('spinner')[0].style.display = "block";
 	document.getElementById(thediv).innerHTML = "";
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
@@ -123,7 +123,7 @@ function hostnameresolver_1(thediv, thefile, thekey, myUrl) {
         if (this.readyState == 4 && this.status == 200) {
 		myObj = JSON.parse(this.responseText);
 	    if (myObj.hasOwnProperty('IPv4')) {
-		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById('spinner')[0].style.display = "none";
 		    document.getElementById(thediv).innerHTML = xmlhttp.responseText;
 		    primereturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.IPv4 , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    } else {
@@ -185,8 +185,7 @@ var rst = document.getElementById("myRst");
 btn.onclick = function() {
     document.getElementById("adiv2").innerHTML = encoded_1('adiv2','functions.php','data');
     modal.style.display = "block";
-    document.getElementById('spinner').style.display = "block";	
-    
+    document.getElementById('spinner')[0].style.display = "block";	  
 }
 // When the user clicks the button, reset adiv
 rst.onclick = function() {
