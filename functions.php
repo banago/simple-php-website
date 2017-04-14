@@ -178,11 +178,11 @@ if (isset($_GET['hostName_1'])){
 					break;
 				} 
 			} else {
-					$failure = $message . $host;
-					$arr = array('Failure' => $failure);	 // create array for JSON
-					echo json_encode($arr);		// return JSON
-					break;
-				}
+			  $failure = $message . $host;
+			  $arr = array('Failure' => $failure);	 // create array for JSON
+			  echo json_encode($arr);		// return JSON
+			  break;
+			}
 		}
         }
 	resolveHost_1($_GET['hostName_1']);
