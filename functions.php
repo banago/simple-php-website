@@ -159,7 +159,7 @@ if (isset($_GET['hostName_1'])){
 			exec("/bin/ping -c 2 " . $ip, $output, $result);
 			//print_r($output);
 			//print_r($result);
-			preg_match( '/\)(.*?)\)/', $output[0], $match );
+			preg_match( '/\((.*?)\)/', $output[0], $match );
 			echo "TJHIS    " . $output[0];
 			print_r($match);
 			echo "DFSDFD    " . $match[1];
