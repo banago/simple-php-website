@@ -25,7 +25,9 @@ services:
         - /swarm/volumes/opt/php_web_page/etc/mysql/:/etc/mysql/
         - /swarm/volumes/opt/php_web_page/lib/mysql/:/var/lib/mysql
     env_file:
-      ./mysql.env
+        - ./mysql.env
+    ports:
+      - "3306:3306"
     deploy:
       mode: replicated
       replicas: 1
