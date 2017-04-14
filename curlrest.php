@@ -148,7 +148,7 @@ function iseCurl_1() {
         for ($i = 0; $i < count($json['queryResponse']['entity']); $i++) {
           //echo "How many response: " . count($json['response']) . "<br>";	// debug
           echo "<br>";
-          echo "Array Element: " . $i . "<br>";  
+          echo "Record Number: " . $i . "<br>";  
           echo "<br>";    
           foreach ($match as $x => $item) {
             echo "<b>" . $x . "</b>" . "  " . $json['queryResponse']['entity']['0']['clientsDTO'][$item] . "<br>"; 
