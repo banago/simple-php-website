@@ -5,7 +5,8 @@
   <li>Search by HostName!</li>
   <li>Interface design changes and bug fixes</li>
 </ul>  	
-<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+@import "mystyle.css";
 <head>
 <script type="text/javascript">
 function findformat(thediv, thefile, thekey) {
@@ -32,7 +33,7 @@ function encoded_1(thediv, thefile, thekey) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
-		var cssId = 'mystyle.css';
+
 	    if (myObj.Type == "MAC") {
 		    myUrl = encodeURIComponent("https://devnetapi.cisco.com/sandbox/apic_em/api/v1");
 		    document.getElementById('spinner').cssId.display = "none";
