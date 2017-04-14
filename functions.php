@@ -174,6 +174,10 @@ if (isset($_GET['hostName_1'])){
 				echo json_encode($arr);		// return JSON
 				//echo "PING AND DNS ARE NOT EQUAL USING PING VALUE"; // debug
 				}
+			} else {
+				$failure = $message . $host;
+				$arr = array('Failure' => $failure);	 // create array for JSON
+				echo json_encode($arr);		// return JSON
 			}
 		}
         }
