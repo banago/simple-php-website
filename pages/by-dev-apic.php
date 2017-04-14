@@ -46,8 +46,9 @@ function encoded_1(thediv, thefile, thekey) {
 	    } else if (myObj.Type == "HostName") {
 		    if (myObj.Encoded.length >=7 ){
 			    myUrl = encodeURIComponent("https://agaprimepr01.fpicore.fpir.pvt/webacs/api/v1/data/Clients.json?.full=true\&ipAddress=eq");
-			    var a = document.getElementById(thediv).innerHTML = ""; 	//clears the div
-			    curlreturn_1(thediv, 'curlrest.php' , 'Type' , 'primeTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , ''); 
+			    document.getElementById('spinner').style.display = "none";
+			    document.getElementById(thediv).innerHTML = ""; 	//clears the div
+			    hostnameresolver_1(thediv,'functions.php','hostName_1',myUrl); 
 		    } else {
 		    myUrl = encodeURIComponent("https://devnetapi.cisco.com/sandbox/apic_em/api/v1");
 		    document.getElementById('spinner').style.display = "none";
