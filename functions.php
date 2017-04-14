@@ -166,18 +166,22 @@ if (isset($_GET['hostName_1'])){
 				if ($match[1] == $arr['IPv4']) {
 					echo json_encode($arr);		// return JSON
 					//echo "PING AND DNS ARE EQUAL";	//debug
-				} elseif (empty($match[1])){
+					break;
+				} elseif (empty($match[1])) {
 					echo json_encode($arr);		// return JSON
 					//echo "PING FAILED, USING DNS VALUE";	// debug
+					break;
+				} elseif (!empty($match[1])) {
+					$arr = array('IPv4' => $match[1]);	 // create array for JSON
+					echo json_encode($arr);		// return JSON
+					//echo "PING AND DNS ARE NOT EQUAL USING PING VALUE"; // debug
+					break;
 				} else {
-				$arr = array('IPv4' => $match[1]);	 // create array for JSON
-				echo json_encode($arr);		// return JSON
-				//echo "PING AND DNS ARE NOT EQUAL USING PING VALUE"; // debug
+					$failure = $message . $host;
+					$arr = array('Failure' => $failure);	 // create array for JSON
+					echo json_encode($arr);		// return JSON
+					break;
 				}
-			} else {
-				$failure = $message . $host;
-				$arr = array('Failure' => $failure);	 // create array for JSON
-				echo json_encode($arr);		// return JSON
 			}
 		}
         }
