@@ -10,8 +10,10 @@ class mymodal {
     return $this->$name = $value;
   }	// used to set properties
   function modal_1(){
-	  <html>
-		  <style>	
+	  <!DOCTYPE html>
+<html>
+<head>
+	
 		  .spinner {
 		  border: 4px solid #f3f3f3; /* Light grey */
     	border-top: 4px solid #3498db; /* Blue */
@@ -86,8 +88,9 @@ class mymodal {
     	background-color: #5cb85c;
     	color: white;
 		}
-	  </html>	
-		  </style>
+</head>
+	  </html>
+
 	}
 }
 ?>
