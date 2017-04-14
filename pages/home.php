@@ -2,7 +2,8 @@
 <p>This is the initial release of the portal, updates, and changes will be included to increase functionality at a later date.</p>
 <p><b>Whats New!</b></p>
 <ul>
-  <li>A new Version has been relased! 17.0.<font color="red">2</font>!</li>
+  <li>A new Version has been relased! 17.0.<font color="red">3</font>!</li>
+  <li>All REST interactions are now completed through an Object</li>
   <li>ISE updated</li>
   <li>PRIME updated</li>
   <li>Menu Bar updated</li>
