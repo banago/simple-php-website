@@ -39,6 +39,10 @@
     animation-name: animatetop;
     animation-duration: 0.4s
 }
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
 /* Add Animation */
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
