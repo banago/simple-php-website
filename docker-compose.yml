@@ -19,3 +19,10 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+  sql:
+    image: mysql:8
+    volumes:
+        - /swarm/volumes/opt/php_web_page/mysql/:/etc/mysql/
+    deploy:
+      mode: replicated
+      replicas: 1
