@@ -150,7 +150,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
 <!-- The Modal -->
 <div id="myModal" class="modal">
   <!-- Modal content -->
-  <div class="modal-content" style="overflow-y:">
+  <div class="modal-content" >
     <div class="modal-header"> 
       <span class="close">&times;</span>
       <h2><center>APIC-EM GET Result</center></h2>
@@ -159,7 +159,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
       <p>LAST DETECTED ON</p>
         <div id="spinner" align="center" class="spinner"></div>
 	    <div style="text-align: center;">
-		    <div id="adiv2" class="pagination" style="display: inline-block; text-align: left">
+		    <div id="adiv2" class="pagination" style="display: inline-block; text-align: left overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
 			    Content<br /> style="font-size:20px">
 
 		    </div>	    
