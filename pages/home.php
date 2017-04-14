@@ -3,6 +3,7 @@
 <p><b>Whats New!</b></p>
 <ul>
   <li>A new Version has been relased! 17.0.<font color="red">3</font>!</li>
+  <li>More robust hostname looks comparing DNS and PING results</li>
   <li>All REST interactions are now completed through an Object</li>
   <li>ISE updated</li>
   <li>PRIME updated</li>
