@@ -156,7 +156,7 @@ if (isset($_GET['hostName_1'])){
 		if ($ip = gethostbyname($host . $fpi) != $host . $fpi) {
 			$ip = gethostbyname($host . $fpi);	// gets the IPv4 address of the host
 			$arr = array('IPv4' => $ip);	 // create array for JSON
-			exec("/bin/ping -c 4 " . $ip, $output, $result);
+			exec("/bin/ping -c 2 " . $ip, $output, $result);
 			print_r($output);
 			print_r($result);
 			echo json_encode($arr);		// return JSON
