@@ -62,9 +62,9 @@ class curlauth {
     } 
   }
 function myTime($format,$offset) {
-	echo date('Y-m-d') . "<br />";	// debug data output
-	echo date($format.':i:s') . "<br />";	// debug time output
-	echo date("H:i:s", strtotime('-'.$offset.' minutes')) . "<br />"; 	// debug time ofset
+	//echo date('Y-m-d') . "<br />";	// debug data output
+	//echo date($format.':i:s') . "<br />";	// debug time output
+	//echo date("H:i:s", strtotime('-'.$offset.' minutes')) . "<br />"; 	// debug time ofset
 	$notepad = "https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/AuthList/2017-04-10 18:35:00/null";	// just a note to self
 	$date = date('Y-m-d');	// creates current data
 	$time = date($format.':i:s', strtotime('-'.$offset.' minutes'));	// creates current time - offset time
