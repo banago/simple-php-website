@@ -32,9 +32,10 @@ function encoded_1(thediv, thefile, thekey) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
+		var cssId = 'mystyle.css';
 	    if (myObj.Type == "MAC") {
 		    myUrl = encodeURIComponent("https://devnetapi.cisco.com/sandbox/apic_em/api/v1");
-		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById('spinner').cssId.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    document.getElementById(thediv).innerHTML = myObj.Encoded;
 		    apicreturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , '/network-device' , 'curlCustom' , 'GET' , 'curlPost' , '');
