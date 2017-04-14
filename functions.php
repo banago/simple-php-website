@@ -157,12 +157,14 @@ if (isset($_GET['hostName_1'])){
 			$ip = gethostbyname($host . $fpi);	// gets the IPv4 address of the host
 			$arr = array('IPv4' => $ip);	 // create array for JSON
 			exec("/bin/ping -c 2 " . $ip, $output, $result);
-			//print_r($output);
-			//print_r($result);
-			preg_match( '/\((.*?)\)/', $output[0], $match );
-			echo "TJHIS    " . $output[0];
-			print_r($match);
+			//print_r($output);	// debug
+			//print_r($result);	// debug
+			preg_match( '/\((.*?)\)/', $output[0], $match );	// matches IP address
+			//print_r($match);	// debug
 			echo "DFSDFD    " . $match[1];
+			if ($match[1] == $arr['IPv4']) {
+				echo "CATS CATS CATS";
+			}
 			echo json_encode($arr);		// return JSON
 		} elseif ($ip = gethostbyname($host . $nwfcs) != $host . $nwfcs) {
 			$ip = gethostbyname($host . $nwfcs);	// gets the IPv4 address of the host
