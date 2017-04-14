@@ -66,8 +66,8 @@ function myTime($format,$offset) {
 	echo date($format.':i:s') . "<br />";	// debug time output
 	echo date("H:i:s", strtotime('-'.$offset.' minutes')) . "<br />"; 	// debug time ofset
 	$notepad = "https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/AuthList/2017-04-10 18:35:00/null";	// just a note to self
-	$date = date($format.':i:s');	// creates current data
-	$time = date("H:i:s", strtotime('-'.$offset.' minutes'));	// creates current time - offset time
+	$date = date('Y-m-d');	// creates current data
+	$time = date($format.':i:s', strtotime('-'.$offset.' minutes'));	// creates current time - offset time
 	$this->time = $date." ".$time;	// populates attribute with correctl formated time
 }
 function apicCurl_1() {
