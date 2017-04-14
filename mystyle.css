@@ -27,8 +27,6 @@
 }
 /* Modal Content */
 .modal-content {
-    overflow-y: initial;
-    overflow: auto; /* Enable scroll if needed */
     position: relative;
     background-color: #fefefe;
     margin: auto;
@@ -68,7 +66,11 @@
     background-color: #5cb85c;
     color: white;
 }
-.modal-body {padding: 2px 16px;}
+.modal-body {
+    overflow-y: initial;
+    overflow: auto; /* Enable scroll if needed */
+    padding: 2px 16px;
+}
 .modal-footer {
     padding: -1px 16px;
     background-color: #5cb85c;
