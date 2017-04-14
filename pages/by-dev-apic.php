@@ -48,7 +48,7 @@ function encoded_1(thediv, thefile, thekey) {
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    hostnameresolver_1(thediv,'functions.php','hostName_1',myUrl);
-	    } else if (isEmpty(this.responseText)) {
+	    } else if (myObj.length === 0)) {
 		    myUrl = encodeURIComponent("https://devnetapi.cisco.com/sandbox/apic_em/api/v1");
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
