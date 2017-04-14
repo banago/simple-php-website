@@ -148,8 +148,9 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
 <div id="adiv"></div>
 
 <!-- The Modal -->
-<div id="myModal" class="modal" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+<div id="myModal" class="modal" >
   <!-- Modal content -->
+	<div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;"> 
   <div class="modal-content">
     <div class="modal-header"> 
       <span class="close">&times;</span>
@@ -169,6 +170,7 @@ MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydow
       <h3><center>____-_-____</center></h3>
     </div>
   </div>
+	  </div>
 
 </div>
 
