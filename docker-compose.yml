@@ -22,7 +22,8 @@ services:
   sql:
     image: mysql:8
     volumes:
-        - /swarm/volumes/opt/php_web_page/mysql/:/etc/mysql/
+        - /swarm/volumes/opt/php_web_page/etc/mysql/:/etc/mysql/
+        - /swarm/volumes/opt/php_web_page/lib/mysql/:/var/lib/mysql
     deploy:
       mode: replicated
       replicas: 1
