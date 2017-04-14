@@ -48,6 +48,12 @@ function encoded_1(thediv, thefile, thekey) {
 		    document.getElementById('spinner').style.display = "none";
 		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
 		    hostnameresolver_1(thediv,'functions.php','hostName_1',myUrl);
+	    } else if (isEmpty(myObj.Type)) {
+		    myUrl = encodeURIComponent("https://devnetapi.cisco.com/sandbox/apic_em/api/v1");
+		    document.getElementById('spinner').style.display = "none";
+		    document.getElementById(thediv).innerHTML = ""; 	//clears the div
+		    document.getElementById(thediv).innerHTML = myObj.Encoded;
+		    apicreturn_1(thediv, 'curlrest.php' , 'Type' , 'apicTicket_1' , 'curlAddress', myUrl , 'curlData' , '/network-device' , 'curlCustom' , 'GET' , 'curlPost' , '');
 	    } else {
 		    // catch all else error messages
 		    var supported_1 = " MAC ";
