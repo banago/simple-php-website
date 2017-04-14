@@ -28,6 +28,7 @@
 /* Modal Content */
 .modal-content {
     overflow-y: initial;
+    overflow: auto; /* Enable scroll if needed */
     position: relative;
     background-color: #fefefe;
     margin: auto;
