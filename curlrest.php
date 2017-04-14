@@ -156,7 +156,7 @@ function iseCurl_1() {
         }
         echo "<p>" . "</p>" . "<p>" . "</p>";
       } else {
-          echo "Unable to locate record for : " . "<font color=\"red\">" . $data . "</font>";
+          echo "Unable to locate record for : " . "<font color=\"red\">" . $this->curlData . "</font>";
           echo "<p>" . "</p>" . "<p>" . "</p>";
       }  
     }  
