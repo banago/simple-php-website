@@ -28,11 +28,10 @@ CREATE TABLE aca_mab_admin (
 CREATE TABLE aca_mab_metadata (
   Mac_ID BIGINT UNSIGNED NOT NULL,
   First_Seen DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  Status CHAR NOT NULL,
+  Status CHAR NOT NULL CHECK (Status IN ('Active','Passive')),   
   Count INT UNSIGNED NOT NULL,
   PRIMARY KEY (Mac_ID),
-  FOREIGN KEY (Mac_ID) REFERENCES aca_mab (Mac_ID),
-  CHECK (Status ="Active"  ||  Status ="Passive")
+  FOREIGN KEY (Mac_ID) REFERENCES aca_mab (Mac_ID)
 );
 CREATE TABLE aca_mab_timestamp (
   Time_ID INT UNSIGNED NOT NULL AUTO_INCREMENT,
