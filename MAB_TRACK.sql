@@ -16,7 +16,7 @@ CREATE TABLE aca_user (
 CREATE TABLE aca_mab (
   Mac_ID BIGINT UNSIGNED NOT NULL,
   Valid_From DATETIME DEFAULT CURRENT_TIMESTAMP,
-  Valide_Until CHAR(20) DEFAULT "null",
+  Valid_Until CHAR(20) DEFAULT "null",
   Aca_ID INT UNSIGNED NOT NULL,
   Status SET('ACTIVE', 'PASSIVE') NOT NULL,
   PRIMARY KEY (Mac_ID,Valid_From,Valide_Until),
