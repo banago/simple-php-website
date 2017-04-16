@@ -19,7 +19,7 @@ CREATE TABLE aca_mab (
   Valide_Until CHAR(20) DEFAULT "null",
   Aca_ID INT UNSIGNED NOT NULL,
   Status SET('ACTIVE', 'PASSIVE') NOT NULL,
-  PRIMARY KEY (Mac_ID,Valid_From_ID,Valide_Until_ID),
+  PRIMARY KEY (Mac_ID,Valid_From,Valide_Until),
   FOREIGN KEY (Aca_ID) REFERENCES aca (Aca_ID)
 );
 CREATE TABLE aca_mab_metadata (
