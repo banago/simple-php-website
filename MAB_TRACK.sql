@@ -24,8 +24,8 @@ CREATE TABLE aca_mab (
 );
 CREATE TABLE aca_mab_metadata (
   Mac_ID BIGINT UNSIGNED NOT NULL,
-  Counter INT UNSIGNED NOT NULL,
-  Note VARCHAR (1000) NOT NULL,
+  Bypass_Count INT UNSIGNED NOT NULL,
+  Bypass_Note VARCHAR (1000) NOT NULL,
   PRIMARY KEY (Mac_ID),
   FOREIGN KEY (Mac_ID) REFERENCES aca_mab (Mac_ID)
 );
