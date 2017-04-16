@@ -31,3 +31,9 @@ CREATE TABLE aca_mab_metadata (
   PRIMARY KEY (Mac_ID),
   FOREIGN KEY (Mac_ID) REFERENCES aca_mab (Mac_ID)
 );
+CREATE TABLE aca_password (
+  User_ID INT UNSIGNED NOT NULL,
+  Password CHAR(50) UNSIGNED NOT NULL,
+  PRIMARY KEY (User_ID),
+  FOREIGN KEY (User_ID REFERENCES aca_users (User_ID)
+);
