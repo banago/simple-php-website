@@ -2,6 +2,8 @@
 class sqlquery {
 	protected $mac_1;
   protected $int_1;
+	protected $serchtype_1;
+	protected $query_1;
   function __construct($function) {
 	  if ($function == "sqlMAC") {
 		  $this->mac2int_1();
@@ -11,6 +13,10 @@ class sqlquery {
 		  $this->iseTicket_1();
 	  }
 	  @$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
+		$this->query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State 
+		FROM aca_mab 
+		WHERE Valid_Until = \'1000-01-01 00:00:0\'\;";
+		echo $this->query_1;
   }
   function __get($name){
     return $this->$name;
