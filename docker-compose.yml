@@ -12,6 +12,8 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+    networks:
+      - LEMP
   php:
     image: rohscx/php:7-fpm-alpine-mysqli
     volumes:
@@ -19,6 +21,8 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+    networks:
+      - LEMP
   sql:
     image: mysql:8
     volumes:
@@ -29,3 +33,7 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+    networks:
+      - LEMP
+networks:
+  LEMP:
