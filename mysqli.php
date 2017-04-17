@@ -13,7 +13,7 @@ class mysqlquery {
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
 	  }
-	  @$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
+	  @$db = new mysqli("sql", "demoUser", "demoPassword", "MAB_TRACK");
 	  $this->serchtype_1 = "Valid_Until"; 
 	  $this->searchterm_1 = "\'1000-01-01 00:00:0\'";
 	  $this->query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab";
@@ -39,7 +39,7 @@ class mysqlquery {
   }
 }
 //$b = new mysqlquery();
-@$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
+@$db = new mysqli("sql", "demoUser", "demoPassword", "MAB_TRACK");
 $serchtype_1 = "Valid_Until"; 
 $searchterm_1 = "1000-01-01 00:00:0";
 $query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE $serchtype_1 = ?";
