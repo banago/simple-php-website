@@ -20,9 +20,9 @@ class mysqlquery {
 	  echo $this->query_1;
 	  $test = $this->query_1;
 	  $test2 = $this->searchterm_1;
-	  $stmt = $db->prepare($test);
-	  $stmt->bind_param('s',$test2);
-	  $stmt->execute();
+	  $stmt = $this->db->prepare($test);
+	  $this->stmt->bind_param('s',$test2);
+	  $this->stmt->execute();
 		
   }
   function __get($name){
