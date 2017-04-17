@@ -20,7 +20,7 @@ class mysqlquery {
 	  $stmt->bind_param('s', $this->searchterm_1);
 	  $stmt->execute();
 	  $stmt->store_result();
-	  $this->stmt_bind_assoc($stmt, $this->$resultrow);
+	  $this->stmt_bind_assoc($stmt, $this->resultrow);
 	  while($stmt->fetch()) {
     	  	print_r($this->resultrow);
 	  }
