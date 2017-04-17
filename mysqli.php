@@ -44,18 +44,22 @@ class mysqlquery {
 
 
 $con = mysqli_connect("sql","demoUser","demoPassword","MAB_TRACK");
-
+mysqli_set_charset($db,"utf8")
 // Check connection
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
-$serchtype_1 = "Valid_Until"; 
-$searchterm_1 = "aca_mab";
-$query_1 = "SELECT * FROM ?";
-$stmt = $db->prepare($query_1);
-$stmt->bind_param('s',$searchterm_1);
-$stmt->execute();
+$charset=mysqli_character_set_name($con);
+echo "Default character set is: " . $charset;
+
+mysqli_close($con);
+//$serchtype_1 = "Valid_Until"; 
+//$searchterm_1 = "aca_mab";
+//$query_1 = "SELECT * FROM ?";
+//$stmt = $db->prepare($query_1);
+//$stmt->bind_param('s',$searchterm_1);
+//$stmt->execute();
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) 
     & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new sqlquery($_GET['Type']);	// sets class property
