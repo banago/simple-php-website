@@ -7,7 +7,7 @@ class mysqlquery {
 	protected $searchterm_1;
 	protected $query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE Valid_Until = ?";
 	protected $resultrow = array();
-  	function __construct($data) {
+  	function __construct($sqlquery) {
 	  if ($function == "sqlMAC") {
 		  $this->mac2int_1();
 	  } elseif ($function == "primeTicket_1") {
@@ -15,12 +15,12 @@ class mysqlquery {
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
 	  }
-	  $this->sqlquery($data);
+	  $this->sqlquery($sqlquery);
 
 		
   }
-   function sqlquery($data) {
-	  $this->searchterm_1 = $data;
+   function sqlquery($sqlquery) {
+	  $this->searchterm_1 = $sqlquery;
 	  $db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
  	  $stmt = $db->prepare($this->query_1);
 	  $stmt->bind_param('s', $this->searchterm_1);
@@ -59,17 +59,16 @@ class mysqlquery {
 }
 }
 
-$db = new mysqlquery("1000-01-01 00:00:0");
-if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) 
-    & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
-	$a = new sqlquery($_GET['Type']);	// sets class property
+//$db = new mysqlquery("1000-01-01 00:00:0");
+if (isset($_GET['sqlData'])) {
+	$db = new mysqlquery($_GET['sqlData']);	// sets class property
 	//echo $_GET['Type'] . "<br />";	// debug
-	$a->curlAddress = $_GET['curlAddress'];	// sets class property
+	//$a->curlAddress = $_GET['curlAddress'];	// sets class property
 	//echo $_GET['curlAddress'] . "<br />";	// debug
 	//echo $_GET['curlData'] . "<br />";	// debug
-	$a->curlCustom =$_GET['curlCustom'];	// sets class property
+	//$a->curlCustom =$_GET['curlCustom'];	// sets class property
 	//echo $_GET['curlCustom'] . "<br />";	// debug
-	$a->curlPost = $_GET['curlPost'];	// sets class property
+	//$a->curlPost = $_GET['curlPost'];	// sets class property
 	//echo $_GET['curlPost'] . "<br />";	// debug
 		if ($_GET['Type'] == "primeTicket_1") {
 		$a->curlData = "(" . $_GET['curlData'] . ")";	// formats user input
