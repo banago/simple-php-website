@@ -16,7 +16,7 @@ class mysqlquery {
 	  @$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
 	  $this->serchtype_1 = "Valid_Until"; 
 	  $this->searchterm_1 = "\'1000-01-01 00:00:0\'";
-	  $this->query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE $this->serchtype_1 = ?";
+	  $this->query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab";
 	  echo $this->query_1;
 	  $test = $this->query_1;
 	  $test2 = $this->searchterm_1;
