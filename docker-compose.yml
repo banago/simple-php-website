@@ -13,7 +13,7 @@ services:
       mode: replicated
       replicas: 1
   php:
-    image: php:7-fpm-alpine
+    image: rohscx/php:7-fpm-alpine-mysqli
     volumes:
         - /swarm/volumes/opt/php_web_page:/code
     deploy:
@@ -26,8 +26,6 @@ services:
         - /swarm/volumes/opt/php_web_page/lib/mysql/:/var/lib/mysql
     env_file:
         - ./mysql.env
-    ports:
-      - "3306:3306"
     deploy:
       mode: replicated
       replicas: 1
