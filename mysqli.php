@@ -32,7 +32,7 @@ class sqlquery {
     $this->mac_1 =  base_convert($int_1, 10, 16);
   }
 }
-b = new sqlquery("cats");
+$b = new sqlquery("cats");
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) 
     & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new sqlquery($_GET['Type']);	// sets class property
