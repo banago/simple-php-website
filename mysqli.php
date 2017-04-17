@@ -49,11 +49,11 @@ if (mysqli_connect_errno()) {
     exit();
 }
 $serchtype_1 = "Valid_Until";
-$searchterm_1 = "2";
+$searchterm_1 = 2;
 $query_1 = "SELECT Valid_From FROM aca_mab WHERE Aca_ID = ?";
 echo "THIS IS THE query_1:  " . $query_1;
 $stmt = $db->prepare($query_1);
-$stmt->bind_param('s',$searchterm_1);
+$stmt->bind_param('d',$searchterm_1);
 $stmt->execute();
 if ($result = $db->query($query_1)) {
 echo "CATS CATA VATS";
