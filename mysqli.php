@@ -39,7 +39,7 @@ class mysqlquery {
   }
 }
 //$b = new mysqlquery();
-@$db = new mysqli("sql", "demoUser", "demoPassword", "MAB_TRACK");
+@$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
 if (mysqli_connect_errno()) {
    printf("Can't connect Errorcode: %s\n", mysqli_connect_error());
    exit;
