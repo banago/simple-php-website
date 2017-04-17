@@ -1,8 +1,9 @@
 <?php
-class sqlquery {
+class mysqlquery {
 	protected $mac_1;
   protected $int_1;
 	protected $serchtype_1;
+	protected $searchterm_1;
 	protected $query_1;
   function __construct($function) {
 	  if ($function == "sqlMAC") {
