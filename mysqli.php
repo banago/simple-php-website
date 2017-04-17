@@ -57,7 +57,7 @@ class mysqlquery {
 }
 }
 
-$db = new mysqlquery("Valid_Until", "1000-01-01 00:00:0", "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE $tserchtype_1 = ?");
+$db = new mysqlquery("Valid_Until", "1000-01-01 00:00:0", "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE $this->serchtype_1 = ?");
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) 
     & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new sqlquery($_GET['Type']);	// sets class property
