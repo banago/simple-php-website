@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
 class mysqlquery {
 	protected $mac_1;
   protected $int_1;
