@@ -40,6 +40,10 @@ class mysqlquery {
 }
 //$b = new mysqlquery();
 @$db = new mysqli("sql", "demoUser", "demoPassword", "MAB_TRACK");
+if (mysqli_connect_errno()) {
+   printf("Can't connect Errorcode: %s\n", mysqli_connect_error());
+   exit;
+}
 $serchtype_1 = "Valid_Until"; 
 $searchterm_1 = "1000-01-01 00:00:0";
 $query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE $serchtype_1 = ?";
