@@ -39,13 +39,14 @@ class mysqlquery {
 	  $this->mac_1 =  base_convert($int_1, 10, 16);
   }
 }
-//$b = new mysqlquery();
-//$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
+$db = new mysqlquery();
+$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
 //mysqli_set_charset($db,"utf8");
+$db->set_charset("utf8"); 
 
 
-$con = mysqli_connect("sql","demoUser","demoPassword","MAB_TRACK");
-echo "Default character set is: " . $charset;
+//$con = mysqli_connect("sql","demoUser","demoPassword","MAB_TRACK");
+//echo "Default character set is: " . $charset;
 
 mysqli_close($con);
 //$serchtype_1 = "Valid_Until"; 
