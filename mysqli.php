@@ -59,23 +59,6 @@ class mysqlquery {
 //$db = new mysqlquery("1000-01-01 00:00:0");
 if (isset($_GET['sqlQuery']) & isset($_GET['sqlData'])) {
 	$db = new mysqlquery($_GET['sqlQuery'], $_GET['sqlData']);	// sets class property
-	//echo $_GET['Type'] . "<br />";	// debug
-	//$a->curlAddress = $_GET['curlAddress'];	// sets class property
-	//echo $_GET['curlAddress'] . "<br />";	// debug
-	//echo $_GET['curlData'] . "<br />";	// debug
-	//$a->curlCustom =$_GET['curlCustom'];	// sets class property
-	//echo $_GET['curlCustom'] . "<br />";	// debug
-	//$a->curlPost = $_GET['curlPost'];	// sets class property
-	//echo $_GET['curlPost'] . "<br />";	// debug
-		if ($_GET['Type'] == "primeTicket_1") {
-		$a->curlData = "(" . $_GET['curlData'] . ")";	// formats user input
-		$a->primeCurl_1();	// calls the correct function based on the GET type
-	} elseif ($_GET['Type'] == "iseTicket_1") {
-		$a->curlData = $_GET['curlData'];	// formats user input
-		$a->iseCurl_1();	// calls the correct function based on the GET Type
-	} elseif ($_GET['Type'] == "apicTicket_1") {
-		$a->curlData = $_GET['curlData'];	// formats user input
-		$a->apicCurl_1();	// calls the correct function based on the GET tpe
 	}	
 }
 ?>
