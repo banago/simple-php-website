@@ -55,7 +55,6 @@ echo "THIS IS THE query_1:  " . $query_1;
 $stmt = $db->prepare($query_1);
 $stmt->bind_param('s',$searchterm_1);
 $stmt->execute();
-if ($result = $db->query($query_1)) {
 
     /* fetch object array */
     while ($obj = $result->fetch_object()) {
@@ -63,7 +62,7 @@ if ($result = $db->query($query_1)) {
     }
     /* free result set */
     $result->close();
-}
+
 //$con = mysqli_connect("sql","demoUser","demoPassword","MAB_TRACK");
 //echo "Default character set is: " . $charset;
 
