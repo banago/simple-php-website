@@ -63,14 +63,14 @@ if ($result = $db->query($query_1)) {
     while ($obj = $result->fetch_object()) {
         printf ("%s (%s)\n", $obj->Name, $obj->CountryCode);
     }
-
     /* free result set */
     $result->close();
 }
 //$con = mysqli_connect("sql","demoUser","demoPassword","MAB_TRACK");
 //echo "Default character set is: " . $charset;
 
-mysqli_close($db);
+/* close connection */
+$db->close();
 //$serchtype_1 = "Valid_Until"; 
 //$searchterm_1 = "aca_mab";
 //$query_1 = "SELECT * FROM ?";
