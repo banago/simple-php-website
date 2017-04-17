@@ -46,13 +46,14 @@ class mysqlquery {
 $con = mysqli_connect("sql","demoUser","demoPassword","MAB_TRACK");
 //mysqli_set_charset($db,"utf8")
 // Check connection
+mysqli_set_charset($con,"utf8");
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 $charset=mysqli_character_set_name($con);
 echo "Default character set is: " . $charset;
-mysqli_set_charset($con,"utf8");
+
 mysqli_close($con);
 //$serchtype_1 = "Valid_Until"; 
 //$searchterm_1 = "aca_mab";
