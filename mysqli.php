@@ -56,6 +56,16 @@ $stmt = $db->prepare($query_1);
 $stmt->bind_param('s',$searchterm_1);
 $stmt->execute();
 printf("%d Row inserted.\n", $stmt->affected_rows);
+if ($result = $db->query($query_1)) {
+
+    /* fetch object array */
+    while ($obj = $result->fetch_object()) {
+        printf ("%s (%s)\n", $obj->Mac_ID, $obj->Valid_From);
+    }
+
+    /* free result set */
+    $result->close();
+}
 $stmt->close();
 
 //$con = mysqli_connect("sql","demoUser","demoPassword","MAB_TRACK");
