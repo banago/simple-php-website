@@ -14,11 +14,7 @@ class mysqlquery {
 		  $this->primeTicket_1();
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
-	  }
-	  if ()
-	  
-
-		
+	  }	
   }
    function sqlquery($Query, $searchTerm) {
 	  $this->searchterm_1 = $searchTerm;
