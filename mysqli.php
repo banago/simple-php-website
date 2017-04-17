@@ -40,42 +40,59 @@ class mysqlquery {
   }
 }
 //$db = new mysqlquery();
-$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
+//$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
 //mysqli_set_charset($db,"utf8");
 //$db->set_charset("utf8");
 /* check connection */
-if (mysqli_connect_errno()) {
-    printf("Connect failed: %s\n", mysqli_connect_error());
-    exit();
-}
-$serchtype_1 = "Valid_Until";
-$searchterm_1 = 2;
-$query_1 = "SELECT Valid_From FROM aca_mab WHERE Aca_ID = ?";
-echo "THIS IS THE query_1:  " . $query_1;
-$stmt = $db->prepare($query_1);
-$stmt->bind_param('d',$searchterm_1);
-$stmt->execute();
-$meta = $stmt->result_metadata();
+//if (mysqli_connect_errno()) {
+//    printf("Connect failed: %s\n", mysqli_connect_error());
+//    exit();
+//}
+//$serchtype_1 = "Valid_Until";
+//$searchterm_1 = 2;
+//$query_1 = "SELECT Valid_From FROM aca_mab WHERE Aca_ID = ?";
+//echo "THIS IS THE query_1:  " . $query_1;
+//$stmt = $db->prepare($query_1);
+//$stmt->bind_param('d',$searchterm_1);
+//$stmt->execute();
+//$meta = $stmt->result_metadata();
 
-while ($field = $meta->fetch_field()) {
-  $parameters[] = &$row[$field->name];
-}
+//while ($field = $meta->fetch_field()) {
+//  $parameters[] = &$row[$field->name];
+//}
 
-call_user_func_array(array($stmt, 'bind_result'), $parameters);
+//call_user_func_array(array($stmt, 'bind_result'), $parameters);
 
-while ($stmt->fetch()) {
-  foreach($row as $key => $val) {
-    $x[$key] = $val;
-  }
-  $results[] = $x;
-}
-$db->close();
+//while ($stmt->fetch()) {
+//  foreach($row as $key => $val) {
+//   $x[$key] = $val;
+//  }
+//  $results[] = $x;
+//}
+//$db->close();
 //$serchtype_1 = "Valid_Until"; 
 //$searchterm_1 = "aca_mab";
 //$query_1 = "SELECT * FROM ?";
 //$stmt = $db->prepare($query_1);
 //$stmt->bind_param('s',$searchterm_1);
 //$stmt->execute();
+
+$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
+$stmt = $db->prepare("SELECT Valid_From FROM aca_mab WHERE Aca_ID = ?");
+$searchterm_1 = 2;
+$stmt->bind_param('i', $searchterm_1);
+$stmt->execute();
+
+$stmt->store_result();
+$stmt->bind_result($column1, $column2, $column3);
+
+while($stmt->fetch())
+{
+    echo "col1=$column1, col2=$column2, col3=$column3 \n";
+}
+
+$stmt->close();
+
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) 
     & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new sqlquery($_GET['Type']);	// sets class property
