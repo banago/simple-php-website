@@ -41,9 +41,10 @@ class mysqlquery {
 }
 
 $db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
-$stmt = $db->prepare("SELECT Valid_From FROM aca_mab WHERE Aca_ID = ?");
-$searchterm_1 = 2;
-$stmt->bind_param('i', $searchterm_1);
+$serchtype_1 = "Valid_Until";
+$searchterm_1 = "1000-01-01 00:00:0";
+$stmt = $db->prepare("SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE $serchtype_1 = ?");
+$stmt->bind_param('s', $searchterm_1);
 $stmt->execute();
 
 $stmt->store_result();
