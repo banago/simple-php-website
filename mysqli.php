@@ -39,7 +39,7 @@ class mysqlquery {
 	  $this->mac_1 =  base_convert($int_1, 10, 16);
   }
 }
-$db = new mysqlquery();
+//$db = new mysqlquery();
 $db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
 //mysqli_set_charset($db,"utf8");
 $db->set_charset("utf8"); 
