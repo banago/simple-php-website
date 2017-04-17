@@ -6,7 +6,8 @@ class mysqlquery {
 	protected $serchtype_1;
 	protected $searchterm_1;
 	protected $query_1;
-  function __construct() {
+	protected $resultrow = array();
+  function __construct($a,$b,$c) {
 	  if ($function == "sqlMAC") {
 		  $this->mac2int_1();
 	  } elseif ($function == "primeTicket_1") {
@@ -14,16 +15,18 @@ class mysqlquery {
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
 	  }
-	  @$db = new mysqli("sql", "demoUser", "demoPassword", "MAB_TRACK");
-	  $this->serchtype_1 = "Valid_Until"; 
-	  $this->searchterm_1 = "\'1000-01-01 00:00:0\'";
-	  $this->query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab";
-	  echo $this->query_1;
-	  $test = $this->query_1;
-	  $test2 = $this->searchterm_1;
-	  $stmt = $db->prepare($test);
-	  $stmt->bind_param('s',$test2);
+	  $db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
+	  $this->serchtype_1 = $a;
+          $this->searchterm_1 = $b;
+	  $this->query_1 = $c;
+ 	  $stmt = $db->prepare($this->query_1);
+	  $stmt->bind_param('s', $this->searchterm_1);
 	  $stmt->execute();
+	  $stmt->store_result();
+	  $this->stmt_bind_assoc($stmt, $this->$resultrow);
+	  while($stmt->fetch()) {
+    	  	print_r($this->resultrow);
+	  }
 		
   }
   function __get($name){
@@ -38,17 +41,7 @@ class mysqlquery {
   function int2mac_1($int_1) {
 	  $this->mac_1 =  base_convert($int_1, 10, 16);
   }
-}
-
-$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
-$serchtype_1 = "Valid_Until";
-$searchterm_1 = "1000-01-01 00:00:0";
-$query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE $serchtype_1 = ?";
-$stmt = $db->prepare($query_1);
-$stmt->bind_param('s', $searchterm_1);
-$stmt->execute();
-$stmt->store_result();
-function stmt_bind_assoc (&$stmt, &$out) {
+  function stmt_bind_assoc (&$stmt, &$out) {
     $data = mysqli_stmt_result_metadata($stmt);
     $fields = array();
     $out = array();
@@ -62,15 +55,9 @@ function stmt_bind_assoc (&$stmt, &$out) {
     }
     call_user_func_array(mysqli_stmt_bind_result, $fields);
 }
-
-$resultrow = array();
-stmt_bind_assoc($stmt, $resultrow);
-
-while($stmt->fetch())
-{
-    print_r($resultrow);
 }
 
+$db = new mysqlquery("Valid_Until", "1000-01-01 00:00:0", "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE $tserchtype_1 = ?");
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) 
     & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new sqlquery($_GET['Type']);	// sets class property
