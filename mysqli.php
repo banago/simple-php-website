@@ -55,16 +55,8 @@ echo "THIS IS THE query_1:  " . $query_1;
 $stmt = $db->prepare($query_1);
 $stmt->bind_param('d',$searchterm_1);
 $stmt->execute();
-if ($result = $db->query($query_1)) {
-echo "CATS CATA VATS";
-    /* fetch object array */
-    while ($obj != $result->fetch_object()) {
-        printf ("%s (%s)\n", $obj->Mac_ID, $obj->Valid_From);
-    }
-
-    /* free result set */
-    $result->close();
-}
+$stmt->bind_result($col1);
+// then fetch and close the statement
 $stmt->close();
 
 //$con = mysqli_connect("sql","demoUser","demoPassword","MAB_TRACK");
