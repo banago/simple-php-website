@@ -15,7 +15,7 @@ services:
     networks:
       - LEMP
   php:
-    image: rohscx/php:7-fpm-alpine-mysqli
+    image: php:7.0.17-fpm-alpine
     volumes:
         - /swarm/volumes/opt/php_web_page:/code
     deploy:
