@@ -40,7 +40,7 @@ class mysqlquery {
   }
 }
 //$db = new mysqlquery();
-@$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
+$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
 //mysqli_set_charset($db,"utf8");
 //$db->set_charset("utf8");
 /* check connection */
@@ -57,7 +57,6 @@ $stmt->bind_param('s',$searchterm_1);
 $stmt->execute();
 $result = $db->query($query_1);
 print_r($result->fetch_object());
-
 if ($result = $db->query($query_1)) {
 
     /* fetch object array */
