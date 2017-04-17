@@ -13,7 +13,7 @@ class sqlquery {
 		  $this->iseTicket_1();
 	  }
 	  @$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
-		$this->serchtype_1 = "Valid_Until" 	
+		$this->serchtype_1 = "Valid_Until"; 	
 	  $this->query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State 
 		FROM aca_mab 
 		WHERE this->serchtype_1 = ?";
