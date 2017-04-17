@@ -44,7 +44,7 @@ class mysqlquery {
 
 
 $con = mysqli_connect("sql","demoUser","demoPassword","MAB_TRACK");
-mysqli_set_charset($db,"utf8")
+//mysqli_set_charset($db,"utf8")
 // Check connection
 if (mysqli_connect_errno())
   {
