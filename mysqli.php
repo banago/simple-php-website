@@ -19,21 +19,21 @@ class mysqlquery {
 	  $this->query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE $this->serchtype_1 = ?";
 	  echo $this->query_1;
 	  $stmt = $db->prepare($this->query_1);
-	  $stmt->bind_param('s',this->$searchterm_1);
+	  $stmt->bind_param('s',$this->searchterm_1);
 	  $stmt->execute();
 		
   }
   function __get($name){
-    return $this->$name;
+	  return $this->$name;
   }	// used to get properties
   function __set($name,$value){
-    return $this->$name = $value;
+	  return $this->$name = $value;
   }	// used to set properties
   function mac2int_1($mac1) {
-    $this->int_1 = base_convert($mac1, 16, 10);
+	  $this->int_1 = base_convert($mac1, 16, 10);
   }
   function int2mac_1($int_1) {
-    $this->mac_1 =  base_convert($int_1, 10, 16);
+	  $this->mac_1 =  base_convert($int_1, 10, 16);
   }
 }
 $b = new mysqlquery("cats");
