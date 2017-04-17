@@ -84,11 +84,11 @@ $stmt->bind_param('i', $searchterm_1);
 $stmt->execute();
 
 $stmt->store_result();
-$stmt->bind_result($column1, $column2, $column3);
+$stmt->bind_result($column1);
 
 while($stmt->fetch())
 {
-    echo "col1=$column1, col2=$column2, col3=$column3 \n";
+    echo "col1=$column1 \n";
 }
 
 $stmt->close();
