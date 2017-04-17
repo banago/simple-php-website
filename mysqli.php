@@ -4,10 +4,10 @@ class mysqlquery {
 	protected $mac_1;
   	protected $int_1;
 	protected $serchtype_1 = "Valid_Until";
-	protected $searchterm_1 = "1000-01-01 00:00:0";
-	protected $query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE " . $this->serchtype_1 . "= ?";
+	protected $searchterm_1;
+	protected $query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE Valid_Until = ?";
 	protected $resultrow = array();
-  	function __construct() {
+  	function __construct($data) {
 	  if ($function == "sqlMAC") {
 		  $this->mac2int_1();
 	  } elseif ($function == "primeTicket_1") {
@@ -15,6 +15,12 @@ class mysqlquery {
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
 	  }
+	  $this->sqlquery($data);
+
+		
+  }
+   function sqlquery($data) {
+	  $this->searchterm_1 = $data;
 	  $db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
  	  $stmt = $db->prepare($this->query_1);
 	  $stmt->bind_param('s', $this->searchterm_1);
@@ -24,7 +30,6 @@ class mysqlquery {
 	  while($stmt->fetch()) {
     	  	print_r($this->resultrow);
 	  }
-		
   }
   function __get($name){
 	  return $this->$name;
@@ -54,7 +59,7 @@ class mysqlquery {
 }
 }
 
-$db = new mysqlquery();
+$db = new mysqlquery("1000-01-01 00:00:0");
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) 
     & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new sqlquery($_GET['Type']);	// sets class property
