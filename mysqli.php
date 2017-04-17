@@ -22,6 +22,7 @@ class mysqlquery {
 		echo $this->query_1;
 		$stmt = $db->prepare($this->query_1);
 	  $stmt->bind_param('s',this->$searchterm_1);
+		$stmt->execute();
 		
   }
   function __get($name){
