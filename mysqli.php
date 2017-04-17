@@ -19,6 +19,8 @@ class mysqlquery {
 		FROM aca_mab 
 		WHERE this->serchtype_1 = ?";
 		echo $this->query_1;
+		$stmt->$db->prepare($this->query_1);
+		
   }
   function __get($name){
     return $this->$name;
@@ -33,7 +35,7 @@ class mysqlquery {
     $this->mac_1 =  base_convert($int_1, 10, 16);
   }
 }
-$b = new sqlquery("cats");
+$b = new mysqlquery("cats");
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) 
     & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new sqlquery($_GET['Type']);	// sets class property
