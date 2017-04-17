@@ -62,7 +62,6 @@ class mysqlquery {
 
 //$db = new mysqlquery("1000-01-01 00:00:0");
 if (isset($_GET['sqlQuery']) & isset($_GET['sqlWhere'])) {
-	$db = new mysqlquery($_GET['sqlQuery'], $_GET['sqlWhere']);	// sets class property
-	}	
+	$db = new mysqlquery($_GET['sqlQuery'], $_GET['sqlWhere']);	// sets class property	
 }
 ?>
