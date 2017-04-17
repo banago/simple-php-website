@@ -10,12 +10,13 @@ class mysqlquery {
 	protected $serchtype_1 = "Valid_Until";
 	protected $searchterm_1;
 	protected $query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE Valid_Until = ?";
+	protected $query_2 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE Valid_Until != ?";
 	protected $resultrow = array();
   	function __construct($sqlQuery,$sqlWhere) {
 	  if ($sqlQuery == "query_1") {
 		  $this->sqlquery($this->query_1, $sqlWhere);
-	  } elseif ($function == "primeTicket_1") {
-		  $this->primeTicket_1();
+	  } elseif ($sqlQuery == "query_1") {
+		  $this->sqlquery($this->query_2, $sqlWhere);
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
 	  }	
