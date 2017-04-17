@@ -45,6 +45,7 @@ $searchterm_1 = "\'1000-01-01 00:00:0\'";
 $query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE $serchtype_1 = ?";
 $stmt = $db->prepare($query_1);
 $stmt->bind_param('s',$searchterm_1);
+$stmt->execute();
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) 
     & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new sqlquery($_GET['Type']);	// sets class property
