@@ -43,13 +43,11 @@ class mysqlquery {
 $db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
 $serchtype_1 = "Valid_Until";
 $searchterm_1 = "1000-01-01 00:00:0";
-$stmt = $db->prepare("SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE $serchtype_1 = ?");
+$query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE $serchtype_1 = ?";
+$stmt = $db->prepare($query_1);
 $stmt->bind_param('s', $searchterm_1);
 $stmt->execute();
-
 $stmt->store_result();
-
-
 function stmt_bind_assoc (&$stmt, &$out) {
     $data = mysqli_stmt_result_metadata($stmt);
     $fields = array();
@@ -72,8 +70,6 @@ while($stmt->fetch())
 {
     print_r($resultrow);
 }
-
-
 
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) 
     & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
