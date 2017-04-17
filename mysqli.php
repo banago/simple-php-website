@@ -55,8 +55,10 @@ echo "THIS IS THE query_1:  " . $query_1;
 $stmt = $db->prepare($query_1);
 $stmt->bind_param('s',$searchterm_1);
 $stmt->execute();
-if ($result = $db->query($query_1)) {
 print_r($obj = $result->fetch_object());
+print_r($result->fetch_object());
+if ($result = $db->query($query_1)) {
+
     /* fetch object array */
     while ($obj = $result->fetch_object()) {
         printf ("%s (%s)\n", $obj->Name, $obj->CountryCode);
