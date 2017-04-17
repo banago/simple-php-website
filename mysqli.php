@@ -5,7 +5,7 @@ class mysqlquery {
 	protected $serchtype_1;
 	protected $searchterm_1;
 	protected $query_1;
-  function __construct($function) {
+  function __construct() {
 	  if ($function == "sqlMAC") {
 		  $this->mac2int_1();
 	  } elseif ($function == "primeTicket_1") {
@@ -20,9 +20,9 @@ class mysqlquery {
 	  echo $this->query_1;
 	  $test = $this->query_1;
 	  $test2 = $this->searchterm_1;
-	  $stmt = $this->db->prepare($test);
-	  $this->stmt->bind_param('s',$test2);
-	  $this->stmt->execute();
+	  $stmt = $db->prepare($test);
+	  $stmt->bind_param('s',$test2);
+	  $stmt->execute();
 		
   }
   function __get($name){
@@ -38,7 +38,7 @@ class mysqlquery {
 	  $this->mac_1 =  base_convert($int_1, 10, 16);
   }
 }
-$b = new mysqlquery("cats");
+$b = new mysqlquery();
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) 
     & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
 	$a = new sqlquery($_GET['Type']);	// sets class property
