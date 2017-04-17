@@ -17,7 +17,7 @@ CREATE TABLE aca_user_password (
   User_ID INT UNSIGNED NOT NULL,
   Password CHAR(50) UNSIGNED NOT NULL,
   PRIMARY KEY (User_ID),
-  FOREIGN KEY (User_ID REFERENCES aca_users (User_ID)
+  FOREIGN KEY (User_ID) REFERENCES aca_users (User_ID)
 );
 CREATE TABLE aca_mab (
   Mac_ID BIGINT UNSIGNED NOT NULL,
