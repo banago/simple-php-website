@@ -52,7 +52,7 @@ if (mysqli_connect_errno())
   }
 $charset=mysqli_character_set_name($con);
 echo "Default character set is: " . $charset;
-
+mysqli_set_charset($con,"utf8");
 mysqli_close($con);
 //$serchtype_1 = "Valid_Until"; 
 //$searchterm_1 = "aca_mab";
