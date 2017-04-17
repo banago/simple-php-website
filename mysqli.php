@@ -49,15 +49,14 @@ if (mysqli_connect_errno()) {
     exit();
 }
 $serchtype_1 = "Valid_Until";
-$searchterm_1 = "\'1000-01-01 00:00:0\'";
-$query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE $serchtype_1 = ?";
+$searchterm_1 = "2";
+$query_1 = "SELECT Valid_From FROM aca_mab WHERE Aca_ID = ?";
 echo "THIS IS THE query_1:  " . $query_1;
 $stmt = $db->prepare($query_1);
 $stmt->bind_param('s',$searchterm_1);
 $stmt->execute();
-printf("%d Row inserted.\n", $stmt->affected_rows);
 if ($result = $db->query($query_1)) {
-
+echo "CATS CATA VATS";
     /* fetch object array */
     while ($obj = $result->fetch_object()) {
         printf ("%s (%s)\n", $obj->Mac_ID, $obj->Valid_From);
