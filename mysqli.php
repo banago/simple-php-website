@@ -39,43 +39,6 @@ class mysqlquery {
 	  $this->mac_1 =  base_convert($int_1, 10, 16);
   }
 }
-//$db = new mysqlquery();
-//$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
-//mysqli_set_charset($db,"utf8");
-//$db->set_charset("utf8");
-/* check connection */
-//if (mysqli_connect_errno()) {
-//    printf("Connect failed: %s\n", mysqli_connect_error());
-//    exit();
-//}
-//$serchtype_1 = "Valid_Until";
-//$searchterm_1 = 2;
-//$query_1 = "SELECT Valid_From FROM aca_mab WHERE Aca_ID = ?";
-//echo "THIS IS THE query_1:  " . $query_1;
-//$stmt = $db->prepare($query_1);
-//$stmt->bind_param('d',$searchterm_1);
-//$stmt->execute();
-//$meta = $stmt->result_metadata();
-
-//while ($field = $meta->fetch_field()) {
-//  $parameters[] = &$row[$field->name];
-//}
-
-//call_user_func_array(array($stmt, 'bind_result'), $parameters);
-
-//while ($stmt->fetch()) {
-//  foreach($row as $key => $val) {
-//   $x[$key] = $val;
-//  }
-//  $results[] = $x;
-//}
-//$db->close();
-//$serchtype_1 = "Valid_Until"; 
-//$searchterm_1 = "aca_mab";
-//$query_1 = "SELECT * FROM ?";
-//$stmt = $db->prepare($query_1);
-//$stmt->bind_param('s',$searchterm_1);
-//$stmt->execute();
 
 $db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
 $stmt = $db->prepare("SELECT Valid_From FROM aca_mab WHERE Aca_ID = ?");
@@ -84,14 +47,32 @@ $stmt->bind_param('i', $searchterm_1);
 $stmt->execute();
 
 $stmt->store_result();
-$stmt->bind_result($column1);
+
+
+function stmt_bind_assoc (&$stmt, &$out) {
+    $data = mysqli_stmt_result_metadata($stmt);
+    $fields = array();
+    $out = array();
+
+    $fields[0] = $stmt;
+    $count = 1;
+
+    while($field = mysqli_fetch_field($data)) {
+        $fields[$count] = &$out[$field->name];
+        $count++;
+    }
+    call_user_func_array(mysqli_stmt_bind_result, $fields);
+}
+
+$resultrow = array();
+stmt_bind_assoc($stmt, $resultrow);
 
 while($stmt->fetch())
 {
-    echo "col1=$column1 \n";
+    print_r($resultrow);
 }
 
-$stmt->close();
+
 
 if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']) 
     & isset($_GET['curlCustom']) & isset($_GET['curlPost'])) {
