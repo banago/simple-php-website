@@ -24,7 +24,7 @@ services:
     networks:
       - LEMP
   sql:
-    image: mysql:8
+    image: mariadb:10.1
     volumes:
         - /swarm/volumes/opt/php_web_page/etc/mysql/:/etc/mysql/
         - /swarm/volumes/opt/php_web_page/lib/mysql/:/var/lib/mysql
