@@ -39,12 +39,17 @@ class mysqlquery {
   }
 }
 //$b = new mysqlquery();
-$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
-mysqli_set_charset($db,"utf8");
-if (mysqli_connect_errno()) {
-   printf("Can't connect Errorcode: %s\n", mysqli_connect_error());
-   exit;
-}
+//$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
+//mysqli_set_charset($db,"utf8");
+
+
+$con = mysqli_connect("sql","demoUser","demoPassword","MAB_TRACK");
+
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
 $serchtype_1 = "Valid_Until"; 
 $searchterm_1 = "aca_mab";
 $query_1 = "SELECT * FROM ?";
