@@ -10,6 +10,7 @@ class sqlquery {
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
 	  }
+	  @$db = new mysqli(mysql)
   }
   function __get($name){
     return $this->$name;
