@@ -55,14 +55,20 @@ echo "THIS IS THE query_1:  " . $query_1;
 $stmt = $db->prepare($query_1);
 $stmt->bind_param('d',$searchterm_1);
 $stmt->execute();
-$stmt->bind_result($col1);
-// then fetch and close the statement
-$stmt->close();
+$meta = $stmt->result_metadata();
 
-//$con = mysqli_connect("sql","demoUser","demoPassword","MAB_TRACK");
-//echo "Default character set is: " . $charset;
+while ($field = $meta->fetch_field()) {
+  $parameters[] = &$row[$field->name];
+}
 
-/* close connection */
+call_user_func_array(array($stmt, 'bind_result'), $parameters);
+
+while ($stmt->fetch()) {
+  foreach($row as $key => $val) {
+    $x[$key] = $val;
+  }
+  $results[] = $x;
+}
 $db->close();
 //$serchtype_1 = "Valid_Until"; 
 //$searchterm_1 = "aca_mab";
