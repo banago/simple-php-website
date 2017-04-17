@@ -10,7 +10,7 @@ class sqlquery {
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
 	  }
-	  @$db = new mysqli(mysql)
+	  @$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
   }
   function __get($name){
     return $this->$name;
