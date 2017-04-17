@@ -15,7 +15,7 @@ class mysqlquery {
   	function __construct($sqlQuery,$sqlWhere) {
 	  if ($sqlQuery == "query_1") {
 		  $this->sqlquery($this->query_1, $sqlWhere);
-	  } elseif ($sqlQuery == "query_1") {
+	  } elseif ($sqlQuery == "query_2") {
 		  $this->sqlquery($this->query_2, $sqlWhere);
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
