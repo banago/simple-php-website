@@ -58,7 +58,7 @@ $stmt->execute();
 if ($result = $db->query($query_1)) {
 echo "CATS CATA VATS";
     /* fetch object array */
-    while ($obj = $result->fetch_object()) {
+    while ($obj != $result->fetch_object()) {
         printf ("%s (%s)\n", $obj->Mac_ID, $obj->Valid_From);
     }
 
