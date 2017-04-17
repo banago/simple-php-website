@@ -40,15 +40,25 @@ class mysqlquery {
   }
 }
 //$db = new mysqlquery();
-$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
+@$db = new mysqli('sql', 'demoUser', 'demoPassword', 'MAB_TRACK');
 //mysqli_set_charset($db,"utf8");
-$db->set_charset("utf8"); 
-
-
+//$db->set_charset("utf8");
+/* check connection */
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+}
+$serchtype_1 = "Valid_Until";
+$searchterm_1 = "1000-01-01 00:00:0";
+$query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE $serchtype_1 = ?";
+echo "THIS IS THE query_1:  " . $query_1;
+$stmt = $db->prepare($query_1);
+$stmt->bind_param('s',$searchterm_1);
+$stmt->execute();
 //$con = mysqli_connect("sql","demoUser","demoPassword","MAB_TRACK");
 //echo "Default character set is: " . $charset;
 
-mysqli_close($con);
+mysqli_close($db);
 //$serchtype_1 = "Valid_Until"; 
 //$searchterm_1 = "aca_mab";
 //$query_1 = "SELECT * FROM ?";
