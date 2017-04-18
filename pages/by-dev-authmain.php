@@ -32,8 +32,8 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
     <h1> Authentication Required</h1>
     <?php
     if (isset($_SESSION['valid_user'])) {
-    echo '<p>You are logged in as: '.$_SESSION['valid_user'] . ' <br />';
-    echo '<a href="logout.php">Log Out</a></p>';
+    echo '<p>You are logged in as: '. $_SESSION['valid_user'] . ' <br />';
+    echo '<a href="/?page=by-dev-logout">Log Out</a></p>';
     } else {
       if (isset($userid)) {
         // if they've tried and failed to log in
