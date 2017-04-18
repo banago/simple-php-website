@@ -14,7 +14,7 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
   $result = $db_conn->query($query);
   $if ($result->num_rows) {
     // if they are in the database register teh user id
-    $_SESSION['valid_user'] = $userid;
+    $_SESSION['valid_user'] = $userid
   }
   $db_conn->close();
 }
