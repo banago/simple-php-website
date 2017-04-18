@@ -58,4 +58,3 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
     ?>
     <p><a href="members_only.php">Go to Members Section</a></p>  
   </body>
-  </html>
