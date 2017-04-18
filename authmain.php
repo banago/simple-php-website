@@ -10,7 +10,7 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
     echo 'Connection to database failed:' . mysqli_connect_error();
     exit();
   }
-  $query = "SELECT * FROM authorized_users WHERE password=sha1('".$password."')";
+  $query = "SELECT * FROM authorized_users WHERE name = '" . $userid . "' AND password=sha1('".$password."')";
   $result = $db_conn->query($query);
   $if ($result->num_rows) {
     // if they are in the database register teh user id
