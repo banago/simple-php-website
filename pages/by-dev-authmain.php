@@ -19,7 +19,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     if ($row['Fname'] == $_POST['userid']) {
       $_SESSION['valid_user'] = $userid;
     } else {
-      echo "UserName <font color=\"red\"><b>" . $_POST['userid'] . "</b> </font>" . " <ins>Not Found</ins>";
+      echo "UserName <font color=\"red\"><b>" . $userid . "</b> </font>" . " <ins>Not Found</ins>";
     }
   } else {
     //echo "THIS IS THE QUERY    :" . $query; // debug
