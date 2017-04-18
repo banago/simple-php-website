@@ -24,11 +24,11 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+
   <head>
     <title>Home Page</title>
     <style type ="text/css">
-      <link rel="stylesheet" type="text/css" href="mystyle.css">
+      </style>
     </head>
   <body>
     <h1> Home Page</h1>
@@ -46,13 +46,13 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
       }
       // provide form to log in
       echo '<form action="authmain.php" method="post">';
-      echo '<div id="fieldset"></div>';
+      echo '<fieldset>';
       echo '<legend>Login Now!</legend>';
       echo '<p><label for="userid">UserID:</label>';
       echo '<input type="text" name="userid" id="userid" size="30"/></p>';
       echo '<p><label for="password">Password:</label>';
       echo '<input type="password" name="password" id="password" size="30"/></p>';
-      echo '<div id="fieldset"></div>';
+      echo '<fieldset>';
       echo '<button type="submit" name="login">Login</button>';
       echo '</form>';
     }                        
