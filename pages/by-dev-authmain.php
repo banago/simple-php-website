@@ -60,5 +60,5 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
       echo '</form>';
     }                        
     ?>
-    <p><a href="members_only.php">Go to Members Section</a></p>  
+    <p><a href="/?page=by-ise-bypass">Go to Members Section</a></p>  
   </body>
