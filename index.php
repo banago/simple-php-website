@@ -4,61 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title><?php siteName(); ?> <?php siteVersion() ?> | <?php pageTitle(); ?></title>
-    <style type="text/css">
-        .wrap { max-width: 700px; margin: 50px auto; padding: 30px; text-align: center; box-shadow: 0 0 5px rgba(0,0,0,.5); }
-        article { text-align: left; padding: 40px; }
-        .container {
-            overflow: hidden;
-            background-color: #333;
-            font-family: Arial;
-        }
-        .container a {
-            float: left;
-            font-size: 16px;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        .dropdown {
-            float: left;
-            overflow: hidden;
-        }
-        .dropdown .dropbtn {
-            cursor: pointer;
-            font-size: 16px;    
-            border: none;
-            outline: none;
-            color: white;
-            padding: 14px 16px;
-            background-color: inherit;
-        }
-        .container a:hover, .dropdown:hover .dropbtn {
-            background-color: red;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-        .show {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
 <div class="wrap">
