@@ -15,6 +15,7 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
   $if ($result->num_rows) {
     // if they are in the database register teh user id
     //$_SESSION['valid_user'] = $userid;
+    echo "catds";
   }
   $db_conn->close();
 }
