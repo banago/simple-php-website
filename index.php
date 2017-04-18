@@ -1,4 +1,4 @@
-<?php require 'functions.php'; ?>
+<?php session_start(); require 'functions.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
