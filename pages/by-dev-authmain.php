@@ -29,7 +29,7 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     </head>
   <body>
-    <h1> Home Page</h1>
+    <h1> Authentication Required</h1>
     <?php
     if (isset($_SESSION['valid_user'])) {
     echo '<p>You are logged in as: '.$_SESSION['valid_user'] . ' <br />';
