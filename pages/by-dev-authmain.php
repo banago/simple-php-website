@@ -27,8 +27,7 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
 
   <head>
     <title>Home Page</title>
-    <style type ="text/css">
-      </style>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
     </head>
   <body>
     <h1> Home Page</h1>
