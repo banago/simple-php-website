@@ -22,7 +22,7 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
       echo "UserName <font color=\"red\"><b>" . $_POST['userid'] . "</b> </font>" . " <ins>Not Found</ins>";
     }
   } else {
-    echo "THIS IS THE QUERY    :" . $query;
+    //echo "THIS IS THE QUERY    :" . $query; // debug
   }
   $db_conn->close();
 }
