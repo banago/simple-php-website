@@ -66,6 +66,8 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
       echo '<fieldset>';
       echo '<legend>Login Now!</legend>';
       echo '<p><label for="userid">UserID:</label>';
+      echo '<input type="text" name="userid" id="userid" size="30"/></p>';
+      echo '<p><label for="password">Password:</label>';
       echo '<input type="password" name="password" id="password" size="30"/></p>';
       echo '<fieldset>';
       echo '<button type="submit" name="login">Login</button>';
