@@ -1,5 +1,6 @@
 <?php
 if (!isset($_SESSION['valid_user'])) {
-    Header('Location: ?page=by-dev-authmain');
-}
+    echo "This is a secured page please login to continue"
+    <p><a href="?page=by-dev-authmain">ISE Bypass Login Page</a></p>
+} 
 ?>
