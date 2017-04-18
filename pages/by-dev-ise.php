@@ -1,4 +1,4 @@
-<p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>	
+<p>Welcome to the Cisco ISE <b>MAC ADDRESS BYPASS</b> page</p>	
 <p><b>Whats New!</b></p>
 <ul>
   <li>PHP backend refactored Now Object oriented</li>
