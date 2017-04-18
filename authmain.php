@@ -15,7 +15,7 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
   WHERE au.Fname = '" . $userid . "' AND au.Type = ADMINISTRATOR AND au.User_ID = aup.User_ID AND password=sha1('".$password."')";
   $result = $db_conn->query($query);
   if ($result->num_rows) {
-    // if they are in the database register teh user id
+    // if they are in the database register the user id
     $_SESSION['valid_user'] = $userid;
   }
   $db_conn->close();
