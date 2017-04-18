@@ -1,4 +1,4 @@
 <?php
-echo "<p>Logged Out $_SESSION.</p>";
-unset ($_SESSION);
+echo "<p>Logged Out $_SESSION['valid_user'].</p>";
+unset ($_SESSION['valid_user']);
 ?>
