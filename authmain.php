@@ -18,7 +18,7 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
     // if they are in the database register the user id
     $_SESSION['valid_user'] = $userid;
   } else {
-    echo "THIS IS THE QUERY    : . $query;
+    echo "THIS IS THE QUERY    :" . $query;
   }
   $db_conn->close();
 }
