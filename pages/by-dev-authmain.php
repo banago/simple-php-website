@@ -28,28 +28,7 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
   <head>
     <title>Home Page</title>
     <style type ="text/css">
-      fieldset {
-        width: 50%;
-        border: 2px solid #ff0000;
-      }
-      legend {
-        font-weight: bold;
-        font-size: 125%;
-      }
-      label {
-        width: 125px;
-        float: left;
-        text-align: left;
-        font-weight: bold;
-      }
-      input {
-        border: 1px solid #000;
-        padding: 3px;
-      }
-      button {
-        margin-top: 12px;
-      }
-      </style>
+      <link rel="stylesheet" type="text/css" href="mystyle.css">
     </head>
   <body>
     <h1> Home Page</h1>
