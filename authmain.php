@@ -55,9 +55,12 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
     echo '<a href="logout.php">Log Out</a></p>';
     } else {
       if (isset($userid)) {
-      // if they've tried and failed to log in
-      echo '<p>You are not logged in.</p>';
-    }
+        // if they've tried and failed to log in
+        echo '<p>You are not logged in.</p>';
+      } else {
+        // they have not tried to log in yet or have logged out
+        echo '<p>You are not logged in.</p>';
+      }
       // provide form to log in
       echo '<form action="authmain.php" method="post">';
       echo '<fieldset>';
