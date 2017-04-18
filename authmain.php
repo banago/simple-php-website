@@ -12,7 +12,7 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
   }
   $query = "SELECT au.Fname, au.Fname, au.User_ID, aup.Password 
   FROM aca_user as au, aca_user_password as aup 
-  WHERE au.Fname = '" . $userid . "' AND au.Type = ADMINISTRATOR AND au.User_ID = aup.User_ID AND aup.Password=sha1('".$password."')";
+  WHERE au.Fname = '" . $userid . "' AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND aup.Password=sha1('".$password."')";
   $result = $db_conn->query($query);
   if ($result->num_rows) {
     // if they are in the database register the user id
