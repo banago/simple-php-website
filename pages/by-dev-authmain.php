@@ -1,7 +1,8 @@
 <?php
 if (isset($_POST['userid']) && isset ($_POST['password'])) {
   // if the user has justed tried to log in
-  //$userid = strtoupper($_POST['userid']);
+  $userid = $_POST['userid'];
+  $userid = strtoupper($userid);
   $password = $_POST['password'];
   
   $db_conn = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
