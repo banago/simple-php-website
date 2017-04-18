@@ -28,25 +28,25 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
   <head>
     <title>Home Page</title>
     <style type ="text/css">
-      fieldset {
+      .fieldset {
         width: 50%;
         border: 2px solid #ff0000;
       }
-      legend {
+      .legend {
         font-weight: bold;
         font-size: 125%;
       }
-      label {
+      .label {
         width: 125px;
         float: left;
         text-align: left;
         font-weight: bold;
       }
-      input {
+      .input {
         border: 1px solid #000;
         padding: 3px;
       }
-      button {
+      .button {
         margin-top: 12px;
       }
       </style>
