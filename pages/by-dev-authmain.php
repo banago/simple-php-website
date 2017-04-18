@@ -16,7 +16,7 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
   if ($result->num_rows) {
     // if they are in the database register the user id
     $row = $result->fetch_assoc()
-    if ($row['user'] == $_POST['userid']){
+    if ($row['Fname'] == $_POST['userid']) {
       $_SESSION['valid_user'] = $userid;
     } else {
       echo "UserName " . $_POST['userid'] . "Not Found";
