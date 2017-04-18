@@ -43,7 +43,7 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
         echo '<p>You are not logged in.</p>';
       }
       // provide form to log in
-      echo '<form action="authmain.php" method="post">';
+      echo '<form action="/?page=by-dev-authmain" method="post">';
       echo '<fieldset>';
       echo '<legend>Login Now!</legend>';
       echo '<p><label for="userid">UserID:</label>';
