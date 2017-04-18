@@ -58,7 +58,7 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
     } else {
       if (isset($userid)) {
         // if they've tried and failed to log in
-        echo '<p>You are not logged in.</p>';
+        echo '<p>Could not log you in.</p>';
       } else {
         // they have not tried to log in yet or have logged out
         echo '<p>You are not logged in.</p>';
