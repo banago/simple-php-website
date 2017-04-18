@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 if (isset($_POST['userid']) && isset ($_POST['password'])) {
   // if the user has justed tried to log in
   $userid = $_POST['userid'];
