@@ -20,7 +20,7 @@
                     <button class="dropbtn" onclick="myFunction(1)">DEV</button>
                     <div class="dropdown-content" id="myDropdown_1">
                         <a href="/?page=by-dev-ise">Dev ISE</a>
-                        <a href="/?page=by-dev-authmain.php">Dev ISE Bypass</a>
+                        <a href="/?page=by-dev-authmain">Dev ISE Bypass</a>
                         <a href="/?page=by-dev-prime">Dev PRIME</a>
                         <a href="/?page=by-dev-apic">Dev APIC</a>    
                     </div>
