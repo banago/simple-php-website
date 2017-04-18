@@ -5,12 +5,14 @@ if (isset($_POST['userid']) && isset ($_POST['password'])) {
   $userid = $_POST['userid'];
   $password = $_POST['password'];
   
-  $db_conn = new mysqli('localhost', 'webauth', 'webauth','auth');
+  $db_conn = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
   if (mysqli_connect_errno()) {
     echo 'Connection to database failed:' . mysqli_connect_error();
     exit();
   }
-  $query = "SELECT aca_user.Fname, aca_user.Fname, aca_user.User_ID, aca_user_password.Password FROM aca_user, aca_user_password WHERE name = '" . $userid . "' AND password=sha1('".$password."')";
+  $query = "SELECT au.Fname, au.Fname, au.User_ID, aup.Password 
+  FROM aca_user as au, aca_user_password as aup 
+  WHERE au.Fname = '" . $userid . "' AND au.Type = "ADMINISTRATOR" AND au.User_ID = aup.User_ID AND password=sha1('".$password."')";
   $result = $db_conn->query($query);
   if ($result->num_rows) {
     // if they are in the database register teh user id
