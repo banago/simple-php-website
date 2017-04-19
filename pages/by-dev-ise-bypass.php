@@ -9,12 +9,7 @@
 <?php endif; ?>
 
 <?php if (isset($_SESSION['valid_user'])) : ?>
-<?php
-echo "VALID USER:   " . $_SESSION['valid_user'];
-echo "<br />";
-echo "VALIDE USER TIME OUT:   " . $_SESSION['timeout_idle'];
-echo "<br />";
-?>
+
 <p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>	
 <p><b>Whats New!</b></p>
 <ul>
