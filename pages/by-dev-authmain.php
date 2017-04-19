@@ -1,5 +1,6 @@
 <?php
 if (isset($_POST['userid']) && isset($_POST['password'])) {
+  define('MAX_IDLE_TIME', '10');
   // if the user has justed tried to log in
   $userid = strtoupper($_POST['userid']); // makes user name uppercase
   $password = $_POST['password'];
@@ -19,6 +20,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     $row = $result->fetch_assoc();  // stores result of successfull query
     if ($row['Fname'] == $userid) {
       $_SESSION['valid_user'] = $userid;  // sets session to returned username
+      $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
     } else {
       echo "UserName <font color=\"red\"><b>" . $userid . "</b> </font>" . " <ins>Not Found</ins>";
     }
@@ -40,6 +42,9 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     if (isset($_SESSION['valid_user'])) {
     echo '<p>You are logged in as: '. $_SESSION['valid_user'] . ' <br />';
     echo '<a href="/?page=by-dev-logout">Log Out</a></p>';
+      if ($_SESSION['timeout_idle'] < time()) {
+        session_destroy();
+      }
     } else {
       if (isset($userid)) {
         // if they've tried and failed to log in
