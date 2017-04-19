@@ -48,7 +48,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
         echo '<p><a href="/?page=by-dev-authmain">Go to Login Section</a></p>'; 
       } else {
         echo '<p>You are logged in as: '. $_SESSION['valid_user'] . ' <br />';  
-        echo '<a href="/?page=by-dev-logout">Log Out</a></p>' . '<br />';
+        echo '<a href="/?page=by-dev-logout">Log Out</a></p>';
         echo '<p><a href="/?page=by-dev-ise-bypass">Go to Members Section</a></p>'; 
       }
     } else {
