@@ -44,7 +44,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     if (isset($_SESSION['valid_user'])) {   
       if ($_SESSION['timeout_idle'] < time()) {
         session_destroy();
-        echo "Your session has timed out please log in again"
+        echo "Your session has timed out please log in again";
       } else {
         echo '<p>You are logged in as: '. $_SESSION['valid_user'] . ' <br />';  
         echo '<a href="/?page=by-dev-logout">Log Out</a></p>';
