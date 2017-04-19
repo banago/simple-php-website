@@ -1,6 +1,10 @@
-<?php if ($_SESSION['timeout_idle'] < time() || !isset($_SESSION['valid_user'])) : ?>
+<?php if (!isset($_SESSION['valid_user'])) : ?>
     This is a secured page please login to continue <br />
     <p><a href="?page=by-dev-authmain">ISE Bypass Login Page</a></p>
+<?php endif; ?>
+
+<?php if ($_SESSION['timeout_idle'] < time()) : ?>
+    Session Timeout <br />
 <?php endif; ?>
 
 <?php if (isset($_SESSION['valid_user'])) : ?>
