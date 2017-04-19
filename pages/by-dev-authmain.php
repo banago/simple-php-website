@@ -1,5 +1,6 @@
 <?php
-if (isset($_POST['userid']) && isset($_POST['password'])) {
+class authmain () {
+  if (isset($_POST['userid']) && isset($_POST['password'])) {
   define('MAX_IDLE_TIME', '5'); // max user idle time in seconds
   // if the user has justed tried to log in
   $userid = strtoupper($_POST['userid']); // makes user name uppercase
@@ -28,6 +29,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     //echo "THIS IS THE QUERY    :" . $query; // debug
   }
   $db_conn->close();  // closes the db connection
+}
 }
 ?>
 <!DOCTYPE html>
