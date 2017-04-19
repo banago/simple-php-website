@@ -41,16 +41,15 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     <?php // there is a better way to write this, rewrite it...
     if ($_SESSION['timeout_idle'] < time()) {
       session_destroy();
-    } elseif (isset($_SESSION['valid_user'])) { 
-        echo '<p>You are logged in as: '. $_SESSION['valid_user'] . ' <br />';
-        echo '<a href="/?page=by-dev-logout">Log Out</a></p>';
+    } elseif (isset($_SESSION['valid_user'])) {   
+      echo '<p>You are logged in as: '. $_SESSION['valid_user'] . ' <br />';  
+      echo '<a href="/?page=by-dev-logout">Log Out</a></p>';
     } elseif (isset($userid)) {
-        // if they've tried and failed to log in
-        echo '<p>Could not log you in.</p>';
-    } else {
-        // they have not tried to log in yet or have logged out
-        echo '<p>You are not logged in.</p>';  
-    }
+      // if they've tried and failed to log in  
+      echo '<p>Could not log you in.</p>';
+    } else {  
+      // they have not tried to log in yet or have logged out  
+      echo '<p>You are not logged in.</p>';  
       // provide form to log in
       echo '<form action="/?page=by-dev-authmain" method="post">';
       echo '<fieldset>';
