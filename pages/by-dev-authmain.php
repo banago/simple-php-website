@@ -1,14 +1,19 @@
 <?php
 class authmain () {
-  protected $;
-  protected $mac_1;
-  protected $mac_1;
+  protected $db_server_1 = 'sql';
+  protected $db_username_1 = 'demoUser';
+  protected $db_password_1 = 'demoPassword';
+  protected $db_1 = 'MAB_TRACK';
+  protected $query_1 = "SELECT au.Fname, au.Fname, au.User_ID, aup.Password
+    		FROM aca_user as au, aca_user_password as aup
+    		WHERE au.Fname = '" . $userid . "' AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND
+    		aup.Password=sha1('".$password."')";
   protected $mac_1;
   protected $mac_1;
   protected $mac_1;
   
-  function __construct($var1,$var2) {
-    $this->validate($var1,$var2);
+  function __construct($userid,$password) {
+    $this->validate($userid,$password);
   }
   function __get($name){
 	  return $this->$name;
@@ -17,7 +22,7 @@ class authmain () {
 	  return $this->$name = $value;
   }	// used to set properties
   
-  function validate($var1, $var2) {
+  function validate($userid, $password) {
     $db_conn = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
     if (mysqli_connect_errno()) {
       echo 'Connection to database failed:' . mysqli_connect_error();
