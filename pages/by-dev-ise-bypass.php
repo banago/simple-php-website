@@ -1,9 +1,15 @@
-<?php if (!isset($_SESSION['valid_user']) || isset($_SESSION['timeout_idle'] < time())) : ?>
+<?php if (!isset($_SESSION['valid_user']) || $_SESSION['timeout_idle'] < time()) : ?>
     This is a secured page please login to continue <br />
     <p><a href="?page=by-dev-authmain">ISE Bypass Login Page</a></p>
 <?php endif; ?>
 
 <?php if (isset($_SESSION['valid_user'])) : ?>
+<?php
+echo "VALID USER:   " . $_SESSION['valid_user'];
+echo "<br />";
+echo "VALIDE USER TIME OUT:   " . $_SESSION['timeout_idle'];
+echo "<br />";
+?>
 <p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>	
 <p><b>Whats New!</b></p>
 <ul>
