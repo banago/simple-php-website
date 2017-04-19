@@ -44,14 +44,13 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     } elseif (isset($_SESSION['valid_user'])) { 
         echo '<p>You are logged in as: '. $_SESSION['valid_user'] . ' <br />';
         echo '<a href="/?page=by-dev-logout">Log Out</a></p>';
-    } else {
-      if (isset($userid)) {
+    } elseif (isset($userid)) {
         // if they've tried and failed to log in
         echo '<p>Could not log you in.</p>';
-      } else {
+    } else {
         // they have not tried to log in yet or have logged out
-        echo '<p>You are not logged in.</p>';
-      }
+        echo '<p>You are not logged in.</p>';  
+    }
       // provide form to log in
       echo '<form action="/?page=by-dev-authmain" method="post">';
       echo '<fieldset>';
