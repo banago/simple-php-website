@@ -1,9 +1,4 @@
-<?php if (!isset($_SESSION['valid_user'])) : ?>
-    This is a secured page please login to continue <br />
-    <p><a href="?page=by-dev-authmain">ISE Bypass Login Page</a></p>
-<?php endif; ?>
-
-<?php if ($_SESSION['timeout_idle'] < time()) : ?>
+<?php if ($_SESSION['timeout_idle'] < time() || !isset($_SESSION['valid_user'])) : ?>
     This is a secured page please login to continue <br />
     <p><a href="?page=by-dev-authmain">ISE Bypass Login Page</a></p>
 <?php endif; ?>
