@@ -195,13 +195,3 @@ document.onclick = function(event) {
 }
 </script>
 <?php endif; ?>
-
-	<?php
-	
-	if ($_SESSION['timeout_idle'] < time()) {
-		session_destroy();
-		echo "ddd";
-	}
-	
-
-	?>
