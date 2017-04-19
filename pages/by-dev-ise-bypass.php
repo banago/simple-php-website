@@ -3,7 +3,7 @@
     <p><a href="?page=by-dev-authmain">ISE Bypass Login Page</a></p>
 <?php endif; ?>
 
-<?php if ($_SESSION['timeout_idle'] < time()) : ?>
+<?php if ($_SESSION['timeout_idle'] < time()) : session_destroy(); ?>
     Session Timeout <br />
 <?php endif; ?>
 
@@ -195,3 +195,13 @@ document.onclick = function(event) {
 }
 </script>
 <?php endif; ?>
+
+	<?php
+	
+	if ($_SESSION['timeout_idle'] < time()) {
+		session_destroy();
+		echo "ddd";
+	}
+	
+
+	?>
