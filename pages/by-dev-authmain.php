@@ -49,24 +49,27 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
         echo '<p>You are logged in as: '. $_SESSION['valid_user'] . ' <br />';  
         echo '<a href="/?page=by-dev-logout">Log Out</a></p>';
       }
-    } elseif (isset($userid)) {
-      // if they've tried and failed to log in  
-      echo '<p>Could not log you in.</p>';
-    } else {  
-      // they have not tried to log in yet or have logged out  
-      echo '<p>You are not logged in.</p>';
+    } else {
+      if (isset($userid)) { 
+        // if they've tried and failed to log in
+        echo '<p>Could not log you in.</p>';
+      } else {
+        // they have not tried to log in yet or have logged out
+        echo '<p>You are not logged in.</p>';
+      }    
+      // provide form to log in
+      echo '<form action="/?page=by-dev-authmain" method="post">';
+      echo '<fieldset>';
+      echo '<legend>Login Now!</legend>';
+      echo '<p><label for="userid">UserID:</label>';
+      echo '<input type="text" name="userid" id="userid" size="30"/></p>';
+      echo '<p><label for="password">Password:</label>';
+      echo '<input type="password" name="password" id="password" size="30"/></p>';
+      echo '<fieldset>'; 
+      echo '<button type="submit" name="login">Login</button>';
+      echo '</form>'; 
     } 
-    // provide form to log in
-    echo '<form action="/?page=by-dev-authmain" method="post">';
-    echo '<fieldset>';
-    echo '<legend>Login Now!</legend>';
-    echo '<p><label for="userid">UserID:</label>';
-    echo '<input type="text" name="userid" id="userid" size="30"/></p>';
-    echo '<p><label for="password">Password:</label>';
-    echo '<input type="password" name="password" id="password" size="30"/></p>';
-    echo '<fieldset>'; 
-    echo '<button type="submit" name="login">Login</button>';
-    echo '</form>';                      
+                     
     ?>
     <p><a href="/?page=by-dev-ise-bypass">Go to Members Section</a></p>  
   </body>
