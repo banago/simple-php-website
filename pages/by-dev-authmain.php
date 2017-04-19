@@ -66,8 +66,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     echo '<input type="password" name="password" id="password" size="30"/></p>';
     echo '<fieldset>'; 
     echo '<button type="submit" name="login">Login</button>';
-    echo '</form>';
-    }                        
+    echo '</form>';                      
     ?>
     <p><a href="/?page=by-dev-ise-bypass">Go to Members Section</a></p>  
   </body>
