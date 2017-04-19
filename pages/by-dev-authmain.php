@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['userid']) && isset($_POST['password'])) {
-  define('MAX_IDLE_TIME', '10');
+  define('MAX_IDLE_TIME', '5');
   // if the user has justed tried to log in
   $userid = strtoupper($_POST['userid']); // makes user name uppercase
   $password = $_POST['password'];
