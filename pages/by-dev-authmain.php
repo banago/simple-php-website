@@ -45,11 +45,10 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
       if ($_SESSION['timeout_idle'] < time()) {
         session_destroy();
         echo "Your session has timed out please log in again";
-        <p><a href="/?page=by-dev-authmain">Go to Login Section</a></p> 
+        echo "<p><a href=\"/?page=by-dev-authmain\">Go to Login Section</a></p>" 
       } else {
         echo '<p>You are logged in as: '. $_SESSION['valid_user'] . ' <br />';  
         echo '<a href="/?page=by-dev-logout">Log Out</a></p>';
-        
       }
     } else {
       if (isset($userid)) { 
@@ -70,7 +69,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
       echo '<fieldset>'; 
       echo '<button type="submit" name="login">Login</button>';
       echo '</form>';
-      <p><a href="/?page=by-dev-ise-bypass">Go to Members Section</a></p> 
+      echo "<p><a href=\"/?page=by-dev-ise-bypass\">Go to Members Section</a></p>"; 
     } 
                      
     ?>
