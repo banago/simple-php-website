@@ -1,35 +1,54 @@
 <?php
 class authmain () {
-  if (isset($_POST['userid']) && isset($_POST['password'])) {
+  protected $;
+  protected $mac_1;
+  protected $mac_1;
+  protected $mac_1;
+  protected $mac_1;
+  protected $mac_1;
+  
+  function __construct($var1,$var2) {
+    $this->validate($var1,$var2);
+  }
+  function __get($name){
+	  return $this->$name;
+  }	// used to get properties
+  function __set($name,$value){
+	  return $this->$name = $value;
+  }	// used to set properties
+  
+  function validate($var1, $var2) {
+    $db_conn = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
+    if (mysqli_connect_errno()) {
+      echo 'Connection to database failed:' . mysqli_connect_error();
+      exit();
+    }
+    $query = "SELECT au.Fname, au.Fname, au.User_ID, aup.Password
+    FROM aca_user as au, aca_user_password as aup
+    WHERE au.Fname = '" . $userid . "' AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND
+    aup.Password=sha1('".$password."')";
+    $result = $db_conn->query($query);  // executes query
+    if ($result->num_rows) {
+      // if they are in the database register the user id
+      $row = $result->fetch_assoc();  // stores result of successfull query
+      if ($row['Fname'] == $userid) {
+        $_SESSION['valid_user'] = $userid;  // sets session to returned username
+        $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
+      } else {
+        echo "UserName <font color=\"red\"><b>" . $userid . "</b> </font>" . " <ins>Not Found</ins>";
+      } 
+    } else { 
+      //echo "THIS IS THE QUERY    :" . $query; // debug
+    }
+    $db_conn->close();  // closes the db connection
+  }   
+}
+if (isset($_POST['userid']) && isset($_POST['password'])) {
   define('MAX_IDLE_TIME', '5'); // max user idle time in seconds
   // if the user has justed tried to log in
   $userid = strtoupper($_POST['userid']); // makes user name uppercase
   $password = $_POST['password'];
-  
-  $db_conn = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
-  if (mysqli_connect_errno()) {
-    echo 'Connection to database failed:' . mysqli_connect_error();
-    exit();
-  }
-  $query = "SELECT au.Fname, au.Fname, au.User_ID, aup.Password 
-  FROM aca_user as au, aca_user_password as aup 
-  WHERE au.Fname = '" . $userid . "' AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND 
-  aup.Password=sha1('".$password."')";
-  $result = $db_conn->query($query);  // executes query
-  if ($result->num_rows) {
-    // if they are in the database register the user id
-    $row = $result->fetch_assoc();  // stores result of successfull query
-    if ($row['Fname'] == $userid) {
-      $_SESSION['valid_user'] = $userid;  // sets session to returned username
-      $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
-    } else {
-      echo "UserName <font color=\"red\"><b>" . $userid . "</b> </font>" . " <ins>Not Found</ins>";
-    }
-  } else {
-    //echo "THIS IS THE QUERY    :" . $query; // debug
-  }
-  $db_conn->close();  // closes the db connection
-}
+  $auth = new authmain($userid, $password);
 }
 ?>
 <!DOCTYPE html>
