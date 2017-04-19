@@ -39,12 +39,11 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   <body>
     <h1> Authentication Required</h1>
     <?php // there is a better way to write this, rewrite it...
-    if (isset($_SESSION['valid_user'])) {
-    echo '<p>You are logged in as: '. $_SESSION['valid_user'] . ' <br />';
-    echo '<a href="/?page=by-dev-logout">Log Out</a></p>';
-      if ($_SESSION['timeout_idle'] < time()) {
-        session_destroy();
-      }
+    if ($_SESSION['timeout_idle'] < time()) {
+      session_destroy();
+    } elseif (isset($_SESSION['valid_user'])) { 
+        echo '<p>You are logged in as: '. $_SESSION['valid_user'] . ' <br />';
+        echo '<a href="/?page=by-dev-logout">Log Out</a></p>';
     } else {
       if (isset($userid)) {
         // if they've tried and failed to log in
