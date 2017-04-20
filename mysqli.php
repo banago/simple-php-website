@@ -63,7 +63,7 @@ class mysqlquery {
                     $results[] = $x;
 	   }
 	   //print_r ($results); 
-	   return $results; 
+	   //return $results; 
 	   $stmt->free_result();
 	   $stmt->close();
   }
@@ -98,6 +98,5 @@ class mysqlquery {
 //$db = new mysqlquery("1000-01-01 00:00:0");
 if (isset($_GET['sqlQuery']) & isset($_GET['sqlWhere'])) {
 	$db = new mysqlquery($_GET['sqlQuery'], $_GET['sqlWhere']);	// sets class property
-	print_r($items);
 }
 ?>
