@@ -1,4 +1,66 @@
 <?php
+class mysqlquery {
+	protected $userid_1;
+  protected $type_1;
+  protected $password_1;
+  protected define('MAX_IDLE_TIME', '3600'); // max user idle time in seconds
+	protected $db_s_1 = 'sql'; 	// db server dns name
+	protected $db_su_1 = 'demoUser';	// db username
+	protected $db_sp_1 = 'demoPassword';	// db password
+	protected $db_sd_1 = 'MAB_TRACK';	// db database name
+	protected $serchtype_1 = "Valid_Until";
+	protected $searchterm_1;
+	protected $query_1 = "SELECT au.Fname, au.User_ID, au.Type, aup.Password FROM aca_user as au, aca_user_password as aup WHERE au.Fname = ? AND au.User_ID = aup.User_ID AND au.Type = ? AND Password=sha1(?)";
+	protected $resultrow = array();
+  	
+  function __construct($sqlQuery,$sqlWhere) {
+	  if ($sqlQuery == "query_1") {
+		  $this->sqlquery($this->query_1, $sqlWhere);
+	  } elseif ($sqlQuery == "query_2") {
+		  $this->sqlquery($this->query_2, $sqlWhere);
+	  } elseif ($function == "iseTicket_1") {
+		  $this->iseTicket_1();
+	  }	
+  }
+   function sqlquery($Query, $sqlWhere) {
+     $db = new mysqli($this->db_s_1, $this->db_su_1, $this->db_sp_1, $this->db_sd_1);
+     if (mysqli_connect_errno()) {
+       echo 'Connection to database failed:' . mysqli_connect_error();
+       exit();
+     }
+    $query = "SELECT au.Fname, au.User_ID, au.Type, aup.Password FROM aca_user as au, aca_user_password as aup WHERE au.Fname = ? AND au.User_ID = aup.User_ID AND au.Type = ? AND Password=sha1(?)";
+    $stmt = $db->prepare($this->query_1);
+    $stmt->bind_param('sss', $this->userid_1, $this->type_1, $this->password_1);
+    $stmt->execute();
+    $stmt->store_result();
+    $numRows = $stmt->num_rows;
+    $stmt->bind_result($Fname, $User_ID, $Type, $Password);
+    $stmt->fetch();
+    if ($numRows > 0) {
+      $_SESSION['valid_user'] = $this->userid_1;  // sets session to returned username
+      $_SESSION['timeout_idle'] = time() + $this->MAX_IDLE_TIME;  // idle timeout
+      //echo "Fname   " . $Fname . "<br />";  // debug
+      //echo "User_ID  " . $User_ID . "<br />"; //debug
+      //echo "Type " . $Type . "<br />";  // debug
+      //echo "Password Hash  " . $Password . "<br />";  // debug
+    } else {
+      //echo "Number of rows returned  " . $numRows;  // debug
+    }
+    $db->close();  // closes the db connection
+}
+
+  }
+  function __get($name){
+	  return $this->$name;
+  }	// used to get properties
+  function __set($name,$value){
+	  return $this->$name = $value;
+  }	// used to set properties
+
+  
+}
+
+
 if (isset($_POST['userid']) && isset($_POST['password'])) {
   define('MAX_IDLE_TIME', '3600'); // max user idle time in seconds
   // if the user has justed tried to log in
