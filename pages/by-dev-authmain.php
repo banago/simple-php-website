@@ -22,6 +22,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   //echo $stmt->error;
   //$result = $stmt->get_result();
   $numRows = $stmt->num_rows;
+  echo "ROWS BRO   " .  $numRows;
   $stmt->bind_result($Fname,$User_ID,$Password); 
 if($numRows > 0) {
   while ($stmt->fetch()) {
