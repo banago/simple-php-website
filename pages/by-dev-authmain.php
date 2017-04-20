@@ -27,7 +27,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   } else {
     //echo "THIS IS THE QUERY    :" . $query; // debug
   }
-  $db_conn->close();  // closes the db connection
+  $db->close();  // closes the db connection
 }
 ?>
 <!DOCTYPE html>
