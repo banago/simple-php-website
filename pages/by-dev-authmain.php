@@ -1,9 +1,9 @@
 <?php
+define('MAX_IDLE_TIME', '3600'); // max user idle time in seconds
 class mysqlquery {
 	protected $userid_1;
   protected $type_1;
   protected $password_1;
-  protected define('MAX_IDLE_TIME', '3600'); // max user idle time in seconds
 	protected $db_s_1 = 'sql'; 	// db server dns name
 	protected $db_su_1 = 'demoUser';	// db username
 	protected $db_sp_1 = 'demoPassword';	// db password
@@ -38,7 +38,7 @@ class mysqlquery {
     $stmt->fetch();
     if ($numRows > 0) {
       $_SESSION['valid_user'] = $this->userid_1;  // sets session to returned username
-      $_SESSION['timeout_idle'] = time() + $this->MAX_IDLE_TIME;  // idle timeout
+      $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
       //echo "Fname   " . $Fname . "<br />";  // debug
       //echo "User_ID  " . $User_ID . "<br />"; //debug
       //echo "Type " . $Type . "<br />";  // debug
