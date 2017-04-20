@@ -8,16 +8,6 @@
 <?php endif; ?>
 
 <?php if (isset($_SESSION['valid_user'])) : ?>
-
-<p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>	
-<p><b>Whats New!</b></p>
-<ul>
-  <li>New Authenication Page for Bypasses!!!!</li>
-  <li>PHP backend refactored Now Object oriented</li>
-  <li>Interface design changes and bug fixes</li>
-</ul>  	
-<link rel="stylesheet" type="text/css" href="mystyle.css">
-<head>
 	<div class="flex-container">
   <div class="flex-item">a 01:23:45:67:89:ab a<br/>sdfasf</div>
   <div class="flex-item">a 01:23:45:67:89:ab a<br/>sdfasf</div>
@@ -27,6 +17,16 @@
 
   
 </div>
+<p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>	
+<p><b>Whats New!</b></p>
+<ul>
+  <li>New Authenication Page for Bypasses!!!!</li>
+  <li>PHP backend refactored Now Object oriented</li>
+  <li>Interface design changes and bug fixes</li>
+</ul>  	
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<head>
+
 <script type="text/javascript">
 function findformat(thediv, thefile, thekey) {
     if (window.XMLHttpRequest) {
