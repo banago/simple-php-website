@@ -63,6 +63,7 @@ class mysqlquery {
  
                     $results[] = $x;
 		}
+	   print_r ($results); 
 
 	  //$result = $stmt->get_result();
 	  //$row = $result->fetch_assoc();
