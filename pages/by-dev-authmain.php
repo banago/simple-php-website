@@ -26,10 +26,10 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   if ($numRows > 0) {
     $_SESSION['valid_user'] = $userid;  // sets session to returned username
     $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
-    echo "ID   " . $Fname . "<br />";
-    echo "AGE  " . $User_ID . "<br />";
-    echo "NAME " . $Type . "<br />";
-    echo "AGE  " . $Password . "<br />";
+    echo "Fname   " . $Fname . "<br />";
+    echo "User_ID  " . $User_ID . "<br />";
+    echo "Type " . $Type . "<br />";
+    echo "Password Hash  " . $Password . "<br />";
   }
   $db->close();  // closes the db connection
 }
