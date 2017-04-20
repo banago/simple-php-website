@@ -11,11 +11,11 @@ class authmain {
   WHERE au.Fname = ? AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND aup.Password=sha1(?)";
   protected $mac_1;
   protected $mac_2;
-  
+	
   function __construct($userid,$password) {
     $this->query_1_name = $password;
     $this->query_1_password = $password;
-    $this->validate($userid,$password);
+    $this->validate();
   }
   function __get($name){
 	  return $this->$name;
@@ -24,7 +24,7 @@ class authmain {
 	  return $this->$name = $value;
   }	// used to set properties
   
-  function validate($userid, $password) {
+  function validate() {
     $db_conn = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
     if (mysqli_connect_errno()) {
       echo 'Connection to database failed:' . mysqli_connect_error();
@@ -34,7 +34,7 @@ class authmain {
     FROM aca_user as au, aca_user_password as aup
     WHERE au.Fname = '" . $userid . "' AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND
     aup.Password=sha1('".$password."')";
-    $result = $db_conn->query($query);  // executes query
+    $result = $db_conn->query($this->query);  // executes query
     if ($result->num_rows) {
       // if they are in the database register the user id
       $row = $result->fetch_assoc();  // stores result of successfull query
@@ -45,7 +45,7 @@ class authmain {
         echo "UserName <font color=\"red\"><b>" . $userid . "</b> </font>" . " <ins>Not Found</ins>";
       } 
     } else { 
-      //echo "THIS IS THE QUERY    :" . $query; // debug
+      echo "THIS IS THE QUERY    :" . $query; // debug
     }
     $db_conn->close();  // closes the db connection
   }   
