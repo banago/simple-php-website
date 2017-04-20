@@ -41,7 +41,7 @@ class mysqlquery {
 	  $num_of_fields = $stmt->field_count;	// set the number of fields
 	  echo "NUMBER OF ROWS    " . $num_of_rows . "<br />";
 	  echo "NUMBER OF FIELDS    " . $num_of_fields . "<br />";
-	  $stmt->bind_result($id, $first_name, $last_name, $username, $a2 ,$a3 , $a4, $a5, $a6, $a7, $a11);	// Bind the result to variables
+	  //$stmt->bind_result($id, $first_name, $last_name, $username, $a2 ,$a3 , $a4, $a5, $a6, $a7, $a11);	// Bind the result to variables
 	  $x = 0;
 	  while($x < $num_of_fields) {
     		echo "The number is: $x <br>";
@@ -51,7 +51,7 @@ class mysqlquery {
 		print_r($array);
     		$x++;
 	  } 
-	   
+	   $stmt->bind_result($array);	// Bind the result to variables
 	   while ($stmt->fetch()) {
 		  echo 'ID: '.$id.'<br>';
 		  echo 'First Name: '.$first_name.'<br>';
