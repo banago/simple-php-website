@@ -20,9 +20,10 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $stmt->bind_param('sss', $userid, $type, $password);
   $stmt->execute();
   $stmt->store_result();
+  $numRows = $stmt->num_rows;
   $stmt->bind_result($Fname, $Type, $Password);
   $stmt->fetch();
-  if ($Fname = $userid && $Type = $type) {
+  if (if($numRows > 0) {
     $_SESSION['valid_user'] = $userid;  // sets session to returned username
     $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
     echo "ID" . $Fname . "<br />";
