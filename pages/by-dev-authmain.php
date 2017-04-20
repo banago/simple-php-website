@@ -5,7 +5,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $userid = strtoupper($_POST['userid']); // makes user name uppercase
   $password = $_POST['password'];
   
-  $db_conn = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
+  $db = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
   if (mysqli_connect_errno()) {
     echo 'Connection to database failed:' . mysqli_connect_error();
     exit();
@@ -14,7 +14,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   FROM aca_user as au, aca_user_password as aup 
   WHERE au.Fname = '" . $userid . "' AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND 
   aup.Password=sha1('".$password."')";
-  $result = $db_conn->query($query);  // executes query
+  $result = $db->query($query);  // executes query
   if ($result->num_rows) {
     // if they are in the database register the user id
     $row = $result->fetch_assoc();  // stores result of successfull query
