@@ -26,7 +26,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $stmt->bind_result($Fname,$User_ID,$Password); 
 if($numRows > 0) {
   while ($stmt->fetch()) {
-    $name1[] = $Fname;
+    $name1[0] = $Fname[0];
     $name2[] = $User_ID;
     $name3[] = $Password;
   }
