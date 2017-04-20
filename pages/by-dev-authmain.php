@@ -11,10 +11,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     echo 'Connection to database failed:' . mysqli_connect_error();
     exit();
   }
-  $query = "SELECT au.Fname, au.Fname, au.User_ID, aup.Password 
-  FROM aca_user as au, aca_user_password as aup 
-  WHERE au.Fname = ? AND au.Type = ? AND au.User_ID = aup.User_ID AND 
-  aup.Password=sha1(?)";
+  $query = "SELECT au.Fname, au.Fname, au.User_ID, aup.Password FROM aca_user as au, aca_user_password as aup WHERE au.Fname = ? AND au.Type = ? AND au.User_ID = aup.User_ID AND aup.Password=sha1(?)";
   $stmt = $db->prepare($query);
   $stmt->bind_param('sss', $userid, $type, $password);
   $stmt->execute();
