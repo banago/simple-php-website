@@ -15,7 +15,7 @@ class authmain {
   function __construct($userid,$password) {
     $this->query_1_name = $password;
     $this->query_1_password = $password;
-    $this->validate($query_1);
+    $this->validate($this->query_1);
   }
   function __get($name){
 	  return $this->$name;
