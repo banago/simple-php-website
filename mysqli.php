@@ -27,11 +27,15 @@ class mysqlquery {
  	  $stmt = $db->prepare($Query);
 	  $stmt->bind_param('s', $this->searchterm_1);
 	  $stmt->execute();
-	  $stmt->store_result();
-	  $this->stmt_bind_assoc($stmt, $this->resultrow);
+	  $result = $stmt->get_result();
+	  $row = $result->fetch_assoc();
+	  $stmt->close();
+	  $echo $row['Mac_ID'][0];
+	  //$stmt->store_result();
+	  /*$this->stmt_bind_assoc($stmt, $this->resultrow);
 	  while($stmt->fetch()) {
     	  	print_r($this->resultrow);
-	  }
+	  }*/
   }
   function __get($name){
 	  return $this->$name;
