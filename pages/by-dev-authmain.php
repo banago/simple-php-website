@@ -25,7 +25,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   echo "ROWS BRO   " .  $numRows;
   $result = $stmt->get_result();
   $row = $result->fetch_assoc();
-  echo "BLALALDLD "$row['Fname'];
+  echo "BLALALDLD " . $row['Fname'];
 
     $_SESSION['valid_user'] = $userid;  // sets session to returned username
     $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
