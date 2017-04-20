@@ -6,8 +6,8 @@ class authmain {
   protected $db_1 = 'MAB_TRACK';
   protected $query_1 = "SELECT au.Fname, au.Fname, au.User_ID, aup.Password
     		FROM aca_user as au, aca_user_password as aup
-    		WHERE au.Fname = '" . $userid . "' AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND
-    		aup.Password=sha1('".$password."')";
+    		WHERE au.Fname = '" . $db_username_1 . "' AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND
+    		aup.Password=sha1('".$db_password_1."')";
   protected $mac_1;
   protected $mac_1;
   protected $mac_1;
