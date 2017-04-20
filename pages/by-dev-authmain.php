@@ -23,8 +23,8 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     while($row = $result->fetch_assoc()) {
       
       $id[] = $row['Type'];
-      $name[] = $row['Fname'];
-      $password[] = $row['Password'];
+     // $name[] = $row['Fname'];
+     // $password[] = $row['Password'];
       echo $id[0];
   
     }
