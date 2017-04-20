@@ -33,7 +33,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     echo "NAME12" . $name1[0];
     echo "NAME13" . $name1[1];
   print_r( $name1);
-}
+
   $db->close();  // closes the db connection
 }
 ?>
