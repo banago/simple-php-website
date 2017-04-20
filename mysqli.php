@@ -13,7 +13,7 @@ class mysqlquery {
 	protected $query_2 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE Valid_Until != ?";
 	protected $query_3 = "SELECT am.Mac_ID, am.Valid_From, am.Valid_Until, am.Aca_ID, am.User_ID, au.Fname, au.Fname  
 		FROM aca_mab as am , aca_user as au, aca as a 
-		WHERE Valid_Until = ? AND au.Type = 'CUSTOMER' AND am.User_ID = au.User_ID AND au.Aca_ID = a.Aca_ID";
+		WHERE Valid_Until = ? AND au.Type = \'CUSTOMER\' AND am.User_ID = au.User_ID AND au.Aca_ID = a.Aca_ID";
 
 	protected $resultrow = array();
   	function __construct($sqlQuery,$sqlWhere) {
