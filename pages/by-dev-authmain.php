@@ -5,6 +5,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $userid = strtoupper($_POST['userid']); // makes user name uppercase
   $password = $_POST['password'];
   $type = "ADMINISTRATOR";
+  $name = "Fname";
   
   $db = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
   if (mysqli_connect_errno()) {
@@ -15,21 +16,19 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $stmt = $db->prepare($query);
   $stmt->bind_param('sss', $userid, $type, $password);
   $stmt->execute();
-  echo $stmt->fullQuery;
-  echo $stmt->error;
-  $result = $stmt->get_result();
-  $numRows = $result->num_rows;
-  if($numRows > 0) {
-    while($row = $result->fetch_assoc()) {
-      
-      $id[] = $row['Type'];
-     // $name[] = $row['Fname'];
-     // $password[] = $row['Password'];
-      echo $id[0];
-  
-    }
-
+  //$stmt->bind_result($Fname);
+  $stmt->fetch();
+  //echo $stmt->fullQuery;
+  //echo $stmt->error;
+  //$result = $stmt->get_result();
+  $numRows = $stmt->num_rows;
+  $stmt->bind_result($Fname); 
+if($numRows > 0) {
+  while ($stmt->fetch()) {
+    $id[] = $Fname;
+    echo  $id[0];
   }
+}
   //$result = $db->query($query);  // executes query
   if ($stmt->num_rows) {
     // if they are in the database register the user id
