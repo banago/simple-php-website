@@ -15,20 +15,21 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     echo 'Connection to database failed:' . mysqli_connect_error();
     exit();
   }
-  $query = "SELECT au.Fname, au.User_ID, aup.Password FROM aca_user as au, aca_user_password as aup WHERE au.Fname = ? AND au.User_ID = aup.User_ID AND au.Type = ? AND Password=sha1(?)";
+  $query = "SELECT au.Fname, au.User_ID, au.Type, aup.Password FROM aca_user as au, aca_user_password as aup WHERE au.Fname = ? AND au.User_ID = aup.User_ID AND au.Type = ? AND Password=sha1(?)";
   $stmt = $db->prepare($query);
   $stmt->bind_param('sss', $userid, $type, $password);
   $stmt->execute();
   $stmt->store_result();
   $numRows = $stmt->num_rows;
-  $stmt->bind_result($Fname, $Type, $Password);
+  $stmt->bind_result($Fname, $User_ID, $Type, $Password);
   $stmt->fetch();
   if ($numRows > 0) {
     $_SESSION['valid_user'] = $userid;  // sets session to returned username
     $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
-    echo "ID" . $Fname . "<br />";
-    echo "NAME" . $Type . "<br />";
-    echo "AGE" . $Password . "<br />";
+    echo "ID   " . $Fname . "<br />";
+    echo "AGE  " . $User_ID . "<br />";
+    echo "NAME " . $Type . "<br />";
+    echo "AGE  " . $Password . "<br />";
   }
   $db->close();  // closes the db connection
 }
