@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['userid']) && isset($_POST['password'])) {
-  define('MAX_IDLE_TIME', '5'); // max user idle time in seconds
+  define('MAX_IDLE_TIME', '3600'); // max user idle time in seconds
   // if the user has justed tried to log in
   $userid = strtoupper($_POST['userid']); // makes user name uppercase
   $password = $_POST['password'];
