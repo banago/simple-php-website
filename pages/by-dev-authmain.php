@@ -21,16 +21,13 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $stmt->execute();
   $stmt->bind_result($Fname, $Type, $Password);
   $stmt->fetch();
-  $numRows = $stmt->num_rows;
-  echo "ROWS BRO   " .  $numRows;
-
-
+  if ($Fname = $userid && $Type = $type) {
     $_SESSION['valid_user'] = $userid;  // sets session to returned username
     $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
     echo "ID" . $Fname . "<br />";
     echo "NAME" . $Type . "<br />";
     echo "AGE" . $Password . "<br />";
-
+  }
   $db->close();  // closes the db connection
 }
 ?>
