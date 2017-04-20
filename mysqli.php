@@ -38,7 +38,8 @@ class mysqlquery {
 	  $stmt->execute();
 	  $stmt->store_result();	// store the result (to get properties)
 	  $num_of_rows = $stmt->num_rows; // set the number of rows
-	  $stmt->bind_result($id, $first_name, $last_name, $username, $a2 ,$a3 , $a4, $a5, $a6, $a7, $a11, $a12);	// Bind the result to variables
+	  echo "NUMBER OF ROWS    " . $num_of_rows;
+	  $stmt->bind_result($id, $first_name, $last_name, $username, $a2 ,$a3 , $a4, $a5, $a6, $a7, $a11);	// Bind the result to variables
 	  while ($stmt->fetch()) {
 		  echo 'ID: '.$id.'<br>';
 		  echo 'First Name: '.$first_name.'<br>';
