@@ -16,7 +16,7 @@ class mysqlquery {
   function __construct($uid,$upw) {
 		$this->userid_1 = $uid;
 		$this->password_1 = $upw;
-	  $this->sqlquery()
+	  $this->sqlquery();
   }
    function sqlquery() {
      $db = new mysqli($this->db_s_1, $this->db_su_1, $this->db_sp_1, $this->db_sd_1);
