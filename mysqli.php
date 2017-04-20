@@ -53,10 +53,10 @@ class mysqlquery {
 	  } 
 	   $stmt->bind_result($array);	// Bind the result to variables
 	   while ($stmt->fetch()) {
-		  echo 'ID: '.$id.'<br>';
-		  echo 'First Name: '.$first_name.'<br>';
-		  echo 'Last Name: '.$last_name.'<br>';
-		  echo 'Username: '.$username.'<br><br>';
+		  echo 'ID: '.$a1.'<br>';
+		  echo 'First Name: '.$a2.'<br>';
+		  echo 'Last Name: '.$a3.'<br>';
+		  echo 'Username: '.$a4.'<br><br>';
 	  }
 
 	  //$result = $stmt->get_result();
