@@ -16,6 +16,7 @@ class mysqlquery {
   function __construct($uid,$upw) {
 		$this->userid_1 = $uid;
 		$this->password_1 = $upw;
+		$this->type_1 = "ADMINISTRATOR";
 	  $this->sqlquery();
   }
    function sqlquery() {
