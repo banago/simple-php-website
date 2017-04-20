@@ -50,41 +50,22 @@ class mysqlquery {
 	  } 
 	   //$stmt->bind_result(array_values($array));	// Bind the result to variables
 	   call_user_func_array(array($stmt, 'bind_result'), $parameters);
-	while($stmt->fetch()) {
-                    $x = array();
-                    foreach($row as $key => $val ) {
+	   while($stmt->fetch()) { 
+		   $x = array();
+                   foreach($row as $key => $val ) {
                         // This next line isn't necessary for your project. 
                         // It can be removed. I use it to ensure
                         // that the "excerpt" of the post doesn't end in the middle
                         // of a word. 
                         if ( $key === 'excerpt') $val = $this->cleanExcerpt($row[$key]);
                         $x[$key] = $val;
-                    }
- 
+		    }
                     $results[] = $x;
-		}
-	   print_r ($results); 
-
-	  //$result = $stmt->get_result();
-	  //$row = $result->fetch_assoc();
-	  //print_r ($row['Mac_ID']);
-	  //echo $row['Mac_ID'][0];
-	  //$num_of_rows = $result->num_rows;
-	  //echo "NUMBER OF ROWS   " . $num_of_rows;
- 	  /*while ($row = $result->fetch_assoc()) {
-        	echo 'ID: '.$row['Mac_ID'].'<br>';
-        	echo 'First Name: '.$row['Mac_ID'].'<br>';
-        	echo 'Last Name: '.$row['Mac_ID'].'<br>';
-        	echo 'Username: '.$row['Mac_ID'].'<br><br>';
-	 }*/
-	  $stmt->free_result();
-	  $stmt->close();
-	  
-	  //$stmt->store_result();
-	  /*$this->stmt_bind_assoc($stmt, $this->resultrow);
-	  while($stmt->fetch()) {
-    	  	print_r($this->resultrow);
-	  }*/
+	   }
+	   //print_r ($results); 
+	   return $results; 
+	   $stmt->free_result();
+	   $stmt->close();
   }
   function __get($name){
 	  return $this->$name;
@@ -116,6 +97,7 @@ class mysqlquery {
 
 //$db = new mysqlquery("1000-01-01 00:00:0");
 if (isset($_GET['sqlQuery']) & isset($_GET['sqlWhere'])) {
-	$db = new mysqlquery($_GET['sqlQuery'], $_GET['sqlWhere']);	// sets class property	
+	$db = new mysqlquery($_GET['sqlQuery'], $_GET['sqlWhere']);	// sets class property
+	print_r($items);
 }
 ?>
