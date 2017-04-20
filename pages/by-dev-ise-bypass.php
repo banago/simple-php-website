@@ -18,6 +18,15 @@
 </ul>  	
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 <head>
+	<div class="flex-container">
+  <div class="flex-item">a 01:23:45:67:89:ab a<br/>sdfasf</div>
+  <div class="flex-item">a 01:23:45:67:89:ab a<br/>sdfasf</div>
+  <div class="flex-item">a 01:23:45:67:89:ab a<br/>sdfasf</div>
+  <div class="flex-item">a 01:23:45:67:89:ab a<br/>sdfasf</div>
+  
+
+  
+</div>
 <script type="text/javascript">
 function findformat(thediv, thefile, thekey) {
     if (window.XMLHttpRequest) {
