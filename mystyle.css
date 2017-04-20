@@ -5,7 +5,7 @@ article { text-align: left; padding: 40px; }
     background-color: #333;
     font-family: Arial;
 }
-.container a {
+.container {
      float: left;
      font-size: 16px;
      color: white;
