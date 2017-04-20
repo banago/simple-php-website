@@ -38,8 +38,8 @@ class mysqlquery {
 	  $stmt->execute();
 	  $result = $stmt->get_result();
 	  $row = $result->fetch_assoc();
-	  print_r ($row['Mac_ID']);
-	  echo $row['Mac_ID'][0];
+	  //print_r ($row['Mac_ID']);
+	  //echo $row['Mac_ID'][0];
 	  $num_of_rows = $result->num_rows;
 	  echo "NUMBER OF ROWS   " . $num_of_rows;
  	  while ($row = $result->fetch_assoc()) {
