@@ -157,8 +157,8 @@ article { text-align: left; padding: 40px; }
     flex-wrap: wrap;
     -webkit-align-content: center;
     align-content: center;
-    width: 639px;
-    height: 125px;
+    width: 639vh;
+    height: 125vh;
     z-index: 15;
     top: 50%;
     left: 50%;
@@ -169,8 +169,8 @@ article { text-align: left; padding: 40px; }
 
 .flex-item {
     background-color: cornflowerblue;
-    width: 140px;
-    height: 100px;
+    width: 140vh;
+    height: 100vh;
     margin: auto;
     text-align:center
 
