@@ -10,7 +10,7 @@ class authmain {
   FROM aca_user as au, aca_user_password as aup 
   WHERE au.Fname = ? AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND aup.Password=sha1(?)";
   protected $mac_1;
-  protected $mac_1;
+  protected $mac_2;
   
   function __construct($userid,$password) {
     $this->query_1_name = $password;
