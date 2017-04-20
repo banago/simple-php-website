@@ -5,11 +5,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $userid = strtoupper($_POST['userid']); // makes user name uppercase
   $password = $_POST['password'];
   $type = "ADMINISTRATOR";
-  $name = "Fname";
-  $name1;
-  $name2;
-  $name3;
-  
+
   $db = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
   if (mysqli_connect_errno()) {
     echo 'Connection to database failed:' . mysqli_connect_error();
