@@ -36,6 +36,7 @@ class mysqlquery {
 	  $result = $stmt->get_result();
 	  $row = $result->fetch_assoc();
 	  print_r ($row['Mac_ID'][0]);
+	  echo $row['Mac_ID'][0];
 	  $stmt->close();
 	  
 	  //$stmt->store_result();
