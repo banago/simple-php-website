@@ -8,8 +8,8 @@ class authmain {
   protected $query_1_password;
   protected $query_1 = "SELECT au.Fname, au.Fname, au.User_ID, aup.Password
     		FROM aca_user as au, aca_user_password as aup
-    		WHERE au.Fname = '" . $this->query_1_name . "' AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND
-    		aup.Password=sha1('".$this->query_1_password."')";
+    		WHERE au.Fname = '" . time() . "' AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND
+    		aup.Password=sha1('". time() ."')";
   protected $mac_1;
   protected $mac_1;
   
