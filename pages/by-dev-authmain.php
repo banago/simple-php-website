@@ -54,8 +54,8 @@ class mysqlquery {
 
   
 }
-?>
-<?php
+
+
 if (isset($_POST['userid']) && isset($_POST['password'])) {
 	$userid = strtoupper($_POST['userid']); // makes user name uppercase
   $password = $_POST['password'];
