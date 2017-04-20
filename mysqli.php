@@ -36,18 +36,29 @@ class mysqlquery {
  	  $stmt = $db->prepare($Query);
 	  $stmt->bind_param('s', $this->searchterm_1);
 	  $stmt->execute();
-	  $result = $stmt->get_result();
-	  $row = $result->fetch_assoc();
+	  $stmt->store_result();	// store the result (to get properties)
+	  $num_of_rows = $stmt->num_rows; // set the number of rows
+	  $stmt->bind_result($id, $first_name, $last_name, $username);	// Bind the result to variables
+	  while ($stmt->fetch()) {
+		  echo 'ID: '.$id.'<br>';
+		  echo 'First Name: '.$first_name.'<br>';
+		  echo 'Last Name: '.$last_name.'<br>';
+		  echo 'Username: '.$username.'<br><br>';
+	  }
+
+	  //$result = $stmt->get_result();
+	  //$row = $result->fetch_assoc();
 	  //print_r ($row['Mac_ID']);
 	  //echo $row['Mac_ID'][0];
-	  $num_of_rows = $result->num_rows;
-	  echo "NUMBER OF ROWS   " . $num_of_rows;
- 	  while ($row = $result->fetch_assoc()) {
+	  //$num_of_rows = $result->num_rows;
+	  //echo "NUMBER OF ROWS   " . $num_of_rows;
+ 	  /*while ($row = $result->fetch_assoc()) {
         	echo 'ID: '.$row['Mac_ID'].'<br>';
         	echo 'First Name: '.$row['Mac_ID'].'<br>';
         	echo 'Last Name: '.$row['Mac_ID'].'<br>';
         	echo 'Username: '.$row['Mac_ID'].'<br><br>';
-	 }
+	 }*/
+	  $stmt->free_result();
 	  $stmt->close();
 	  
 	  //$stmt->store_result();
