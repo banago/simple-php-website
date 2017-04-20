@@ -29,8 +29,9 @@ class mysqlquery {
 	  $stmt->execute();
 	  $result = $stmt->get_result();
 	  $row = $result->fetch_assoc();
-	  $stmt->close();
 	  $echo $row['Mac_ID'][0];
+	  $stmt->close();
+	  
 	  //$stmt->store_result();
 	  /*$this->stmt_bind_assoc($stmt, $this->resultrow);
 	  while($stmt->fetch()) {
