@@ -30,7 +30,7 @@ if($numRows > 0) {
     $name3[] = $Password;
     echo "NAME1" . $name1['Fname'];
     echo "NAME12" . $name1[0];
-    echo "NAME13" . $name1['1];
+    echo "NAME13" . $name1[1];
   }
     $_SESSION['valid_user'] = $userid;  // sets session to returned username
     $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
