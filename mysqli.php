@@ -34,7 +34,7 @@ class mysqlquery {
 	  $result = $stmt->get_result();
 	  $row = $result->fetch_assoc();
 	  print_r ($row['Mac_ID']);
-	  echo $row['Mac_ID'];
+	  echo $row['Mac_ID'][0];
 	  while ($row = $result->fetch_assoc()) {
         	echo 'ID: '.$row['Mac_ID'].'<br>';
         	echo 'First Name: '.$row['Mac_ID'].'<br>';
