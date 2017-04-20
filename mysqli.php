@@ -39,8 +39,8 @@ class mysqlquery {
 	  $stmt->store_result();	// store the result (to get properties)
 	  $num_of_rows = $stmt->num_rows; // set the number of rows
 	  $num_of_fields = $stmt->field_count;	// set the number of fields
-	  echo "NUMBER OF ROWS    " . $num_of_rows . "<br />";
-	  echo "NUMBER OF FIELDS    " . $num_of_fields . "<br />";
+	  //echo "NUMBER OF ROWS    " . $num_of_rows . "<br />";	// debug
+	  //echo "NUMBER OF FIELDS    " . $num_of_fields . "<br />";	// debug
 	  //$stmt->bind_result($id, $first_name, $last_name, $username, $a2 ,$a3 , $a4, $a5, $a6, $a7, $a11);	// Bind the result to variables
 	  $x = 0;
 	  $meta = $stmt->result_metadata();
@@ -98,6 +98,6 @@ class mysqlquery {
 //$db = new mysqlquery("1000-01-01 00:00:0");
 if (isset($_GET['sqlQuery']) & isset($_GET['sqlWhere'])) {
 	$db = new mysqlquery($_GET['sqlQuery'], $_GET['sqlWhere']);	// sets class property
-	print_r($db->results);
+	print_r($db->results);	// debug
 }
 ?>
