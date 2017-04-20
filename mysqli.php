@@ -43,23 +43,26 @@ class mysqlquery {
 	  echo "NUMBER OF FIELDS    " . $num_of_fields . "<br />";
 	  //$stmt->bind_result($id, $first_name, $last_name, $username, $a2 ,$a3 , $a4, $a5, $a6, $a7, $a11);	// Bind the result to variables
 	  $x = 0;
+	  $meta = $stmt->result_metadata();
 	  $parameters = array();
-	  while($x < $num_of_fields) {
-    		echo "The number is: $x <br>";
-		$y = "\$a";
-		$z = $y . $x;
-		$parameters[] = $z;
-		print_r($parameters);
-    		$x++;
+	  while($field = $meta->fetch_field()) {
+    		$parameters[] = &$row[$field->name];
 	  } 
 	   //$stmt->bind_result(array_values($array));	// Bind the result to variables
 	   call_user_func_array(array($stmt, 'bind_result'), $parameters);
-	   while ($stmt->fetch()) {
-		  echo 'ID: '.$a1.'<br>';
-		  echo 'First Name: '.$a2.'<br>';
-		  echo 'Last Name: '.$a3.'<br>';
-		  echo 'Username: '.$a4.'<br><br>';
-	  }
+	while($stmt->fetch()) {
+                    $x = array();
+                    foreach($row as $key => $val ) {
+                        // This next line isn't necessary for your project. 
+                        // It can be removed. I use it to ensure
+                        // that the "excerpt" of the post doesn't end in the middle
+                        // of a word. 
+                        if ( $key === 'excerpt') $val = $this->cleanExcerpt($row[$key]);
+                        $x[$key] = $val;
+                    }
+ 
+                    $results[] = $x;
+		}
 
 	  //$result = $stmt->get_result();
 	  //$row = $result->fetch_assoc();
