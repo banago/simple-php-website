@@ -28,7 +28,9 @@ if($numRows > 0) {
     $name1[] = $Fname;
     $name2[] = $User_ID;
     $name3[] = $Password;
-    echo  $name1['Fname'];
+    echo "NAME1" . $name1['Fname'];
+    echo "NAME12" . $name1[0];
+    echo "NAME13" . $name1['1];
   }
 }
   //$result = $db->query($query);  // executes query
