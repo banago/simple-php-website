@@ -1,5 +1,5 @@
 <?php
-class authmain () {
+class authmain {
   protected $db_server_1 = 'sql';
   protected $db_username_1 = 'demoUser';
   protected $db_password_1 = 'demoPassword';
