@@ -11,7 +11,9 @@ class mysqlquery {
 	protected $searchterm_1;
 	protected $query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE Valid_Until = ?";
 	protected $query_2 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE Valid_Until != ?";
-	protected $query_3 = "SELECT am.Mac_ID, am.Valid_From, am.Valid_Until, am.Aca_ID, am.User_ID, au.Fname, au.Fname FROM aca_mab as am , aca_user as au, aca as a WHERE Valid_Until = ? AND au.Type = 'CUSTOMER' AND am.User_ID = au.User_ID AND au.Aca_ID = a.Aca_ID";
+	protected $query_3 = "SELECT am.Mac_ID, am.Valid_From, am.Valid_Until, am.Aca_ID, am.User_ID, au.Fname, au.Fname 
+	FROM aca_mab as am , aca_user as au, aca as a 
+	WHERE Valid_Until = ? AND au.Type = 'CUSTOMER' AND am.User_ID = au.User_ID AND au.Aca_ID = a.Aca_ID";
 
 	protected $resultrow = array();
   	function __construct($sqlQuery,$sqlWhere) {
@@ -35,7 +37,9 @@ class mysqlquery {
 	  $row = $result->fetch_assoc();
 	  print_r ($row['Mac_ID']);
 	  echo $row['Mac_ID'][0];
-	  while ($row = $result->fetch_assoc()) {
+	  $num_of_rows = $result->num_rows;
+	  echo "NUMBER OF ROWS   " . $num_of_rows;
+ 	  while ($row = $result->fetch_assoc()) {
         	echo 'ID: '.$row['Mac_ID'].'<br>';
         	echo 'First Name: '.$row['Mac_ID'].'<br>';
         	echo 'Last Name: '.$row['Mac_ID'].'<br>';
