@@ -19,7 +19,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $stmt = $db->prepare($query);
   $stmt->bind_param('sss', $userid, $type, $password);
   $stmt->execute();
-  $stmt->store_result();
+  $stmt->bind_result($id, $name, $age);
   $stmt->fetch();
   $numRows = $stmt->num_rows;
   echo "ROWS BRO   " .  $numRows;
@@ -29,9 +29,9 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
 
     $_SESSION['valid_user'] = $userid;  // sets session to returned username
     $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
-      echo "NAME1" . $name1['Fname'];
-    echo "NAME12" . $name1[0];
-    echo "NAME13" . $name1[1];
+      echo "ID" . $id;
+    echo "NAME" . $name];
+    echo "AGE" . $age;
   print_r( $name1);
 
   $db->close();  // closes the db connection
