@@ -17,6 +17,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $stmt = $db->prepare($query);
   $stmt->bind_param('ss', $userid, $password);
   $stmt->execute();
+  
   //$result = $db->query($query);  // executes query
   if ($stmt->num_rows) {
     // if they are in the database register the user id
@@ -28,7 +29,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
       echo "UserName <font color=\"red\"><b>" . $userid . "</b> </font>" . " <ins>Not Found</ins>";
     }
   } else {
-    echo "THIS IS THE QUERY    :" . $query; // debug
+    echo "THIS IS THE QUERY    :" . $stmt->fullQuery; // debug
   }
   $db->close();  // closes the db connection
 }
