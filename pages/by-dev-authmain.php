@@ -49,7 +49,6 @@ class mysqlquery {
     $db->close();  // closes the db connection
 }
 
-  }
   function __get($name){
 	  return $this->$name;
   }	// used to get properties
