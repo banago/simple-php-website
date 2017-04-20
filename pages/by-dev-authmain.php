@@ -13,16 +13,12 @@ class mysqlquery {
 	protected $query_1 = "SELECT au.Fname, au.User_ID, au.Type, aup.Password FROM aca_user as au, aca_user_password as aup WHERE au.Fname = ? AND au.User_ID = aup.User_ID AND au.Type = ? AND Password=sha1(?)";
 	protected $resultrow = array();
   	
-  function __construct($sqlQuery,$sqlWhere) {
-	  if ($sqlQuery == "query_1") {
-		  $this->sqlquery($this->query_1, $sqlWhere);
-	  } elseif ($sqlQuery == "query_2") {
-		  $this->sqlquery($this->query_2, $sqlWhere);
-	  } elseif ($function == "iseTicket_1") {
-		  $this->iseTicket_1();
-	  }	
+  function __construct($uid,$upw) {
+		$this->userid_1 = $uid;
+		$this->password_1 = $upw;
+	  $this->sqlquery()
   }
-   function sqlquery($Query, $sqlWhere) {
+   function sqlquery() {
      $db = new mysqli($this->db_s_1, $this->db_su_1, $this->db_sp_1, $this->db_sd_1);
      if (mysqli_connect_errno()) {
        echo 'Connection to database failed:' . mysqli_connect_error();
@@ -61,37 +57,9 @@ class mysqlquery {
 
 
 if (isset($_POST['userid']) && isset($_POST['password'])) {
-  define('MAX_IDLE_TIME', '3600'); // max user idle time in seconds
-  // if the user has justed tried to log in
-  $userid = strtoupper($_POST['userid']); // makes user name uppercase
+	$userid = strtoupper($_POST['userid']); // makes user name uppercase
   $password = $_POST['password'];
-  $type = "ADMINISTRATOR";
-
-  $db = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
-  if (mysqli_connect_errno()) {
-    echo 'Connection to database failed:' . mysqli_connect_error();
-    exit();
-  }
-  $query = "SELECT au.Fname, au.User_ID, au.Type, aup.Password FROM aca_user as au, aca_user_password as aup WHERE au.Fname = ? AND au.User_ID = aup.User_ID AND au.Type = ? AND Password=sha1(?)";
-  $stmt = $db->prepare($query);
-  $stmt->bind_param('sss', $userid, $type, $password);
-  $stmt->execute();
-  $stmt->store_result();
-  $numRows = $stmt->num_rows;
-  $stmt->bind_result($Fname, $User_ID, $Type, $Password);
-  $stmt->fetch();
-  if ($numRows > 0) {
-    $_SESSION['valid_user'] = $userid;  // sets session to returned username
-    $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
-    //echo "Fname   " . $Fname . "<br />";  // debug
-    //echo "User_ID  " . $User_ID . "<br />"; //debug
-    //echo "Type " . $Type . "<br />";  // debug
-    //echo "Password Hash  " . $Password . "<br />";  // debug
-  } else {
-    //echo "Number of rows returned  " . $numRows;  // debug
-  }
-  $db->close();  // closes the db connection
-}
+	$db = new mysqlquery($userid, $password);	// sets class property	
 ?>
 <!DOCTYPE html>
 
