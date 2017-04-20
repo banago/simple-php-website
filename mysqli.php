@@ -51,7 +51,8 @@ class mysqlquery {
 		print_r($array);
     		$x++;
 	  } 
-	   $stmt->bind_result($array);	// Bind the result to variables
+	   //$stmt->bind_result(array_values($array));	// Bind the result to variables
+	   call_user_func_array(array($prep1, '$stmt->bind_result'), $array);
 	   while ($stmt->fetch()) {
 		  echo 'ID: '.$a1.'<br>';
 		  echo 'First Name: '.$a2.'<br>';
