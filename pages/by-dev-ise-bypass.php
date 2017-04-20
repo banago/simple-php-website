@@ -9,8 +9,7 @@
 
 <?php if (isset($_SESSION['valid_user'])) : ?>
 
-<p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>	
-<h2><center>Hot List</center></h2>	
+<p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>		
 <div class="flex-container">
 	<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
 		<div>Demo User ACA</div><div>Demo Time Left</div></div>
