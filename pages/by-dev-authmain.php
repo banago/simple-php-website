@@ -51,9 +51,7 @@ class mysqlquery {
   }	// used to get properties
   function __set($name,$value){
 	  return $this->$name = $value;
-  }	// used to set properties
-
-  
+  }	// used to set properties  
 }
 
 
