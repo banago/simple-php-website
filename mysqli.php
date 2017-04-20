@@ -37,6 +37,12 @@ class mysqlquery {
 	  $row = $result->fetch_assoc();
 	  print_r ($row['Mac_ID']);
 	  echo $row['Mac_ID'];
+	  while ($row = $result->fetch_assoc()) {
+        	echo 'ID: '.$row['Mac_ID'].'<br>';
+        	echo 'First Name: '.$row['Mac_ID'].'<br>';
+        	echo 'Last Name: '.$row['Mac_ID'].'<br>';
+        	echo 'Username: '.$row['Mac_ID'].'<br><br>';
+	 }
 	  $stmt->close();
 	  
 	  //$stmt->store_result();
