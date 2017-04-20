@@ -23,13 +23,10 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $stmt->fetch();
   $numRows = $stmt->num_rows;
   echo "ROWS BRO   " .  $numRows;
-  $stmt->bind_result($Fname,$User_ID,$Password); 
-if($numRows > 0) {
-  while ($stmt->fetch()) {
-    $name1[0] = $Fname[0];
-    $name2[] = $User_ID;
-    $name3[] = $Password;
-  }
+  $result = $stmt->get_result();
+  $row = $result->fetch_assoc();
+  echo "BLALALDLD "$row['Fname'];
+
     $_SESSION['valid_user'] = $userid;  // sets session to returned username
     $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
       echo "NAME1" . $name1['Fname'];
