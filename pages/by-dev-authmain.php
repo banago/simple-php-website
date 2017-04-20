@@ -17,6 +17,19 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $stmt->execute();
   echo $stmt->fullQuery;
   echo $stmt->error;
+  $result = $stmt->get_result();
+  $numRows = $result->num_rows;
+  if($numRows > 0) {
+    while($row = $result->fetch_assoc()) {
+      
+      $id[] = $row['Type'];
+      $name[] = $row['Fname'];
+      $password[] = $row['Password'];
+      echo $id[0];
+  
+    }
+
+  }
   //$result = $db->query($query);  // executes query
   if ($stmt->num_rows) {
     // if they are in the database register the user id
