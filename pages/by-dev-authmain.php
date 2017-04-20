@@ -6,9 +6,9 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $password = $_POST['password'];
   $type = "ADMINISTRATOR";
   $name = "Fname";
-  $name1[];
-  $name2[];
-  $name3[];
+  $name1;
+  $name2;
+  $name3;
   
   $db = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
   if (mysqli_connect_errno()) {
@@ -35,6 +35,7 @@ if($numRows > 0) {
       echo "NAME1" . $name1['Fname'];
     echo "NAME12" . $name1[0];
     echo "NAME13" . $name1[1];
+  print_r( $name1);
 }
   $db->close();  // closes the db connection
 }
