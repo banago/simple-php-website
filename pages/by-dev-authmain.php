@@ -30,7 +30,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     $_SESSION['valid_user'] = $userid;  // sets session to returned username
     $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
       echo "ID" . $id;
-    echo "NAME" . $name];
+    echo "NAME" . $name;
     echo "AGE" . $age;
   print_r( $name1);
 
