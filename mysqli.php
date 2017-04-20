@@ -19,6 +19,8 @@ class mysqlquery {
       		AND au.Aca_ID = am.Aca_ID AND am.Mac_ID = amm.Mac_ID";
 
 	protected $resultrow = array();
+	protected $results[];
+	
   	function __construct($sqlQuery,$sqlWhere) {
 	  if ($sqlQuery == "query_1") {
 		  $this->sqlquery($this->query_1, $sqlWhere);
@@ -60,9 +62,9 @@ class mysqlquery {
                         if ( $key === 'excerpt') $val = $this->cleanExcerpt($row[$key]);
                         $x[$key] = $val;
 		    }
-                    $results[] = $x;
+                    $this->results[] = $x;
 	   }
-	   //print_r ($results); 
+	   print_r ($this->results); 
 	   //return $results; 
 	   $stmt->free_result();
 	   $stmt->close();
