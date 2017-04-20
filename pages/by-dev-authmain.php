@@ -64,11 +64,10 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
 <!DOCTYPE html>
 
   <head>
-    <title>Home Page</title>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     </head>
   <body>
-    <h1> Authentication Required</h1>
+    <h1> Authentication Page</h1>
     <?php // there is a better way to write this, rewrite it...
     
     if (isset($_SESSION['valid_user'])) {   
