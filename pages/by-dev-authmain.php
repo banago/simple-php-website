@@ -12,7 +12,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     echo 'Connection to database failed:' . mysqli_connect_error();
     exit();
   }
-  $query = "SELECT au.Fname, au.Fname, au.User_ID, aup.Password FROM aca_user as au, aca_user_password as aup WHERE au.Fname = ? AND au.Type = ? AND au.User_ID = aup.User_ID AND aup.Password=sha1(?)";
+  $query = "SELECT au.Fname, au.User_ID, aup.Password FROM aca_user as au, aca_user_password as aup WHERE au.Fname = ? AND au.Type = ? AND au.User_ID = aup.User_ID AND aup.Password=sha1(?)";
   $stmt = $db->prepare($query);
   $stmt->bind_param('sss', $userid, $type, $password);
   $stmt->execute();
@@ -22,10 +22,12 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   //echo $stmt->error;
   //$result = $stmt->get_result();
   $numRows = $stmt->num_rows;
-  $stmt->bind_result($Fname); 
+  $stmt->bind_result($Fname,$User_ID,$Password); 
 if($numRows > 0) {
   while ($stmt->fetch()) {
-    $id[] = $Fname;
+    $name1[] = $Fname;
+    $name2[] = $User_ID;
+    $name3[] = $Password;
     echo  $id[0];
   }
 }
