@@ -150,7 +150,7 @@ article { text-align: left; padding: 40px; }
     margin-top: 12px;
 }
 .flex-container {
-    position: relative;
+    position: absolute;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
