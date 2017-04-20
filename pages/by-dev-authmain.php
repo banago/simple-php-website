@@ -16,6 +16,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $stmt->bind_param('sss', $userid, $type, $password);
   $stmt->execute();
   echo $stmt->fullQuery;
+  echo $stmt->error;
   //$result = $db->query($query);  // executes query
   if ($stmt->num_rows) {
     // if they are in the database register the user id
