@@ -17,8 +17,6 @@ class mysqlquery {
   		FROM aca as a, aca_user as au, aca_mab as am, aca_mab_metadata as amm 
     		WHERE am.Valid_Until = ? AND a.Aca_ID = au.Aca_ID 
       		AND au.Aca_ID = am.Aca_ID AND am.Mac_ID = amm.Mac_ID";
-
-	protected $resultrow = array();
 	protected $results;
 	
   	function __construct($sqlQuery,$sqlWhere) {
@@ -64,7 +62,7 @@ class mysqlquery {
 		    }
                     $this->results[] = $x;
 	   }
-	   print_r ($this->results); 
+	   //print_r ($this->results); 
 	   //return $results; 
 	   $stmt->free_result();
 	   $stmt->close();
@@ -100,5 +98,6 @@ class mysqlquery {
 //$db = new mysqlquery("1000-01-01 00:00:0");
 if (isset($_GET['sqlQuery']) & isset($_GET['sqlWhere'])) {
 	$db = new mysqlquery($_GET['sqlQuery'], $_GET['sqlWhere']);	// sets class property
+	print_r($db->results);
 }
 ?>
