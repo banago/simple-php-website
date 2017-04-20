@@ -33,7 +33,7 @@ class authmain {
       echo 'Connection to database failed:' . mysqli_connect_error();
       exit();
     }
-    $result = $db->query($this->query);  // executes query
+    //$result = $db->query($this->query);  // executes query
     if ($db->num_rows) {
       // if they are in the database register the user id
       $row = $db->fetch_assoc();  // stores result of successfull query
