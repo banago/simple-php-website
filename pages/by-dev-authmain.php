@@ -23,7 +23,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $numRows = $stmt->num_rows;
   $stmt->bind_result($Fname, $Type, $Password);
   $stmt->fetch();
-  if (if($numRows > 0) {
+  if ($numRows > 0) {
     $_SESSION['valid_user'] = $userid;  // sets session to returned username
     $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
     echo "ID" . $Fname . "<br />";
