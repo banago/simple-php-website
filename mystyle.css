@@ -151,8 +151,6 @@ article { text-align: left; padding: 40px; }
 }
 .flex-container {
     position: absolute;
-    top: 50%;
-    left: 50%;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
@@ -161,6 +159,8 @@ article { text-align: left; padding: 40px; }
     align-content: center;
     width: 639px;
     height: 125px;
+    top: 50%;
+    left: 50%;
     background-color: lightgrey;
     box-shadow: 2px 2px 5px grey;
 }
