@@ -19,7 +19,7 @@ class mysqlquery {
       		AND au.Aca_ID = am.Aca_ID AND am.Mac_ID = amm.Mac_ID";
 
 	protected $resultrow = array();
-	protected $results[];
+	protected $results;
 	
   	function __construct($sqlQuery,$sqlWhere) {
 	  if ($sqlQuery == "query_1") {
