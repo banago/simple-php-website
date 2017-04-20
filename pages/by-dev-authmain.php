@@ -12,12 +12,15 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   }
   $query = "SELECT au.Fname, au.Fname, au.User_ID, aup.Password 
   FROM aca_user as au, aca_user_password as aup 
-  WHERE au.Fname = '" . $userid . "' AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND 
-  aup.Password=sha1('".$password."')";
-  $result = $db->query($query);  // executes query
-  if ($result->num_rows) {
+  WHERE au.Fname = '?' AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND 
+  aup.Password=sha1('?')";
+  $stmt = $db->prepare($query);
+  $stmt->bind_param('ss', $userid, $password);
+  $stmt->execute();
+  //$result = $db->query($query);  // executes query
+  if ($stmt->num_rows) {
     // if they are in the database register the user id
-    $row = $result->fetch_assoc();  // stores result of successfull query
+    $row = $stmt->fetch_assoc();  // stores result of successfull query
     if ($row['Fname'] == $userid) {
       $_SESSION['valid_user'] = $userid;  // sets session to returned username
       $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
@@ -25,7 +28,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
       echo "UserName <font color=\"red\"><b>" . $userid . "</b> </font>" . " <ins>Not Found</ins>";
     }
   } else {
-    //echo "THIS IS THE QUERY    :" . $query; // debug
+    echo "THIS IS THE QUERY    :" . $query; // debug
   }
   $db->close();  // closes the db connection
 }
