@@ -39,6 +39,7 @@ class authmain {
       $row = $db->fetch_assoc();  // stores result of successfull query
       echo $row['Fname'];
       echo $userid;
+      print_r($row);
       if ($row['Fname'] == $userid) {
         $_SESSION['valid_user'] = $userid;  // sets session to returned username
         $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
