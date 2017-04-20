@@ -4,7 +4,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   // if the user has justed tried to log in
   $userid = strtoupper($_POST['userid']); // makes user name uppercase
   $password = $_POST['password'];
-  $type = "ADMINISTRATOR" 
+  $type = "ADMINISTRATOR";
   
   $db = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
   if (mysqli_connect_errno()) {
