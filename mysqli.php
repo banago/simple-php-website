@@ -29,7 +29,7 @@ class mysqlquery {
 	  $stmt->execute();
 	  $result = $stmt->get_result();
 	  $row = $result->fetch_assoc();
-	  print_r ($row['Mac_ID'][0]);
+	  print_r ($row['Mac_ID']);
 	  $stmt->close();
 	  
 	  //$stmt->store_result();
