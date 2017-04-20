@@ -6,6 +6,9 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $password = $_POST['password'];
   $type = "ADMINISTRATOR";
   $name = "Fname";
+  $name1[];
+  $name2[];
+  $name3[];
   
   $db = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
   if (mysqli_connect_errno()) {
@@ -16,12 +19,8 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $stmt = $db->prepare($query);
   $stmt->bind_param('sss', $userid, $type, $password);
   $stmt->execute();
-  //$stmt->bind_result($Fname);
   $stmt->store_result();
   $stmt->fetch();
-  //echo $stmt->fullQuery;
-  //echo $stmt->error;
-  //$result = $stmt->get_result();
   $numRows = $stmt->num_rows;
   echo "ROWS BRO   " .  $numRows;
   $stmt->bind_result($Fname,$User_ID,$Password); 
@@ -30,12 +29,12 @@ if($numRows > 0) {
     $name1[] = $Fname;
     $name2[] = $User_ID;
     $name3[] = $Password;
-    echo "NAME1" . $name1['Fname'];
-    echo "NAME12" . $name1[0];
-    echo "NAME13" . $name1[1];
   }
     $_SESSION['valid_user'] = $userid;  // sets session to returned username
     $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
+      echo "NAME1" . $name1['Fname'];
+    echo "NAME12" . $name1[0];
+    echo "NAME13" . $name1[1];
 }
   $db->close();  // closes the db connection
 }
