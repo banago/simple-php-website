@@ -2,8 +2,8 @@
 class authmain {
   protected $db_s_1 = 'sql';
   protected $db_su_1 = 'demoUser';
-  protected $db_sd_1 = 'demoPassword';
-  protected $db_1 = 'MAB_TRACK';
+  protected $db_sp_1 = 'demoPassword';
+  protected $db_sd_1 = 'MAB_TRACK';
   protected $query_1_name;
   protected $query_1_password;  
   protected $query_1 = "SELECT au.Fname, au.Fname, au.User_ID, aup.Password 
