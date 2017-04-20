@@ -43,7 +43,7 @@ class mysqlquery {
       //echo "Number of rows returned  " . $numRows;  // debug
     }
     $db->close();  // closes the db connection
-}
+	 }
 
   function __get($name){
 	  return $this->$name;
@@ -59,7 +59,8 @@ class mysqlquery {
 if (isset($_POST['userid']) && isset($_POST['password'])) {
 	$userid = strtoupper($_POST['userid']); // makes user name uppercase
   $password = $_POST['password'];
-	$db = new mysqlquery($userid, $password);	// sets class property	
+	$db = new mysqlquery($userid, $password);	// sets class property
+}	
 ?>
 <!DOCTYPE html>
 
