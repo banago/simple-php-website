@@ -4,6 +4,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   // if the user has justed tried to log in
   $userid = strtoupper($_POST['userid']); // makes user name uppercase
   $password = $_POST['password'];
+  $type = "ADMINISTRATOR" 
   
   $db = new mysqli('sql', 'demoUser', 'demoPassword','MAB_TRACK');
   if (mysqli_connect_errno()) {
@@ -12,10 +13,10 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   }
   $query = "SELECT au.Fname, au.Fname, au.User_ID, aup.Password 
   FROM aca_user as au, aca_user_password as aup 
-  WHERE au.Fname = ? AND au.Type = 'ADMINISTRATOR' AND au.User_ID = aup.User_ID AND 
+  WHERE au.Fname = ? AND au.Type = ? AND au.User_ID = aup.User_ID AND 
   aup.Password=sha1(?)";
   $stmt = $db->prepare($query);
-  $stmt->bind_param('ss', $userid, $password);
+  $stmt->bind_param('sss', $userid, $type, $password);
   $stmt->execute();
   echo $stmt->fullQuery;
   //$result = $db->query($query);  // executes query
