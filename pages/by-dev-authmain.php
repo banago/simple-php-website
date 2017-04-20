@@ -17,6 +17,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
   $stmt->bind_param('sss', $userid, $type, $password);
   $stmt->execute();
   //$stmt->bind_result($Fname);
+  $stmt->store_result();
   $stmt->fetch();
   //echo $stmt->fullQuery;
   //echo $stmt->error;
