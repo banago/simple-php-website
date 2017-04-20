@@ -38,9 +38,21 @@ class mysqlquery {
 	  $stmt->execute();
 	  $stmt->store_result();	// store the result (to get properties)
 	  $num_of_rows = $stmt->num_rows; // set the number of rows
+	  $num_of_fields = $stmt->field_count;	// set the number of fields
 	  echo "NUMBER OF ROWS    " . $num_of_rows . "<br />";
+	  echo "NUMBER OF FIELDS    " . $num_of_fields . "<br />";
 	  $stmt->bind_result($id, $first_name, $last_name, $username, $a2 ,$a3 , $a4, $a5, $a6, $a7, $a11);	// Bind the result to variables
-	  while ($stmt->fetch()) {
+	  $x = 0;
+	  while($x < $num_of_fields) {
+    		echo "The number is: $x <br>";
+		$y = "\$a";
+		$z = $y . $x;
+		$array[] = $z;
+		print_r($array);
+    		$x++;
+	  } 
+	   
+	   while ($stmt->fetch()) {
 		  echo 'ID: '.$id.'<br>';
 		  echo 'First Name: '.$first_name.'<br>';
 		  echo 'Last Name: '.$last_name.'<br>';
