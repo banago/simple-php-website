@@ -30,6 +30,8 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
     echo "User_ID  " . $User_ID . "<br />";
     echo "Type " . $Type . "<br />";
     echo "Password Hash  " . $Password . "<br />";
+  } else {
+    echo "Number of rows returned  " . $numRows;
   }
   $db->close();  // closes the db connection
 }
