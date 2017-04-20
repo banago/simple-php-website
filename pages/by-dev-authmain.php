@@ -24,7 +24,7 @@ class authmain {
 	  return $this->$name = $value;
   }	// used to set properties
   
-  function validate() {
+  function validate($Query) {
     $db = new mysqli($this->db_s_1, $this->db_su_1, $this->db_sp_1, $this->db_sd_1);
     $stmt = $db->prepare($Query);
     $stmt->bind_param('ss', $this->query_1_name,$this->password);
