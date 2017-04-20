@@ -33,19 +33,6 @@ if($numRows > 0) {
     echo "NAME13" . $name1['1];
   }
 }
-  //$result = $db->query($query);  // executes query
-  if ($stmt->num_rows) {
-    // if they are in the database register the user id
-    $row = $stmt->fetch_assoc();  // stores result of successfull query
-    if ($row['Fname'] == $userid) {
-      $_SESSION['valid_user'] = $userid;  // sets session to returned username
-      $_SESSION['timeout_idle'] = time() + MAX_IDLE_TIME;  // idle timeout
-    } else {
-      echo "UserName <font color=\"red\"><b>" . $userid . "</b> </font>" . " <ins>Not Found</ins>";
-    }
-  } else {
-    echo "THIS IS THE QUERY    :" . $stmt->fullQuery; // debug
-  }
   $db->close();  // closes the db connection
 }
 ?>
