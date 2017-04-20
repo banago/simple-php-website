@@ -149,6 +149,41 @@ article { text-align: left; padding: 40px; }
 .button {
     margin-top: 12px;
 }
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center;
+    width: 639px;
+    height: 125px;
+    background-color: lightgrey;
+    box-shadow: 2px 2px 5px grey;
+}
+
+.flex-item {
+    background-color: cornflowerblue;
+    width: 140px;
+    height: 100px;
+    margin: auto;
+
+}
+.item1 {
+    -webkit-flex: 2;
+    flex: 2;
+    
+}
+
+.item2 {
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.item3 {
+    -webkit-flex: 1;
+    flex: 1;
+}
 .pagination {
     display: inline-block;
 }
