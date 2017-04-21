@@ -13,8 +13,8 @@
 <div class="flex-container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
     <div class="flex-dialog"> 
         <div class="flex-content"> 
-            <div class="flex-header"> 
-                <h3 class="modal-title">ASDFASDFASDFASDF</h3> 
+            <div class="flex-header">
+		    <h2><center>ASDFASDFASDFASDFt</center></h2> 
             </div> 
             <div class="flex-body">
 				<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
