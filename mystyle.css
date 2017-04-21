@@ -185,7 +185,7 @@ article { text-align: left; padding: 40px; }
 .flex-header {
     float:left;
     padding: 2px 16px;
-    width: 200%;
+    width: 400%;
     background-color: #5cb85c;
     color: white;
 }
