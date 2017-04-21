@@ -158,8 +158,6 @@ article { text-align: left; padding: 40px; }
 .flex-container{
     display: block !important;
     text-align: center;
-    max-width: 100%;
-    margin: 50px auto;
     width: 100%;
 }
 .flex-dialog{
