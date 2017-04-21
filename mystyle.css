@@ -174,7 +174,7 @@ article { text-align: left; padding: 40px; }
 }
 /* Flex Content */
 .flex-content {
-    position: relative;
+
     background-color: #fefefe;
     margin: auto;
     padding: 0;
