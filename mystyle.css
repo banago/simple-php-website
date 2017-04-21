@@ -158,15 +158,14 @@ article { text-align: left; padding: 40px; }
 .flex-container{
     display: block !important;
     text-align: center;
-    width: 1000px;
+    width: 100%;
 }
 .flex-dialog{ 
     overflow-y: initial !important;
-
     max-height: 85%;  
     margin-top: 50px; 
     margin-bottom:50px;
-    
+    width: 100%;
 }
 .flex-body{
   height: 250px;
@@ -174,12 +173,6 @@ article { text-align: left; padding: 40px; }
 }
 .flex-item {
     background-color: cornflowerblue;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-align-content: center;
-    width: 100%;
     width: 140px;
     height: 100px;
     margin: auto;
