@@ -165,7 +165,7 @@ article { text-align: left; padding: 40px; }
     overflow-y: initial !important;
     position: relative;
     left: 60%;
-    min-width: 200%;
+    min-width: 400%;
 
 }
 .flex-body{
