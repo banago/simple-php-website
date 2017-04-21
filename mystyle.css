@@ -191,7 +191,7 @@ article { text-align: left; padding: 40px; }
     color: white;
 }
 .flex-body{
-    float:left;
+    float:center;
     height: 250px;
     width: 325%;
     margin: 10px 0 0 -400px;
