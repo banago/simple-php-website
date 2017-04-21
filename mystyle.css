@@ -208,8 +208,7 @@ article { text-align: left; padding: 40px; }
     background-color: cornflowerblue;
     height: 20px;
     width: 80%;
-    margin: auto;
-    padding: 10px;
+    margin: 10px;
     text-align:center;
 }
 .flex-footer {
