@@ -183,7 +183,7 @@ article { text-align: left; padding: 40px; }
 }
 .flex-header {
     padding: 2px 16px;
-    width: 100%;
+    min-width: 1200px;
     color: black;
 }
 .flex-body{
