@@ -184,7 +184,7 @@ article { text-align: left; padding: 40px; }
 }
 .flex-header {
     padding: 2px 16px;
-    min-width: 100%;
+    min-width: 200%;
     color: black;
 }
 .flex-body{
@@ -201,7 +201,7 @@ article { text-align: left; padding: 40px; }
 }
 .flex-footer {
     padding: -1px 16px;
-    min-width: 100%;
+    min-width: 200%;
     color: black;
 }
 .pagination {
