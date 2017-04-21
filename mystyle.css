@@ -184,12 +184,12 @@ article { text-align: left; padding: 40px; }
 }
 .flex-header {
     padding: 2px 16px;
-    min-width: 500%;
+    min-width: 100%;
     color: black;
 }
 .flex-body{
     height: 250px;
-    min-width: 100%;
+    min-width: 200%;
     overflow-y: auto;
 }
 .flex-item {
@@ -201,7 +201,7 @@ article { text-align: left; padding: 40px; }
 }
 .flex-footer {
     padding: -1px 16px;
-    min-width: 200%;
+    min-width: 100%;
     color: black;
 }
 .pagination {
