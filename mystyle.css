@@ -163,9 +163,8 @@ article { text-align: left; padding: 40px; }
 }
 .flex-dialog{ 
     overflow-y: initial !important;
-    position: relative;
-    left: 60%;
-    min-width: 800%;
+    background: #999;
+    overflow: hidden;;
 
 }
 .flex-body{
