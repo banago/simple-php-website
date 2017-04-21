@@ -158,7 +158,7 @@ article { text-align: left; padding: 40px; }
 .flex-container{
     display: block !important;
     text-align: center;
-    width: 20%;
+    width: 40%;
 }
 .flex-dialog{ 
     overflow-y: initial !important;
