@@ -155,18 +155,17 @@ article { text-align: left; padding: 40px; }
 .button {
     margin-top: 12px;
 }
-.flex-container{
-    display: block !important;
-     display: -webkit-flex;
+.flex-container {
+    display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     -webkit-align-content: center;
     align-content: center;
-    text-align: center;
-    max-width: 100%;
-
-    
+    width: 100%;
+    height: 125px;
+    background-color: lightgrey;
+    box-shadow: 2px 2px 5px grey;
 }
 .flex-dialog{ 
     overflow-y: initial !important;
