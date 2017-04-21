@@ -162,6 +162,7 @@ article { text-align: left; padding: 40px; }
 .flex-dialog{ 
     overflow-y: initial !important;
     margin: auto;
+    min-width: 100%;
     width: 100%;
 
 }
