@@ -166,6 +166,25 @@ article { text-align: left; padding: 40px; }
 
 
 }
+/* Flex Content */
+.flex-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+.flex-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
 .flex-body{
     height: 250px;
     overflow-y: auto;
@@ -176,6 +195,11 @@ article { text-align: left; padding: 40px; }
     height: 100px;
     margin: auto;
     text-align:center
+}
+.flex-footer {
+    padding: -1px 16px;
+    background-color: #5cb85c;
+    color: white;
 }
 .pagination {
     display: inline-block;
