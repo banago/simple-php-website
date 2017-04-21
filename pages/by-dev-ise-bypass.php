@@ -13,7 +13,6 @@
 <div class="flex-container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
     <div class="flex-dialog"> 
         <div class="flex-content">
-		
             <div class="flex-header">
 		    <h2><center>ASDFASDFASDFASDFt</center></h2> 
             </div> 
