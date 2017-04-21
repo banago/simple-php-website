@@ -213,7 +213,7 @@ article { text-align: left; padding: 40px; }
     padding: -1px 16px;
      margin: auto;
      width: 95%;
-     height: 25px; 
+     height: 100%; 
     background-color: #5cb85c;
     color: white;
 }
