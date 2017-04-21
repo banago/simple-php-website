@@ -187,9 +187,9 @@ article { text-align: left; padding: 40px; }
     animation-duration: 0.4s
 }
 .flex-header {
-    padding: 0px 16px;
+    padding: 8px 16px;
     width: 96%;
-    height: 2px;
+    height: 40px;
     margin: auto;
     text-align:center;
     background-color: #5cb85c;
