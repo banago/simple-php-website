@@ -157,11 +157,9 @@ article { text-align: left; padding: 40px; }
 }
 .flex-container{
     display: block !important;
-   
-    width: 20%;
+    text-align: center;
 }
 .flex-dialog{ 
-    overflow-y: initial !important;
     overflow-y: initial !important;
     min-width: 1000%;
     margin: auto;
