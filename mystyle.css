@@ -176,8 +176,8 @@ article { text-align: left; padding: 40px; }
 /* Flex Content */
 .flex-content {
     background-color: #fefefe;
-     margin: auto;
-     width: 100%;  
+    margin: auto;
+    width: 100%;  
     padding: 0;
     border: 1px solid #888;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -187,7 +187,7 @@ article { text-align: left; padding: 40px; }
     animation-duration: 0.4s
 }
 .flex-header {
-    padding: 0px 16px;
+    padding: 10px 16px;
     width: 97%;
     height: 60px;
     margin: auto;
