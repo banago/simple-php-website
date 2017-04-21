@@ -195,8 +195,7 @@ article { text-align: left; padding: 40px; }
 
     height: 250px;
      margin: auto;
-     width: 90%x;
-     height: 100%; 
+     width: 90%x; 
     background-color: #f9f9f9;
     overflow-y: auto;
 }
