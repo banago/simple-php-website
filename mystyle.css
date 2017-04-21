@@ -165,7 +165,7 @@ article { text-align: left; padding: 40px; }
     max-height: 85%;  
     margin-top: 50px; 
     margin-bottom:50px;
-    min-width:1140px
+    min-width:1140px;
 }
 .flex-body{
     height: 250px;
