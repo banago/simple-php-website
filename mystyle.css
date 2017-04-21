@@ -185,14 +185,14 @@ article { text-align: left; padding: 40px; }
 .flex-header {
     float:left;
     padding: 2px 16px;
-    min-width: 200%;
+    width: 200%;
     background-color: #5cb85c;
     color: white;
 }
 .flex-body{
     float:left;
     height: 250px;
-    min-width: 200%;
+    width: 200%;
     background-color: #f9f9f9;
     overflow-y: auto;
 }
@@ -207,7 +207,7 @@ article { text-align: left; padding: 40px; }
 .flex-footer {
     float:left;
     padding: -1px 16px;
-    min-width: 200%;
+    width: 200%;
     background-color: #5cb85c;
     color: white;
 }
