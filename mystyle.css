@@ -182,9 +182,9 @@ article { text-align: left; padding: 40px; }
     border: 1px solid #888;
     box-shadow: 5px 5px 10px #888888;
     -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
+    -webkit-animation-duration: 0.8s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.8s
 }
 .flex-header {
     
