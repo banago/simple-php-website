@@ -188,9 +188,10 @@ article { text-align: left; padding: 40px; }
 }
 .flex-header {
     padding: 2px 16px;
-   width: 96%;
+    width: 96%;
+    height: 20px;
     margin: auto;
-     height: 20px;
+    text-align:center;
     background-color: #5cb85c;
     color: white;
 }
@@ -205,11 +206,12 @@ article { text-align: left; padding: 40px; }
     width: 140px;
     height: 100px;
     margin: auto;
-    text-align:center
+   text-align:center;
 }
 .flex-footer {
     padding: -1px 16px;
-     margin: auto;
+    margin: auto;
+    text-align:center;
     background-color: #5cb85c;
     color: white;
 }
