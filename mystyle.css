@@ -206,10 +206,10 @@ article { text-align: left; padding: 40px; }
 }
 .flex-item {
     background-color: cornflowerblue;
-    width: 140px;
-    height: 10px;
+    width: 80%;
+    height: 30px;
     margin: auto;
-   text-align:center;
+    text-align:center;
 }
 .flex-footer {
     padding: -1px 16px;
