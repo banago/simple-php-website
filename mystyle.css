@@ -171,8 +171,7 @@ article { text-align: left; padding: 40px; }
 .flex-dialog{ 
     overflow-y: initial !important;
      margin: auto;
-     width: 98%;
-     height: 25px;  
+     width: 98%; 
 }
 /* Flex Content */
 .flex-content {
