@@ -14,7 +14,7 @@
     <div class="flex-dialog"> 
         <div class="flex-content">
             <div class="flex-header">
-		    <h2><center>ASDFASDFASDFASDFt</center></h2> 
+		    <h2><center>BYPASS LIST</center></h2> 
             </div> 
             <div class="flex-body">
 				<div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
