@@ -198,6 +198,8 @@ article { text-align: left; padding: 40px; }
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
+        -webkit-justify-content: center;
+    justify-content: center;
     height: 150px;
     margin: auto;
     background-color: #f9f9f9;
