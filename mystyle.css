@@ -223,7 +223,7 @@ article { text-align: left; padding: 40px; }
 }
 .mark_green { 
     background-color: PaleGreen;
-    color: white;
+    color: black;
 }
 .mark_red { 
     background-color: FireBrick;
