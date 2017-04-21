@@ -205,10 +205,9 @@ article { text-align: left; padding: 40px; }
 }
 .flex-item {
     -webkit-justify-content: center;
-    align-content: center;
     background-color: cornflowerblue;
     height: 20px;
-    width: 80%;
+    width: 100%;
     margin: 5px;
     text-align:center;
 }
