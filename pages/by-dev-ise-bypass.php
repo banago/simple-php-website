@@ -10,16 +10,26 @@
 <?php if (isset($_SESSION['valid_user'])) : ?>
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 <p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>		
-<div class="flex-container">
-	<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
-		<div>Demo User ACA</div><div>Demo Time Left</div></div>
-	<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
-		<div>Demo User ACA</div><div>Demo Time Left</div></div>
-	<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
-		<div>Demo User ACA</div><div>Demo Time Left</div></div>
-	<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
-		<div>Demo User ACA</div><div>Demo Time Left</div></div>
-</div>
+<div class="flex-container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
+    <div class="flex-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;"> 
+        <div class="modal-content"> 
+            <div class="modal-header"> 
+                <h3 class="modal-title">ASDFASDFASDFASDF</h3> 
+            </div> 
+            <div class="flex-body">
+				<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
+				<div>Demo User ACA</div><div>Demo Time Left</div></div>
+				<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
+				<div>Demo User ACA</div><div>Demo Time Left</div></div>
+				<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
+				<div>Demo User ACA</div><div>Demo Time Left</div></div>
+				<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
+				<div>Demo User ACA</div><div>Demo Time Left</div></div>
+			</div> 
+            <div class="modal-footer">ASDFASDFASDFASDF</div> 
+        </div> 
+    </div> 
+</div> 
 <p><b>Whats New!</b></p>
 <ul>
   <li>New Authenication Page for Bypasses!!!!</li>
