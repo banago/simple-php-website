@@ -205,6 +205,7 @@ article { text-align: left; padding: 40px; }
 }
 .flex-item {
     -webkit-justify-content: center;
+    justify-content: center;
     background-color: cornflowerblue;
     height: 20px;
     width: 80%;
