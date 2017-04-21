@@ -175,7 +175,6 @@ article { text-align: left; padding: 40px; }
 }
 /* Flex Content */
 .flex-content {
-    display: flex;
     background-color: #fefefe;
     margin: auto;
     width: 100%;  
@@ -196,6 +195,7 @@ article { text-align: left; padding: 40px; }
     color: black;
 }
 .flex-body{
+    display: flex;
     height: 150px;
      margin: auto;
     background-color: #f9f9f9;
