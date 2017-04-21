@@ -209,7 +209,7 @@ article { text-align: left; padding: 40px; }
     width: 80%;
     margin: 10px auto;
     text-align:center;
-    letter-spacing: 20px;
+    word-spacing: 20px;
 }
 .flex-footer {
     padding: -1px 16px;
