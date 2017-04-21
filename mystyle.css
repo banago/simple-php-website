@@ -198,20 +198,16 @@ article { text-align: left; padding: 40px; }
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
-        -webkit-justify-content: center;
-    justify-content: center;
     height: 150px;
     margin: auto;
     background-color: #f9f9f9;
     overflow-y: auto;
 }
 .flex-item {
-    -webkit-justify-content: center;
-    justify-content: center;
     background-color: cornflowerblue;
     height: 20px;
     width: 80%;
-    margin: 10px;
+    margin: 10 auto;
     text-align:center;
 }
 .flex-footer {
