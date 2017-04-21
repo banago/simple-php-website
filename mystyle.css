@@ -164,7 +164,7 @@ article { text-align: left; padding: 40px; }
     -webkit-align-content: center;
     align-content: center;
     width: 100%;
-    height: 125px;
+    height: 100%;
     background-color: lightgrey;
     box-shadow: 2px 2px 5px grey;
 }
