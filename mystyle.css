@@ -221,7 +221,7 @@ article { text-align: left; padding: 40px; }
     margin: 5px auto;
     text-align:center;
     word-spacing: 20px;
-    box-shadow: 0 6px 16px 0 rgba(0,0,0,0.24),0 8px 25px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.24),0 6px 25px 0 rgba(0,0,0,0.19);
 }
 .flex-footer {
     padding: -1px 16px;
