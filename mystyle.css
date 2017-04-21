@@ -207,8 +207,8 @@ article { text-align: left; padding: 40px; }
     -webkit-justify-content: center;
     background-color: cornflowerblue;
     height: 20px;
-    width: 100%;
-    margin: 5px;
+    width: 80%;
+    margin: auto;
     text-align:center;
 }
 .flex-footer {
