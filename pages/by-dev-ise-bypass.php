@@ -13,10 +13,10 @@
 <div class="flex-container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
     <div class="flex-dialog"> 
         <div class="flex-content">
-		<h2><center>ASDFASDFASDFASDFt</center></h2> 
+		
             <div class="flex-header">
-		    
-            </div> 
+		    <h2><center>ASDFASDFASDFASDFt</center></h2> 
+            
             <div class="flex-body">
 				<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
 				<div>Demo User ACA</div><div>Demo Time Left</div></div>
