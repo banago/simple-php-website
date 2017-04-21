@@ -161,7 +161,6 @@ article { text-align: left; padding: 40px; }
 }
 .flex-dialog{ 
     overflow-y: initial !important;
-    position: absolute;
     left: 0px;
     min-width: 200%;
     width: 100%;
