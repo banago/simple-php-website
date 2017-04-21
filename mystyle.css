@@ -187,10 +187,9 @@ article { text-align: left; padding: 40px; }
     animation-duration: 0.4s
 }
 .flex-header {
-
     padding: 2px 16px;
-     margin: auto;
-   width: 100%;
+   width: 98%;
+    margin: auto;
      height: 20px;
     background-color: #5cb85c;
     color: white;
