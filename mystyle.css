@@ -206,8 +206,9 @@ article { text-align: left; padding: 40px; }
 }
 .flex-item {
     background-color: cornflowerblue;
+    height: 20px;
     width: 80%;
-    height: 30px;
+    margin: 10px;
     margin: auto;
     text-align:center;
 }
