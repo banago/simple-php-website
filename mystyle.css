@@ -164,7 +164,7 @@ article { text-align: left; padding: 40px; }
 .flex-dialog{ 
     overflow-y: initial !important;
     background: #999;
-    overflow: hidden;;
+    overflow: hidden;
 
 }
 .flex-body{
