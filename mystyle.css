@@ -186,8 +186,8 @@ article { text-align: left; padding: 40px; }
     float:left;
     padding: 2px 16px;
     min-width: 200%;
-    background-color: #5cb85c
-    color: black;
+    background-color: #5cb85c;
+    color: white;
 }
 .flex-body{
     float:left;
@@ -208,8 +208,8 @@ article { text-align: left; padding: 40px; }
     float:left;
     padding: -1px 16px;
     min-width: 200%;
-    background-color: #5cb85c
-    color: black;
+    background-color: #5cb85c;
+    color: white;
 }
 .pagination {
     display: inline-block;
