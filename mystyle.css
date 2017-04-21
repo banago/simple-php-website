@@ -158,14 +158,14 @@ article { text-align: left; padding: 40px; }
 .flex-container{
     display: block !important;
     text-align: center;
-    width: 100%;
+    width: 100px;
 }
 .flex-dialog{ 
     overflow-y: initial !important;
     max-height: 85%;  
     margin-top: 50px; 
     margin-bottom:50px;
-    width: 100%;
+    width: 100px;
 }
 .flex-body{
   height: 250px;
