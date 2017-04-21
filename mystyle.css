@@ -217,15 +217,15 @@ article { text-align: left; padding: 40px; }
     text-align:center;
     color: black;
 }
-.mark_blue { 
+mark_blue { 
     background-color: cornflowerblue;
     color: white;
 }
-.mark_green { 
+mark_green { 
     background-color: PaleGreen;
     color: black;
 }
-.mark_red { 
+mark_red { 
     background-color: FireBrick;
     color: white;
 }
