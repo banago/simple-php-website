@@ -183,7 +183,7 @@ article { text-align: left; padding: 40px; }
     animation-duration: 0.4s
 }
 .flex-header {
-    float:left;
+
     padding: 2px 16px;
     width: 325%;
     margin: 10px 0 0 -400px;
@@ -191,7 +191,7 @@ article { text-align: left; padding: 40px; }
     color: white;
 }
 .flex-body{
-    float:center;
+
     height: 250px;
     width: 325%;
     margin: 10px 0 0 -400px;
@@ -207,7 +207,7 @@ article { text-align: left; padding: 40px; }
     text-align:center
 }
 .flex-footer {
-    float:left;
+\
     padding: -1px 16px;
     width: 325%;
     margin: 10px 0 0 -400px;
