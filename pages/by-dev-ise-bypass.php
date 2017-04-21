@@ -10,25 +10,28 @@
 <?php if (isset($_SESSION['valid_user'])) : ?>
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 <p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>		
-<div class="flex-container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
-    <div class="flex-dialog"> 
-        <div class="flex-content">
-            <div class="flex-header">
-		    <h2><center>BYPASS LIST</center></h2> 
-            </div> 
-            <div class="flex-body">
-				<div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
-				<div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
-				<div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
-				<div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
-				<div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
-				<div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
-				<div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
-				<div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
-			</div> 
-            <div class="flex-footer"><mark_blue>BLUE</mark_blue> = New <mark_green>Greeen</mark_green> = Active <mark_red>RED</mark_red> = Problem </div> 
-        </div> 
-    </div> 
+<div class="flex-container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">     
+	<div class="flex-dialog"> 
+	    <div class="flex-content">
+		<div class="flex-header">
+		    <h2><center>BYPASS LIST</center></h2>             
+		</div>             
+		<div class="flex-body">				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>	
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>			
+		</div> 
+		<div class="flex-footer"><mark_blue>BLUE</mark_blue> = <strong>New</strong> 
+		    <mark_green>Greeen</mark_green> = <strong>Active</strong> 
+		    <mark_red>RED</mark_red> = <strong>Problem</strong> 
+		</div>        
+	    </div>    
+	</div> 
 </div> 
 <p><b>Whats New!</b></p>
 <ul>
@@ -145,41 +148,41 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
     xmlhttp.open('GET', thefile+'?'+thetype+'='+thetypeval+'&'+thekey_1+'='+theval_1+'&'+thekey_2+'='+theval_2+'&'+thekey_3+'='+theval_3+'&'+thekey_4+'='+theval_4, true);
     	xmlhttp.send();	
 }
-</script>    
+
+	</script>    
 </head>
 <body>
-
-<h2>ISE REST Request</h2>
-<form id="search" name="search">
-MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data_2')};">
- <!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
-<button id="myBtn" type="button">Submit</button>
-<input id="myRst" type="reset" name="reset">
-</form>
-<!-- This DIV returns the users input after proccessing it through the php file -->
-<div id="adiv"></div>
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2><center>PRIME GET Result</center></h2>
-    </div>
-    <div class="modal-body" align="center">
-      <p>LAST DETECTED ON</p>
-        <div id="spinner" align="center" class="spinner"></div>
+	<h2>ISE REST Request</h2>
+	<form id="search" name="search">
+	MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data_2')};"> 
+	<!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
+	<button id="myBtn" type="button">Submit</button>
+	<input id="myRst" type="reset" name="reset">
+	</form>
+	<!-- This DIV returns the users input after proccessing it through the php file -->
+	<div id="adiv"></div>
+	<!-- The Modal -->
+	<div id="myModal" class="modal">  
+	<!-- Modal content -->  
+	<div class="modal-content">    
+	  <div class="modal-header">      
+	    <span class="close">&times;</span>      
+	    <h2><center>PRIME GET Result</center></h2>   
+	  </div>    
+	  <div class="modal-body" align="center">      
+	    <p>LAST DETECTED ON</p>        
+	    <div id="spinner" align="center" class="spinner"></div>
 	    <div style="text-align: center;">
 		    <div id="adiv2" class="apicdata" style="display: inline-block; text-align: left">
 			    Content<br /> style="font-size:20px">
 		    </div>	    
 	    </div>
-	    <div id="test1" class="teest12"></div>
-    <div class="modal-footer">
-      <h3><center>___\__-_-__/___</center></h3>
-    </div>
-  </div>
-</div>
+	    <div id="test1" class="teest12"></div>    
+	    <div class="modal-footer">      
+	    <h3><center>___\__-_-__/___</center></h3>    
+	    </div>  
+	  </div>
+	</div>
 
 <script>
 // Get the modal
