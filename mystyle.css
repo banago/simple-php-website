@@ -201,7 +201,6 @@ article { text-align: left; padding: 40px; }
     overflow-y: auto;
 }
 .flex-item {
-    float:left;
     background-color: cornflowerblue;
     width: 140px;
     height: 100px;
@@ -209,7 +208,6 @@ article { text-align: left; padding: 40px; }
     text-align:center
 }
 .flex-footer {
-
     padding: -1px 16px;
      margin: auto;
      width: 95%;
