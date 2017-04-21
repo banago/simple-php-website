@@ -222,11 +222,11 @@ article { text-align: left; padding: 40px; }
     color: white;
 }
 .mark_green { 
-    background-color: green;
+    background-color: PaleGreen;
     color: white;
 }
 .mark_red { 
-    background-color: red;
+    background-color: FireBrick;
     color: white;
 }
 .pagination {
