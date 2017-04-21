@@ -1,4 +1,4 @@
-.wrap { max-width: 1200px; margin: 50px auto; padding: 30px; text-align: center; box-shadow: 0 0 5px rgba(0,0,0,.5); }
+wrap { max-width: 1200px; margin: 50px auto; padding: 30px; text-align: center; box-shadow: 0 0 5px rgba(0,0,0,.5); }
 article { text-align: left; padding: 40px; }
 .container {
     overflow: hidden;
@@ -157,11 +157,9 @@ article { text-align: left; padding: 40px; }
     flex-wrap: wrap;
     -webkit-align-content: center;
     align-content: center;
-    max-width:100%;
-    height:auto;
-    width:100%
-    
-
+    width: 639px;
+    height: 125px;
+    z-index: 15;
     top: 50%;
     left: 50%;
     margin: -100px 0 0 -150px;
