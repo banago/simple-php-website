@@ -175,6 +175,7 @@ article { text-align: left; padding: 40px; }
 }
 /* Flex Content */
 .flex-content {
+    display: flex;
     background-color: #fefefe;
     margin: auto;
     width: 100%;  
