@@ -187,7 +187,7 @@ article { text-align: left; padding: 40px; }
     padding: 2px 16px;
      margin: auto;
      width: 95%;
-     height: 25px; 
+     height: 100%; 
     background-color: #5cb85c;
     color: white;
 }
@@ -195,8 +195,8 @@ article { text-align: left; padding: 40px; }
 
     height: 250px;
      margin: auto;
-     width: 100px;
-     height: 100px; 
+     width: 90%x;
+     height: 100%; 
     background-color: #f9f9f9;
     overflow-y: auto;
 }
