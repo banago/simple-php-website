@@ -17,14 +17,14 @@
 		    <h2><center>ASDFASDFASDFASDFt</center></h2> 
             </div> 
             <div class="flex-body">
-				<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
-				<div>Demo User ACA</div><div>Demo Time Left</div></div>
-				<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
-				<div>Demo User ACA</div><div>Demo Time Left</div></div>
-				<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
-				<div>Demo User ACA</div><div>Demo Time Left</div></div>
-				<div class="flex-item">| 01:23:45:67:89:ab |<div>Demo User Name</div><div>Demo User Status</div>
-				<div>Demo User ACA</div><div>Demo Time Left</div></div>
+				<div class="flex-item">| 01:23:45:67:89:ab |Demo User Name Demo User Status</div>
+				<div class="flex-item">| 01:23:45:67:89:ab |Demo User Name Demo User Status</div>
+				<div class="flex-item">| 01:23:45:67:89:ab |Demo User Name Demo User Status</div>
+				<div class="flex-item">| 01:23:45:67:89:ab |Demo User Name Demo User Status</div>
+				<div class="flex-item">| 01:23:45:67:89:ab |Demo User Name Demo User Status</div>
+				<div class="flex-item">| 01:23:45:67:89:ab |Demo User Name Demo User Status</div>
+				<div class="flex-item">| 01:23:45:67:89:ab |Demo User Name Demo User Status</div>
+				<div class="flex-item">| 01:23:45:67:89:ab |Demo User Name Demo User Status</div>
 			</div> 
             <div class="flex-footer">ASDFASDFASDFASDF</div> 
         </div> 
