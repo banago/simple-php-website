@@ -187,11 +187,11 @@ article { text-align: left; padding: 40px; }
     animation-duration: 0.4s
 }
 .flex-header {
-    text-align:center;
     padding: 8px 16px;
     width: 96%;
-    height: 40px;
+    height: 20px;
     margin: auto;
+    text-align:center;
     background-color: #5cb85c;
     color: white;
 }
