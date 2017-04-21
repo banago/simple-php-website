@@ -157,9 +157,11 @@ article { text-align: left; padding: 40px; }
     flex-wrap: wrap;
     -webkit-align-content: center;
     align-content: center;
-    width: 639px;
-    height: 125px;
-    z-index: 15;
+    max-width:100%;
+    height:auto;
+    width:100%
+    
+
     top: 50%;
     left: 50%;
     margin: -100px 0 0 -150px;
