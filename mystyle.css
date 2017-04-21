@@ -195,8 +195,10 @@ article { text-align: left; padding: 40px; }
     color: black;
 }
 .flex-body{
-    display: flex;
     display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
     height: 150px;
     margin: auto;
     background-color: #f9f9f9;
