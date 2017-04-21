@@ -196,6 +196,8 @@ article { text-align: left; padding: 40px; }
 .flex-body{
     display: -webkit-flex;
     display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
     -webkit-flex-direction: column;
     flex-direction: column;
     height: 150px;
@@ -206,9 +208,9 @@ article { text-align: left; padding: 40px; }
 .flex-item {
     display: -webkit-flex;
     display: flex;
+
     background-color: cornflowerblue;
-    -webkit-justify-content: center;
-    justify-content: center;
+
     height: 20px;
     width: 80%;
     margin: 5px;
