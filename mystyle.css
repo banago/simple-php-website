@@ -170,7 +170,6 @@ article { text-align: left; padding: 40px; }
 .flex-body{
   height: 250px;
   overflow-y: auto;
-    width: 1000px;
 }
 .flex-item {
     background-color: cornflowerblue;
