@@ -165,11 +165,11 @@ article { text-align: left; padding: 40px; }
     max-height: 85%;  
     margin-top: 50px; 
     margin-bottom:50px;
-    width: 1000px;
+    min-width: 100%;
 }
 .flex-body{
-  height: 250px;
-  overflow-y: auto;
+    height: 250px;
+    overflow-y: auto;
 }
 .flex-item {
     background-color: cornflowerblue;
