@@ -182,8 +182,7 @@ article { text-align: left; padding: 40px; }
 }
 .flex-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
+    color: black;
 }
 .flex-body{
     height: 250px;
@@ -198,8 +197,7 @@ article { text-align: left; padding: 40px; }
 }
 .flex-footer {
     padding: -1px 16px;
-    background-color: #5cb85c;
-    color: white;
+    color: black;
 }
 .pagination {
     display: inline-block;
