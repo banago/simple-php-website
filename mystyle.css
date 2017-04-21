@@ -158,7 +158,7 @@ article { text-align: left; padding: 40px; }
 .flex-container{
     display: block !important;
     text-align: center;
-    max-width: 20%;
+    max-width: 40%;
     
 }
 .flex-dialog{ 
