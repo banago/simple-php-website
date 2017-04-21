@@ -193,7 +193,8 @@ article { text-align: left; padding: 40px; }
 .flex-body{
     float:left;
     height: 250px;
-    width: 200%;
+    width: 325%;
+    margin: 10px 0 0 -400px;
     background-color: #f9f9f9;
     overflow-y: auto;
 }
@@ -208,7 +209,8 @@ article { text-align: left; padding: 40px; }
 .flex-footer {
     float:left;
     padding: -1px 16px;
-    width: 200%;
+    width: 325%;
+    margin: 10px 0 0 -400px;
     background-color: #5cb85c;
     color: white;
 }
