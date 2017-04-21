@@ -201,7 +201,7 @@ article { text-align: left; padding: 40px; }
 }
 .flex-footer {
     padding: -1px 16px;
-    min-width: 100%;
+    min-width: 200%;
     color: black;
 }
 .pagination {
