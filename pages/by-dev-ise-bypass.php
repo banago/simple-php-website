@@ -26,9 +26,9 @@
 		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
 		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>			
 		</div> 
-		<div class="flex-footer"><mark_blue>BLUE</mark_blue> = <strong>New</strong> 
+		<div class="flex-footer"><mark_blue>Blue</mark_blue> = <strong>New</strong> 
 		    <mark_green>Greeen</mark_green> = <strong>Active</strong> 
-		    <mark_red>RED</mark_red> = <strong>Problem</strong> 
+		    <mark_red>Red</mark_red> = <strong>Problem</strong> 
 		</div>        
 	    </div>    
 	</div> 
