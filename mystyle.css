@@ -183,16 +183,19 @@ article { text-align: left; padding: 40px; }
     animation-duration: 0.4s
 }
 .flex-header {
+    float:left;
     padding: 2px 16px;
     min-width: 200%;
     color: black;
 }
 .flex-body{
+    float:left;
     height: 250px;
     min-width: 200%;
     overflow-y: auto;
 }
 .flex-item {
+    float:left;
     background-color: cornflowerblue;
     width: 140px;
     height: 100px;
@@ -200,6 +203,7 @@ article { text-align: left; padding: 40px; }
     text-align:center
 }
 .flex-footer {
+    float:left;
     padding: -1px 16px;
     min-width: 200%;
     color: black;
