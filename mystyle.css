@@ -164,9 +164,7 @@ article { text-align: left; padding: 40px; }
     overflow-y: initial !important;
     overflow-y: initial !important;
     min-width: 2000px;
-    max-height: 85%;  
-    margin-top: 50px; 
-    margin-bottom:50px;
+
 }
 .flex-body{
     height: 250px;
