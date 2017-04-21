@@ -170,6 +170,7 @@ article { text-align: left; padding: 40px; }
 .flex-body{
     height: 250px;
     overflow-y: auto;
+    background: #999;
     overflow: hidden;
 }
 .flex-item {
