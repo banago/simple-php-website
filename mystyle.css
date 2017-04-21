@@ -190,14 +190,13 @@ article { text-align: left; padding: 40px; }
 
     padding: 2px 16px;
      margin: auto;
-     min-width: 100%;
+   width: 90%;
      height: 5px;
     background-color: #5cb85c;
     color: white;
 }
 .flex-body{
-
-    height: 250px;
+    height: 150px;
      margin: auto;
     background-color: #f9f9f9;
     overflow-y: auto;
