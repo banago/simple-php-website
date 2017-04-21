@@ -191,9 +191,9 @@ article { text-align: left; padding: 40px; }
     width: 97%;
     height: 60px;
     margin: auto;
+    align-content: center;
     text-align:center;
-    background-color: #5cb85c;
-    color: white;
+    color: black;
 }
 .flex-body{
     height: 150px;
@@ -212,8 +212,7 @@ article { text-align: left; padding: 40px; }
     padding: -1px 16px;
     margin: auto;
     text-align:center;
-    background-color: #5cb85c;
-    color: white;
+    color: black;
 }
 .pagination {
     display: inline-block;
