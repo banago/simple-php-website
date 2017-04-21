@@ -185,16 +185,18 @@ article { text-align: left; padding: 40px; }
 .flex-header {
 
     padding: 2px 16px;
-    width: 325%;
-    margin: 10px 0 0 -400px;
+     margin: auto;
+     width: 100px;
+     height: 100px; 
     background-color: #5cb85c;
     color: white;
 }
 .flex-body{
 
     height: 250px;
-    width: 325%;
-      margin: 0 auto;
+     margin: auto;
+     width: 100px;
+     height: 100px; 
     background-color: #f9f9f9;
     overflow-y: auto;
 }
@@ -207,10 +209,11 @@ article { text-align: left; padding: 40px; }
     text-align:center
 }
 .flex-footer {
-\
+
     padding: -1px 16px;
-    width: 300%;
-      margin: 0 auto;
+     margin: auto;
+     width: 100px;
+     height: 100px; 
     background-color: #5cb85c;
     color: white;
 }
