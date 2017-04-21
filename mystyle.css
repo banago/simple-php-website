@@ -169,18 +169,13 @@ article { text-align: left; padding: 40px; }
 }
 .flex-dialog{ 
     overflow-y: initial !important;
-
-
 }
 /* Flex Content */
 .flex-content {
-
     background-color: #fefefe;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 95%;
-    max-width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -191,8 +186,6 @@ article { text-align: left; padding: 40px; }
 
     padding: 2px 16px;
      margin: auto;
-     width: 90%;
-     height: 100%; 
     background-color: #5cb85c;
     color: white;
 }
@@ -200,7 +193,6 @@ article { text-align: left; padding: 40px; }
 
     height: 250px;
      margin: auto;
-     width: 85%x; 
     background-color: #f9f9f9;
     overflow-y: auto;
 }
@@ -214,8 +206,6 @@ article { text-align: left; padding: 40px; }
 .flex-footer {
     padding: -1px 16px;
      margin: auto;
-     width: 80%;
-     height: 100%; 
     background-color: #5cb85c;
     color: white;
 }
