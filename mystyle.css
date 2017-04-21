@@ -192,6 +192,7 @@ article { text-align: left; padding: 40px; }
     float:left;
     height: 250px;
     min-width: 200%;
+    background-color: #f9f9f9;
     overflow-y: auto;
 }
 .flex-item {
@@ -206,6 +207,7 @@ article { text-align: left; padding: 40px; }
     float:left;
     padding: -1px 16px;
     min-width: 200%;
+    background-color: #f9f9f9;
     color: black;
 }
 .pagination {
