@@ -207,7 +207,7 @@ article { text-align: left; padding: 40px; }
 .flex-item {
     background-color: cornflowerblue;
     width: 140px;
-    height: 100px;
+    height: 10px;
     margin: auto;
    text-align:center;
 }
