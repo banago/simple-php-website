@@ -188,6 +188,8 @@ article { text-align: left; padding: 40px; }
 
     padding: 2px 16px;
      margin: auto;
+     width: 85%;
+     height: 125px;
     background-color: #5cb85c;
     color: white;
 }
