@@ -159,6 +159,7 @@ article { text-align: left; padding: 40px; }
     display: block !important;
     text-align: center;
     max-width: 100%;
+
     
 }
 .flex-dialog{ 
@@ -182,6 +183,7 @@ article { text-align: left; padding: 40px; }
 }
 .flex-header {
     padding: 2px 16px;
+    min-width: 100%;
     color: black;
 }
 .flex-body{
