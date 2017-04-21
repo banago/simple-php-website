@@ -169,12 +169,15 @@ article { text-align: left; padding: 40px; }
 }
 .flex-dialog{ 
     overflow-y: initial !important;
+     margin: auto;
+     width: 90%;
+     height: 100px;  
 }
 /* Flex Content */
 .flex-content {
     background-color: #fefefe;
      margin: auto;
-     width: 90%;
+     width: 85%;
      height: 125px;  
     padding: 0;
     border: 1px solid #888;
