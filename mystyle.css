@@ -196,8 +196,9 @@ article { text-align: left; padding: 40px; }
 }
 .flex-body{
     display: flex;
+    display: -webkit-flex;
     height: 150px;
-     margin: auto;
+    margin: auto;
     background-color: #f9f9f9;
     overflow-y: auto;
 }
