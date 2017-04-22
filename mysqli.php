@@ -61,7 +61,7 @@ class mysqlquery {
 
 			   if ($x['Mac_ID']) {
 				   $temp = $this->int2mac_1($x['Mac_ID']);
-				   $x['Mac_ID'] = $temp;
+				   //$x['Mac_ID'] = $temp;
 			   }
 			   $x[$key] = $val;
 		    }
@@ -84,6 +84,7 @@ class mysqlquery {
   }
   function int2mac_1($int_1) {
 	  $mac_1 =  base_convert($int_1, 10, 16);
+	  echo "sadfasf " . $mac_1;
 	  return $mac_1;
   }
   function stmt_bind_assoc (&$stmt, &$out) {
