@@ -97,9 +97,11 @@ function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
 	
 	    if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
-		    document.getElementById('testdiv').innerHTML = "adsfasdfsadfsa";
+		    
     } else { 
         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    } xmlhttp.onreadystatechange = function() {
+	    document.getElementById('testdiv').innerHTML = "adsfasdfsadfsa";
     }  
 xmlhttp.open('GET', thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+encodeURIComponent(thekeyB_2), true);
 xmlhttp.send();
