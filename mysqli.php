@@ -89,9 +89,9 @@ class mysqlquery {
 	  return $int_1;
   }
   function int2mac_1($int_1) {
-	  echo "THIS WAS PASSED    " . $int_1; //	debug
+	  //echo "THIS WAS PASSED    " . $int_1; //	debug
 	  $this->mac_1 =  base_convert($int_1, 10, 16);
-	  echo "CONVERTED TO BASE 16     " . $this->mac_1;	// debug
+	  //echo "CONVERTED TO BASE 16     " . $this->mac_1;	// debug
 	  
   }
   function stmt_bind_assoc (&$stmt, &$out) {
@@ -113,7 +113,7 @@ class mysqlquery {
 //$db = new mysqlquery("1000-01-01 00:00:0");
 if (isset($_GET['sqlQuery']) & isset($_GET['sqlWhere'])) {
 	$db = new mysqlquery($_GET['sqlQuery'], $_GET['sqlWhere']);	// sets class property
-	print_r($db->results);	// debug
-	//echo json_encode($db->results);
+	//print_r($db->results);	// debug
+	echo json_encode($db->results);
 }
 ?>
