@@ -93,35 +93,32 @@ function encoded_1(thediv, thefile, thekey) {
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
-function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
-	    if (window.XMLHttpRequest) {
+function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {    
+	if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();	    
-    } else { 
-        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
-    } xmlhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-		    
-		      
-		    myObj = JSON.parse(this.responseText);
-		    document.getElementById('testdiv').innerHTML = myObj.length;
-		    document.getElementById('testdiv').innerHTML = myObj[0].Mac_ID;
-		    if (myObj[0].hasOwnProperty("Mac_ID")) {
-			    var myNode = document.getElementById(thediv);
-			    while (myNode.firstChild) {
-				    myNode.removeChild(myNode.firstChild);
-			    }
-			    for (i1 = 0; i1 < myObj.length; i1++) {
-				    var newdiv = document.createElement('div');
-				    newdiv.className = 'flex-item';
-				    newdiv.innerHTML = myObj[i1].Mac_ID+' '+myObj[i1].Fname+' '+myObj[i1].Lname+' '+myObj[i1].Valid_From+' '+myObj[i1].State;
-				    document.getElementById(thediv).appendChild(newdiv);  
-			    }
-			    
-		    }
-	    }
-    }   
-xmlhttp.open('GET', thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+thekeyB_2, true);
-xmlhttp.send();
+	} else { 
+	    xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+	} xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			myObj = JSON.parse(this.responseText);
+		    	//document.getElementById(thediv).innerHTML = myObj.length;	// debug
+		    	//document.getElementById(thediv).innerHTML = myObj[0].Mac_ID;	// debug
+		    	if (myObj[0].hasOwnProperty("Mac_ID")) {
+				var myNode = document.getElementById(thediv);
+			    	while (myNode.firstChild) {
+					myNode.removeChild(myNode.firstChild);
+				}
+				for (i1 = 0; i1 < myObj.length; i1++) {
+					var newdiv = document.createElement('div');
+				    	newdiv.className = 'flex-item';
+				    	newdiv.innerHTML = myObj[i1].Mac_ID+' '+myObj[i1].Fname+' '+myObj[i1].Lname+' '+myObj[i1].Valid_From+' '+myObj[i1].State;
+				    	document.getElementById(thediv).appendChild(newdiv);  
+				}   
+			}
+		}
+	}       
+	xmlhttp.open('GET', thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+thekeyB_2, true);
+	xmlhttp.send();
 }
 function restmodal(thediv, thefile , thekey) {
     //var addSpinner = document.getElementById("spinner");  //var used to add spinner
