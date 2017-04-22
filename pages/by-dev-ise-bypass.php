@@ -107,7 +107,7 @@ function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
 		    var div = document.createElement('div');
 		    div.className = 'flex-item';
 		    myObj = JSON.parse(this.responseText);
-		    document.getElementById('testdiv').innerHTML = myObj.Mac_ID;
+		    document.getElementById('testdiv').innerHTML = myObj.Mac_ID.length;
 		    
 		    if (myObj.hasOwnProperty("Mac_ID")) {
 			    document.getElementById('testdiv').innerHTML = this.responseText;
