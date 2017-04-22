@@ -87,7 +87,7 @@ class mysqlquery {
   }
   function int2mac_1($int_1) {
 	  $mac_1 =  base_convert($int_1, 10, 16);
-	  return $mac_t;
+	  return $mac_1;
   }
   function stmt_bind_assoc (&$stmt, &$out) {
     $data = mysqli_stmt_result_metadata($stmt);
