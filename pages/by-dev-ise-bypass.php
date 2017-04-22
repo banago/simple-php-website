@@ -223,7 +223,8 @@ var span = document.getElementsByClassName("close")[0];
 var rst = document.getElementById("myRst");
 // When the user clicks the button, open the modal
 //var formvalue_1 = document.getElementById("uniqueID").value;	
-default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
+var active_users = encodeURIComponent("1000-01-01 00:00:0");
+default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',active_users);
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = b('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
     //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
