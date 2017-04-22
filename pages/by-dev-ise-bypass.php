@@ -105,6 +105,7 @@ function encoded_2(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) 
 	    var div = document.createElement('div');
 	    div.className = 'flex-item';
 	    document.getElementById('testdiv').innerHTML = myObj.Mac_ID;
+		document.getElementById('testdiv').innerHTML = myObj.Mac_ID.length;
 	    if (myObj.hasOwnProperty("Mac_ID")) {
 		    //myUrl = encodeURIComponent("https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/MACAddress/");
 		    //document.getElementById('spinner').style.display = "none";
