@@ -227,9 +227,9 @@ var span = document.getElementsByClassName("close")[0];
 // When presses resets a div
 var rst = document.getElementById("myRst");
 // When the user clicks the button, open the modal
-//var formvalue_1 = document.getElementById("uniqueID").value;
-var rats = encoded_2('testdiv','mysqli.php','sqlQuery','query_3','sqlWhere','1000-01-01 00:00:0');	
+//var formvalue_1 = document.getElementById("uniqueID").value;	
 btn.onclick = function() {
+    document.getElementById("adiv2").innerHTML = encoded_2('testdiv','mysqli.php','sqlQuery','query_3','sqlWhere','1000-01-01 00:00:0');
     //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
     document.getElementById("adiv2").innerHTML = encoded_1('adiv2','functions.php','data_2');
     //document.getElementById("adiv2").innerHTML = document.getElementById("uniqueID").value;
