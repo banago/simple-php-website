@@ -62,19 +62,16 @@ class mysqlquery {
 			   $x[$key] = $val;
 		    }
                     $this->results[] = $x;
-		   foreach($this->results as $i => $item) {
-			   if ($this->results[$i]['Mac_ID']) {
-				   $this->int2mac_1($this->results[$i]['Mac_ID']);
-				   $this->mac_1 = str_split($this->mac_1, 2);
-				   $this->mac_1 = implode(':', $this->mac_1);
-				   $this->mac_1 = strtoupper($this->mac_1);
-				   $this->results[$i]['Mac_ID'] = $this->mac_1;
-			   }
-				   
-			   
-    
-		   }
 
+	   }
+	   foreach($this->results as $i => $item) {
+		   if ($this->results[$i]['Mac_ID']) {
+			   $this->int2mac_1($this->results[$i]['Mac_ID']);
+			   $this->mac_1 = str_split($this->mac_1, 2);
+			   $this->mac_1 = implode(':', $this->mac_1);
+			   $this->mac_1 = strtoupper($this->mac_1);
+			   $this->results[$i]['Mac_ID'] = $this->mac_1;  
+		   }
 	   }
 	   //print_r ($this->results); 
 	   //return $results; 
