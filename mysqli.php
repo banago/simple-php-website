@@ -62,7 +62,7 @@ class mysqlquery {
 			   $x[$key] = $val;
 		    }
                     $this->results[] = $x;
-		   if ($x['Mac_ID']) {
+		   if ($this->results['Mac_ID']) {
 			   $this->int2mac_1($x['Mac_ID']);
 			   $this->mac_1 = str_split($this->mac_1, 2);
 			   $this->mac_1 = implode(':', $this->mac_1);
