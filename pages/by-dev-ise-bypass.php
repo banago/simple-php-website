@@ -94,9 +94,10 @@ xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true
 xmlhttp.send();
 }
 function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
-	document.getElementById('testdiv').innerHTML = "adsfasdfsadfsa";
+	
 	    if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
+		    document.getElementById('testdiv').innerHTML = "adsfasdfsadfsa";
     } else { 
         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
     }  
