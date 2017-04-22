@@ -94,41 +94,30 @@ xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true
 xmlhttp.send();
 }
 function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
-	
 	    if (window.XMLHttpRequest) {
-        xmlhttp = new XMLHttpRequest();
-		    
+        xmlhttp = new XMLHttpRequest();	    
     } else { 
         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
     } xmlhttp.onreadystatechange = function() {
-	    
 	    if (this.readyState == 4 && this.status == 200) {
-		    
 		    var div = document.createElement('div');
-		    div.className = 'flex-item';
-		     
+		    div.className = 'flex-item';  
 		    myObj = JSON.parse(this.responseText);
 		    document.getElementById('testdiv').innerHTML = myObj.length;
 		    document.getElementById('testdiv').innerHTML = myObj[0].Mac_ID;
 		    if (myObj[0].hasOwnProperty("Mac_ID")) {
-			    var myNode = document.getElementById('flex_div_1');
-
+			    var myNode = document.getElementById('div);
 			    while (myNode.firstChild) {
-    
 				    myNode.removeChild(myNode.firstChild);
-
 			    }
-	
 			    for (i1 = 0; i1 < myObj.length; i1++) {
 				    div.innerHTML = myObj[i1].Mac_ID+' '+myObj[i1].Fname+' '+myObj[i1].Lname+' '+myObj[i1].Valid_From+' '+myObj[i1].State;
-				    document.getElementById('testdiv').appendChild(div);
-				 
+				    document.getElementById().appendChild(div);	 
 			    }
 			    
 		    }
 	    }
-    } 
-    
+    }   
 xmlhttp.open('GET', thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+thekeyB_2, true);
 xmlhttp.send();
 }
@@ -237,7 +226,7 @@ var rst = document.getElementById("myRst");
 //var formvalue_1 = document.getElementById("uniqueID").value;	
 	var cats = encodeURIComponent("1000-01-01 00:00:0");
 btn.onclick = function() {
-    document.getElementById("adiv2").innerHTML = b('testdiv','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
+    document.getElementById("adiv2").innerHTML = b('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
     //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
     document.getElementById("adiv2").innerHTML = encoded_1('adiv2','functions.php','data_2');
     //document.getElementById("adiv2").innerHTML = document.getElementById("uniqueID").value;
