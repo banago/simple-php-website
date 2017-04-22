@@ -16,7 +16,7 @@
 		<div class="flex-header">
 		    <h2><center>BYPASS LIST</center></h2>             
 		</div>             
-		<div class="flex-body">				
+		<div class="flex-body" id="flex_div_1">				
 		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>	
 		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
 		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
@@ -93,6 +93,34 @@ function encoded_1(thediv, thefile, thekey) {
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
+function encoded_2(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else { 
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }  
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myObj = JSON.parse(this.responseText);
+	    if (myObj.Type == "MAC") {
+		    //myUrl = encodeURIComponent("https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/MACAddress/");
+		    //document.getElementById('spinner').style.display = "none";
+		    for (i1 = 0; i1 < myObj.Mac_ID.length; i1++) { 			
+			    text += cars[i1] + "<br>";
+			    for (i2 = 0; i2 < myObj.Mac_ID.length; i2++){
+				    document.getElementById(thediv).innerHTML = myObj.[i1].Mac_ID;    
+			    }
+			    
+		    }
+		    //document.getElementById(thediv).innerHTML = myObj.Encoded;
+		    //curlreturn_1(thediv, 'curlrest.php' , 'Type' , 'iseTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
+		    
+	    } 
+        }
+    } 
+xmlhttp.open('GET', thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+encodeURIComponent(thekeyB_2), true);
+xmlhttp.send();
+}	
 function restmodal(thediv, thefile , thekey) {
     //var addSpinner = document.getElementById("spinner");  //var used to add spinner
     document.getElementById('spinner').style.display = "block";
@@ -195,6 +223,7 @@ var span = document.getElementsByClassName("close")[0];
 var rst = document.getElementById("myRst");
 // When the user clicks the button, open the modal
 //var formvalue_1 = document.getElementById("uniqueID").value;
+document.getElementById("adiv2").innerHTML = encoded_2('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere','1000-01-01 00:00:0');
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
     document.getElementById("adiv2").innerHTML = encoded_1('adiv2','functions.php','data_2');
