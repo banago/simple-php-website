@@ -64,7 +64,7 @@ class mysqlquery {
                     $this->results[] = $x;
 		   if ($x['Mac_ID']) {
 			   $this->int2mac_1($x['Mac_ID']);
-			   $x['Mac_ID'] = $this->mac1;
+			   $x['Mac_ID'] = $this->mac_1;
 		   }
 	   }
 	   //print_r ($this->results); 
