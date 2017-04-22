@@ -58,10 +58,7 @@ class mysqlquery {
                         // that the "excerpt" of the post doesn't end in the middle
                         // of a word. 
                         if ( $key === 'excerpt') $val = $this->cleanExcerpt($row[$key]);
-			   if ($x[$key]['Mac_ID']) {
-				   $temp = $this->int2mac_1($x[$key]['Mac_ID']);
-				   $x[$key]['Mac_ID'] = $temp;
-			   }
+
 			   if ($x['Mac_ID']) {
 				   $temp = $this->int2mac_1($x['Mac_ID']);
 				   $x['Mac_ID'] = $temp;
