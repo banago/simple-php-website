@@ -111,9 +111,8 @@ function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
 		    document.getElementById('testdiv').innerHTML = myObj.length;
 		    document.getElementById('testdiv').innerHTML = myObj[0].Mac_ID;
 		    if (myObj[0].hasOwnProperty("Mac_ID")) {
-			    while (document.getElementById('flex-body').hasChildNodes()) {
-				    document.getElementById('flex-body').removeChild(node.lastChild);
-			    }
+			    document.getElementById('flex-body').innerHTML = '';
+	
 			    for (i1 = 0; i1 < myObj.length; i1++) {
 				    div.innerHTML = myObj[i1].Mac_ID+' '+myObj[i1].Fname+' '+myObj[i1].Lname+' '+myObj[i1].Valid_From+' '+myObj[i1].State;
 				    document.getElementById('testdiv').appendChild(div);
