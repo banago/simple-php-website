@@ -101,7 +101,10 @@ function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
     } else { 
         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
     } xmlhttp.onreadystatechange = function() {
-	    document.getElementById('testdiv').innerHTML = "adsfasdfsadfsa";
+	    
+	    if (this.readyState == 4 && this.status == 200) {
+		    document.getElementById('testdiv').innerHTML = "adsfasdfsadfsa";
+	    }
     }  
 xmlhttp.open('GET', thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+encodeURIComponent(thekeyB_2), true);
 xmlhttp.send();
