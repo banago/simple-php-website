@@ -16,7 +16,8 @@ class mysqlquery {
  		amm.Note,  amm.Action 
   		FROM aca as a, aca_user as au, aca_mab as am, aca_mab_metadata as amm 
     		WHERE am.Valid_Until = ? AND a.Aca_ID = au.Aca_ID 
-      		AND au.Aca_ID = am.Aca_ID AND am.Mac_ID = amm.Mac_ID";
+      		AND au.Aca_ID = am.Aca_ID AND am.Mac_ID = amm.Mac_ID
+		GROUP BY group am.Mac_ID";
 	protected $results;
 	
   	function __construct($sqlQuery,$sqlWhere) {
