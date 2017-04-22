@@ -204,7 +204,7 @@ article { text-align: left; padding: 40px; }
     overflow-y: auto;
 }
 .flex-item {
-    background-color: PaleGreen;
+    background-color: cornflowerblue;
     height: 20px;
     width: 95%;
     margin: 5px auto;
@@ -213,17 +213,17 @@ article { text-align: left; padding: 40px; }
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    color: black;
+    color: white;
 }
 .flex-item:hover {
-    background-color: PaleGreen;
+    background-color: cornflowerblue;
     height: 20px;
     width: 95%;
     margin: 6px auto;
     text-align:center;
     word-spacing: 20px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24),0 6px 25px 0 rgba(0,0,0,0.19);
-    color: black;
+    color: white;
 }
 .flex-footer {
     padding: -1px 16px;
