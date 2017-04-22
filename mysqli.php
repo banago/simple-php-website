@@ -56,13 +56,13 @@ class mysqlquery {
                         // This next line isn't necessary for your project. 
                         // It can be removed. I use it to ensure
                         // that the "excerpt" of the post doesn't end in the middle
-                        // of a word. 
+                        // of a word.
+			if ($x['Mac_ID']) {
+				$temp = $this->int2mac_1($x['Mac_ID']);
+				//$x['Mac_ID'] = $temp;
+			}   
                         if ( $key === 'excerpt') $val = $this->cleanExcerpt($row[$key]);
 
-			   if ($x['Mac_ID']) {
-				   $temp = $this->int2mac_1($x['Mac_ID']);
-				   //$x['Mac_ID'] = $temp;
-			   }
 			   $x[$key] = $val;
 		    }
                     $this->results[] = $x;
