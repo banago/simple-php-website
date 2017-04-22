@@ -101,7 +101,7 @@ function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
     } xmlhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
 		    var newdiv = document.createElement('div');
-		    newdiv.className = 'flex-item';  
+		      
 		    myObj = JSON.parse(this.responseText);
 		    document.getElementById('testdiv').innerHTML = myObj.length;
 		    document.getElementById('testdiv').innerHTML = myObj[0].Mac_ID;
@@ -112,7 +112,8 @@ function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
 			    }
 			    for (i1 = 0; i1 < myObj.length; i1++) {
 				    newdiv.innerHTML = myObj[i1].Mac_ID+' '+myObj[i1].Fname+' '+myObj[i1].Lname+' '+myObj[i1].Valid_From+' '+myObj[i1].State;
-				    document.getElementById(thediv).appendChild(newdiv);	 
+				    document.getElementById(thediv).appendChild(newdiv);
+				    newdiv.className = 'flex-item';
 			    }
 			    
 		    }
