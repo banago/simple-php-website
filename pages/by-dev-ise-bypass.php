@@ -228,7 +228,7 @@ var span = document.getElementsByClassName("close")[0];
 var rst = document.getElementById("myRst");
 // When the user clicks the button, open the modal
 //var formvalue_1 = document.getElementById("uniqueID").value;
-document.getElementById("adiv2").innerHTML = encoded_2('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere','1000-01-01 00:00:0');
+document.getElementById("testdiv").innerHTML = encoded_2('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere','1000-01-01 00:00:0');
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
     document.getElementById("adiv2").innerHTML = encoded_1('adiv2','functions.php','data_2');
