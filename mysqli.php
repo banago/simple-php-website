@@ -58,7 +58,11 @@ class mysqlquery {
                         // that the "excerpt" of the post doesn't end in the middle
                         // of a word. 
                         if ( $key === 'excerpt') $val = $this->cleanExcerpt($row[$key]);
-                        $x[$key] = $val;
+			   if ($x[$key]['Mac_ID']) {
+				   $temp = $this->int2mac_1($x[$key]['Mac_ID']);
+				   $x[$key]['Mac_ID'] = $temp;
+			   }
+			   $x[$key] = $val;
 		    }
                     $this->results[] = $x;
 	   }
@@ -74,10 +78,12 @@ class mysqlquery {
 	  return $this->$name = $value;
   }	// used to set properties
   function mac2int_1($mac1) {
-	  $this->int_1 = base_convert($mac1, 16, 10);
+	  $int_1 = base_convert($mac1, 16, 10);
+	  return $int_1;
   }
   function int2mac_1($int_1) {
-	  $this->mac_1 =  base_convert($int_1, 10, 16);
+	  $mac_1 =  base_convert($int_1, 10, 16);
+	  return $mac_t;
   }
   function stmt_bind_assoc (&$stmt, &$out) {
     $data = mysqli_stmt_result_metadata($stmt);
