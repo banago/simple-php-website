@@ -93,6 +93,9 @@ function encoded_1(thediv, thefile, thekey) {
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
+function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
+	document.getElementById('testdiv').innerHTML = "adsfasdfsadfsa";
+}
 function a(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
@@ -236,7 +239,7 @@ var rst = document.getElementById("myRst");
 // When the user clicks the button, open the modal
 //var formvalue_1 = document.getElementById("uniqueID").value;	
 btn.onclick = function() {
-    document.getElementById("adiv2").innerHTML = a('testdiv','mysqli.php','sqlQuery','query_3','sqlWhere','1000-01-01 00:00:0');
+    document.getElementById("adiv2").innerHTML = b('testdiv','mysqli.php','sqlQuery','query_3','sqlWhere',"1000-01-01 00:00:0");
     //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
     document.getElementById("adiv2").innerHTML = encoded_1('adiv2','functions.php','data_2');
     //document.getElementById("adiv2").innerHTML = document.getElementById("uniqueID").value;
