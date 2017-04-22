@@ -102,7 +102,8 @@ function encoded_2(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) 
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
-	    if (myObj.Type == "MAC") {
+		
+	    if (myObj.hasOwnProperty("Mac_ID")) {
 		    //myUrl = encodeURIComponent("https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/MACAddress/");
 		    //document.getElementById('spinner').style.display = "none";
 		    for (i1 = 0; i1 < myObj.Mac_ID.length; i1++) { 			
