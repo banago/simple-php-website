@@ -213,6 +213,7 @@ article { text-align: left; padding: 40px; }
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
+    color: white;
 }
 .flex-item:hover {
     background-color: cornflowerblue;
