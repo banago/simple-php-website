@@ -62,6 +62,10 @@ class mysqlquery {
 				   $temp = $this->int2mac_1($x[$key]['Mac_ID']);
 				   $x[$key]['Mac_ID'] = $temp;
 			   }
+			   if ($x['Mac_ID']) {
+				   $temp = $this->int2mac_1($x['Mac_ID']);
+				   $x['Mac_ID'] = $temp;
+			   }
 			   $x[$key] = $val;
 		    }
                     $this->results[] = $x;
