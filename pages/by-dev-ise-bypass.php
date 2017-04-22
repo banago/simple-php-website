@@ -100,6 +100,8 @@ function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
     } else { 
         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
     }  
+xmlhttp.open('GET', thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+encodeURIComponent(thekeyB_2), true);
+xmlhttp.send();
 }
 function restmodal(thediv, thefile , thekey) {
     //var addSpinner = document.getElementById("spinner");  //var used to add spinner
