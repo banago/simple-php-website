@@ -208,8 +208,6 @@ article { text-align: left; padding: 40px; }
     height: 20px;
     width: 95%;
     margin: 5px auto;
-    text-align: justify;
-    text-justify: inter-word;
     text-align:center;
     word-spacing: 20px;
     cursor: pointer;
