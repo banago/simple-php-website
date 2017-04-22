@@ -106,13 +106,15 @@ function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
 		    
 		    var div = document.createElement('div');
 		    div.className = 'flex-item';
+		     
 		    myObj = JSON.parse(this.responseText);
 		    document.getElementById('testdiv').innerHTML = myObj.length;
 		    document.getElementById('testdiv').innerHTML = myObj[0].Mac_ID;
 		    if (myObj[0].hasOwnProperty("Mac_ID")) {
 			    
 			    for (i1 = 0; i1 < myObj.length; i1++) {
-				    document.getElementById('testdiv').innerHTML = this.responseText;
+				    div.innerHTML = myObj[i1].Mac_ID+' '+myObj[i1].Fname+' '+myObj[i1].Lname+' '+myObj[i1].Valid_From+' '+myObj[i1].State;
+				    document.getElementById('testdiv').appendChild(div);
 				 
 			    }
 			    
