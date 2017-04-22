@@ -83,6 +83,7 @@ class mysqlquery {
 	  return $int_1;
   }
   function int2mac_1($int_1) {
+	  echo "THIS WAS PASSED    " . $int_1;
 	  $mac_1 =  base_convert($int_1, 10, 16);
 	  echo "sadfasf " . $mac_1;
 	  return $mac_1;
