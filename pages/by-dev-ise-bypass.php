@@ -103,15 +103,19 @@ function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
     } xmlhttp.onreadystatechange = function() {
 	    
 	    if (this.readyState == 4 && this.status == 200) {
-		    document.getElementById('testdiv').innerHTML = "adsfasdfsadfsa";
+		    
 		    var div = document.createElement('div');
 		    div.className = 'flex-item';
 		    myObj = JSON.parse(this.responseText);
-		    	    document.getElementById('testdiv').innerHTML = myObj.Mac_ID;
-		document.getElementById('testdiv').innerHTML = this.responseText;
+		    document.getElementById('testdiv').innerHTML = myObj.Mac_ID;
+		    
+		    if (myObj.hasOwnProperty("Mac_ID")) {
+			    document.getElementById('testdiv').innerHTML = this.responseText;
+			    
+		    }
 	    }
     } 
-    document.getElementById('testdiv').innerHTML =thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+thekeyB_2;
+    
 xmlhttp.open('GET', thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+thekeyB_2, true);
 xmlhttp.send();
 }
