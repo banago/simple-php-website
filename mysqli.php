@@ -64,7 +64,7 @@ class mysqlquery {
                     $this->results[] = $x;
 		   if ($x['Mac_ID']) {
 			   $temp = $this->int2mac_1($x['Mac_ID']);
-			   //$x['Mac_ID'] = $temp;
+			   $x['Mac_ID'] = $temp;
 		   }
 	   }
 	   //print_r ($this->results); 
@@ -85,7 +85,7 @@ class mysqlquery {
   function int2mac_1($int_1) {
 	  echo "THIS WAS PASSED    " . $int_1;
 	  $mac_1 =  base_convert($int_1, 10, 16);
-	  echo "sadfasf " . $mac_1;
+	  //echo "CONVERTED TO BASE 16     " . $mac_1;	// debug
 	  return $mac_1;
   }
   function stmt_bind_assoc (&$stmt, &$out) {
