@@ -93,7 +93,9 @@ function encoded_1(thediv, thefile, thekey) {
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
-
+function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
+	document.getElementById('testdiv').innerHTML = "adsfasdfsadfsa";
+}
 function restmodal(thediv, thefile , thekey) {
     //var addSpinner = document.getElementById("spinner");  //var used to add spinner
     document.getElementById('spinner').style.display = "block";
