@@ -104,6 +104,7 @@ function encoded_2(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) 
             myObj = JSON.parse(this.responseText);
 	    var div = document.createElement('div');
 	    div.className = 'flex-item';
+	    document.getElementById('testdiv').innerHTML = "dddddd";
 	    if (myObj.hasOwnProperty("Mac_ID")) {
 		    //myUrl = encodeURIComponent("https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/MACAddress/");
 		    //document.getElementById('spinner').style.display = "none";
@@ -192,6 +193,7 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	</form>
 	<!-- This DIV returns the users input after proccessing it through the php file -->
 	<div id="adiv"></div>
+	<div id="testdiv"></div>
 	<!-- The Modal -->
 	<div id="myModal" class="modal">  
 	<!-- Modal content -->  
