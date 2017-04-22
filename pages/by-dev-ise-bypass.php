@@ -111,7 +111,7 @@ function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
 				    myNode.removeChild(myNode.firstChild);
 			    }
 			    for (i1 = 0; i1 < myObj.length; i1++) {
-				    div.innerHTML = myObj[i1].Mac_ID+' '+myObj[i1].Fname+' '+myObj[i1].Lname+' '+myObj[i1].Valid_From+' '+myObj[i1].State;
+				    newdiv.innerHTML = myObj[i1].Mac_ID+' '+myObj[i1].Fname+' '+myObj[i1].Lname+' '+myObj[i1].Valid_From+' '+myObj[i1].State;
 				    document.getElementById(thediv).appendChild(newdiv);	 
 			    }
 			    
