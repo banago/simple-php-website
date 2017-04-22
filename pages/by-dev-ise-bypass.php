@@ -93,48 +93,7 @@ function encoded_1(thediv, thefile, thekey) {
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
 xmlhttp.send();
 }
-function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
-	document.getElementById('testdiv').innerHTML = "adsfasdfsadfsa";
-}
-function a(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
-    if (window.XMLHttpRequest) {
-        xmlhttp = new XMLHttpRequest();
-    } else { 
-        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
-    }  
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            myObj = JSON.parse(this.responseText);
-	    var div = document.createElement('div');
-	    div.className = 'flex-item';
-	    document.getElementById('testdiv').innerHTML = myObj.Mac_ID;
-		document.getElementById('testdiv').innerHTML = myObj.Mac_ID.length;
-	    if (myObj.hasOwnProperty("Mac_ID")) {
-		    //myUrl = encodeURIComponent("https://agaisepr01.fpicore.fpir.pvt/admin/API/mnt/Session/MACAddress/");
-		    //document.getElementById('spinner').style.display = "none";
-		    for (i1 = 0; i1 < myObj.Mac_ID.length; i1++) { 			
-			    text += cars[i1] + "<br>";
-			    for (i2 = 0; i2 < myObj.Mac_ID.length; i2++){
-				    div.textContent = myObj.[i1].Mac_ID;
-				    document.getElementById(thediv).innerHTML = div;   
-			    
-			    }
-			    
-		    
-		    }
-		    //document.getElementById(thediv).innerHTML = myObj.Encoded;
-		    //curlreturn_1(thediv, 'curlrest.php' , 'Type' , 'iseTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
-		    
-	    
-	    } 
-        }
-    
-    }
 
-document.getElementById('testdiv').innerHTML = thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+encodeURIComponent(thekeyB_2);
-xmlhttp.open('GET', thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+encodeURIComponent(thekeyB_2), true);
-xmlhttp.send();
-}	
 function restmodal(thediv, thefile , thekey) {
     //var addSpinner = document.getElementById("spinner");  //var used to add spinner
     document.getElementById('spinner').style.display = "block";
