@@ -108,7 +108,7 @@ function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
 		    div.className = 'flex-item';
 		    myObj = JSON.parse(this.responseText);
 		    	    document.getElementById('testdiv').innerHTML = myObj.Mac_ID;
-		document.getElementById('testdiv').innerHTML = myObj.Mac_ID.length;
+		document.getElementById('testdiv').innerHTML = this.responseText;
 	    }
     }  
 xmlhttp.open('GET', thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+encodeURIComponent(thekeyB_2), true);
