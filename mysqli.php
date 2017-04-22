@@ -67,7 +67,7 @@ class mysqlquery {
 			   $this->mac_1 = str_split($this->mac_1, 2);
 			   $this->mac_1 = implode(':', $this->mac_1);
 			   $this->mac_1 = strtoupper($this->mac_1);
-			   $this->result['Mac_ID'] = $this->mac_1;
+			   $this->results['Mac_ID'] = $this->mac_1;
 		   }
 	   }
 	   //print_r ($this->results); 
