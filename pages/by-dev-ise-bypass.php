@@ -114,15 +114,20 @@ function encoded_2(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) 
 			    for (i2 = 0; i2 < myObj.Mac_ID.length; i2++){
 				    div.textContent = myObj.[i1].Mac_ID;
 				    document.getElementById(thediv).innerHTML = div;   
+			    
 			    }
 			    
+		    
 		    }
 		    //document.getElementById(thediv).innerHTML = myObj.Encoded;
 		    //curlreturn_1(thediv, 'curlrest.php' , 'Type' , 'iseTicket_1' , 'curlAddress', myUrl , 'curlData' , myObj.Encoded , 'curlCustom' , 'GET' , 'curlPost' , '');
 		    
+	    
 	    } 
         }
+    
     }
+}
 document.getElementById('testdiv').innerHTML = thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+encodeURIComponent(thekeyB_2);
 xmlhttp.open('GET', thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+encodeURIComponent(thekeyB_2), true);
 xmlhttp.send();
