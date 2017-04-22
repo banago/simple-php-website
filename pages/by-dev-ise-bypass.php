@@ -111,8 +111,8 @@ function b(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {
 		    document.getElementById('testdiv').innerHTML = myObj[0].Mac_ID;
 		    if (myObj[0].hasOwnProperty("Mac_ID")) {
 			    
-			    for (i1 = 0; i1 < myObj.Mac_ID.length; i1++) {
-				    for (i2 = 0; i2 < myObj.Mac_ID[i1].length; i2++){
+			    for (i1 = 0; i1 < myObj.length; i1++) {
+				    for (i2 = 0; i2 < myObj.[i1].length; i2++){
 					    document.getElementById('testdiv').innerHTML = this.responseText;
 					    
 				    }
