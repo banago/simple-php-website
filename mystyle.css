@@ -167,18 +167,14 @@ article { text-align: left; padding: 40px; }
     height: 100%;
     /*background-color: lightgrey;*/
     box-shadow: 2px 2px 5px grey;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+    user-select: none; /* Non-prefixed version, currently*/
+
 }
 .flex-dialog{ 
     overflow-y: initial !important;
      margin: auto;
-     width: 100%; 
+     width: 100%;
+    user-select: none; /* Non-prefixed version, currently*/
 }
 /* Flex Content */
 .flex-content {
