@@ -113,6 +113,9 @@ function default_list(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_
 				    	newdiv.className = 'flex-item';
 					newdiv.style.background = "PaleGreen";
 					newdiv.style.color = "black";
+					newdiv.onclick = function () {
+						modal.style.display = "block";
+					}
 					if (myObj[i1].State == "PASSIVE") {
 						newdiv.style.background = "FireBrick";
 						newdiv.style.color = "white";
