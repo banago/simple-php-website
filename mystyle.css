@@ -156,6 +156,9 @@ article { text-align: left; padding: 40px; }
     margin-top: 12px;
 }
 .flex-container {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
     position: relative;
     display: -webkit-flex;
     display: flex;
