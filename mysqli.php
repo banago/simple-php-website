@@ -9,8 +9,12 @@ class mysqlquery {
 	protected $db_sd_1 = 'MAB_TRACK';	// db database name
 	protected $serchtype_1 = "Valid_Until";
 	protected $searchterm_1;
-	protected $query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE Valid_Until = ?";
-	protected $query_2 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State FROM aca_mab WHERE Valid_Until != ?";
+	protected $query_1 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State 
+				FROM aca_mab 
+				WHERE Valid_Until = ?";		// used for testing
+	protected $query_2 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State 
+				FROM aca_mab 
+				WHERE Valid_Until != ?";	// used for testing
 	protected $query_3 = "SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State
 				FROM aca_mab as am
 				JOIN aca_user as au
@@ -18,7 +22,7 @@ class mysqlquery {
 				JOIN aca as a
 				ON a.Aca_ID = au.Aca_ID
 				WHERE am.Valid_Until = ?
-				ORDER BY am.Valid_From ASC";
+				ORDER BY am.Valid_From ASC";	// general lookup
 	protected $results;
 	
   	function __construct($sqlQuery,$sqlWhere) {
