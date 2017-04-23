@@ -228,19 +228,10 @@ var span = document.getElementsByClassName("close")[0];
 // When presses resets a div
 var rst = document.getElementById("myRst");
 // When the user clicks the button, open the modal
-//var formvalue_1 = document.getElementById("uniqueID").value;	
+//var formvalue_1 = document.getElementById("uniqueID").value;
+// populates flex_div_1 on page load	
 var active_users = encodeURIComponent("1000-01-01 00:00:0");
-default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',active_users);
-var notes= document.getElementById("flex_div_1");
-	
-notes.onclick = function() {
-    //document.getElementById("adiv2").innerHTML = b('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
-    //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
-    document.getElementById("adiv2").innerHTML = encoded_1('adiv2','functions.php','data_2');
-    //document.getElementById("adiv2").innerHTML = document.getElementById("uniqueID").value;
-    //document.getElementById("adiv2").innerHTML = input_1;
-    modal.style.display = "block";
-}	
+default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',active_users);	
 	
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = b('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
