@@ -231,6 +231,17 @@ var rst = document.getElementById("myRst");
 //var formvalue_1 = document.getElementById("uniqueID").value;	
 var active_users = encodeURIComponent("1000-01-01 00:00:0");
 default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',active_users);
+var notes = document.getElementsByClassName("flex-item");
+	
+notes.onclick = function() {
+    //document.getElementById("adiv2").innerHTML = b('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
+    //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
+    document.getElementById("adiv2").innerHTML = encoded_1('adiv2','functions.php','data_2');
+    //document.getElementById("adiv2").innerHTML = document.getElementById("uniqueID").value;
+    //document.getElementById("adiv2").innerHTML = input_1;
+    modal.style.display = "block";
+}	
+	
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = b('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
     //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
