@@ -113,13 +113,14 @@ function default_list(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_
 				    	newdiv.className = 'flex-item';
 					newdiv.style.background = "PaleGreen";
 					newdiv.style.color = "black";
-					newdiv.onclick = function () {
-						modal.style.display = "block";
-					}
 					if (myObj[i1].State == "PASSIVE") {
 						newdiv.style.background = "FireBrick";
 						newdiv.style.color = "white";
 					    }
+					newdiv.onclick = function () {
+						modal.style.display = "block";
+						document.getElementById("adiv2").innerHTML = "CATS"+myObj[i1].Mac_ID;
+					}
 				    	newdiv.innerHTML = myObj[i1].Mac_ID+' '+myObj[i1].Fname+' '+myObj[i1].Lname+' '+myObj[i1].Valid_From+' '+myObj[i1].State;
 				    	document.getElementById(thediv).appendChild(newdiv);  
 				}   
