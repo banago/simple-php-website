@@ -188,6 +188,7 @@ function iseCurl_1() {
 	function ouiTicket_1(){
    		$auth_1 =""; 	// populate with a ticket
 		$cache_1 =""; 	// populate with needed information
+		$this->curlData = urlencode($this->curlData);	// url encoder
     		$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
     		//return json_encode($arr);		// return JSON
 		$arr = json_encode($arr);	// encode as JSON
