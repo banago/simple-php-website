@@ -178,7 +178,7 @@ function iseCurl_1() {
    		$auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
 		$cache_1 ="cache-control: no-cache"; 	// populate with needed information
     		$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
-    		return json_encode($arr);		// return JSON
+    		//return json_encode($arr);		// return JSON
 		$arr = json_encode($arr);	// encode as JSON
 		$arr = json_decode($arr,true);	// decode as jSON
 		$this->curlHTTP = array($arr['serviceTicket']);
