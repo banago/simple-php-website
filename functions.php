@@ -155,7 +155,7 @@ if (isset($_GET['hostName_1'])){
 		foreach ($dns_1 as $suffix) {
 			$failure = $message . $host;	// if submitted name is returned
 			echo "Resolve Host name result : " . gethostbyname($host . $suffix) . "\r\n";	// debug
-			if ($ip = gethostbyname($host . $suffix) != $host . $suffix) {
+			if (gethostbyname($host . $suffix) != $host . $suffix) {
 				$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
 				$arr = array('IPv4' => $ip);	 // create array for JSON
 				exec("/bin/ping -c 2 " . $ip, $output, $result);
