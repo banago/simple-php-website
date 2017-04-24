@@ -114,7 +114,7 @@ ORDER BY am.Valid_From ASC;
 # GETS THE ADMIN AND THE USER FOR ALL MACS
 
 # GETS THE NOTES AND for a Particular MAC
-SELECT amm.Mac_ID, amm.Note
+SELECT amm.Mac_ID, amm.Note, amm.Ticket
 FROM aca_mab_metadata as amm
 WHERE amm.Mac_ID = 31999624755866
 ORDER BY amm.Mac_ID ASC;
