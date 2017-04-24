@@ -144,7 +144,7 @@ function get_notes(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) 
 		if (this.readyState == 4 && this.status == 200) {
 			myObj = JSON.parse(this.responseText);
 		    	if (myObj[0].hasOwnProperty("Mac_ID")) {
-				var ouiLookup = curlreturn_1("testdiv", "curlrest.php"  , "Type" , "ouiLookup_1" , "curlAddress" , "http%3A%2F%2Fapi.macvendors.com%2F", "curlData", mac_encoded, "curlCustom" , "GET" , "curlPost" , "%22%22");
+				var ouiLookup = curlreturn_1("NULLLDIV", "curlrest.php"  , "Type" , "ouiLookup_1" , "curlAddress" , "http%3A%2F%2Fapi.macvendors.com%2F", "curlData", mac_encoded, "curlCustom" , "GET" , "curlPost" , "%22%22");
 				var url = "https://financialpartners.service-now.com/nav_to.do?uri=task.do?sysparm_query=number=";
 				var window = " target=\"_blank\"";
 				var ticket = "<a href="+url+myObj[0].Ticket+window+">"+myObj[0].Ticket+"</a>";
