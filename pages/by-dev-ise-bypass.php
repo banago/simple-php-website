@@ -122,7 +122,7 @@ function default_list(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_
 						var str = this.textContent.split(" ", 1);
 						str = encodeURIComponent(str);
 						document.getElementById("adiv2").innerHTML = str;
-						default_list('adiv2','mysqli.php','sqlQuery','query_4','sqlWhere',str);
+						get_notes('adiv2','mysqli.php','sqlQuery','query_4','sqlWhere',str);
 					}
 				    	newdiv.innerHTML = myObj[i1].Mac_ID+' '+myObj[i1].Fname+' '+myObj[i1].Lname+' '+myObj[i1].Valid_From+' '+myObj[i1].State;
 				    	document.getElementById(thediv).appendChild(newdiv);  
