@@ -16,9 +16,10 @@
 		<div class="flex-header">
 		    <h2><center>BYPASS LIST</center></h2>
 			<div id="search_1" align="left">
-				<form>
-  <input type="text" name="search" placeholder="Search.." name="data_text" id="uniqueID" onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data_2')};">
-</form>
+	<form id="search" name="search">
+	MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data_2')};"> 
+	<!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
+				</form>
 			</div>
 		</div>             
 		<div class="flex-body" id="flex_div_1">	
