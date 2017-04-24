@@ -23,6 +23,10 @@ class mysqlquery {
 				ON a.Aca_ID = au.Aca_ID
 				WHERE am.Valid_Until = ?
 				ORDER BY am.Valid_From ASC";	// general lookup
+	protected $query_4 = "SELECT amm.Mac_ID, amm.Note
+				FROM aca_mab_metadata as amm
+				WHERE amm.Mac_ID = 31999624755866
+				ORDER BY amm.Mac_ID ASC";
 	protected $results;
 	
   	function __construct($sqlQuery,$sqlWhere) {
@@ -32,6 +36,9 @@ class mysqlquery {
 		  $this->sqlquery($this->query_2, $sqlWhere);
 	  } elseif ($sqlQuery == "query_3") {
 		  $this->sqlquery($this->query_3, $sqlWhere);
+	  } elseif ($sqlQuery == "query_4") {
+		  $this->mac2int_1($sqlWhere);
+		  $this->sqlquery($this->query_4, $this->int_1);
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
 	  }	
@@ -91,8 +98,7 @@ class mysqlquery {
 	  return $this->$name = $value;
   }	// used to set properties
   function mac2int_1($mac1) {
-	  $int_1 = base_convert($mac1, 16, 10);
-	  return $int_1;
+	  $this->int_1 = base_convert($mac1, 16, 10);
   }
   function int2mac_1($int_1) {
 	  //echo "THIS WAS PASSED    " . $int_1; //	debug
