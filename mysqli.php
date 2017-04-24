@@ -25,7 +25,7 @@ class mysqlquery {
 				ORDER BY am.Valid_From ASC";	// general lookup
 	protected $query_4 = "SELECT amm.Mac_ID, amm.Note
 				FROM aca_mab_metadata as amm
-				WHERE amm.Mac_ID = 31999624755866
+				WHERE amm.Mac_ID = ?
 				ORDER BY amm.Mac_ID ASC";
 	protected $results;
 	
