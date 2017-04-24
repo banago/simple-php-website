@@ -17,7 +17,7 @@
 		    <h2><center>BYPASS LIST</center></h2>
 			<div id="search_1" align="left">
 				<form>
-  <input type="text" name="search" placeholder="Search.."onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data_2')};">
+  <input type="text" name="search" placeholder="Search.." name="data_text" id="uniqueID" onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data_2')};">
 </form>
 			</div>
 		</div>             
