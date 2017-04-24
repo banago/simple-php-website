@@ -246,7 +246,7 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	  </div>    
 	  <div class="modal-body" align="center">      
 		  <p>Details</p> 
-		  <div id="modal-body" align="left"></div>        
+		  <div id="modal-body"></div>        
 	    <div id="spinner" align="center" class="spinner"></div>
 	    <div style="text-align: center;">
 		    <div id="adiv2" class="apicdata" style="display: inline-block; text-align: left">
