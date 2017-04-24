@@ -185,15 +185,30 @@ function iseCurl_1() {
 		//print_r($this->curlHTTP);	// debug
 	}
 	function ouiTicket_1(){
-   		$auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
-		$cache_1 ="cache-control: no-cache"; 	// populate with needed information
-    		$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
-    		//return json_encode($arr);		// return JSON
-		$arr = json_encode($arr);	// encode as JSON
-		$arr = json_decode($arr,true);	// decode as jSON
-		$this->curlHTTP = array($arr['serviceTicket']);
-		//print_r($arr);	// debug
-		//print_r($this->curlHTTP);	// debug
+		$this->curlAddress = "http://api.macvendors.com/" . urlencode($this->curlData);
+		//$this->curlData = "/ticket";
+		$this->curlCustom = "GET";
+		$this->curlPost = "";
+		$this->curlHTTP = array(
+        		"cache-control: no-cache",	
+        		"content-type: application/json");
+    		$response = $this->myCurl();
+		$json = json_decode($response, true);
+		print_r($json);	// debug
+		$arr = array('serviceTicket' => $json['response']['serviceTicket'], 'idleTimeout' => $json['response']['idleTimeout'], 
+								 'sessionTimeout' => $json['response']['sessionTimeout'], 'sessionVersion' => $json['version']);	// create array for JSON
+		//echo json_encode($arr);		// return JSON
+				// debug
+		$this->ticket = json_encode($arr);
+		$this->ticket = json_decode($this->ticket, true);
+		//print_r($this->ticket);	// debug
+		$combined = "x-auth-token: ".$this->ticket['serviceTicket'];
+		//echo "THIS IS THE KEY      " . 	$combined;	// debug
+		$this->curlHTTP = array($combined);
+		//print_r($this->ticket);	// debug
+		//$this->ticket = json_decode($this->ticket,true);	// debug
+		//print_r($this->ticket);	// debug
+		
 	}
 	function apicTicket_1(){
 		$this->curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
