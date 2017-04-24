@@ -122,6 +122,7 @@ function default_list(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_
 						modal.style.display = "block";
 						var str = this.textContent.split(" ", 1);
 						str = encodeURIComponent(str);
+						var test = curlreturn_1("testdiv", "curlrest.php"  , "Type" , "ouiLookup_1" , "curlAddress" , "http%3A%2F%2Fapi.macvendors.com%2F", "curlData", str, "curlCustom" , "GET" , "curlPost" , "%22%22");
 						document.getElementById("adiv2").innerHTML = str;
 						get_notes('adiv2','mysqli.php','sqlQuery','query_4','sqlWhere',str);
 					}
