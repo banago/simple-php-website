@@ -33,12 +33,12 @@ class curlauth {
     return $this->$name = $value;
   }	// used to set properties
   function myCurl() {
-    	echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
-	echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
-	echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
-	echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
-	echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
-	echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $this->curlData . "<br>"; // debug
+    	//echo "curlAddress myCurl  ::" . $this->curlAddress . "<br>";	// debug
+	//echo "curlData myCurl  ::" .  $this->curlData . "<br>";	// debug
+	//echo "curlCustom myCurl  ::" .  $this->curlCustom . "<br>";	// debug
+	//echo "curlPost myCurl  ::" .   $this->curlPost . "<br>";	// debug
+	//echo "curlHTTP myCurl  ::" .   print_r($this->curlHTTP) . "<br>";	// debug
+	//echo "FULLLcurlAddress myCurl  ::" .   $this->curlAddress . $this->curlData . "<br>"; // debug
 	$curl = curl_init();    
 	curl_setopt_array($curl, array(
 		CURLOPT_SSL_VERIFYPEER => false,    // disables ssl server cert verify check
@@ -59,7 +59,7 @@ class curlauth {
     if ($err) {
         echo "cURL Error #:" . $err;
     } else {
-	    echo "RESPONSE   " .  $response;	// debug
+	    //echo "RESPONSE   " .  $response;	// debug
 	    return $response;    
     } 
   }
@@ -187,7 +187,7 @@ function iseCurl_1() {
 	}
 	function ouiTicket_1(){
    		$auth_1 =""; 	// populate with a ticket
-		$cache_1 =""; 	// populate with needed information
+		$cache_1 ="cache-control: no-cache"; 	// populate with needed information
     		$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
     		//return json_encode($arr);		// return JSON
 		$arr = json_encode($arr);	// encode as JSON
