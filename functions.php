@@ -157,7 +157,7 @@ if (isset($_GET['hostName_1'])){
 			//echo "Resolve Host name result : " . gethostbyname($host . $suffix) . "\r\n";	// debug
 			//$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
 			//echo "IP ADDRESS " . $ip;	// debug
-			if ($ip = gethostbyname($host . $suffix) != $host . $suffix || $ip = gethostbyname($host . $suffix) = "") {
+			if ($ip = gethostbyname($host . $suffix) != $host . $suffix || $ip = gethostbyname($host . $suffix) == "") {
 				$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
 				$arr = array('IPv4' => $ip);	 // create array for JSON
 				exec("/bin/ping -c 2 " . $ip, $output, $result);
