@@ -231,10 +231,10 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	<div class="modal-content">    
 	  <div class="modal-header">      
 	    <span class="close">&times;</span>      
-	    <h2><center>PRIME GET Result</center></h2>   
+	    <h2><center>RESULT</center></h2>   
 	  </div>    
 	  <div class="modal-body" align="center">      
-	    <p>RESULT</p>        
+	    <p>Details</p>        
 	    <div id="spinner" align="center" class="spinner"></div>
 	    <div style="text-align: center;">
 		    <div id="adiv2" class="apicdata" style="display: inline-block; text-align: left">
