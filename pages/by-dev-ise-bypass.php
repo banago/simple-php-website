@@ -148,7 +148,7 @@ function get_notes(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) 
 				var window = " target=\"_blank\"";
 				var ticket = "<a href="+url+myObj[0].Ticket+">"+myObj[0].Ticket+"</a>";
 				document.getElementById('spinner').style.display = "none";
-				document.getElementById("adiv2").innerHTML = "MAC : "+myObj[0].Mac_ID+'<br />'+url+ticket+window+'<br />'+'<p>'+myObj[0].Note+'</p>';
+				document.getElementById("adiv2").innerHTML = "MAC : "+myObj[0].Mac_ID+'<br />'+ticket+window+'<br />'+'<p>'+myObj[0].Note+'</p>';
 			}
 		}
 	}       
