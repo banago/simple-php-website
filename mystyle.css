@@ -187,7 +187,7 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-    width: 40%;
+    width: 20%;
 }
 .flex-dialog{ 
     overflow-y: initial !important;
