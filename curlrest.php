@@ -193,8 +193,8 @@ function iseCurl_1() {
 		$arr = json_encode($arr);	// encode as JSON
 		$arr = json_decode($arr,true);	// decode as jSON
 		$this->curlHTTP = array($arr['serviceTicket']);
-		//print_r($arr);	// debug
-		//print_r($this->curlHTTP);	// debug
+		print_r($arr);	// debug
+		print_r($this->curlHTTP);	// debug
 	}
 	function apicTicket_1(){
 		$this->curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
