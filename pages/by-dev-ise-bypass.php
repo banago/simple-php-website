@@ -117,7 +117,7 @@ function default_list(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_
 						newdiv.style.background = "FireBrick";
 						newdiv.style.color = "white";    
 					}
-					newdiv.onclick = function (this) {
+					newdiv.onclick = function () {
 						modal.style.display = "block";
 						document.getElementById("adiv2").innerHTML = "CATS"+this.textContent;
 					}
