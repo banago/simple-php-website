@@ -213,10 +213,10 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
         if (this.readyState == 4 && this.status == 200) {
 		document.getElementById('spinner').style.display = "none";
 		if (thediv == "modal-body") {
-			if (xmlhttp.responseText == "undefined") {
-				document.getElementById(thediv).innerHTML = "OUI Lookup Failed. Respose : "+xmlhttp.responseText;
+			if (xmlhttp.responseText == "Vendor not found") {
+				document.getElementById(thediv).innerHTML = "OUI Respose : "+xmlhttp.responseText;
 			} else {
-				document.getElementById(thediv).innerHTML = "OUI Lookup Success. Respose : "+xmlhttp.responseText;
+				document.getElementById(thediv).innerHTML = "OUI : "+xmlhttp.responseText;
 			}
 		} else {
 			document.getElementById(thediv).innerHTML = xmlhttp.responseText;
