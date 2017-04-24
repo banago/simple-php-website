@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Used to store different static data.
  *
@@ -8,7 +7,6 @@
 $config = [
     'name' => 'Frosty Face',
 ];
-
 /**
  * Displays site name. Uses $config global.
  */
@@ -17,7 +15,6 @@ function siteName()
     global $config;
     echo $config['name'];
 }
-
 /**
  * Displays page title. It takes the data from 
  * URL, it replaces the hyphens with spaces and 
@@ -26,10 +23,8 @@ function siteName()
 function pageTitle()
 {
     $page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'home';
-
     echo ucwords(str_replace('-', ' ', $page));
 }
-
 /**
  * Displays page content. It takes the data from 
  * the static pages inside the pages/ directory.
@@ -38,9 +33,7 @@ function pageTitle()
 function pageContent()
 {
     $page = isset($_GET['page']) ? $_GET['page'] : 'home';
-
     $path = getcwd().'/pages/'.$page.'.php';
-
     if (file_exists($path)) {
         include $path;
     } else {
@@ -52,7 +45,6 @@ function siteVersion()
      $sitever = " Version: 17.0.3";
     echo $sitever;
 }
-
 function primeMac($mac)
 {
     $name = $_GET['name'];
@@ -60,7 +52,6 @@ function primeMac($mac)
     echo "This is what was passed through GET" . $name;
     echo $sitever['17.0.1'];
 }
-
 if (isset($_GET['data'])) 
 {
 	//$get_data = $_GET['data'];
@@ -147,17 +138,17 @@ if (isset($_GET['data_2']))
 if (isset($_GET['hostName_1'])){
 	//echo "DEBUG GET HOSTBY NAME : " . gethostbyname("86c.nfcs.fpir.pvt") . "\r\n";	// debug 
         function resolveHost_1($host){
-		$dns_1 = array(".fpi.fpir.pvt.", ".nfcs.fpir.pvt.", ".farmcrediteast.fpir.pvt.", 
-			       ".agcountry.fpir.pvt.", ".yankee.fpir.pvt.", ".fpi.pvt.", 
-			       ".fpicorelab.fpir.pvt.", "fcc.fpir.pvt.", ".nextgen.fpir.pvt.", 
-			       ".farmcreditwest.fpir.pvt."); 	// DNS search suffix's
+		$dns_1 = array(".fpi.fpir.pvt", ".nfcs.fpir.pvt", ".farmcrediteast.fpir.pvt", 
+			       ".agcountry.fpir.pvt", ".yankee.fpir.pvt", ".fpi.pvt", 
+			       ".fpicorelab.fpir.pvt", "fcc.fpir.pvt", ".nextgen.fpir.pvt", 
+			       ".farmcreditwest.fpir.pvt"); 	// DNS search suffix's
 		$message = "Unable to resolve: ";	// if submitted message is returned
 		foreach ($dns_1 as $suffix) {
 			$failure = $message . $host;	// if submitted name is returned
 			//echo "Resolve Host name result : " . gethostbyname($host . $suffix) . "\r\n";	// debug
 			$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
 			//echo "IP ADDRESS " . $ip;	// debug
-			if ($ip != $host . $suffix || $ip ==  "") {
+			if ($ip != $host . $suffix || $ip="") {
 				//$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
 				$arr = array('IPv4' => $ip);	 // create array for JSON
 				exec("/bin/ping -c 2 " . $ip, $output, $result);
@@ -180,7 +171,7 @@ if (isset($_GET['hostName_1'])){
 					//echo "PING AND DNS ARE NOT EQUAL USING PING VALUE"; // debug
 					break;
 				} 
-			} else if ($ip = gethostbyname($host . $suffix) == $host . $suffix) {
+			} else if ($ip == $host . $suffix) {
 			  $arr = array('Failure' => $failure);	 // create array for JSON
 			  echo json_encode($arr);		// return JSON
 			  break;
@@ -189,6 +180,3 @@ if (isset($_GET['hostName_1'])){
         }
 	resolveHost_1($_GET['hostName_1']);
 }
-
-
-?>
