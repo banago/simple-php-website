@@ -212,10 +212,10 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 		document.getElementById('spinner').style.display = "none";
-		if (thediv) == "modal-body" {
+		if (thediv == "modal-body") {
 			if (xmlhttp.responseText == "undefined") {
 				document.getElementById(thediv).innerHTML = "OUI Lookup Failed. Respose : "+xmlhttp.responseText;
-			} else{
+			} else {
 				document.getElementById(thediv).innerHTML = "OUI Lookup Success. Respose : "+xmlhttp.responseText;
 			}
 		} else {
