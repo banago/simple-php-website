@@ -213,7 +213,7 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
         if (this.readyState == 4 && this.status == 200) {
 		document.getElementById('spinner').style.display = "none";
 		if (thediv == "modal-body") {
-			var str = xmlhttp.responseText == xmlhttp;
+			var str = xmlhttp.responseText;
 			if (str == str.match(/Vendor not found/g)) {
 				document.getElementById(thediv).innerHTML = "OUI Respose : "+xmlhttp.responseText;
 			} else {
