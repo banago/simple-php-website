@@ -193,8 +193,8 @@ function iseCurl_1() {
 		$arr = json_encode($arr);	// encode as JSON
 		$arr = json_decode($arr,true);	// decode as jSON
 		$this->curlHTTP = array($arr['serviceTicket']);
-		print_r($arr);	// debug
-		print_r($this->curlHTTP);	// debug
+		//print_r($arr);	// debug
+		//print_r($this->curlHTTP);	// debug
 	}
 	function apicTicket_1(){
 		$this->curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
@@ -253,7 +253,8 @@ if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']
 		$a->apicCurl_1();	// calls the correct function based on the GET tpe
 	} elseif ($_GET['Type'] == "ouiLookup_1") {
 		$a->curlData = urlencode($_GET['curlData']);	// formats user input
-		$a->myCurl();	// calls the correct function based on the GET tpe
+		$response = $a->myCurl();	// calls the correct function based on the GET tpe
+		echo "DFSDFSD  RESPONSE TEST    " . $response;
 	}		
 }
 ?>
