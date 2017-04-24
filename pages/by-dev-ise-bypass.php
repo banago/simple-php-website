@@ -146,7 +146,7 @@ function get_notes(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) 
 		    	if (myObj[0].hasOwnProperty("Mac_ID")) {
 				var url = "https://financialpartners.service-now.com/nav_to.do?uri=incident.do?number=";
 				var window = " target=\"_blank\"";
-				var ticket = "<a href="+url+myObj[0].Ticket+">"+myObj[0].Ticket+window+"</a>";
+				var ticket = "<a href="+url+myObj[0].Ticket+window+">"+myObj[0].Ticket+"</a>";
 				document.getElementById('spinner').style.display = "none";
 				document.getElementById("adiv2").innerHTML = "MAC : "+myObj[0].Mac_ID+'<br />'+ticket+'<br />'+'<p>'+myObj[0].Note+'</p>';
 			}
