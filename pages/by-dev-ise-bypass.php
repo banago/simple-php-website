@@ -121,6 +121,7 @@ function default_list(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_
 						modal.style.display = "block";
 						var str = this.textContent.split(" ", 1);
 						document.getElementById("adiv2").innerHTML = str;
+						default_list('adiv2','mysqli.php','sqlQuery','query_4','sqlWhere',str);
 					}
 				    	newdiv.innerHTML = myObj[i1].Mac_ID+' '+myObj[i1].Fname+' '+myObj[i1].Lname+' '+myObj[i1].Valid_From+' '+myObj[i1].State;
 				    	document.getElementById(thediv).appendChild(newdiv);  
@@ -131,6 +132,24 @@ function default_list(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_
 	xmlhttp.open('GET', thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+thekeyB_2, true);
 	xmlhttp.send();
 }
+	
+function get_notes(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) {    
+	if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();	    
+	} else { 
+	    xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+	} xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			myObj = JSON.parse(this.responseText);
+		    	if (myObj[0].hasOwnProperty("Mac_ID")) {
+				
+			}
+		}
+	}       
+	xmlhttp.open('GET', thefile+'?'+thekeyA_1+'='+thekeyB_1+'&'+thekeyA_2+'='+thekeyB_2, true);
+	xmlhttp.send();
+}
+	
 function restmodal(thediv, thefile , thekey) {
     //var addSpinner = document.getElementById("spinner");  //var used to add spinner
     document.getElementById('spinner').style.display = "block";
