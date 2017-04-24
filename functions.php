@@ -155,10 +155,10 @@ if (isset($_GET['hostName_1'])){
 		foreach ($dns_1 as $suffix) {
 			$failure = $message . $host;	// if submitted name is returned
 			//echo "Resolve Host name result : " . gethostbyname($host . $suffix) . "\r\n";	// debug
-			$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
+			//$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
 			//echo "IP ADDRESS " . $ip;	// debug
-			if (gethostbyname($host . $suffix) != $host . $suffix) {
-				//$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
+			if ($ip = gethostbyname($host . $suffix) != $host . $suffix) {
+				$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
 				$arr = array('IPv4' => $ip);	 // create array for JSON
 				exec("/bin/ping -c 2 " . $ip, $output, $result);
 				//print_r($output);	// debug
@@ -180,7 +180,7 @@ if (isset($_GET['hostName_1'])){
 					//echo "PING AND DNS ARE NOT EQUAL USING PING VALUE"; // debug
 					break;
 				} 
-			} else if (gethostbyname($host . $suffix) == $host . $suffix) {
+			} else if ($ip = gethostbyname($host . $suffix) == $host . $suffix) {
 			  $arr = array('Failure' => $failure);	 // create array for JSON
 			  echo json_encode($arr);		// return JSON
 			  break;
