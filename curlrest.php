@@ -188,7 +188,6 @@ function iseCurl_1() {
 	function ouiTicket_1(){
    		$auth_1 =""; 	// populate with a ticket
 		$cache_1 =""; 	// populate with needed information
-		$this->curlData = urlencode($this->curlData);	// url encoder
     		$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
     		//return json_encode($arr);		// return JSON
 		$arr = json_encode($arr);	// encode as JSON
@@ -253,7 +252,7 @@ if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']
 		$a->curlData = $_GET['curlData'];	// formats user input
 		$a->apicCurl_1();	// calls the correct function based on the GET tpe
 	} elseif ($_GET['Type'] == "ouiLookup_1") {
-		$a->curlData = $_GET['curlData'];	// formats user input
+		$a->curlData = urlencode($_GET['curlData']);	// formats user input
 		$a->myCurl();	// calls the correct function based on the GET tpe
 	}		
 }
