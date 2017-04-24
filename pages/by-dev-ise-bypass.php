@@ -233,12 +233,6 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 </head>
 <body>
 	<h2>ISE REST Request</h2>
-	<form id="search" name="search">
-	MAC | IP | HOSTNAME : <input type="text" name="data_text" id="uniqueID" onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data_2')};"> 
-	<!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
-	<button id="myBtn" type="button">Submit</button>
-	<input id="myRst" type="reset" name="reset">
-	</form>
 	<!-- This DIV returns the users input after proccessing it through the php file -->
 	<div id="adiv"></div>
 	<div id="testdiv"></div>
