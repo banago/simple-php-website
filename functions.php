@@ -147,10 +147,10 @@ if (isset($_GET['data_2']))
 if (isset($_GET['hostName_1'])){
 	//echo "DEBUG GET HOSTBY NAME : " . gethostbyname("86c.nfcs.fpir.pvt") . "\r\n";	// debug 
         function resolveHost_1($host){
-		$dns_1 = array(".fpi.fpir.pvt", ".nfcs.fpir.pvt", ".farmcrediteast.fpir.pvt", 
-			       ".agcountry.fpir.pvt", ".yankee.fpir.pvt", ".fpi.pvt", 
-			       ".fpicorelab.fpir.pvt", "fcc.fpir.pvt", ".nextgen.fpir.pvt", 
-			       ".farmcreditwest.fpir.pvt"); 	// DNS search suffix's
+		$dns_1 = array(".fpi.fpir.pvt.", ".nfcs.fpir.pvt.", ".farmcrediteast.fpir.pvt.", 
+			       ".agcountry.fpir.pvt.", ".yankee.fpir.pvt.", ".fpi.pvt.", 
+			       ".fpicorelab.fpir.pvt.", "fcc.fpir.pvt.", ".nextgen.fpir.pvt.", 
+			       ".farmcreditwest.fpir.pvt."); 	// DNS search suffix's
 		$message = "Unable to resolve: ";	// if submitted message is returned
 		foreach ($dns_1 as $suffix) {
 			$failure = $message . $host;	// if submitted name is returned
