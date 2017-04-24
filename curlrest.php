@@ -19,6 +19,7 @@ class curlauth {
 		  $this->iseTicket_1();
 	  } elseif ($function == "ouiLookup_1") {
 		  $this->ouiTicket_1();
+	  }
 	  $this->myTime("H",15);
 	  //echo "Constructor called with parameter ".$param."<br />";
 	  //$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
