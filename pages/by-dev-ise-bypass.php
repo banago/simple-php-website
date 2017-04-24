@@ -15,7 +15,7 @@
 	    <div class="flex-content">
 		<div class="flex-header">
 		    <h2><center>BYPASS LIST</center></h2>
-			<div id="newsearch"><input type="text" name="search" placeholder="Search.."></div>
+			<div id="newsearch" align="left"><input type="text" name="search" placeholder="Search.."></div>
 		</div>             
 		<div class="flex-body" id="flex_div_1">	
 		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
