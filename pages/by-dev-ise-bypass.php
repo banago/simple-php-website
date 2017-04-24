@@ -11,15 +11,15 @@
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 <p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>		
 <div class="flex-container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<form>
+	<div class="flex-dialog"> 
+	    <div class="flex-content">
+		<div class="flex-header">
+		    <h2><center>BYPASS LIST</center></h2>
+				<form>
   
 		<input type="text" name="search" placeholder="Search..">
 
 	</form>
-	<div class="flex-dialog"> 
-	    <div class="flex-content">
-		<div class="flex-header">
-		    <h2><center>BYPASS LIST</center></h2>             
 		</div>             
 		<div class="flex-body" id="flex_div_1">	
 		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
