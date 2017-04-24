@@ -35,9 +35,10 @@
 </div> 
 <p><b>Whats New!</b></p>
 <ul>
+  <li>Color Coding and visual effects</li>
+  <li>Select a row to view notes!!</li>
   <li>New Authenication Page for Bypasses!!!!</li>
   <li>PHP backend refactored Now Object oriented</li>
-  <li>Interface design changes and bug fixes</li>
 </ul>  	
 <head>
 
