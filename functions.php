@@ -154,17 +154,17 @@ if (isset($_GET['hostName_1'])){
 		$message = "Unable to resolve: ";	// if submitted message is returned
 		foreach ($dns_1 as $suffix) {
 			$failure = $message . $host;	// if submitted name is returned
-			echo "Resolve Host name result : " . gethostbyname($host . $suffix) . "\r\n";	// debug
+			//echo "Resolve Host name result : " . gethostbyname($host . $suffix) . "\r\n";	// debug
 			$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
 			//echo "IP ADDRESS " . $ip;	// debug
 			if ($ip != $host . $suffix || $ip="") {
 				//$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
 				$arr = array('IPv4' => $ip);	 // create array for JSON
 				exec("/bin/ping -c 2 " . $ip, $output, $result);
-				print_r($output);	// debug
-				print_r($result);	// debug
+				//print_r($output);	// debug
+				//print_r($result);	// debug
 				preg_match( '/\((.*?)\)/', $output[0], $match );	// matches IP address
-				print_r($match);	// debug
+				//print_r($match);	// debug
 				//echo "PING RETURN    " . $match[1];	// debug
 				if ($match[1] == $arr['IPv4']) {
 					echo json_encode($arr);		// return JSON
