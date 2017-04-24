@@ -156,7 +156,7 @@ if (isset($_GET['hostName_1'])){
 			$failure = $message . $host;	// if submitted name is returned
 			echo "Resolve Host name result : " . gethostbyname($host . $suffix) . "\r\n";	// debug
 			$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
-			echo "IP ADDRESS " . $IP;	// debug
+			echo "IP ADDRESS " . $ip;	// debug
 			if ($ip != $host . $suffix) {
 				//$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
 				$arr = array('IPv4' => $ip);	 // create array for JSON
