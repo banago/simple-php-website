@@ -152,7 +152,7 @@ function get_notes(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) 
 				var window = " target=\"_blank\"";
 				var ticket = "<a href="+url+myObj[0].Ticket+window+">"+myObj[0].Ticket+"</a>";
 				var mac_encoded = encodeURIComponent(myObj[0].Mac_ID);
-				document.getElementById("modal-body").innerHTML = curlreturn_1("DFSF", "curlrest.php"  , "Type" , "ouiLookup_1" , "curlAddress" , "http%3A%2F%2Fapi.macvendors.com%2F", "curlData", mac_encoded, "curlCustom" , "GET" , "curlPost" , "%22%22");
+				curlreturn_1("modal-body", "curlrest.php"  , "Type" , "ouiLookup_1" , "curlAddress" , "http%3A%2F%2Fapi.macvendors.com%2F", "curlData", mac_encoded, "curlCustom" , "GET" , "curlPost" , "%22%22");
 				document.getElementById('spinner').style.display = "none";
 				document.getElementById("adiv2").innerHTML = "MAC : "+myObj[0].Mac_ID+" "+'<br />'+ticket+'<br />'+'<p>'+myObj[0].Note+'</p>';
 				
@@ -212,8 +212,15 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 		document.getElementById('spinner').style.display = "none";
-		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
-		return xmlhttp.responseText;
+		if (thediv) == "modal-body" {
+			if (xmlhttp.responseText == "undefined") {
+				document.getElementById(thediv).innerHTML = "OUI Lookup Failed. Respose : "+xmlhttp.responseText;
+			} else{
+				document.getElementById(thediv).innerHTML = "OUI Lookup Success. Respose : "+xmlhttp.responseText;
+			}
+		} else {
+			document.getElementById(thediv).innerHTML = xmlhttp.responseText;
+		}
         }
     }
     xmlhttp.open('GET', thefile+'?'+thetype+'='+thetypeval+'&'+thekey_1+'='+theval_1+'&'+thekey_2+'='+theval_2+'&'+thekey_3+'='+theval_3+'&'+thekey_4+'='+theval_4, true);
