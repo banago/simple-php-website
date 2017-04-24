@@ -17,7 +17,8 @@ class curlauth {
 		  $this->primeTicket_1();
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
-	  }
+	  } elseif ($function == "ouiLookup_1") {
+		  $this->ouiTicket_1();
 	  $this->myTime("H",15);
 	  //echo "Constructor called with parameter ".$param."<br />";
 	  //$this->$response = myCurl($curlAddress, $curlData, $curlCustom, $curlPost, $curlHTTP);
@@ -183,6 +184,17 @@ function iseCurl_1() {
 		//print_r($arr);	// debug
 		//print_r($this->curlHTTP);	// debug
 	}
+	function ouiTicket_1(){
+   		$auth_1 ="B1@ck_Sn@k3_M0@n"; 	// populate with a ticket
+		$cache_1 ="cache-control: no-cache"; 	// populate with needed information
+    		$arr = array('serviceTicket' => $auth_1, 'serviceCache' => $cache_1);	// create array for JSON
+    		//return json_encode($arr);		// return JSON
+		$arr = json_encode($arr);	// encode as JSON
+		$arr = json_decode($arr,true);	// decode as jSON
+		$this->curlHTTP = array($arr['serviceTicket']);
+		//print_r($arr);	// debug
+		//print_r($this->curlHTTP);	// debug
+	}
 	function apicTicket_1(){
 		$this->curlAddress = "https://devnetapi.cisco.com/sandbox/apic_em/api/v1";
 		$this->curlData = "/ticket";
@@ -238,7 +250,10 @@ if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']
 	} elseif ($_GET['Type'] == "apicTicket_1") {
 		$a->curlData = $_GET['curlData'];	// formats user input
 		$a->apicCurl_1();	// calls the correct function based on the GET tpe
-	}	
+	} elseif ($_GET['Type'] == "ouiLookup_1") {
+		$a->curlData = $_GET['curlData'];	// formats user input
+		$a->apicCurl_1();	// calls the correct function based on the GET tpe
+	}		
 }
 ?>
 
