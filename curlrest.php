@@ -254,7 +254,7 @@ if (isset($_GET['Type']) & isset($_GET['curlAddress']) & isset($_GET['curlData']
 	} elseif ($_GET['Type'] == "ouiLookup_1") {
 		$a->curlData = urlencode($_GET['curlData']);	// formats user input
 		$response = $a->myCurl();	// calls the correct function based on the GET tpe
-		echo "DFSDFSD  RESPONSE TEST    " . $response;
+		echo $response;
 	}		
 }
 ?>
