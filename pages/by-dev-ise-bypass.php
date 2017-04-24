@@ -239,7 +239,7 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	<!-- The Modal -->
 	<div id="myModal" class="modal">  
 	<!-- Modal content -->  
-	<div class="modal-content">    
+	<div class="modal-content" align="left">    
 	  <div class="modal-header">      
 	    <span class="close">&times;</span>      
 	    <h2><center>RESULT</center></h2>   
