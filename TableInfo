@@ -45,86 +45,76 @@ INSERT INTO aca VALUES(NULL,"FPI","AGAWAM");
 INSERT INTO aca VALUES(NULL,"NWFCS","SPOKANE");
 INSERT INTO aca VALUES(NULL,"FCE","WINDSOR");
 INSERT INTO aca_user VALUES(NULL,1,"EROU","FOSTER","ADMINISTRATOR");
-INSERT INTO aca_user VALUES(NULL,1,"FRED","FLINTSTONE","ADMINISTRATOR");
+INSERT INTO aca_user VALUES(NULL,2,"FRED","FLINTSTONE","CUSTOMER");
 INSERT INTO aca_user VALUES(NULL,2,"CHARLEY","MURPHY","CUSTOMER");
 INSERT INTO aca_user VALUES(NULL,3,"DONALD","TRUMP","CUSTOMER");
-INSERT INTO aca_user_password VALUES(1,"password1");
-INSERT INTO aca_user_password VALUES(2,"password2");
-INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(18764998447377,2,1,"ACTIVE");
-INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(64579898907324,2,1,"ACTIVE");
-INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(12898234146815,3,1,"ACTIVE");
+INSERT INTO aca_user VALUES(NULL,3,"DAVID","NEILL","CUSTOMER");
+INSERT INTO aca_user VALUES(NULL,2,"KENDRICK","LAMAR","CUSTOMER");
+INSERT INTO aca_user VALUES(NULL,3,"SAM","ADAMS","CUSTOMER");
+INSERT INTO aca_user VALUES(NULL,1,"FROSTY","FACE","CUSTOMER");
+INSERT INTO aca_user VALUES(NULL,2,"WOODY","GUTHRIE","CUSTOMER");
+INSERT INTO aca_user_password VALUES(1,"e38ad214943daad1d64c102faec29de4afe9da3d");
+INSERT INTO aca_user_password VALUES(2,"e38ad214943daad1d64c102faec29de4afe9da3d");
+INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(18764998447377,2,2,"ACTIVE");
+INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(64579898907324,2,3,"ACTIVE");
+INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(206371746349055,3,4,"ACTIVE");
+INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(177871106557727,3,5,"ACTIVE");
+INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(31999624755866,2,6,"ACTIVE");
+INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(27618687937945,3,7,"ACTIVE");
+INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(205462290820849,1,8,"ACTIVE");
+INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(150244117114491,2,9,"ACTIVE");
 INSERT INTO aca_mab_metadata VALUES(18764998447377,"THIS IS THE FIRST NOTE FOR THE FIRST MAC",1);
 INSERT INTO aca_mab_metadata VALUES(64579898907324,"THIS IS THE FIRST NOTE FOR THE SECOND MAC",1);
-INSERT INTO aca_mab_metadata VALUES(12898234146815,"THIS IS THE FIRST NOTE FOR THE THRID MAC",1);
+INSERT INTO aca_mab_metadata VALUES(206371746349055,"THIS IS THE FIRST NOTE FOR THE THRID MAC",1);
+INSERT INTO aca_mab_metadata VALUES(177871106557727,"THIS IS THE FIRST NOTE FOR THE FORTH MAC",1);
+INSERT INTO aca_mab_metadata VALUES(31999624755866,"THIS IS THE FIRST NOTE FOR THE FIFTH MAC",1);
+INSERT INTO aca_mab_metadata VALUES(27618687937945,"THIS IS THE FIRST NOTE FOR THE SIXTH MAC",1);
+INSERT INTO aca_mab_metadata VALUES(205462290820849,"THIS IS THE FIRST NOTE FOR THE SEVENTH MAC",1);
+INSERT INTO aca_mab_metadata VALUES(150244117114491,"THIS IS THE FIRST NOTE FOR THE EIGHTH MAC",1);
 
 
 UPDATE aca_mab SET Valid_Until = now() WHERE Mac_ID = 18764998447377;
-INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(18764998447377,2,1,"PASSIVE");
+INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(18764998447377,2,2,"PASSIVE");
 
 UPDATE aca_mab SET Valid_Until = now() WHERE Mac_ID = 64579898907324;
-INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(64579898907324,2,1,"PASSIVE");
+INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(64579898907324,2,3,"PASSIVE");
 
 UPDATE aca_mab SET Valid_Until = now() WHERE Mac_ID = 64579898907324;
-INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(64579898907324,2,1,"ACTIVE");
+INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(64579898907324,2,3,"ACTIVE");
 
 
 # GETS THE ADMIN HISTORY FOR ALL MACS  
-SELECT 
- a.Aca_ID, am.Mac_ID,
- au.Fname, au.Lname, au.Type,
- am.Valid_From, am.Valid_Until, am.State, 
- amm.Note,  amm.Action 
-  FROM 
-   aca as a, aca_user as au, aca_mab as am, aca_mab_metadata as amm 
-    WHERE 
-      am.Valid_Until != '1000-01-01 00:00:00' AND a.Aca_ID = am.Aca_ID 
-      AND au.User_ID = am.User_ID AND am.Mac_ID = amm.Mac_ID;
+
+
 
 # GETS THE USER HISTORY FOR ALL MACS      
-SELECT 
- a.Aca_ID, am.Mac_ID, au.User_ID,
- au.Fname, au.Lname, au.Type,
- am.Valid_From, am.Valid_Until, am.State, 
- amm.Note,  amm.Action 
-  FROM 
-   aca as a, aca_user as au, aca_mab as am, aca_mab_metadata as amm 
-    WHERE 
-      am.Valid_Until = '1000-01-01 00:00:00' AND a.Aca_ID = au.Aca_ID 
-      AND au.Aca_ID = am.Aca_ID AND am.Mac_ID = amm.Mac_ID; 
+SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State
+FROM aca_mab as am
+JOIN aca_user as au
+USING (User_ID)
+JOIN aca as a
+USING (User_ID);
+WHERE am.Valid_Until != '1000-01-01 00:00:00'
+ORDER BY am.Valid_From ASC;
       
 # GETS THE ADMIN FOR ALL MACS    
-SELECT 
- a.Aca_ID, am.Mac_ID, au.User_ID,
- au.Fname, au.Lname, au.Type,
- am.Valid_From, am.Valid_Until, am.State, 
- amm.Note,  amm.Action 
-  FROM 
-   aca as a, aca_user as au, aca_mab as am, aca_mab_metadata as amm 
-    WHERE 
-      am.Valid_Until = '1000-01-01 00:00:00' AND a.Aca_ID = au.Aca_ID 
-      AND au.User_ID = am.User_ID AND am.Mac_ID = amm.Mac_ID; 
+ 
 
 # GETS THE USER FOR ALL MACS      
-SELECT 
- a.Aca_ID, am.Mac_ID, au.User_ID,
- au.Fname, au.Lname, au.Type,
- am.Valid_From, am.Valid_Until, am.State, 
- amm.Note,  amm.Action 
-  FROM 
-   aca as a, aca_user as au, aca_mab as am, aca_mab_metadata as amm 
-    WHERE 
-      am.Valid_Until = '1000-01-01 00:00:00' AND a.Aca_ID = au.Aca_ID 
-      AND au.Aca_ID = am.Aca_ID AND am.Mac_ID = amm.Mac_ID; 
+SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State
+FROM aca_mab as am
+JOIN aca_user as au
+USING (User_ID)
+JOIN aca as a
+USING (User_ID);
+WHERE am.Valid_Until = '1000-01-01 00:00:00'
+ORDER BY am.Valid_From ASC;
       
 # GETS THE ADMIN AND THE USER FOR ALL MACS
-SELECT 
- a.Aca_ID, am.Mac_ID, au.User_ID,
- au.Fname, au.Lname, au.Type,
- am.Valid_From, am.Valid_Until, am.State, 
- amm.Note,  amm.Action 
-  FROM 
-   aca as a, aca_user as au, aca_mab as am, aca_mab_metadata as amm 
-    WHERE 
-      am.Valid_Until = '1000-01-01 00:00:00' AND a.Aca_ID = au.Aca_ID 
-      AND (au.Aca_ID = am.Aca_ID OR au.User_ID = am.User_ID) AND am.Mac_ID = amm.Mac_ID; 
-      
+
+# GETS THE NOTES AND for a Particular MAC
+SELECT amm.Mac_ID, amm.Note
+FROM aca_mab_metadata as amm
+WHERE amm.Mac_ID = 31999624755866
+ORDER BY amm.Mac_ID ASC;
+
