@@ -120,6 +120,7 @@ function default_list(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_
 					newdiv.onclick = function () {
 						modal.style.display = "block";
 						var str = this.textContent.split(" ", 1);
+						str = encodeURIComponent(str);
 						document.getElementById("adiv2").innerHTML = str;
 						default_list('adiv2','mysqli.php','sqlQuery','query_4','sqlWhere',str);
 					}
