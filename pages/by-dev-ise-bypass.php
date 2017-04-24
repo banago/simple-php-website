@@ -151,8 +151,8 @@ function get_notes(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) 
 				var ouiLookup = curlreturn_1("testdiv", "curlrest.php"  , "Type" , "ouiLookup_1" , "curlAddress" , "http%3A%2F%2Fapi.macvendors.com%2F", "curlData", mac_encoded, "curlCustom" , "GET" , "curlPost" , "%22%22");
 				myObj_1 = JSON.parse(ouiLookup);
 				document.getElementById('spinner').style.display = "none";
-				document.getElementById("adiv2").innerHTML = "MAC : "+myObj[0].Mac_ID+' '+"OUI LOOKUP: "+myObj_1+'<br />'+ticket+'<br />'+'<p>'+myObj[0].Note+'</p>';
-				document.getElementById("testdiv").innerHTML =myObj;
+				document.getElementById("adiv2").innerHTML = "MAC : "+myObj[0].Mac_ID+" "+"OUI LOOKUP : "+myObj_1+'<br />'+ticket+'<br />'+'<p>'+myObj[0].Note+'</p>';
+				
 			}
 		}
 	}       
