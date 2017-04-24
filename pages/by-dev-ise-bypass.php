@@ -211,6 +211,7 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
         if (this.readyState == 4 && this.status == 200) {
 		document.getElementById('spinner').style.display = "none";
 		document.getElementById(thediv).innerHTML = xmlhttp.responseText;
+		return xmlhttp.responseText;
         }
     }
     xmlhttp.open('GET', thefile+'?'+thetype+'='+thetypeval+'&'+thekey_1+'='+theval_1+'&'+thekey_2+'='+theval_2+'&'+thekey_3+'='+theval_3+'&'+thekey_4+'='+theval_4, true);
