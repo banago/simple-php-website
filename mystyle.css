@@ -170,7 +170,7 @@ article { text-align: left; padding: 40px; }
     outline: none;
 
 }
-input[type=text] {
+#search_2 input[type=text] {
     width: 130px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -186,7 +186,7 @@ input[type=text] {
     margin-top: -20px;
 }
 
-input[type=text]:focus {
+#search_2 input[type=text]:focus {
     width: 20%;
 }
 .flex-dialog{ 
