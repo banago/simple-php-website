@@ -145,7 +145,7 @@ if (isset($_GET['data_2']))
 	deviceURL_1($_GET['data_2']);
 }
 if (isset($_GET['hostName_1'])){
-	echo "DEBUG GET HOSTBY NAME : " . gethostbyname("86c.nfcs.fpir.pvt") . "\r\n";	// debug 
+	//echo "DEBUG GET HOSTBY NAME : " . gethostbyname("86c.nfcs.fpir.pvt") . "\r\n";	// debug 
         function resolveHost_1($host){
 		$dns_1 = array(".fpi.fpir.pvt", ".nfcs.fpir.pvt", ".farmcrediteast.fpir.pvt", 
 			       ".agcountry.fpir.pvt", ".yankee.fpir.pvt", ".fpi.pvt", 
@@ -156,7 +156,7 @@ if (isset($_GET['hostName_1'])){
 			$failure = $message . $host;	// if submitted name is returned
 			echo "Resolve Host name result : " . gethostbyname($host . $suffix) . "\r\n";	// debug
 			$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
-			echo "IP ADDRESS " . $ip;	// debug
+			//echo "IP ADDRESS " . $ip;	// debug
 			if ($ip != $host . $suffix || $ip="") {
 				//$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
 				$arr = array('IPv4' => $ip);	 // create array for JSON
@@ -165,19 +165,19 @@ if (isset($_GET['hostName_1'])){
 				print_r($result);	// debug
 				preg_match( '/\((.*?)\)/', $output[0], $match );	// matches IP address
 				print_r($match);	// debug
-				echo "PING RETURN    " . $match[1];	// debug
+				//echo "PING RETURN    " . $match[1];	// debug
 				if ($match[1] == $arr['IPv4']) {
 					echo json_encode($arr);		// return JSON
-					echo "PING AND DNS ARE EQUAL";	//debug
+					//echo "PING AND DNS ARE EQUAL";	//debug
 					break;
 				} elseif (empty($match[1])) {
 					echo json_encode($arr);		// return JSON
-					echo "PING FAILED, USING DNS VALUE";	// debug
+					//echo "PING FAILED, USING DNS VALUE";	// debug
 					break;
 				} elseif (!empty($match[1])) {
 					$arr = array('IPv4' => $match[1]);	 // create array for JSON
 					echo json_encode($arr);		// return JSON
-					echo "PING AND DNS ARE NOT EQUAL USING PING VALUE"; // debug
+					//echo "PING AND DNS ARE NOT EQUAL USING PING VALUE"; // debug
 					break;
 				} 
 			} else if ($ip == $host . $suffix) {
