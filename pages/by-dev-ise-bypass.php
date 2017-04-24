@@ -16,7 +16,7 @@
 		<div class="flex-header">
 		    <h2><center>BYPASS LIST</center></h2>
 			<div id="search_1" align="left">
-	<form id="search" name="search">
+	<form id="search_1" name="search">
 	<input type="text" name="data_text" id="uniqueID" placeholder="Search.." onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{findformat('adiv','functions.php','data_2')};"> 
 	<!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
 				</form>
@@ -62,7 +62,7 @@ function findformat(thediv, thefile, thekey) {
             document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;
         }
     }
-xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search.data_text.value, true);
+xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search_1.data_text.value, true);
 xmlhttp.send();
 }
 function encoded_1(thediv, thefile, thekey) {
