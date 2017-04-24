@@ -179,7 +179,7 @@ if (isset($_GET['hostName_1'])){
 					echo "PING AND DNS ARE NOT EQUAL USING PING VALUE"; // debug
 					break;
 				} 
-			} else if ($ip = gethostbyname($host . $suffix) == $host . $suffix) {
+			} else if ($ip == $host . $suffix) {
 			  $arr = array('Failure' => $failure);	 // create array for JSON
 			  echo json_encode($arr);		// return JSON
 			  break;
