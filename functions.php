@@ -158,11 +158,11 @@ if (isset($_GET['hostName_1'])){
 				$ip = gethostbyname($host . $suffix);	// gets the IPv4 address of the host
 				$arr = array('IPv4' => $ip);	 // create array for JSON
 				exec("/bin/ping -c 2 " . $ip, $output, $result);
-				//print_r($output);	// debug
-				//print_r($result);	// debug
+				print_r($output);	// debug
+				print_r($result);	// debug
 				preg_match( '/\((.*?)\)/', $output[0], $match );	// matches IP address
-				//print_r($match);	// debug
-				//echo "PING RETURN    " . $match[1];	// debug
+				print_r($match);	// debug
+				echo "PING RETURN    " . $match[1];	// debug
 				if ($match[1] == $arr['IPv4']) {
 					echo json_encode($arr);		// return JSON
 					//echo "PING AND DNS ARE EQUAL";	//debug
