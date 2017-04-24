@@ -145,7 +145,7 @@ if (isset($_GET['data_2']))
 	deviceURL_1($_GET['data_2']);
 }
 if (isset($_GET['hostName_1'])){
-	echo "DEBUG GET HOSTBY NAME : " . gethostbyname($host . $suffix) . "\r\n";	// debug 
+	echo "DEBUG GET HOSTBY NAME : " . gethostbyname($_GET['hostName_1 . ".nfcs.fpir.pvt") . "\r\n";	// debug 
         function resolveHost_1($host){
 		$dns_1 = array(".fpi.fpir.pvt", ".nfcs.fpir.pvt", ".farmcrediteast.fpir.pvt", 
 			       ".agcountry.fpir.pvt", ".yankee.fpir.pvt", ".fpi.pvt", 
