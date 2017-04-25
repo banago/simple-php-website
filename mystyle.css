@@ -171,7 +171,7 @@ article { text-align: left; padding: 40px; }
 
 }
 #search_2 input[type=text] {
-    width: 130px;
+    width: 10px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
