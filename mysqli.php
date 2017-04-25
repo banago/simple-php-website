@@ -15,12 +15,14 @@ class mysqlquery {
 	protected $query_2 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State 
 				FROM aca_mab 
 				WHERE Valid_Until != ?";	// used for testing
-	protected $query_3 = "SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State
+	protected $query_3 = "SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State, amm.Action
 				FROM aca_mab as am
 				JOIN aca_user as au
 				USING (User_ID)
 				JOIN aca as a
 				ON a.Aca_ID = au.Aca_ID
+				JOIN aca_mab_metadata as amm
+				ON am.Mac_ID = amm.Mac_ID
 				WHERE am.Valid_Until = ?
 				ORDER BY am.Valid_From ASC";	// general lookup
 	protected $query_4 = "SELECT amm.Mac_ID, amm.Note, amm.Ticket
