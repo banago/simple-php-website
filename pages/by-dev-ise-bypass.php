@@ -60,6 +60,9 @@ function findformat(thediv, thefile, thekey) {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
             document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;
+	    if (myObj.Type == "HostName"){
+		    document.getElementById(thediv).innerHTML = "JPST NSDSDFJ";
+	    } 
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search_2.data_text.value, true);
