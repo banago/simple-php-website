@@ -178,7 +178,7 @@ article { text-align: left; padding: 40px; }
     font-size: 16px;
     background-color: white;
     background-image: url('searchicon.png');
-    background-position: 12px 0px; 
+    background-position: 12px 2px; 
     background-repeat: no-repeat;
     padding: 2px 20px 2px 40px;
     -webkit-transition: width 0.4s ease-in-out;
