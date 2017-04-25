@@ -259,7 +259,7 @@ mark_blue {
     color: white;
 }
 mark_green { 
-    background-color: PaleGreen;
+    background-color: linear-gradient(-90deg, PaleGreen, LightGrey);
     color: black;
 }
 mark_red { 
