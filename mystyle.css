@@ -52,7 +52,7 @@ article { text-align: left; padding: 40px; }
       text-align: left;
 }
 .dropdown-content a:hover {
-      background-color: grey;
+      background-color: #ddd;
 }
 .show {
       display: block;
