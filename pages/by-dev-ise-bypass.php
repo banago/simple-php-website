@@ -61,12 +61,10 @@ function findformat(thediv, thefile, thekey) {
             myObj = JSON.parse(this.responseText);
             document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;
 	    if (myObj.Type == "HostName"){
-		    var myNode = document.getElementById(thediv);
+		    var myNode = document.getElementById("flex_div_1");
 		    while (myNode.firstChild) {
 			    myNode.removeChild(myNode.firstChild);
-		    }
-		    
-		    
+		    }  
 	    } 
         }
     }
