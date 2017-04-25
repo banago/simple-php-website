@@ -75,7 +75,7 @@ INSERT INTO aca_mab_metadata VALUES(31999624755866,"THIS IS THE FIRST NOTE FOR T
 INSERT INTO aca_mab_metadata VALUES(27618687937945,"THIS IS THE FIRST NOTE FOR THE SIXTH MAC","INC0224868",1);
 INSERT INTO aca_mab_metadata VALUES(205462290820849,"THIS IS THE FIRST NOTE FOR THE SEVENTH MAC","INC0224709",1);
 INSERT INTO aca_mab_metadata VALUES(150244117114491,"THIS IS THE FIRST NOTE FOR THE EIGHTH MAC","INC0225111",1);
-INSERT INTO aca_mab_metadata VALUES(150244117114491,"THIS IS THE FIRST NOTE FOR THE NINTH MAC","INC0229598",10);
+INSERT INTO aca_mab_metadata VALUES(35490518732683,"THIS IS THE FIRST NOTE FOR THE NINTH MAC","INC0229598",10);
 
 
 UPDATE aca_mab SET Valid_Until = now() WHERE Mac_ID = 18764998447377;
@@ -86,6 +86,7 @@ INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(64579898907324,2,3,"
 
 UPDATE aca_mab SET Valid_Until = now() WHERE Mac_ID = 64579898907324;
 INSERT INTO aca_mab (Mac_ID, Aca_ID, User_ID, State) VALUES(64579898907324,2,3,"ACTIVE");
+UPDATE aca_mab_metadata SET Action = Action + 1 WHERE Mac_ID = 64579898907324;
 
 
 # GETS THE ADMIN HISTORY FOR ALL MACS  
@@ -106,12 +107,14 @@ ORDER BY am.Valid_From ASC;
  
 
 # GETS THE USER FOR ALL MACS      
-SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State
+SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State, amm.Action
 FROM aca_mab as am
 JOIN aca_user as au
 USING (User_ID)
 JOIN aca as a
 ON a.Aca_ID = au.Aca_ID
+JOIN aca_mab_metadata as amm
+ON am.Mac_ID = amm.Mac_ID
 WHERE am.Valid_Until = '1000-01-01 00:00:00'
 ORDER BY am.Valid_From ASC;
 
