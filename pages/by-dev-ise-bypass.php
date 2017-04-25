@@ -65,7 +65,9 @@ function findformat(thediv, thefile, thekey) {
 		    var res = str.replace(/"/g, "");
 		    document.getElementById(thediv).innerHTML = res;
 		    default_list('flex_div_1','mysqli.php','sqlQuery','query_5','sqlWhere',res);   
-	    } 
+	    } else {
+		    default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',encodeURIComponent("1000-01-01 00:00:0"));
+	    }
         }
     }
 xmlhttp.open('GET', thefile+'?'+thekey+'='+document.search_2.data_text.value, true);
