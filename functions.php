@@ -42,7 +42,7 @@ function pageContent()
 }
 function siteVersion()
 {
-     $sitever = " Version: 17.0.3";
+     $sitever = " Version: 17.0.5";
     echo $sitever;
 }
 function primeMac($mac)
