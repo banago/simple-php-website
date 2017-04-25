@@ -60,7 +60,7 @@ class mysqlquery {
 		  $this->sqlquery($this->query_5, $sqlWhere);
 	  } elseif ($sqlQuery == "query_6") {
 		  $this->mac2int_1($sqlWhere);
-		  $this->int_1 = '%' . $sqlWhere . '%';	// adds formating needed for sql searches
+		  $this->int_1 = '%' . $this->int_1 . '%';	// adds formating needed for sql searches
 		  $this->sqlquery($this->query_6, $this->int_1);
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
