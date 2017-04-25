@@ -33,7 +33,7 @@ class mysqlquery {
 				USING (User_ID)
 				JOIN aca as a
 				ON a.Aca_ID = au.Aca_ID
-				WHERE am.Valid_Until = '1000-01-01 00:00:00' AND   CONCAT( Fname,  ' ', Lname ) LIKE  '%"."?"."%'
+				WHERE am.Valid_Until = '1000-01-01 00:00:00' AND   CONCAT( Fname,  ' ', Lname ) LIKE  ?
 				ORDER BY am.Valid_From ASC";
 	protected $results;
 	
@@ -49,6 +49,7 @@ class mysqlquery {
 		  $this->sqlquery($this->query_4, $this->int_1);
 	  } elseif ($sqlQuery == "query_5") {
 		  $this->query_5 = addslashes ($this->query_5);
+		  $sqlWhere = '%' . $sqlWhere . '%';
 		  $this->sqlquery($this->query_5, $sqlWhere);
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
