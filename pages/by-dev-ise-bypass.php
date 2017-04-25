@@ -134,7 +134,7 @@ function default_list(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_
 				    	newdiv.className = 'flex-item';
 					newdiv.style.background = "linear-gradient(-90deg, white, LightGrey)"; /* Standard syntax */
 					newdiv.style.color = "black";
-					if (myObj[i1].State == "PASSIVE") {
+					if (myObj[i1].State == "PASSIVE" || myObj[i1].Action > 5) {
 						newdiv.style.background = "linear-gradient(-90deg, FireBrick, LightGrey)";
 						newdiv.style.color = "white";    
 					}
