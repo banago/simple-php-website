@@ -259,7 +259,10 @@ mark_blue {
     color: white;
 }
 mark_green { 
-    background-color: linear-gradient(-90deg, Gray, LightGrey);
+    background: -webkit-linear-gradient(-90deg, white, LightGrey); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-90deg, white, LightGrey); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-90deg, white, LightGrey); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-90deg, white, LightGrey); /* Standard syntax */
     color: black;
 }
 mark_red { 
