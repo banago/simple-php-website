@@ -69,7 +69,7 @@ function dbsearch_1(thediv, thefile, thekey) {
 		    var str = myObj.Normalized;
 		    var res = encodeURIComponent(str);
 		    document.getElementById(thediv).innerHTML = "MAC "+res;	// debug
-		    default_list('flex_div_1','mysqli.php','sqlQuery','query_5','sqlWhere',res);
+		    default_list('flex_div_1','mysqli.php','sqlQuery','query_6','sqlWhere',res);
 	    } else {
 		    default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',encodeURIComponent("1000-01-01 00:00:0"));
 	    }
