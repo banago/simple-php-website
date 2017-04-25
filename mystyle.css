@@ -131,8 +131,8 @@ article { text-align: left; padding: 40px; }
 .modal-body {padding: 2px 16px;}
 .modal-footer {
     padding: -1px 16px;
-    background-color: #5cb85c;
-    color: white;
+    background-color: white;
+    color: black;
 }
 .fieldset {
     width: 50%;
