@@ -274,7 +274,7 @@ var rst = document.getElementById("myRst");
 // populates flex_div_1 on page load	
 var active_users = encodeURIComponent("1000-01-01 00:00:0");
 default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',active_users);	
-/*	
+/* not needed as their are no buttons and it stops the exection of the rest of the code.
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = b('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
     //document.getElementById("adiv2").innerHTML = restmodal('adiv2','restAuth.php','get_ticket');
