@@ -127,6 +127,7 @@ article { text-align: left; padding: 40px; }
     padding: 2px 16px;
     background-color: #333;
     color: white;
+    font-family: Arial;
 }
 .modal-body {padding: 2px 16px;}
 .modal-footer {
