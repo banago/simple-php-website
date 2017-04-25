@@ -34,7 +34,7 @@ class mysqlquery {
 				JOIN aca as a
 				ON a.Aca_ID = au.Aca_ID
 				WHERE am.Valid_Until = '1000-01-01 00:00:00' AND   CONCAT( Fname,  ' ', Lname ) LIKE  '\%?\%'
-				ORDER BY am.Valid_From ASC;"
+				ORDER BY am.Valid_From ASC";
 	protected $results;
 	
   	function __construct($sqlQuery,$sqlWhere) {
