@@ -178,6 +178,7 @@ function get_notes(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) 
 					document.getElementById("adiv2").innerHTML = "MAC : "+myObj[0].Mac_ID+" "+'<br />'+ticket+'<br />'+
 						'<p>'+myObj[0].Note+'</p>'+"BYPASS count : "+myObj[0].Action;
 				}
+				document.getElementById("modal-body").innerHTML = "";	// clears a DIV
 				curlreturn_1("modal-body", "curlrest.php"  , "Type" , "ouiLookup_1" , "curlAddress" , "http%3A%2F%2Fapi.macvendors.com%2F", "curlData", mac_encoded, "curlCustom" , "GET" , "curlPost" , "%22%22");
 				
 				
