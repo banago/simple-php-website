@@ -48,7 +48,6 @@ class mysqlquery {
 		  $this->mac2int_1($sqlWhere);
 		  $this->sqlquery($this->query_4, $this->int_1);
 	  } elseif ($sqlQuery == "query_5") {
-		  $this->query_5 = addslashes ($this->query_5);
 		  $sqlWhere = '%' . $sqlWhere . '%';
 		  $this->sqlquery($this->query_5, $sqlWhere);
 	  } elseif ($function == "iseTicket_1") {
