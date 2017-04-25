@@ -61,7 +61,30 @@ function findformat(thediv, thefile, thekey) {
             myObj = JSON.parse(this.responseText);
             document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;
 	    if (myObj.Type == "HostName"){
-		    document.getElementById(thediv).innerHTML = "JPST NSDSDFJ";
+		    var myNode = document.getElementById(thediv);
+		    while (myNode.firstChild) {
+			    myNode.removeChild(myNode.firstChild);
+		    }
+		    for (i1 = 0; i1 < myObj.length; i1++) {
+			    var newdiv = document.createElement('div');
+			    newdiv.className = 'flex-item';
+			    newdiv.style.background = "linear-gradient(-90deg, white, LightGrey)"; /* Standard syntax */
+			    newdiv.style.color = "black";
+			    if (myObj[i1].State == "PASSIVE") {
+				    newdiv.style.background = "linear-gradient(-90deg, FireBrick, LightGrey)";
+				    newdiv.style.color = "white";    
+			    }
+			    newdiv.onclick = function () {
+				    modal.style.display = "block";
+				    var str = this.textContent.split(" ", 1);
+				    str = encodeURIComponent(str);
+				    document.getElementById("adiv2").innerHTML = str;
+				    get_notes('adiv2','mysqli.php','sqlQuery','query_4','sqlWhere',str);
+			    }
+			    newdiv.innerHTML = myObj[i1].Mac_ID+' '+myObj[i1].Fname+' '+myObj[i1].Lname+' '+myObj[i1].Valid_From+' '+myObj[i1].State;
+			    document.getElementById(thediv).appendChild(newdiv);
+		    }
+		    
 	    } 
         }
     }
