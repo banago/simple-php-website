@@ -185,8 +185,6 @@ article { text-align: left; padding: 40px; }
     transition: width 0.4s ease-in-out;
     margin-top: -20px;
     outline: none;
-    padding-bottom: 1cm;
-    
 }
 
 #search_2 input[type=text]:focus {
