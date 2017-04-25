@@ -27,6 +27,14 @@ class mysqlquery {
 				FROM aca_mab_metadata as amm
 				WHERE amm.Mac_ID = ?
 				ORDER BY amm.Mac_ID ASC";
+	protected $query_5 ="SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State
+				FROM aca_mab as am
+				JOIN aca_user as au
+				USING (User_ID)
+				JOIN aca as a
+				ON a.Aca_ID = au.Aca_ID
+				WHERE am.Valid_Until = '1000-01-01 00:00:00' AND   CONCAT( Fname,  ' ', Lname ) LIKE  '\%?\%'
+				ORDER BY am.Valid_From ASC;"
 	protected $results;
 	
   	function __construct($sqlQuery,$sqlWhere) {
@@ -39,6 +47,8 @@ class mysqlquery {
 	  } elseif ($sqlQuery == "query_4") {
 		  $this->mac2int_1($sqlWhere);
 		  $this->sqlquery($this->query_4, $this->int_1);
+	  } elseif ($sqlQuery == "query_5") {
+		  $this->sqlquery($this->query_5, $sqlWhere);
 	  } elseif ($function == "iseTicket_1") {
 		  $this->iseTicket_1();
 	  }	
