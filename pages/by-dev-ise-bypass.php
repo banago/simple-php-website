@@ -63,6 +63,7 @@ function findformat(thediv, thefile, thekey) {
 	    if (myObj.Type == "HostName"){
 		    var str = myObj.Normalized;
 		    var res = str.replace("\"", "");
+		    document.getElementById(thediv).innerHTML = res;
 		    default_list('flex_div_1','mysqli.php','sqlQuery','query_5','sqlWhere',res);   
 	    } 
         }
