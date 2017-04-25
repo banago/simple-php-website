@@ -119,7 +119,7 @@ function default_list(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_
 				for (i1 = 0; i1 < myObj.length; i1++) {
 					var newdiv = document.createElement('div');
 				    	newdiv.className = 'flex-item';
-					newdiv.style.background = "linear-gradient(-90deg, red, yellow)"; /* Standard syntax */
+					newdiv.style.background = "linear-gradient(-90deg, PaleGreen, yellow)"; /* Standard syntax */
 					newdiv.style.color = "black";
 					if (myObj[i1].State == "PASSIVE") {
 						newdiv.style.background = "FireBrick";
