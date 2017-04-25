@@ -125,7 +125,7 @@ article { text-align: left; padding: 40px; }
 }
 .modal-header {
     padding: 2px 16px;
-    background-color: black;
+    background-color: #333;
     color: white;
 }
 .modal-body {padding: 2px 16px;}
