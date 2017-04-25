@@ -61,7 +61,9 @@ function findformat(thediv, thefile, thekey) {
             myObj = JSON.parse(this.responseText);
             document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;
 	    if (myObj.Type == "HostName"){
-		    default_list('flex_div_1','mysqli.php','sqlQuery','query_5','sqlWhere',myObj.Normalized);   
+		    var str = myObj.Normalized;
+		    var res = str.replace("\"", "");
+		    default_list('flex_div_1','mysqli.php','sqlQuery','query_5','sqlWhere',res);   
 	    } 
         }
     }
