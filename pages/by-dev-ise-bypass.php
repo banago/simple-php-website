@@ -59,7 +59,7 @@ function findformat(thediv, thefile, thekey) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
-            document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;
+            document.getElementById(thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;	// debug
 	    if (myObj.Type == "HostName"){
 		    var str = myObj.Normalized;
 		    var res = str.replace(/"/g, "");
@@ -280,8 +280,7 @@ var rst = document.getElementById("myRst");
 // When the user clicks the button, open the modal
 //var formvalue_1 = document.getElementById("uniqueID").value;
 // populates flex_div_1 on page load	
-var active_users = encodeURIComponent("1000-01-01 00:00:0");
-default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',active_users);	
+default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',encodeURIComponent("1000-01-01 00:00:0"));	
 /* not needed as their are no buttons and it stops the exection of the rest of the code.
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = b('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
