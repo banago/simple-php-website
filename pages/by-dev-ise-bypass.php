@@ -63,11 +63,11 @@ function dbsearch_1(thediv, thefile, thekey) {
 	    if (myObj.Type == "HostName"){
 		    var str = myObj.Normalized;
 		    var res = str.replace(/"/g, "");	// strips exclimation ponts
-		    document.getElementById(thediv).innerHTML = res;	// debug
+		    document.getElementById(thediv).innerHTML = "HostName "+res;	// debug
 		    default_list('flex_div_1','mysqli.php','sqlQuery','query_5','sqlWhere',res);   
 	    } else if (myObj.Type == "MAC"){
 		    var str = myObj.Normalized;
-		    document.getElementById(thediv).innerHTML = str;	// debug
+		    document.getElementById(thediv).innerHTML = "MAC "+str;	// debug
 		    default_list('flex_div_1','mysqli.php','sqlQuery','query_5','sqlWhere',str);
 	    } else {
 		    default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',encodeURIComponent("1000-01-01 00:00:0"));
