@@ -33,7 +33,7 @@ class mysqlquery {
 				USING (User_ID)
 				JOIN aca as a
 				ON a.Aca_ID = au.Aca_ID
-				WHERE am.Valid_Until = '1000-01-01 00:00:00' AND   CONCAT( Fname,  ' ', Lname ) LIKE  '%?%'
+				WHERE am.Valid_Until = '1000-01-01 00:00:00' AND   CONCAT( Fname,  ' ', Lname ) LIKE  '% ? %'
 				ORDER BY am.Valid_From ASC";
 	protected $results;
 	
