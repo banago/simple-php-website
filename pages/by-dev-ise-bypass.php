@@ -269,18 +269,7 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
     <!-- form HTML goes here -->
 </div>
 
-<script>
-    var showPopup = function(event) {
-        event.preventDefault();
-        document
-            .getElementById('popup-form')
-            .style.display = 'block';
-    };
-
-    document
-        .getElementById('popup-clickie')
-        .addEventListener('click', showPopup);
-</script>		
+		
 	
 	    
 	<div id="adiv"></div>
@@ -349,5 +338,15 @@ document.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+    var showPopup = function(event) {
+        event.preventDefault();
+        document
+            .getElementById('popup-form')
+            .style.display = 'block';
+    };
+
+    document
+        .getElementById('popup-clickie')
+        .addEventListener('click', showPopup);
 </script>
 <?php endif; ?>
