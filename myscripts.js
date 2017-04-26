@@ -6,7 +6,7 @@ function sqli_interface (thediv,thefile,thekey,thedocument) {
   
   
   
-  this.dbsearch_1 function() {
+  this.dbsearch_1 = function() {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
