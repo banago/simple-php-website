@@ -257,7 +257,10 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 <body>
 	<h2>ISE REST Request</h2>
 	<!-- This DIV returns the users input after proccessing it through the php file -->
-	    <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Show Popup Form</a>
+	   
+	
+	  <div data-role="main" class="ui-content">
+    <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Show Popup Form</a>
 
     <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
       <form method="post" action="/action_page_post.php">
@@ -272,6 +275,9 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
           <input type="submit" data-inline="true" value="Log in">
         </div>
       </form>
+
+  </div>
+	
 	    
 	<div id="adiv"></div>
 	<div id="testdiv"></div>
