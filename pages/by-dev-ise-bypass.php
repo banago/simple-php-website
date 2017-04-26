@@ -285,7 +285,31 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	  </div>
 	</div>
 
-		
+<style>
+    #popup-form {
+        display: none;
+        position: absolute;
+    }
+</style>
+
+<a id="popup-clickie" href="fallback-link-to-form-page">Contact</a>
+
+<div id="popup-form">
+    <!-- form HTML goes here -->
+</div>
+
+<script>
+    var showPopup = function(event) {
+        event.preventDefault();
+        document
+            .getElementById('popup-form')
+            .style.display = 'block';
+    };
+
+    document
+        .getElementById('popup-clickie')
+        .addEventListener('click', showPopup);
+</script>		
 
 		
 		
