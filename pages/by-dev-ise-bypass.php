@@ -223,6 +223,10 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
     xmlhttp.open('GET', thefile+'?'+thetype+'='+thetypeval+'&'+thekey_1+'='+theval_1+'&'+thekey_2+'='+theval_2+'&'+thekey_3+'='+theval_3+'&'+thekey_4+'='+theval_4, true);
     	xmlhttp.send();	
 }
+			window.onload = function() {
+   		<script src="myscripts.js">
+</script>
+}
 	</script>
 
 </head>
@@ -285,8 +289,10 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	    </div>  
 	  </div>
 	</div>
-<script src="myscripts.js">
-</script>
+
+
+		
+
 <body/>
 <footer>
 
