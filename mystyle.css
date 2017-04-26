@@ -192,7 +192,7 @@ article { text-align: left; padding: 40px; }
     width: 20%;
 }
 
-input[type=text], select {
+#form_1 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -202,7 +202,7 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
-input[type=submit] {
+#form_1 input[type=submit] {
     width: 100%;
     background-color: #4CAF50;
     color: white;
@@ -213,11 +213,11 @@ input[type=submit] {
     cursor: pointer;
 }
 
-input[type=submit]:hover {
+#form_1 input[type=submit]:hover {
     background-color: #45a049;
 }
 
-div {
+#form_1 div {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
