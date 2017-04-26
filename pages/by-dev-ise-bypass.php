@@ -9,6 +9,9 @@
 
 <?php if (isset($_SESSION['valid_user'])) : ?>
 <link rel="stylesheet" type="text/css" href="mystyle.css">
+<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+<script src="jquery-1.11.4.min.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
 <p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>		
 <div class="flex-container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="flex-dialog"> 
