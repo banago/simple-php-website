@@ -29,20 +29,24 @@ class mysqlquery {
 				FROM aca_mab_metadata as amm
 				WHERE amm.Mac_ID = ?
 				ORDER BY amm.Mac_ID ASC";
-	protected $query_5 = "SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State
+	protected $query_5 = "SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State, amm.Action
 				FROM aca_mab as am
 				JOIN aca_user as au
 				USING (User_ID)
 				JOIN aca as a
 				ON a.Aca_ID = au.Aca_ID
+				JOIN aca_mab_metadata as amm
+				ON am.Mac_ID = amm.Mac_ID
 				WHERE am.Valid_Until = '1000-01-01 00:00:00' AND   CONCAT( Fname,  ' ', Lname ) LIKE  ?
 				ORDER BY am.Valid_From ASC";
-	protected $query_6 = "SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State
+	protected $query_6 = "SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State, amm.Action
 				FROM aca_mab as am
 				JOIN aca_user as au
 				USING (User_ID)
 				JOIN aca as a
 				ON a.Aca_ID = au.Aca_ID
+				JOIN aca_mab_metadata as amm
+				ON am.Mac_ID = amm.Mac_ID
 				WHERE am.Valid_Until = '1000-01-01 00:00:00' AND  am.Mac_ID LIKE  ?
 				ORDER BY am.Valid_From ASC";
 	protected $results;
