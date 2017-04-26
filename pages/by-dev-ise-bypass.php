@@ -320,7 +320,7 @@ span.psw {
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
-<div id="id01" class="modal_2">
+<div id="id01" class="modal">
   
   <form class="modal-content animate" action="/action_page.php">
     <div class="imgcontainer">
@@ -413,7 +413,7 @@ span.onclick = function() {
 }
 // When the user clicks anywhere outside of the modal, close it
 document.onclick = function(event) {
-    if (event.target == modal || event.target == modal_2) {
+    if (event.target == modal) {
         modal.style.display = "none";
     }
 }
