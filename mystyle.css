@@ -192,7 +192,7 @@ article { text-align: left; padding: 40px; }
     width: 20%;
 }
 
-#form-group_1 input[type=text] {
+#col-md-4 input[type=text] {
     width: 10px;
     box-sizing: border-box;
     border: 2px solid #ccc;
