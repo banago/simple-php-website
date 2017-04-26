@@ -255,30 +255,30 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	<h2>ISE REST Request</h2>
 	<!-- This DIV returns the users input after proccessing it through the php file -->
 
-<button class="id01" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+<button class="id02" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
-<div id="id01" class="modal">
+<div id="id02" class="modal">
   
-  <form id="id01" class="modal-content animate" action="/action_page.php">
-    <div id="id01" class="imgcontainer">
+  <form id="id02" class="modal-content animate" action="/action_page.php">
+    <div id="id02" class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="img_avatar2.png" alt="Avatar" class="avatar">
     </div>
 
-    <div id="id01" class="container">
+    <div id="id02" class="container">
       <label><b>Username</b></label>
-      <input id="id01" type="text" placeholder="Enter Username" name="uname" required>
+      <input id="id02" type="text" placeholder="Enter Username" name="uname" required>
 
       <label><b>Password</b></label>
-      <input id="id01" type="password" placeholder="Enter Password" name="psw" required>
+      <input id="id02" type="password" placeholder="Enter Password" name="psw" required>
         
-      <button id="id01" type="submit">Login</button>
-      <input id="id01" type="checkbox" checked="checked"> Remember me
+      <button id="id02" type="submit">Login</button>
+      <input id="id02" type="checkbox" checked="checked"> Remember me
     </div>
 
-    <div id="id01" class="container" style="background-color:#f1f1f1">
-      <button id="id01" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span id="id01" class="psw">Forgot <a href="#">password?</a></span>
+    <div id="id02" class="container" style="background-color:#f1f1f1">
+      <button id="id02" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span id="id02" class="psw">Forgot <a href="#">password?</a></span>
     </div>
   </form>
 </div>
@@ -286,10 +286,10 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	<div id="adiv"></div>
 	<div id="testdiv"></div>
 	<!-- The Modal -->
-	<div id="myModal" class="modal">  
+	<div id="id01" id="myModal" class="modal">  
 	<!-- Modal content -->  
-	<div class="modal-content">    
-	  <div class="modal-header">      
+	<div id="id01" class="modal-content">    
+	  <div id="id01" class="modal-header">      
 	    <span class="close">&times;</span>      
 	    <h2><center>RESULT</center></h2>   
 	  </div>    
@@ -303,7 +303,7 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 		    </div>	    
 	    </div>
 	    <div id="test1" class="teest12"></div>    
-	    <div class="modal-footer">      
+	    <div id="id01" class="modal-footer">      
 	    <h3><center>___\__-_-__/___</center></h3>    
 	    </div>  
 	  </div>
