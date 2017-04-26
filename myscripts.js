@@ -1,12 +1,8 @@
-function sqli_interface (thediv,thefile,thekey,thedocument) {
-  this.thediv = thediv;
-  this.thefile = thefile;
-  this.theykey = thekey;
-  this.thedocument = thedocument;
+var sqli_interface = {
   
+
   
-  
-  this.dbsearch_1 = function() {
+  dbsearch_1 : function(thediv,thefile,thekey,thedocument) {
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
@@ -34,4 +30,4 @@ function sqli_interface (thediv,thefile,thekey,thedocument) {
     xmlhttp.open('GET', this.thefile+'?'+this.thekey+'='+document.search_2.data_text.value, true);  // add this.thedocument inplace of the document
     xmlhttp.send();
   }
-}
+};
