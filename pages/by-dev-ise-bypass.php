@@ -256,19 +256,7 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	<h2>ISE REST Request</h2>
 	<!-- This DIV returns the users input after proccessing it through the php file -->
 	   	
-<div id="popup1" class="box">
-    <a id="popup1" class="button" href="#popup1">Let me Pop up</a>
-</div>
 
-<div id="popup1" class="overlay">
-    <div id="popup1" class="popup">
-        <h2>Here i am</h2>
-        <a id="popup1" class="close" href="#">&times;</a>
-        <div id="popup1" class="content">
-            Thank to pop me out of that button, but now i'm done so you can close this window.
-        </div>
-    </div>
-</div>
 	
 	    
 	<div id="adiv"></div>
