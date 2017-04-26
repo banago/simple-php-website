@@ -284,7 +284,6 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	</div>
 
 		
-  <div data-role="main" class="ui-content">
     <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Show Popup Form</a>
 
     <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
@@ -300,8 +299,6 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
           <input type="submit" data-inline="true" value="Log in">
         </div>
       </form>
-
-  </div>
 		
 		
 <script>
