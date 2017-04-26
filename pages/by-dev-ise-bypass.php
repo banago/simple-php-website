@@ -254,28 +254,32 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 <body>
 	<h2>ISE REST Request</h2>
 	<!-- This DIV returns the users input after proccessing it through the php file -->
-<div id="form_1">
-  <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-	  
-    <label for="mac_1">MAC Address</label>
-    <input type="text" id="mac_1" name="mac_1" placeholder="The MAC Address..">
-	  
-    <label for="incedent_1">Incedent Number</label>
-    <input type="text" id="incedent_1" name="incedent_1" placeholder="The Incenent Number..">
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
-    <label for="aca">ACA</label>
-    <select id="aca" name="ACA">
-      <option value="1">FPI</option>
-      <option value="2">NWFCS</option>
-      <option value="3">FCE</option>
-    </select>
+<div id="id01" class="modal">
   
-    <input type="submit" value="Submit">
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
   </form>
 </div>
 
@@ -317,7 +321,9 @@ var rst = document.getElementById("myRst");
 // When the user clicks the button, open the modal
 //var formvalue_1 = document.getElementById("uniqueID").value;
 // populates flex_div_1 on page load	
-default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',encodeURIComponent("1000-01-01 00:00:0"));	
+default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',encodeURIComponent("1000-01-01 00:00:0"));
+// Get the modal
+var modal = document.getElementById('id01');
 /* not needed as their are no buttons and it stops the exection of the rest of the code.
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = b('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
@@ -337,6 +343,12 @@ span.onclick = function() {
 }
 // When the user clicks anywhere outside of the modal, close it
 document.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
