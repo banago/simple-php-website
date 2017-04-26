@@ -192,19 +192,35 @@ article { text-align: left; padding: 40px; }
     width: 20%;
 }
 
-#form-group_1 .col-md-4 input[type=text] {
-    width: 10px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('searchicon.png');
-    background-position: 12px 2px; 
-    background-repeat: no-repeat;
-    padding: 2px 20px 2px 40px;
-    margin-top: -20px;
-    outline: none;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
 }
 
 .flex-dialog{ 
