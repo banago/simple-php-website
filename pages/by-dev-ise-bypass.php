@@ -320,7 +320,7 @@ span.psw {
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
-<div id="id01" class="modal">
+<div id="id01" class="modal_2">
   
   <form class="modal-content animate" action="/action_page.php">
     <div class="imgcontainer">
