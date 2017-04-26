@@ -173,10 +173,10 @@ function get_notes(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) 
 				var mac_encoded = encodeURIComponent(myObj[0].Mac_ID);
 				if (myObj[0].Action > 5) {
 					document.getElementById("adiv2").innerHTML = "MAC : "+myObj[0].Mac_ID+" "+'<br />'+ticket+'<br />'+
-						+"BYPASS count : "+'<p>'+'<font color="red">'+myObj[0].Action+'</font>'+'</p>';
+						"BYPASS count : "+'<p>'+'<font color="red">'+myObj[0].Action+'</font>'+'</p>';
 				} else {
 					document.getElementById("adiv2").innerHTML = "MAC : "+myObj[0].Mac_ID+" "+'<br />'+ticket+'<br />'+
-						+"BYPASS count : "+'<p>'+myObj[0].Action+'</p>';
+						"BYPASS count : "+'<p>'+myObj[0].Action+'</p>';
 				}
 				document.getElementById("modal-body").innerHTML = "";	// clears a DIV
 				curlreturn_1("modal-body", "curlrest.php"  , "Type" , "ouiLookup_1" , "curlAddress" , "http%3A%2F%2Fapi.macvendors.com%2F", "curlData", mac_encoded, "curlCustom" , "GET" , "curlPost" , "%22%22");
