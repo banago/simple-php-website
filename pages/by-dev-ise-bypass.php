@@ -255,29 +255,20 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 <body>
 	<h2>ISE REST Request</h2>
 	<!-- This DIV returns the users input after proccessing it through the php file -->
-	   
-	
-  <div data-role="main" class="ui-content">
-    <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Show Popup Form</a>
+	   	
+<div class="box">
+    <a class="button" href="#popup1">Let me Pop up</a>
+</div>
 
-    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
-      <form method="post" action="/action_page_post.php">
-        <div>
-          <h3>Login information</h3>
-          <label for="usrnm" class="ui-hidden-accessible">Username:</label>
-          <input type="text" name="user" id="usrnm" placeholder="Username">
-          <label for="pswd" class="ui-hidden-accessible">Password:</label>
-          <input type="password" name="passw" id="pswd" placeholder="Password">
-          <label for="log">Keep me logged in</label>
-          <input type="checkbox" name="login" id="log" value="1" data-mini="true">
-          <input type="submit" data-inline="true" value="Log in">
+<div id="popup1" class="overlay">
+    <div class="popup">
+        <h2>Here i am</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+            Thank to pop me out of that button, but now i'm done so you can close this window.
         </div>
-      </form>
     </div>
-
-
-
-</div> 
+</div>
 	
 	    
 	<div id="adiv"></div>
