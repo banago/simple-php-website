@@ -49,8 +49,7 @@
 </ul>  	
 <head>
 
-<script src="myscripts.js">
-</script>	
+	
 	
 <script type="text/javascript">
 /*function dbsearch_1(thediv, thefile, thekey) {
@@ -255,6 +254,8 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 
 	</script>    
 </head>
+<script src="myscripts.js">
+</script>
 <body>
 	<h2>ISE REST Request</h2>
 	<!-- This DIV returns the users input after proccessing it through the php file -->
