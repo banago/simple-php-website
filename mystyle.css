@@ -229,7 +229,7 @@ article { text-align: left; padding: 40px; }
 }
 
 /* The Modal (background) */
-.modal {
+#id01 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -244,15 +244,18 @@ article { text-align: left; padding: 40px; }
 }
 
 /* Modal Content/Box */
-.modal-content {
+#id01 .modal-content {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    animation-name: animatezoom;
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
 }
 
 /* The Close Button (x) */
-.close {
+#id01 .close {
     position: absolute;
     right: 25px;
     top: 0;
@@ -261,17 +264,12 @@ article { text-align: left; padding: 40px; }
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+#id01 .close:hover,
+#id01 .close:focus {
     color: red;
     cursor: pointer;
 }
 
-/* Add Zoom Animation */
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
 
 @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)} 
