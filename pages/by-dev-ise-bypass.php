@@ -393,7 +393,7 @@ var rst = document.getElementById("myRst");
 // populates flex_div_1 on page load	
 default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',encodeURIComponent("1000-01-01 00:00:0"));
 // Get the modal
-var modal = document.getElementById('id01');
+var modal_2 = document.getElementById('id01');
 /* not needed as their are no buttons and it stops the exection of the rest of the code.
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = b('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
