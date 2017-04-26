@@ -9,7 +9,37 @@
 
 <?php if (isset($_SESSION['valid_user'])) : ?>
 <link rel="stylesheet" type="text/css" href="mystyle.css">
-
+<p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>		
+<div class="flex-container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="flex-dialog"> 
+	    <div class="flex-content">
+		<div class="flex-header">
+		    <h2><center>BYPASS LIST</center></h2>
+			<div id="search_2" align="left">
+	<form id="search_2" name="search_2">
+	<input type="text" name="data_text" id="uniqueID" placeholder="Search.." onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{sqli_interface.dbsearch_1('flex_div_1','functions.php','data_2', 'document.search_2.data_text.value')};"> 
+	<!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
+				</form>
+			</div>
+		</div>             
+		<div class="flex-body" id="flex_div_1">	
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>	
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>			
+		</div> 
+		<div class="flex-footer"><mark_blue>Blue</mark_blue> = <strong>New</strong> 
+		    <mark_grey>grey</mark_grey> = <strong>Active</strong> 
+		    <mark_red>Red</mark_red> = <strong>Problem</strong> 
+		</div>        
+	    </div>    
+	</div> 
+</div> 
 <p><b>Whats New!</b></p>
 <ul>
   <li>Color Coding and visual effects</li>
@@ -18,8 +48,7 @@
   <li>PHP backend refactored Now Object oriented</li>
 </ul>  	
 <head>
-<script src="myscripts.js">
-</script>
+
 	
 	
 <script type="text/javascript">
@@ -222,41 +251,10 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
     xmlhttp.open('GET', thefile+'?'+thetype+'='+thetypeval+'&'+thekey_1+'='+theval_1+'&'+thekey_2+'='+theval_2+'&'+thekey_3+'='+theval_3+'&'+thekey_4+'='+theval_4, true);
     	xmlhttp.send();	
 }
-
 	</script>    
 </head>
+
 <body>
-	<p>Cisco Identity Services Engine (ISE) is a next-generation identity and access control policy platform that enables enterprises to enforce compliance, enhance infrastructure security, and streamline their service operations. The unique architecture of Cisco ISE allows enterprises to gather real-time contextual information from networks, users, and devices.</p>		
-<div class="flex-container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="flex-dialog"> 
-	    <div class="flex-content">
-		<div class="flex-header">
-		    <h2><center>BYPASS LIST</center></h2>
-			<div id="search_2" align="left">
-	<form id="search_2" name="search_2">
-	<input type="text" name="data_text" id="uniqueID" placeholder="Search.." onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{sqli_interface.dbsearch_1('flex_div_1','functions.php','data_2', 'document.search_2.data_text.value')};"> 
-	<!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
-				</form>
-			</div>
-		</div>             
-		<div class="flex-body" id="flex_div_1">	
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>	
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>			
-		</div> 
-		<div class="flex-footer"><mark_blue>Blue</mark_blue> = <strong>New</strong> 
-		    <mark_grey>grey</mark_grey> = <strong>Active</strong> 
-		    <mark_red>Red</mark_red> = <strong>Problem</strong> 
-		</div>        
-	    </div>    
-	</div> 
-</div> 
 	<h2>ISE REST Request</h2>
 	<!-- This DIV returns the users input after proccessing it through the php file -->
 	<div id="adiv"></div>
@@ -285,6 +283,10 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	  </div>
 	</div>
 
+
+<footer>
+<script src="myscripts.js">
+</script>
 <script>
 // Get the modal
 var modal = document.getElementById('myModal');
@@ -322,4 +324,5 @@ document.onclick = function(event) {
     }
 }
 </script>
+</footer>
 <?php endif; ?>
