@@ -13,7 +13,7 @@ var sqli_interface = {
     }  
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-		document.getElementById(this.thediv).innerHTML = xmlhttp.responseText;
+		document.getElementById(this.thediv).innerHTML = document.search_2.data_text.value;
             myObj = JSON.parse(xmlhttp.responseText);
             document.getElementById(this.thediv).innerHTML =  myObj.Type.fontcolor("green")  + " : " + myObj.Normalized + "<br>" + myObj.Encoded;	// debug
 	    if (myObj.Type == "HostName"){
