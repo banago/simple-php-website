@@ -261,12 +261,18 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 
     <label for="lname">Last Name</label>
     <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+	  
+    <label for="mac_1">MAC Address</label>
+    <input type="text" id="mac_1" name="mac_1" placeholder="The MAC Address..">
+	  
+    <label for="incedent_1">Incedent Number</label>
+    <input type="text" id="incedent_1" name="incedent_1" placeholder="The Incenent Number..">
 
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
+    <label for="aca">ACA</label>
+    <select id="aca" name="ACA">
+      <option value="1">FPI</option>
+      <option value="2">NWFCS</option>
+      <option value="3">FCE</option>
     </select>
   
     <input type="submit" value="Submit">
