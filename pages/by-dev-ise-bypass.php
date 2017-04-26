@@ -256,7 +256,31 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	<h2>ISE REST Request</h2>
 	<!-- This DIV returns the users input after proccessing it through the php file -->
 	   	
+<style>
+    #popup-form {
+        display: none;
+        position: absolute;
+    }
+</style>
 
+<a id="popup-clickie" href="fallback-link-to-form-page">Contact</a>
+
+<div id="popup-form">
+    <!-- form HTML goes here -->
+</div>
+
+<script>
+    var showPopup = function(event) {
+        event.preventDefault();
+        document
+            .getElementById('popup-form')
+            .style.display = 'block';
+    };
+
+    document
+        .getElementById('popup-clickie')
+        .addEventListener('click', showPopup);
+</script>		
 	
 	    
 	<div id="adiv"></div>
@@ -285,31 +309,7 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	  </div>
 	</div>
 
-<style>
-    #popup-form {
-        display: none;
-        position: absolute;
-    }
-</style>
 
-<a id="popup-clickie" href="fallback-link-to-form-page">Contact</a>
-
-<div id="popup-form">
-    <!-- form HTML goes here -->
-</div>
-
-<script>
-    var showPopup = function(event) {
-        event.preventDefault();
-        document
-            .getElementById('popup-form')
-            .style.display = 'block';
-    };
-
-    document
-        .getElementById('popup-clickie')
-        .addEventListener('click', showPopup);
-</script>		
 
 		
 		
