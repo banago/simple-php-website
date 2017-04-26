@@ -1,8 +1,11 @@
 var sqli_interface = {
   
-
   
   dbsearch_1 : function(thediv,thefile,thekey,thedocument) {
+		this.thediv = thediv;
+		this.thefile = thefile;
+		this.theky = thekey;
+		this.thedocument = thedocument;
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else { 
