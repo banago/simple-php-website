@@ -286,10 +286,10 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	<div id="adiv"></div>
 	<div id="testdiv"></div>
 	<!-- The Modal -->
-	<div id="id01" id="myModal" class="modal">  
+	<div  id="myModal" class="modal">  
 	<!-- Modal content -->  
 	<div id="id01" class="modal-content">    
-	  <div id="id01" class="modal-header">      
+	  <div  class="modal-header">      
 	    <span class="close">&times;</span>      
 	    <h2><center>RESULT</center></h2>   
 	  </div>    
@@ -303,7 +303,7 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 		    </div>	    
 	    </div>
 	    <div id="test1" class="teest12"></div>    
-	    <div id="id01" class="modal-footer">      
+	    <div  class="modal-footer">      
 	    <h3><center>___\__-_-__/___</center></h3>    
 	    </div>  
 	  </div>
