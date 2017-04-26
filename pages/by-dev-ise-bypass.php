@@ -19,36 +19,7 @@
   <li>PHP backend refactored Now Object oriented</li>
 </ul>  	
 <head>
-<div class="flex-container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="flex-dialog"> 
-	    <div class="flex-content">
-		<div class="flex-header">
-		    <h2><center>BYPASS LIST</center></h2>
-			<div id="search_2" align="left">
-	<form id="search_2" name="search_2">
-	<input type="text" name="data_text" id="uniqueID" placeholder="Search.." onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{sqli_interface.dbsearch_1('flex_div_1','functions.php','data_2', 'document.search_2.data_text.value')};"> 
-	<!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
-				</form>
-			</div>
-		</div>             
-		<div class="flex-body" id="flex_div_1">	
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>	
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
-		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>			
-		</div> 
-		<div class="flex-footer"><mark_blue>Blue</mark_blue> = <strong>New</strong> 
-		    <mark_grey>grey</mark_grey> = <strong>Active</strong> 
-		    <mark_red>Red</mark_red> = <strong>Problem</strong> 
-		</div>        
-	    </div>    
-	</div> 
-</div> 
+
 	
 	
 	
@@ -253,11 +224,40 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
     	xmlhttp.send();	
 }
 	</script>
-<script src="myscripts.js">
-</script>
+
 </head>
 
 <body>
+	<div class="flex-container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="flex-dialog"> 
+	    <div class="flex-content">
+		<div class="flex-header">
+		    <h2><center>BYPASS LIST</center></h2>
+			<div id="search_2" align="left">
+	<form id="search_2" name="search_2">
+	<input type="text" name="data_text" id="uniqueID" placeholder="Search.." onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{sqli_interface.dbsearch_1('flex_div_1','functions.php','data_2', 'document.search_2.data_text.value')};"> 
+	<!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
+				</form>
+			</div>
+		</div>             
+		<div class="flex-body" id="flex_div_1">	
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>	
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>				
+		    <div class="flex-item">{01:23:45:67:89:ab} Demo-User-Name Demo-User-Status</div>			
+		</div> 
+		<div class="flex-footer"><mark_blue>Blue</mark_blue> = <strong>New</strong> 
+		    <mark_grey>grey</mark_grey> = <strong>Active</strong> 
+		    <mark_red>Red</mark_red> = <strong>Problem</strong> 
+		</div>        
+	    </div>    
+	</div> 
+</div> 
 	<h2>ISE REST Request</h2>
 	<!-- This DIV returns the users input after proccessing it through the php file -->
 	<div id="adiv"></div>
@@ -285,7 +285,8 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	    </div>  
 	  </div>
 	</div>
-
+<script src="myscripts.js">
+</script>
 <body/>
 <footer>
 
