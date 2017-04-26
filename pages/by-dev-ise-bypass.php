@@ -173,10 +173,10 @@ function get_notes(thediv, thefile, thekeyA_1, thekeyB_1, thekeyA_2, thekeyB_2) 
 				var mac_encoded = encodeURIComponent(myObj[0].Mac_ID);
 				if (myObj[0].Action > 5) {
 					document.getElementById("adiv2").innerHTML = "MAC : "+myObj[0].Mac_ID+" "+'<br />'+ticket+'<br />'+
-						'<p>'+"BYPASS count : "+'<font color="red">'+myObj[0].Action+'</font>'+'</p>';
+						'<p>'+'<font color="red">'+myObj[0].Action+'</font>'+'</p>'+"BYPASS count : ";
 				} else {
 					document.getElementById("adiv2").innerHTML = "MAC : "+myObj[0].Mac_ID+" "+'<br />'+ticket+'<br />'+
-						'<p>'+"BYPASS count : "+myObj[0].Action+'</p>';
+						'<p>'+myObj[0].Action+'</p>'+"BYPASS count : ";
 				}
 				document.getElementById("modal-body").innerHTML = "";	// clears a DIV
 				curlreturn_1("modal-body", "curlrest.php"  , "Type" , "ouiLookup_1" , "curlAddress" , "http%3A%2F%2Fapi.macvendors.com%2F", "curlData", mac_encoded, "curlCustom" , "GET" , "curlPost" , "%22%22");
@@ -254,42 +254,13 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 <body>
 	<h2>ISE REST Request</h2>
 	<!-- This DIV returns the users input after proccessing it through the php file -->
-
-<button class="id02" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
-<div id="id02" class="modal">
-  
-  <form id="id02" class="modal-content animate" action="/action_page.php">
-    <div id="id02" class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
-
-    <div id="id02" class="container">
-      <label><b>Username</b></label>
-      <input id="id02" type="text" placeholder="Enter Username" name="uname" required>
-
-      <label><b>Password</b></label>
-      <input id="id02" type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button id="id02" type="submit">Login</button>
-      <input id="id02" type="checkbox" checked="checked"> Remember me
-    </div>
-
-    <div id="id02" class="container" style="background-color:#f1f1f1">
-      <button id="id02" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span id="id02" class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
-
 	<div id="adiv"></div>
 	<div id="testdiv"></div>
 	<!-- The Modal -->
 	<div id="myModal" class="modal">  
 	<!-- Modal content -->  
 	<div class="modal-content">    
-	  <div  class="modal-header">      
+	  <div class="modal-header">      
 	    <span class="close">&times;</span>      
 	    <h2><center>RESULT</center></h2>   
 	  </div>    
@@ -303,7 +274,7 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 		    </div>	    
 	    </div>
 	    <div id="test1" class="teest12"></div>    
-	    <div  class="modal-footer">      
+	    <div class="modal-footer">      
 	    <h3><center>___\__-_-__/___</center></h3>    
 	    </div>  
 	  </div>
@@ -321,9 +292,7 @@ var rst = document.getElementById("myRst");
 // When the user clicks the button, open the modal
 //var formvalue_1 = document.getElementById("uniqueID").value;
 // populates flex_div_1 on page load	
-default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',encodeURIComponent("1000-01-01 00:00:0"));
-// Get the modal
-var modal = document.getElementById('id01');
+default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',encodeURIComponent("1000-01-01 00:00:0"));	
 /* not needed as their are no buttons and it stops the exection of the rest of the code.
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = b('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
@@ -343,12 +312,6 @@ span.onclick = function() {
 }
 // When the user clicks anywhere outside of the modal, close it
 document.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
