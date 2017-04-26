@@ -17,7 +17,7 @@
 		    <h2><center>BYPASS LIST</center></h2>
 			<div id="search_2" align="left">
 	<form id="search_2" name="search_2">
-	<input type="text" name="data_text" id="uniqueID" placeholder="Search.." onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{new sqli_interface('flex_div_1','functions.php','data_2', 'document.search_2.data_text.value')};"> 
+	<input type="text" name="data_text" id="uniqueID" placeholder="Search.." onkeydown="if (event.keyCode == 13) {return false;}" onkeyup="if (event.keyCode == 13) {return false;}else{sqli_interface.dbsearch_1('flex_div_1','functions.php','data_2', 'document.search_2.data_text.value')};"> 
 	<!-- Trigger/Open The Modal --> <!-- Add a type attribute button stops sumbit -->
 				</form>
 			</div>
