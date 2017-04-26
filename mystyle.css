@@ -191,6 +191,22 @@ article { text-align: left; padding: 40px; }
 #search_2 input[type=text]:focus {
     width: 20%;
 }
+
+#form-group_1 input[type=text] {
+    width: 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 12px 2px; 
+    background-repeat: no-repeat;
+    padding: 2px 20px 2px 40px;
+    margin-top: -20px;
+    outline: none;
+}
+
 .flex-dialog{ 
     overflow-y: initial !important;
      margin: auto;
