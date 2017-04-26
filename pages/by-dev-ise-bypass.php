@@ -346,18 +346,7 @@ span.psw {
   </form>
 </div>
 
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-		
 	
 	    
 	<div id="adiv"></div>
@@ -402,7 +391,9 @@ var rst = document.getElementById("myRst");
 // When the user clicks the button, open the modal
 //var formvalue_1 = document.getElementById("uniqueID").value;
 // populates flex_div_1 on page load	
-default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',encodeURIComponent("1000-01-01 00:00:0"));	
+default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',encodeURIComponent("1000-01-01 00:00:0"));
+// Get the modal
+var modal = document.getElementById('id01');
 /* not needed as their are no buttons and it stops the exection of the rest of the code.
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = b('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
@@ -426,6 +417,5 @@ document.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
 </script>
 <?php endif; ?>
