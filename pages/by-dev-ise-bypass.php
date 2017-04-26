@@ -257,14 +257,14 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 	<!-- This DIV returns the users input after proccessing it through the php file -->
 	   	
 <div id="popup1" class="box">
-    <a class="button" href="#popup1">Let me Pop up</a>
+    <a id="popup1" class="button" href="#popup1">Let me Pop up</a>
 </div>
 
 <div id="popup1" class="overlay">
-    <div class="popup">
+    <div id="popup1" class="popup">
         <h2>Here i am</h2>
-        <a class="close" href="#">&times;</a>
-        <div class="content">
+        <a id="popup1" class="close" href="#">&times;</a>
+        <div id="popup1" class="content">
             Thank to pop me out of that button, but now i'm done so you can close this window.
         </div>
     </div>
