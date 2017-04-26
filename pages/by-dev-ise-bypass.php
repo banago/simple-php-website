@@ -254,6 +254,71 @@ function curlreturn_1(thediv, thefile  , thetype , thetypeval , thekey_1 , theva
 <body>
 	<h2>ISE REST Request</h2>
 	<!-- This DIV returns the users input after proccessing it through the php file -->
+	<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>sqli_newuser_1</legend>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="ACA">Select ACA</label>
+  <div class="col-md-4">
+    <select id="ACA" name="ACA" class="form-control">
+      <option value="1">FPI</option>
+      <option value="2">NWFCS</option>
+      <option value="3">FCE</option>
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="fname_1">Frist Name</label>  
+  <div class="col-md-4">
+  <input id="fname_1" name="fname_1" type="text" placeholder="name" class="form-control input-md" required="">
+  <span class="help-block">users first name</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="lname_1">Last Name</label>  
+  <div class="col-md-4">
+  <input id="lname_1" name="lname_1" type="text" placeholder="name" class="form-control input-md" required="">
+  <span class="help-block">users last name</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="incedent_1">Incedent Number</label>  
+  <div class="col-md-4">
+  <input id="incedent_1" name="incedent_1" type="text" placeholder="INC0000000" class="form-control input-md" required="">
+  <span class="help-block">Incedent Number</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="mac_1">MAC Address</label>  
+  <div class="col-md-4">
+  <input id="mac_1" name="mac_1" type="text" placeholder="0000.0000.0000" class="form-control input-md" required="">
+  <span class="help-block">MAC address</span>  
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="frombutton_1">Submit</label>
+  <div class="col-md-4">
+    <button id="frombutton_1" name="frombutton_1" class="btn btn-success">Sumbit</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
 	<div id="adiv"></div>
 	<div id="testdiv"></div>
 	<!-- The Modal -->
