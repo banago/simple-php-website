@@ -15,7 +15,7 @@ class mysqlquery {
 	protected $query_2 = "SELECT Mac_ID, Valid_From, Valid_Until, Aca_ID, User_ID , State 
 				FROM aca_mab 
 				WHERE Valid_Until != ?";	// used for testing
-	protected $query_3 = "SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State, amm.Action
+	protected $query_3 = "SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State, amm.Action, am.Ticket
 				FROM aca_mab as am
 				JOIN aca_user as au
 				USING (User_ID)
@@ -29,7 +29,7 @@ class mysqlquery {
 				FROM aca_mab_metadata as amm
 				WHERE amm.Mac_ID = ?
 				ORDER BY amm.Mac_ID ASC";
-	protected $query_5 = "SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State, amm.Action
+	protected $query_5 = "SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State, amm.Action, am.Ticket
 				FROM aca_mab as am
 				JOIN aca_user as au
 				USING (User_ID)
@@ -39,7 +39,7 @@ class mysqlquery {
 				ON am.Mac_ID = amm.Mac_ID
 				WHERE am.Valid_Until = '1000-01-01 00:00:00' AND   CONCAT( Fname,  ' ', Lname ) LIKE  ?
 				ORDER BY am.Valid_From ASC";
-	protected $query_6 = "SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State, amm.Action
+	protected $query_6 = "SELECT am.Mac_ID, au.Fname, au.Lname, a.ACA_Name, a.ACA_Bname, am.Valid_From, am.State, amm.Action, am.Ticket
 				FROM aca_mab as am
 				JOIN aca_user as au
 				USING (User_ID)
