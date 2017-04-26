@@ -150,3 +150,12 @@ JOIN aca_mab_metadata as amm
 ON am.Mac_ID = amm.Mac_ID
 WHERE am.Valid_Until = '1000-01-01 00:00:00' AND  am.Mac_ID LIKE '%150244117114491%'
 ORDER BY am.Valid_From ASC;
+
+
+# GETS A SINGLE NOTE BASES ON MAC ADDRESS
+SELECT amm.Mac_ID, amm.Note, amm.Action, am.Ticket
+FROM aca_mab_metadata as amm
+JOIN aca_mab as am
+USING (Mac_ID)
+WHERE am.Valid_Until = '1000-01-01 00:00:00' AND amm.Mac_ID = 18764998447377
+ORDER BY amm.Mac_ID ASC;
