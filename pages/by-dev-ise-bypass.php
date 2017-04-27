@@ -410,7 +410,7 @@ input.value = 'Incenent Number...';
 var input = form.appendChild(document.createElement('select'));
 var opt = document.createElement('option');
 opt.value = 1;
-opt.innerHTML 'Kiwi';
+opt.innerHTML = 'Kiwi';
 	
 input = form.appendChild(document.createElement('input'));
 input.type = 'submit';
