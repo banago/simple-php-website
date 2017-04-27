@@ -408,7 +408,7 @@ input.name = 'incedent_1';
 input.value = 'Incenent Number...';
 	
 var input = form.appendChild(document.createElement('select'));
-var opt = document.createElement('option');
+var opt = form.document.createElement('option');
 opt.value = 1;
 opt.innerHTML = 'Kiwi';
 	
