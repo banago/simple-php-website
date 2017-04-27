@@ -289,28 +289,7 @@ button:hover {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
-}
 
-/* Center the image and position the close button */
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-}
-
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
-
-.container {
-    padding: 16px;
-}
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
 
 
 </style>
