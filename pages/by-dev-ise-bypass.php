@@ -423,10 +423,6 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-span.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+
 </script>
 <?php endif; ?>
