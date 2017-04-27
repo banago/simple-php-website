@@ -389,8 +389,8 @@ form.appendChild(document.createTextNode('Edit: '));
 
 var input = form.appendChild(document.createElement('input'));
 input.type = 'text';
-input.name = 'tex';
-input.value = 'Some text here to edit';
+input.name = 'text_1';
+input.value = 'Some text here to edit 1';
 
 
 input = form.appendChild(document.createElement('input'));
