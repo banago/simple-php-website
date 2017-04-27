@@ -392,6 +392,10 @@ input.type = 'text';
 input.name = 'text_1';
 input.value = 'Some text here to edit 1';
 
+var input = form.appendChild(document.createElement('input'));
+input.type = 'text';
+input.name = 'text_2';
+input.value = 'Some text here to edit 1ddd';	
 
 input = form.appendChild(document.createElement('input'));
 input.type = 'submit';
