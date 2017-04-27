@@ -299,27 +299,53 @@ button:hover {
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">User MAB bypass</button>
 
-<div id="id01" class="modal">
+	<!-- The Modal -->
+	<div  id="id01" class="modal">  
+	<!-- Modal content -->  
+	<div class="modal-content">    
+	  <div class="modal-header">      
+	    <span class="close">&times;</span>      
+	    <h2><center>RESULT</center></h2>   
+	  </div>    
+	  <div class="modal-body" align="center">      
+		  <p>Details</p> 
+		  <div id="modal-body"></div>        
+	    <div id="spinner" align="center" class="spinner"></div>
+	    <div style="text-align: center;">
+		    <div id="adiv2" class="apicdata" style="display: inline-block; text-align: left">
+			    Content<br /> style="font-size:20px">
+				
+				  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+	  
+    <label for="mac_1">MAC Address</label>
+    <input type="text" id="mac_1" name="mac_1" placeholder="The MAC Address..">
+	  
+    <label for="incedent_1">Incedent Number</label>
+    <input type="text" id="incedent_1" name="incedent_1" placeholder="The Incenent Number..">
+
+    <label for="aca">ACA</label>
+    <select id="aca" name="ACA">
+      <option value="1">FPI</option>
+      <option value="2">NWFCS</option>
+      <option value="3">FCE</option>
+    </select>
   
-  <form class="modal-content">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
-
-    <div class="container">
-      <label><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <input type="checkbox" checked="checked"> Remember me
-    </div>
-
- 
+    <input type="submit" value="Submit">
   </form>
-</div>
+				
+		    </div>	    
+	    </div>
+	    <div id="test1" class="teest12"></div>    
+	    <div class="modal-footer">      
+	    <h3><center>___\__-_-__/___</center></h3>    
+	    </div>  
+	  </div>
+	</div>
 
 
 	
