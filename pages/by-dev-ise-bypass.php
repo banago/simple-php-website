@@ -407,10 +407,11 @@ input.type = 'text';
 input.name = 'incedent_1';
 input.value = 'Incenent Number...';
 	
-var input = form.appendChild(document.createElement('select'));
-var opt = form.appendChild(document.createElement('option'));
+
+var opt = document.createElement('option');
 opt.value = 1;
 opt.innerHTML = 'Kiwi';
+var input = form.appendChild(document.createElement('opt'));
 	
 input = form.appendChild(document.createElement('input'));
 input.type = 'submit';
