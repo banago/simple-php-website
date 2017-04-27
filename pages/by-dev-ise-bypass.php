@@ -376,7 +376,7 @@ window.onclick = function(event) {
 }
 form_1.onclick = function() {
     document.getElementById("adiv2").innerHTML = 
-"
+'
     <form action="/action_page.php">
     <label for="fname">First Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your name..">
@@ -399,8 +399,7 @@ form_1.onclick = function() {
   
     <input type="submit" value="Submit">
   </form>
-	"
-	;
+	';
     modal.style.display = "block";
 }
 </script>
