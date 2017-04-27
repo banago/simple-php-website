@@ -297,7 +297,7 @@ button:hover {
 
 <h2>MAB BYPASS FORM</h2>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">User MAB bypass</button>
+<button id="formid01" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">User MAB bypass</button>
 	
 	    
 	<div id="adiv"></div>
@@ -344,7 +344,7 @@ var rst = document.getElementById("myRst");
 // populates flex_div_1 on page load	
 default_list('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',encodeURIComponent("1000-01-01 00:00:0"));
 // Get the modal
-var modal_2 = document.getElementById('id01');
+var form_1 = document.getElementById('formid01');
 /* not needed as their are no buttons and it stops the exection of the rest of the code.
 btn.onclick = function() {
     //document.getElementById("adiv2").innerHTML = b('flex_div_1','mysqli.php','sqlQuery','query_3','sqlWhere',cats);
@@ -374,6 +374,34 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+form_1.onclick = function() {
+    document.getElementById("adiv2").innerHTML = 
+"
+    <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+	  
+    <label for="mac_1">MAC Address</label>
+    <input type="text" id="mac_1" name="mac_1" placeholder="The MAC Address..">
+	  
+    <label for="incedent_1">Incedent Number</label>
+    <input type="text" id="incedent_1" name="incedent_1" placeholder="The Incenent Number..">
+
+    <label for="aca">ACA</label>
+    <select id="aca" name="ACA">
+      <option value="1">FPI</option>
+      <option value="2">NWFCS</option>
+      <option value="3">FCE</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form>
+	"
+	;
+    modal.style.display = "block";
+}
 </script>
 <?php endif; ?>
