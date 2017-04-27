@@ -409,9 +409,14 @@ input.value = 'Incenent Number...';
 	
 var input = form.appendChild(document.createElement('select'));
 var opt = document.createElement('option');
-opt.value = 1;
-opt.innerHTML = 'Kiwi';
+var aca_list_1 = ["FPI","NWFCS","FCE"];
+var aLen = aca_list_1.length;
+for (i = 0; i< aLen; i++){
+opt.value = i;
+opt.innerHTML = aca_list_1[i];
 input.appendChild(opt);
+}
+
 	
 input = form.appendChild(document.createElement('input'));
 input.type = 'submit';
