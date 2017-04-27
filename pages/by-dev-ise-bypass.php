@@ -375,31 +375,7 @@ window.onclick = function(event) {
     }
 }
 form_1.onclick = function() {
-    document.getElementById("adiv2").innerHTML = 
-'
-    <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-	  
-    <label for="mac_1">MAC Address</label>
-    <input type="text" id="mac_1" name="mac_1" placeholder="The MAC Address..">
-	  
-    <label for="incedent_1">Incedent Number</label>
-    <input type="text" id="incedent_1" name="incedent_1" placeholder="The Incenent Number..">
-
-    <label for="aca">ACA</label>
-    <select id="aca" name="ACA">
-      <option value="1">FPI</option>
-      <option value="2">NWFCS</option>
-      <option value="3">FCE</option>
-    </select>
-  
-    <input type="submit" value="Submit">
-  </form>
-	';
+    document.getElementById("adiv2").innerHTML = 'asdf';
     modal.style.display = "block";
 }
 </script>
