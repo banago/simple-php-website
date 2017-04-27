@@ -375,7 +375,27 @@ window.onclick = function(event) {
     }
 }
 form_1.onclick = function() {
-    document.getElementById("adiv2").innerHTML = 'asdf';
+    var form_1 = document.getElementById('adiv2');
+
+form_1.innerHTML = '';
+
+var form = form_1.appendChild(document.createElement('form'));
+
+form.name = 'input';
+form.action = 'html_form_action.asp';
+form.method = 'get';
+
+form.appendChild(document.createTextNode('Edit: '));
+
+var input = form.appendChild(document.createElement('input'));
+input.type = 'text';
+input.name = 'tex';
+input.value = 'Some text here to edit';
+
+
+input = form.appendChild(document.createElement('input'));
+input.type = 'submit';
+input.value = 'Submit';
     modal.style.display = "block";
 }
 </script>
