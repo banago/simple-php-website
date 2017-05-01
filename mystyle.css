@@ -1,0 +1,277 @@
+.wrap { 
+    max-width: 1200px; 
+    margin: 50px auto; 
+    padding: 30px; 
+    text-align: center; 
+    box-shadow: 0 0 5px rgba(0,0,0,.5); 
+}
+article { text-align: left; padding: 40px; }
+.container {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+}
+.container a {
+     float: left;
+     font-size: 16px;
+     color: white;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+}
+.dropdown {
+      float: left;
+      overflow: hidden;
+}
+.dropdown .dropbtn {
+      cursor: pointer;
+      font-size: 16px;    
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+}
+.container a:hover, .dropdown:hover .dropbtn {
+      background-color: red;
+}
+.dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+}
+.dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+}
+.dropdown-content a:hover {
+      background-color: #ddd;
+}
+.show {
+      display: block;
+}
+.spinner {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;   /* Enable scroll if needed */
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: grey;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header {
+    padding: 2px 16px;
+    background-color: #333;
+    color: white;
+    font-family: Arial;
+}
+.modal-body {padding: 2px 16px;}
+.modal-footer {
+    padding: -1px 16px;
+    background-color: white;
+    color: black;
+}
+.fieldset {
+    width: 50%;
+    border: 2px solid #ff0000;
+}
+.legend {
+    font-weight: bold;
+    font-size: 125%;
+}
+.label {
+    width: 125px;
+    float: left;
+    text-align: left;
+    font-weight: bold;
+}
+.input {
+    border: 1px solid #000;
+    padding: 3px;
+}
+.button {
+    margin-top: 12px;
+}
+.flex-container {
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    /*background-color: lightgrey;*/
+    box-shadow: 2px 2px 5px grey;
+    outline: none;
+
+}
+#search_2 input[type=text] {
+    width: 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 12px 2px; 
+    background-repeat: no-repeat;
+    padding: 2px 20px 2px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin-top: -20px;
+    outline: none;
+}
+
+#search_2 input[type=text]:focus {
+    width: 20%;
+}
+.flex-dialog{ 
+    overflow-y: initial !important;
+     margin: auto;
+     width: 100%;
+}
+/* Flex Content */
+.flex-content {
+    background-color: #fefefe;
+    margin: auto;
+    width: 100%;  
+    padding: 0;
+    border: 1px solid #888;
+    box-shadow: 5px 5px 10px #888888;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.8s;
+    animation-name: animatetop;
+    animation-duration: 0.8s
+}
+.flex-header {
+    width: 97%;
+    margin: auto;
+    align-content: center;
+    text-align:center;
+    color: black;
+}
+.flex-body{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    height: 150px;
+    margin: auto;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+}
+.flex-item {
+    background-color: cornflowerblue;
+    height: 20px;
+    width: 95%;
+    margin: 5px auto;
+    text-align:center;
+    word-spacing: 20px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    color: white;
+}
+.flex-item:hover {
+    background-color: cornflowerblue;
+    height: 20px;
+    width: 95%;
+    margin: 6px auto;
+    text-align:center;
+    word-spacing: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24),0 6px 25px 0 rgba(0,0,0,0.19);
+    color: white;
+}
+.flex-footer {
+    padding: -1px 16px;
+    margin: auto;
+    text-align:center;
+    color: black;
+}
+mark_blue {
+    background: -webkit-linear-gradient(-90deg, cornflowerblue, LightGrey); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-90deg, cornflowerblue, LightGrey); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-90deg, cornflowerblue, LightGrey); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-90deg, cornflowerblue, LightGrey); /* Standard syntax */
+    color: white;
+}
+mark_grey { 
+    background: -webkit-linear-gradient(-90deg, white, LightGrey); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-90deg, white, LightGrey); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-90deg, white, LightGrey); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-90deg, white, LightGrey); /* Standard syntax */
+    color: black;
+}
+mark_red {
+    background: -webkit-linear-gradient(-90deg, FireBrick, LightGrey); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-90deg, FireBrick, LightGrey); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-90deg, FireBrick, LightGrey); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-90deg, FireBrick, LightGrey); /* Standard syntax */
+    color: white;
+}
