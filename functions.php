@@ -10,13 +10,12 @@ $config = [
         '' => 'Home',
         'about-us' => 'About Us',
         'products' => 'Products',
-        'contact' => 'Contact'
+        'contact' => 'Contact',
     ],
     'template_path' => 'template',
     'content_path' => 'content',
     'pretty_uri' => true,
     'version' => 'v2.0',
-    'debug' => true
 ];
 
 /**
@@ -42,17 +41,16 @@ function siteVersion()
 /**
  * Website navigation. Uses $config global.
  */
-function navMenu($sep = ' | ') 
+function navMenu($sep = ' | ')
 {
     global $config;
 
     $nav_manu = '';
-    
-    foreach($config['nav_menu'] as $uri => $name) 
-    {
-        $nav_manu .= '<a href="/'. ($config['pretty_uri'] ? '' : '?page=') . $uri .'">'. $name .'</a>' . $sep;
+
+    foreach ($config['nav_menu'] as $uri => $name) {
+        $nav_manu .= '<a href="/'.($config['pretty_uri'] || $uri == '' ? '' : '?page=').$uri.'">'.$name.'</a>'.$sep;
     }
-    
+
     echo trim($nav_manu, ' |');
 }
 
@@ -76,14 +74,15 @@ function pageTitle()
 function pageContent()
 {
     global $config;
-    
+
     $page = isset($_GET['page']) ? $_GET['page'] : 'home';
-    $path = getcwd().'/'. $config['content_path'] .'/'.$page.'.php';
+
+    $path = getcwd().'/'.$config['content_path'].'/'.$page.'.php';
 
     if (file_exists($path)) {
         include $path;
     } else {
-        include $config['content_path'] . '/404.php';
+        include $config['content_path'].'/404.php';
     }
 }
 
@@ -95,5 +94,5 @@ function run()
 {
     global $config;
 
-    include $config['template_path'] . '/template.php';   
+    include $config['template_path'].'/template.php';
 }

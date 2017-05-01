@@ -5,13 +5,15 @@ I put together this project while introducing to PHP a good friend of mine. I de
 ## Variables
 
 ```php
+
 $variable = 'Value';
+
 ```
 
 ## Functions
 
 ```php
-function funcName()
+function showValue()
 {
     global $variable;
     
