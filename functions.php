@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Used to store different static data.
  *
@@ -7,6 +6,17 @@
  */
 $config = [
     'name' => 'Simple PHP Website',
+    'nav_menu' => [
+        '' => 'Home',
+        'about-us' => 'About Us',
+        'products' => 'Products',
+        'contact' => 'Contact'
+    ],
+    'template_path' => 'template',
+    'content_path' => 'content',
+    'pretty_uri' => true,
+    'version' => 'v2.0',
+    'debug' => true
 ];
 
 /**
@@ -15,7 +25,35 @@ $config = [
 function siteName()
 {
     global $config;
+
     echo $config['name'];
+}
+
+/**
+ * Displays site version. Uses $config global.
+ */
+function siteVersion()
+{
+    global $config;
+
+    echo $config['version'];
+}
+
+/**
+ * Website navigation. Uses $config global.
+ */
+function navMenu($sep = ' | ') 
+{
+    global $config;
+
+    $nav_manu = '';
+    
+    foreach($config['nav_menu'] as $uri => $name) 
+    {
+        $nav_manu .= '<a href="/'. ($config['pretty_uri'] ? '' : '?page=') . $uri .'">'. $name .'</a>' . $sep;
+    }
+    
+    echo trim($nav_manu, ' |');
 }
 
 /**
@@ -25,7 +63,7 @@ function siteName()
  */
 function pageTitle()
 {
-    $page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'home';
+    $page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'Home';
 
     echo ucwords(str_replace('-', ' ', $page));
 }
@@ -37,13 +75,25 @@ function pageTitle()
  */
 function pageContent()
 {
+    global $config;
+    
     $page = isset($_GET['page']) ? $_GET['page'] : 'home';
-
-    $path = getcwd().'/pages/'.$page.'.php';
+    $path = getcwd().'/'. $config['content_path'] .'/'.$page.'.php';
 
     if (file_exists($path)) {
         include $path;
     } else {
-        include 'pages/404.php';
+        include $config['content_path'] . '/404.php';
     }
+}
+
+/**
+ * Starts everything and displays the template.
+ * Uses $config global.
+ */
+function run()
+{
+    global $config;
+
+    include $config['template_path'] . '/template.php';   
 }
