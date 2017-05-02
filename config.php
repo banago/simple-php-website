@@ -1,30 +1,29 @@
 <?php
 
 /**
- * Used to store different static data.
+ * Used to store website configuration information.
  *
- * @var array
+ * @var string
  */
-function config($key = '') 
+function config($key = '')
 {
-
     $config = [
-    
+
         'name' => 'Simple PHP Website',
-    
+
         'nav_menu' => [
             '' => 'Home',
             'about-us' => 'About Us',
             'products' => 'Products',
             'contact' => 'Contact',
         ],
-    
+
         'template_path' => 'template',
-    
+
         'content_path' => 'content',
-    
+
         'pretty_uri' => true,
-    
+
         'version' => 'v2.0',
     ];
 
