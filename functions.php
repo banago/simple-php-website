@@ -37,7 +37,11 @@ function navMenu($sep = ' | ')
  */
 function pageTitle()
 {
-    $page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'Home';
+		if ($_SERVER['REQUEST_URI'] != '/' && config('pretty_uri')) {
+			$page = htmlspecialchars(str_replace("/", "", $_SERVER['REQUEST_URI']));
+		} else {
+			$page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'Home';
+		}
 
     echo ucwords(str_replace('-', ' ', $page));
 }
@@ -49,7 +53,11 @@ function pageTitle()
  */
 function pageContent()
 {
-    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+		if ($_SERVER['REQUEST_URI'] != '/' && config('pretty_uri')) {
+			$page = str_replace("/", "", $_SERVER['REQUEST_URI']);
+		} else {
+			$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+		}
 
     $path = getcwd().'/'.config('content_path').'/'.$page.'.php';
 
