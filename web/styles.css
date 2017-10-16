@@ -1,2 +1,31 @@
-.wrap { max-width: 720px; margin: 50px auto; padding: 30px 40px; text-align: center; box-shadow: 0 4px 25px -4px #9da5ab; }
-article { text-align: left; padding: 40px; line-height: 150%; }
+* {margin: 0; padding: 0}
+body {color: rgba(0, 0, 0, 0.87); font-weight: 300; text-align: center;}
+.wrap {
+    max-width: 720px;
+    margin: 50px auto;
+    padding: 30px 40px;
+    box-shadow: 0 4px 25px -4px #9da5ab;
+}
+
+#page-content, #copy-right {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: left;
+    padding-bottom: 3em;
+}
+
+h3#title, #site-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    line-height: 44px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+header h3#site-title {
+    text-align: center;
+}
+
+footer #copy-right {text-align: center; font-size: 12px;}
+
