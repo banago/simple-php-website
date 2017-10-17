@@ -1,8 +1,9 @@
+<?php $functions = new Functions(); ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <title><?php pageTitle(); ?> | <?php siteName(); ?></title>
+    <title><?php $functions->pageTitle(); ?> | <?php $functions->siteName(); ?></title>
     <style type="text/css">
     </style>
     <link rel='stylesheet' type='text/css' href="../web/styles.css" />
@@ -10,16 +11,16 @@
 <body>
 <div class="wrap">
     <header>
-        <h2><?php siteName(); ?></h2>
+        <h2><?php $functions->siteName(); ?></h2>
         <nav class="menu">
-            <?php navMenu(); ?>
+            <?php $functions->navMenu(); ?>
         </nav>
     </header>
     <article>
-        <h3><?php pageTitle(); ?></h3>
-        <?php pageContent(); ?>
+        <h3><?php $functions->pageTitle(); ?></h3>
+        <?php $functions->pageContent(); ?>
     </article>
-    <footer><small>&copy;<?php echo date('Y'); ?> <?php siteName(); ?>.<br><?php siteVersion(); ?></small></footer>
+    <footer><small>&copy;<?php echo date('Y'); ?> <?php $functions->siteName(); ?>.<br><?php $functions->siteVersion(); ?></small></footer>
 </div>
 </body>
 </html>

@@ -2,5 +2,5 @@
 
 require 'config.php';
 require 'functions.php';
-
-run();
+$functions = new Functions();
+$functions->run();
