@@ -1,2 +1,23 @@
 .wrap { max-width: 720px; margin: 50px auto; padding: 30px 40px; text-align: center; box-shadow: 0 4px 25px -4px #9da5ab; }
 article { text-align: left; padding: 40px; line-height: 150%; }
+* {margin: 0; padding: 0; }
+
+.clear::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.wrap ul#navigation  {
+    padding-left: 13em;
+    overflow: auto;
+}
+
+.wrap ul#navigation li {
+    padding-top: 20px;
+    list-style: none;
+    width: 90px;
+    text-align: left;
+    float: left;
+
+}

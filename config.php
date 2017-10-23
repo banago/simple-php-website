@@ -4,10 +4,11 @@ class Configuration {
 
     /**
      * Used to store website configuration information.
+     * @param string $key
      *
-     * @var string
+     * @return mixed
      */
-    function config($key = '')
+    function getConfiguration(string $key)
     {
         $config = [
             'name' => 'Simple PHP Website',

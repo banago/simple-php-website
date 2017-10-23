@@ -1,0 +1,30 @@
+<?php $app = new Application(); ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title><?php echo $app->getPageTitle(); ?> | <?php echo $app->getSiteName(); ?></title>
+    <style type="text/css">
+    </style>
+    <link rel='stylesheet' type='text/css' href="../web/styles.css" />
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <h2><?php echo $app->getSiteName(); ?></h2>
+        <nav class="menu">
+            <?php $navigationItems = $app->getNavMenu(); ?>
+            <ul id="navigation">
+                <?php foreach ($navigationItems as $index => $item) { ?><li><a href="<?php echo $index ?>"><?php echo $item ?></a></li> <?php } ?>
+            </ul>
+            <div class="clear"></div>
+        </nav>
+    </header>
+    <article>
+        <h3><?php echo $app->getPageTitle(); ?></h3>
+        <?php echo $app->getPageContent(); ?>
+    </article>
+    <footer><small>&copy;<?php echo date('Y'); ?> <?php echo $app->getSiteName(); ?>.<br><?php echo $app->getSiteVersion(); ?></small></footer>
+</div>
+</body>
+</html>

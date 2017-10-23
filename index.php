@@ -1,6 +1,4 @@
 <?php
-
 require 'config.php';
-require 'functions.php';
-$functions = new Functions();
-$functions->run();
+require 'Application.php';
+require 'template/template.phtml';
