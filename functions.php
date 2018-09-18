@@ -24,7 +24,7 @@ function navMenu($sep = ' | ')
     $nav_menu = '';
 
     foreach (config('nav_menu') as $uri => $name) {
-        $nav_menu .= '<a href="/'.(config('pretty_uri') || $uri == '' ? '' : '?page=').$uri.'">'.$name.'</a>'.$sep;
+        $nav_menu .= '<a href="'.(config('pretty_uri') || $uri == '' ? '' : '?page=').$uri.'">'.$name.'</a>'.$sep;
     }
 
     echo trim($nav_menu, $sep);
