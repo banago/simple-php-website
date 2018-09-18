@@ -19,12 +19,18 @@ function siteVersion()
 /**
  * Website navigation.
  */
+
 function navMenu($sep = ' | ')
 {
     $nav_menu = '';
-
+    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+	//echo $page . "</br>";
+	$page = ucwords(str_replace('-', ' ', $page));
+ 
     foreach (config('nav_menu') as $uri => $name) {
-        $nav_menu .= '<a href="'.(config('pretty_uri') || $uri == '' ? '' : '?page=').$uri.'">'.$name.'</a>'.$sep;
+		$class = '';
+	    if ($page == $name){$class = 'active'; } else{$class = 'menu';}
+        $nav_menu .= '<a class="'.$class.'" href="'.(config('pretty_uri') || $uri == '' ? '' : '?page=').$uri.'">'.$name.'</a>'.$sep;
     }
 
     echo trim($nav_menu, $sep);
