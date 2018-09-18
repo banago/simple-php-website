@@ -12,14 +12,13 @@
 <div class="wrap">
 
     <header>
-        <h2><?php siteName(); ?></h2>
+        <h1 class="site-name"><?php siteName(); ?></h1>
         <nav class="menu">
             <?php navMenu(); ?>
         </nav>
     </header>
 
-    <article>
-        <h3><?php pageTitle(); ?></h3>
+    <article>        
         <?php pageContent(); ?>
     </article>
 
