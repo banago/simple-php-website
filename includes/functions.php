@@ -3,15 +3,23 @@
 /**
  * Displays site name.
  */
-function siteName()
+function site_name()
 {
     echo config('name');
 }
 
 /**
+ * Displays site url provided in conig.
+ */
+function site_url()
+{
+    echo config('site_url');
+}
+
+/**
  * Displays site version.
  */
-function siteVersion()
+function site_version()
 {
     echo config('version');
 }
@@ -19,12 +27,13 @@ function siteVersion()
 /**
  * Website navigation.
  */
-function navMenu($sep = ' | ')
+function nav_menu($sep = ' | ')
 {
     $nav_menu = '';
+    $nav_items = config('nav_menu');
 
-    foreach (config('nav_menu') as $uri => $name) {
-        $nav_menu .= '<a href="/'.(config('pretty_uri') || $uri == '' ? '' : '?page=').$uri.'">'.$name.'</a>'.$sep;
+    foreach ($nav_items as $uri => $name) {
+        $nav_menu .= '<a href="'.config('site_url').'/'.(config('pretty_uri') || $uri == '' ? '' : '?page=').$uri.'">'.$name.'</a>'.$sep;
     }
 
     echo trim($nav_menu, $sep);
@@ -35,7 +44,7 @@ function navMenu($sep = ' | ')
  * URL, it replaces the hyphens with spaces and 
  * it capitalizes the words.
  */
-function pageTitle()
+function page_title()
 {
     $page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'Home';
 
@@ -47,23 +56,23 @@ function pageTitle()
  * the static pages inside the pages/ directory.
  * When not found, display the 404 error page.
  */
-function pageContent()
+function page_content()
 {
     $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-    $path = getcwd().'/'.config('content_path').'/'.$page.'.php';
+    $path = getcwd().'/'.config('content_path').'/'.$page.'.phtml';
 
-    if (file_exists(filter_var($path, FILTER_SANITIZE_URL))) {
-        include $path;
-    } else {
-        include config('content_path').'/404.php';
+    if (! file_exists($path)) {
+        $path = getcwd().'/'.config('content_path').'/404.phtml';
     }
+
+    echo file_get_contents($path);
 }
 
 /**
  * Starts everything and displays the template.
  */
-function run()
-{
-    include config('template_path').'/template.php';
+function init()
+{    
+    require config('template_path').'/template.php';
 }

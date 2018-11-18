@@ -2,28 +2,27 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title><?php pageTitle(); ?> | <?php siteName(); ?></title>
-    <style type="text/css">
-        .wrap { max-width: 720px; margin: 50px auto; padding: 30px 40px; text-align: center; box-shadow: 0 4px 25px -4px #9da5ab; }
-        article { text-align: left; padding: 40px; line-height: 150%; }
-    </style>
+    <title><?php page_title(); ?> | <?php site_name(); ?></title>
+    <link rel='stylesheet' type='text/css' href="<?php site_url(); ?>/template/style.css" /> 
 </head>
 <body>
 <div class="wrap">
 
     <header>
-        <h2><?php siteName(); ?></h2>
+        <h1><?php site_name(); ?></h1>
         <nav class="menu">
-            <?php navMenu(); ?>
+            <?php nav_menu(); ?>
         </nav>
     </header>
 
     <article>
-        <h3><?php pageTitle(); ?></h3>
-        <?php pageContent(); ?>
+        <h2><?php page_title(); ?></h2>
+        <?php page_content(); ?>
     </article>
 
-    <footer><small>&copy;<?php echo date('Y'); ?> <?php siteName(); ?>.<br><?php siteVersion(); ?></small></footer>
+    <footer>
+        <small>&copy;<?php echo date('Y'); ?> <?php site_name(); ?>.<br><?php site_version(); ?></small>
+    </footer>
 
 </div>
 </body>
