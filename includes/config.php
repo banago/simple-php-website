@@ -3,7 +3,7 @@
 /**
  * Used to store website configuration information.
  *
- * @var string
+ * @var string or null
  */
 function config($key = '')
 {

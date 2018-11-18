@@ -1,6 +1,6 @@
 <?php
 
-// Comments these two lines to hide errors
+// Comment these lines to hide errors
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 

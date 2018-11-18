@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title><?php page_title(); ?> | <?php site_name(); ?></title>
-    <link rel='stylesheet' type='text/css' href="<?php site_url(); ?>/template/style.css" /> 
+    <link href="<?php site_url(); ?>/template/style.css" rel="stylesheet" type="text/css" /> 
 </head>
 <body>
 <div class="wrap">
