@@ -1,3 +1,20 @@
 
-.wrap { max-width: 720px; margin: 50px auto; padding: 30px 40px; text-align: center; box-shadow: 0 4px 25px -4px #9da5ab; }
-article { text-align: left; padding: 40px; line-height: 150%; }
+.wrap { 
+    max-width: 720px; 
+    margin: 50px auto; 
+    padding: 30px 40px; 
+    text-align: center; 
+    box-shadow: 0 4px 25px -4px #9da5ab; 
+}
+article { 
+    padding: 40px; 
+    line-height: 150%; 
+    text-align: left; 
+}
+
+nav .item {
+    text-decoration: none;
+}
+nav .active {
+    border-bottom: 1px solid;
+}

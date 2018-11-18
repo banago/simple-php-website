@@ -31,17 +31,19 @@ function nav_menu($sep = ' | ')
 {
     $nav_menu = '';
     $nav_items = config('nav_menu');
-
     foreach ($nav_items as $uri => $name) {
-        $nav_menu .= '<a href="'.config('site_url').'/'.(config('pretty_uri') || $uri == '' ? '' : '?page=').$uri.'">'.$name.'</a>'.$sep;
+        $class = str_replace('page=', '', $_SERVER['QUERY_STRING']) == $uri ? ' active' : '';
+        $url = config('site_url') . '/' . (config('pretty_uri') || $uri == '' ? '' : '?page=') . $uri;
+        
+        $nav_menu .= '<a href="' . $url . '" title="' . $name . '" class="item ' . $class . '">' . $name . '</a>' . $sep;
     }
 
     echo trim($nav_menu, $sep);
 }
 
 /**
- * Displays page title. It takes the data from 
- * URL, it replaces the hyphens with spaces and 
+ * Displays page title. It takes the data from
+ * URL, it replaces the hyphens with spaces and
  * it capitalizes the words.
  */
 function page_title()
@@ -52,7 +54,7 @@ function page_title()
 }
 
 /**
- * Displays page content. It takes the data from 
+ * Displays page content. It takes the data from
  * the static pages inside the pages/ directory.
  * When not found, display the 404 error page.
  */
@@ -60,10 +62,10 @@ function page_content()
 {
     $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-    $path = getcwd().'/'.config('content_path').'/'.$page.'.phtml';
+    $path = getcwd() . '/' . config('content_path') . '/' . $page . '.phtml';
 
     if (! file_exists($path)) {
-        $path = getcwd().'/'.config('content_path').'/404.phtml';
+        $path = getcwd() . '/' . config('content_path') . '/404.phtml';
     }
 
     echo file_get_contents($path);
@@ -73,6 +75,6 @@ function page_content()
  * Starts everything and displays the template.
  */
 function init()
-{    
-    require config('template_path').'/template.php';
+{
+    require config('template_path') . '/template.php';
 }
