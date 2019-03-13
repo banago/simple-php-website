@@ -1,3 +1,3 @@
 <?PHP
-phpdinfo();
+phpinfo();
 ?>
