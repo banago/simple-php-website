@@ -64,16 +64,20 @@ function page_content()
 
     $path = getcwd() . '/' . config('content_path') . '/' . $page . '.phtml';
 
+    $static=True;
     if (! file_exists($path)) {
         if ($path = 'phpinfo') {
             require (getcwd() . '/' . config('content_path') . '/' . $page . '.php');
+            $static=False;
         }
         else {
             $path = getcwd() . '/' . config('content_path') . '/404.phtml';
         }
     }
-
-    echo file_get_contents($path);
+    
+    if ($static) {
+        echo file_get_contents($path);
+    }
 }
 
 /**
