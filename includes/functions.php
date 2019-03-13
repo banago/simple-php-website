@@ -65,7 +65,12 @@ function page_content()
     $path = getcwd() . '/' . config('content_path') . '/' . $page . '.phtml';
 
     if (! file_exists($path)) {
-        $path = getcwd() . '/' . config('content_path') . '/404.phtml';
+        if ($path = 'phpinfo') {
+            require (getcwd() . '/' . config('content_path') . '/' . $page . '.php');
+        }
+        else {
+            $path = getcwd() . '/' . config('content_path') . '/404.phtml';
+        }
     }
 
     echo file_get_contents($path);
