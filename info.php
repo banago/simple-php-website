@@ -1,3 +1,3 @@
 <?PHP
-echo "a message";
+phpinfo();
 ?>
