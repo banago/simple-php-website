@@ -16,6 +16,7 @@ function config($key = '')
             'about-us' => 'About Us',
             'products' => 'Products',
             'contact' => 'Contact',
+            'phpinfo' => 'Phpinfo',
         ],
         'template_path' => 'template',
         'content_path' => 'content',
