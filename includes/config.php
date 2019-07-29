@@ -20,6 +20,10 @@ function config($key = '')
         'template_path' => 'template',
         'content_path' => 'content',
         'version' => 'v3.0',
+		'db_host' => 'localhost',
+		'db_user' => 'root',
+		'db_pass' => '',
+		'db_name' => 'my_db',
     ];
 
     return isset($config[$key]) ? $config[$key] : null;
