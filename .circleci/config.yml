@@ -10,24 +10,24 @@ jobs:
     steps:
 
       # install git
-      - run: sudo yum update -y && yum install git -y
+      - run: yum update -y && yum install git -y
 
       # checkout repository
       - checkout
 
       # install git submodules for managing third-party dependencies
-      - run: sudo git submodule sync && sudo git submodule update --init
+      - run: git submodule sync && sudo git submodule update --init
 
       - run:
           name: install AWS CLI 
           command: |
-            sudo yum makecache
-            sudo yum -y install epel-release
-            sudo yum makecache
-            sudo yum -y install python-pip
-            sudo yum clean all
-            sudo pip install --upgrade pip
-            Sudo pip install awscli
+            yum makecache
+            yum -y install epel-release
+            yum makecache
+            yum -y install python-pip
+            yum clean all
+            pip install --upgrade pip
+            pip install awscli
       # Deploy
       - deploy:
           name: deploy to AWS
