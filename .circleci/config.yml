@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: centos/php-56-centos7
+      - image: centos/httpd-24-centos7
     working_directory: /var/www/
     environment:
       BUILD_DIR: /var/www/
