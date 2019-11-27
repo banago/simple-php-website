@@ -21,7 +21,7 @@ jobs:
       - run:
           name: install AWS CLI 
           command: |
-            yum -y install python*
+            yum -y install python* --allowerasing
             yum clean all
             pip install --upgrade pip
             pip install awscli
