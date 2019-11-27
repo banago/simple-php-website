@@ -33,7 +33,7 @@ jobs:
           name: deploy to AWS
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              aws s3 sync $BUILD_DIR s3://congruent-test --delete
+              aws s3 sync $BUILD_DIR s3://congruent-test 
             else
-              echo "Not master branch, dry run only"
+              echo "No master branch"
             fi
