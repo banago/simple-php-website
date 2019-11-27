@@ -24,7 +24,6 @@ jobs:
             yum makecache
             yum -y install epel-release
             yum makecache
-            yum install python-devel -y
             yum -y install python-pip
             yum clean all
             pip install --upgrade pip
