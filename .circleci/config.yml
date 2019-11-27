@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: centos7
+      - image: centos
     working_directory: /var/www/
     environment:
       BUILD_DIR: /var/www/
