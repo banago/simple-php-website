@@ -21,8 +21,9 @@ jobs:
       - run:
           name: install AWS CLI 
           command: |
+            sudo yum makecache
             yum -y install epel-release
-            yum --enablerepo=extras install epel-release -y
+            sudo yum makecache
             yum install python-devel -y
             yum -y install python-pip
             yum clean all
