@@ -21,12 +21,12 @@ jobs:
       - run:
           name: install AWS CLI 
           command: |
+            yum -y install epel-release
             yum -y install python-pip
             yum clean all
             pip install --upgrade pip
             pip install awscli
-      # `deploy` step: identical to a `run` step, but uses only one container:
-      # /docs/2.0/configuration-reference/#deploy 
+      # Deploy
       - deploy:
           name: deploy to AWS
           command: |
