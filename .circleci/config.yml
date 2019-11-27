@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: centos/httpd-24-centos7
+      - image: centos:latest
     working_directory: /var/www/
     environment:
       BUILD_DIR: /var/www/
@@ -33,7 +33,7 @@ jobs:
           name: deploy to AWS
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              aws s3 sync $BUILD_DIR s3://your-bucket-name/your-subfolder --delete
+              aws s3 sync $BUILD_DIR s3://congruent-test --delete
             else
               echo "Not master branch, dry run only"
             fi
