@@ -16,7 +16,7 @@ jobs:
       - checkout
 
       # install git submodules for managing third-party dependencies
-      - run: git submodule sync && sudo git submodule update --init
+      - run: git submodule sync && git submodule update --init
 
       - run:
           name: install AWS CLI 
