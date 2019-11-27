@@ -1,1 +1,38 @@
 
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php
+    working_directory: /var/www/
+    environment:
+      BUILD_DIR: /var/www/
+    steps:
+
+      # install git
+      - run: yum update -y && yum install git -y
+
+      # checkout repository
+      - checkout
+
+      # install git submodules for managing third-party dependencies
+      - run: git submodule sync && git submodule update --init
+
+      - run:
+          name: install AWS CLI 
+          command: |
+            yum -y install python-pip
+            yum clean all
+            pip install --upgrade pip
+            pip install awscli
+
+      # `deploy` step: identical to a `run` step, but uses only one container:
+      # /docs/2.0/configuration-reference/#deploy 
+      - deploy:
+          name: deploy to AWS
+          command: |
+            if [ "${CIRCLE_BRANCH}" = "master" ]; then
+              aws s3 sync $BUILD_DIR s3://your-bucket-name/your-subfolder --delete
+            else
+              echo "Not master branch, dry run only"
+            fi
