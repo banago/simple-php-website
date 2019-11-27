@@ -27,7 +27,7 @@ jobs:
             yum clean all
             yum -y install python3-pip
             pip3 install --upgrade pip
-            pip3install awscli
+            pip3 install awscli
       # Deploy
       - deploy:
           name: deploy to AWS
