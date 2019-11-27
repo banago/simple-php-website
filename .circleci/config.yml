@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: centos6
+      - image: centos:latest
     working_directory: /var/www/
     environment:
       BUILD_DIR: /var/www/
@@ -25,9 +25,9 @@ jobs:
             yum -y install epel-release
             yum makecache
             yum clean all
-            yum -y install python-pip
-            pip install --upgrade pip
-            pip install awscli
+            yum -y install python3-pip
+            pip3 install --upgrade pip
+            pip3install awscli
       # Deploy
       - deploy:
           name: deploy to AWS
