@@ -6,7 +6,7 @@ This project is meant for beginners. I've intentionally kept it minimal while in
 
 ## Usage
 
-I've made sure to make the running of this little site as simple as possible. There are only to steps go take:
+I've made sure to make the running of this little site as simple as possible. There are only two steps to take:
 
 1. Download the project to the desired directory on your computer
 2. Populate the `site_url` field in `includes/config.php` with the desird site url.
