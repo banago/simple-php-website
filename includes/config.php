@@ -10,7 +10,7 @@ function config($key = '')
     $config = [
         'name' => 'Simple PHP Website',
         'site_url' => '',
-        'pretty_uri' => true,
+        'pretty_uri' => false,
         'nav_menu' => [
             '' => 'Home',
             'about-us' => 'About Us',
@@ -19,7 +19,7 @@ function config($key = '')
         ],
         'template_path' => 'template',
         'content_path' => 'content',
-        'version' => 'v3.0',
+        'version' => 'v3.1',
     ];
 
     return isset($config[$key]) ? $config[$key] : null;

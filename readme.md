@@ -4,12 +4,14 @@ I put together this project while introducing a friend of mine to PHP. I decided
 
 This project is meant for beginners. I've intentionally kept it minimal while introducing some [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns).
 
-## Usage
+## Installation
 
-I've made sure to make the running of this little site as simple as possible. There are only two steps to take:
+There are only two steps to run this website:
 
 1. Download the project to the desired directory on your computer
-2. Populate the `site_url` field in `includes/config.php` with the desird site url.
+2. Run  `php -S localhost:8080` on your terminal. Navigate to http://localhost:8080 to see the site.
+
+By defaut, the page URLs use query strings (*?page=about*). You need to have Apache installed for pretly URLs (*/about*) to work. To activate pretty urls, update config value of `pretty_uri` to `true`.
 
 ## Concepts
 

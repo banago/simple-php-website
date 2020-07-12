@@ -9,7 +9,7 @@ function site_name()
 }
 
 /**
- * Displays site url provided in conig.
+ * Displays site url provided in config.
  */
 function site_url()
 {
@@ -31,10 +31,13 @@ function nav_menu($sep = ' | ')
 {
     $nav_menu = '';
     $nav_items = config('nav_menu');
+    
     foreach ($nav_items as $uri => $name) {
-        $class = str_replace('page=', '', $_SERVER['QUERY_STRING']) == $uri ? ' active' : '';
+        $query_string = str_replace('page=', '', $_SERVER['QUERY_STRING'] ?? '');
+        $class = $query_string == $uri ? ' active' : '';
         $url = config('site_url') . '/' . (config('pretty_uri') || $uri == '' ? '' : '?page=') . $uri;
         
+        // Add nav item to list. See the dot in front of equal sign (.=)
         $nav_menu .= '<a href="' . $url . '" title="' . $name . '" class="item ' . $class . '">' . $name . '</a>' . $sep;
     }
 
@@ -61,7 +64,6 @@ function page_title()
 function page_content()
 {
     $page = isset($_GET['page']) ? $_GET['page'] : 'home';
-
     $path = getcwd() . '/' . config('content_path') . '/' . $page . '.phtml';
 
     if (! file_exists($path)) {
