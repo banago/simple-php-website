@@ -8,18 +8,19 @@
 function config($key = '')
 {
     $config = [
-        'name' => 'Simple PHP Website',
+		'name' => 'Assignment',
+        'batch' => 'DevOps Fundamental Course Batch - 2',
+		'trainer' => 'Khalid Bin Sattar',
         'site_url' => '',
-        'pretty_uri' => false,
-        'nav_menu' => [
-            '' => 'Home',
-            'about-us' => 'About Us',
-            'products' => 'Products',
-            'contact' => 'Contact',
+		'pretty_uri' => false,
+        'sidebar_menu' => [
+			'' => 'Home',
+            '9-9-2020' => '9 Sep, 2020(Tuesday)',
         ],
         'template_path' => 'template',
         'content_path' => 'content',
         'version' => 'v3.1',
+		'project_uri' => '/DevSkill/Assignment-1/simple-php-website',
     ];
 
     return isset($config[$key]) ? $config[$key] : null;

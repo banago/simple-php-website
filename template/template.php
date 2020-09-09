@@ -4,28 +4,28 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title><?php page_title(); ?> | <?php site_name(); ?></title>
-    <link href="<?php site_url(); ?>/template/style.css" rel="stylesheet" type="text/css" /> 
+	<title><?php page_title(); ?></title>
+    <link href="<?php site_url(); ?>/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> 
+	<link href="<?php site_url(); ?>/css/style.css" rel="stylesheet" type="text/css" /> 
+	<script src="<?php site_url(); ?>/js/jquery.min.js"></script>
+	<script src="<?php site_url(); ?>/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="wrap">
+<div class="container">
 
-    <header>
-        <h1><?php site_name(); ?></h1>
-        <nav class="menu">
-            <?php nav_menu(); ?>
-        </nav>
-    </header>
+	<div class="sidebar text-white">
+		<h1 style="padding: 0px 10px; text-align: center;"><?php site_name(); ?></h1><hr/>
+		<?php sidebar_menu(); ?>
+	</div>
 
-    <article>
-        <h2><?php page_title(); ?></h2>
+    <div class="main">
         <?php page_content(); ?>
-    </article>
-
-    <footer>
-        <small>&copy;<?php echo date('Y'); ?> <?php site_name(); ?>.<br><?php site_version(); ?></small>
-    </footer>
-
+    </div>
+	
+	<div class="footer bg-light text-dark">
+		<small>&copy;<?php echo date('Y'); ?> <?php batch_name(); ?>.<br><?php trainer_name(); ?></small>
+	</div>
+	
 </div>
 </body>
 </html>
