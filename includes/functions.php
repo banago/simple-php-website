@@ -13,7 +13,7 @@ function site_name()
  */
 function site_url()
 {
-    echo config('site_url');
+    echo config('site_url').config('project_uri').'/template/';
 }
 
 /**
@@ -25,23 +25,40 @@ function site_version()
 }
 
 /**
+ * Displays batch name.
+ */
+function batch_name()
+{
+    echo config('batch');
+}
+
+/**
+ * Displays trainer name.
+ */
+function trainer_name()
+{
+    echo config('trainer');
+}
+
+/**
  * Website navigation.
  */
-function nav_menu($sep = ' | ')
+function sidebar_menu($sep = ' -------------------------------- ')
 {
-    $nav_menu = '';
-    $nav_items = config('nav_menu');
+    $sidebar_menu = '';
+    $sidebar_items = config('sidebar_menu');
     
-    foreach ($nav_items as $uri => $name) {
+    foreach ($sidebar_items as $uri => $name) {
         $query_string = str_replace('page=', '', $_SERVER['QUERY_STRING'] ?? '');
         $class = $query_string == $uri ? ' active' : '';
-        $url = config('site_url') . '/' . (config('pretty_uri') || $uri == '' ? '' : '?page=') . $uri;
-        
-        // Add nav item to list. See the dot in front of equal sign (.=)
-        $nav_menu .= '<a href="' . $url . '" title="' . $name . '" class="item ' . $class . '">' . $name . '</a>' . $sep;
+		
+		$url = config('site_url') . config('project_uri') . (config('pretty_uri') || $uri == '' ? '/' : '?page=') . $uri;
+        			
+		// Add nav item to list. See the dot in front of equal sign (.=)
+        $sidebar_menu .= '<a href="' . $url . '">' . $name . '</a>' . $sep;
     }
 
-    echo trim($nav_menu, $sep);
+    echo trim($sidebar_menu, $sep);
 }
 
 /**
@@ -51,7 +68,7 @@ function nav_menu($sep = ' | ')
  */
 function page_title()
 {
-    $page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'Home';
+    $page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'DevOps';
 
     echo ucwords(str_replace('-', ' ', $page));
 }
@@ -78,5 +95,5 @@ function page_content()
  */
 function init()
 {
-    require config('template_path') . '/template.php';
+	require config('template_path') . '/template.php';
 }
