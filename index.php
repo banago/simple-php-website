@@ -10,3 +10,6 @@ require 'includes/functions.php';
 krelated
 
 init();
+
+// this line is edited for creating pull request
+echo "pull request created";
