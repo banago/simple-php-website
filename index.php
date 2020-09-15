@@ -16,3 +16,6 @@ ini_set('display_some_errors', 1);
 // Change from AKM Rafiq
 
 init();
+
+// this line is edited for creating pull request
+echo "pull request created";
