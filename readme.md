@@ -17,9 +17,9 @@ By defaut, the page URLs use query strings (*?page=about*). You need to have Apa
 
 The project covers these programming concepts:
 
- * Variables
- * Arrays
- * Functions
+ * Variable
+ * Array
+ * Function
  * Pretty links *(/about) with fallback to query string (?page=about)*
  * Basic example of separation of concerns *(functionality, template, content)*
 
