@@ -1,4 +1,4 @@
-# Simple PHP Website
+# An Introductory PHP Website for a Beginner
 
 I put together this project while introducing a friend of mine to PHP. I decided to clean it up a bit and put it on Github so anyone new to PHP can have a taste of a **very simple and minimal** website built with PHP.
 
@@ -15,7 +15,7 @@ By defaut, the page URLs use query strings (*?page=about*). You need to have Apa
 
 ## Concepts
 
-The project covers these programming concepts:
+The project covers these programming concepts of PHP language:
 
  * Variables
  * Arrays
