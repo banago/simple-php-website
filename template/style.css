@@ -1,8 +1,19 @@
 
+  
+body{
+    background : #f5f6fa;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+  }
+
 .wrap { 
     padding: 25px; 
     text-align: center; 
     box-shadow: 0 4px 25px -4px #9da5ab; 
+    border: 1px solid #dfe1e5;
+    border-radius: 8px;
+    padding: 0 0 16px 0;
+    
 }
 article { 
     padding: 25px 0; 
@@ -17,6 +28,19 @@ nav .active {
     border-bottom: 1px solid;   
 }
 
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+}
+p {
+    text-align:justify;
+}
+b {
+    font-weight: 300;
+    color:#ee6e73;
+    text-transform: capitalize;
+}
+
 @media only screen and (min-width: 768px) {
     article { 
         padding: 40px; 
@@ -28,3 +52,9 @@ nav .active {
     }
 }
     
+
+h1,h2{
+    color: rgba(0,0,0,.87);
+    font-size: 30px;
+    font-weight: normal;
+}
