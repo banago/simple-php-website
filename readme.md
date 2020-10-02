@@ -4,7 +4,7 @@ I put together this project while introducing a friend of mine to PHP. I decided
 
 This project is meant for beginners. I've intentionally kept it minimal while introducing some [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns).
 
-## Installation
+## Installation:-
 
 There are only two steps to run this website:
 
@@ -13,7 +13,7 @@ There are only two steps to run this website:
 
 By defaut, the page URLs use query strings (*?page=about*). You need to have Apache installed for pretly URLs (*/about*) to work. To activate pretty urls, update config value of `pretty_uri` to `true`.
 
-## Concepts
+## Concepts:-
 
 The project covers these programming concepts:
 
@@ -27,6 +27,9 @@ If you have any questions or recommendations for the project, please [create an 
 
 > To help you take your knowledge of PHP to the next level, I've personally hunt down what I deem to be the best introductory course on PHP out there. I wish this course existed when I started learing PHP. Check it out on Udemy: [PHP for Beginners Course](https://click.linksynergy.com/link?id=jTy10g8O/M8&offerid=507388.1576856&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fphp-for-beginners-%2F).
 
-## License
+## License:-
 
-MIT
+MIT permitted
+
+
+-----------end-----------
