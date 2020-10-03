@@ -74,6 +74,23 @@ function page_content()
 }
 
 /**
+ * Display all Social Media Icons As You Given URL
+ * 
+ */
+
+function social_icons(){
+    $social_icons = config('social');
+    foreach(array_reverse($social_icons) as $name => $url){
+        if(!empty($url)){
+            echo '<div class="icon">';
+            echo '<a href="'.$url.'"><i class="fab fa-'.$name.' circle"></i></a>';
+            echo '</div>';
+        }
+    }
+}
+
+
+/**
  * Starts everything and displays the template.
  */
 function init()
