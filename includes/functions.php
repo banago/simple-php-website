@@ -5,7 +5,7 @@
  */
 function site_name()
 {
-    echo config('name');
+  echo config('name');
 }
 
 /**
@@ -13,7 +13,7 @@ function site_name()
  */
 function site_url()
 {
-    echo config('site_url');
+  echo config('site_url');
 }
 
 /**
@@ -21,7 +21,7 @@ function site_url()
  */
 function site_version()
 {
-    echo config('version');
+  echo config('version');
 }
 
 /**
@@ -29,19 +29,19 @@ function site_version()
  */
 function nav_menu($sep = ' | ')
 {
-    $nav_menu = '';
-    $nav_items = config('nav_menu');
-    
-    foreach ($nav_items as $uri => $name) {
-        $query_string = str_replace('page=', '', $_SERVER['QUERY_STRING'] ?? '');
-        $class = $query_string == $uri ? ' active' : '';
-        $url = config('site_url') . '/' . (config('pretty_uri') || $uri == '' ? '' : '?page=') . $uri;
-        
-        // Add nav item to list. See the dot in front of equal sign (.=)
-        $nav_menu .= '<a href="' . $url . '" title="' . $name . '" class="item ' . $class . '">' . $name . '</a>' . $sep;
-    }
+  $nav_menu = '';
+  $nav_items = config('nav_menu');
 
-    echo trim($nav_menu, $sep);
+  foreach ($nav_items as $uri => $name) {
+    $query_string = str_replace('page=', '', $_SERVER['QUERY_STRING'] ?? '');
+    $class = $query_string == $uri ? ' active' : '';
+    $url = config('site_url') . '/' . (config('pretty_uri') || $uri == '' ? '' : '?page=') . $uri;
+
+    // Add nav item to list. See the dot in front of equal sign (.=)
+    $nav_menu .= '<a href="' . $url . '" title="' . $name . '" class="item ' . $class . '">' . $name . '</a>' . $sep;
+  }
+
+  echo trim($nav_menu, $sep);
 }
 
 /**
@@ -51,9 +51,18 @@ function nav_menu($sep = ' | ')
  */
 function page_title()
 {
-    $page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'Home';
+  if(config('pretty_uri')){
+    // Parse the URL path to extract the "page" parameter
+    $url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $url_parts = explode('/', trim($url_path, '/'));
 
-    echo ucwords(str_replace('-', ' ', $page));
+    // The "page" will be the last part of the URL
+    $page = end($url_parts) !== '' ? end($url_parts) : 'Home';
+  } else {
+    $page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'Home';
+  }
+
+  echo ucwords(str_replace('-', ' ', $page));
 }
 
 /**
@@ -63,14 +72,26 @@ function page_title()
  */
 function page_content()
 {
+  if(config('pretty_uri')){
+    // Parse the URL path to extract the "page" parameter
+    $url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $url_parts = explode('/', trim($url_path, '/'));
+
+    // The "page" will be the last part of the URL
+    $page = end($url_parts) !== '' ? end($url_parts) : 'Home';
+
+
+  } else {
     $page = isset($_GET['page']) ? $_GET['page'] : 'home';
-    $path = getcwd() . '/' . config('content_path') . '/' . $page . '.phtml';
+  }
 
-    if (! file_exists($path)) {
-        $path = getcwd() . '/' . config('content_path') . '/404.phtml';
-    }
+  $path = getcwd() . '/' . config('content_path') . '/' . $page . '.phtml';
 
-    echo file_get_contents($path);
+  if (!file_exists($path)) {
+    $path = getcwd() . '/' . config('content_path') . '/404.phtml';
+  }
+
+  echo file_get_contents($path);
 }
 
 /**
@@ -78,5 +99,5 @@ function page_content()
  */
 function init()
 {
-    require config('template_path') . '/template.php';
+  require config('template_path') . '/template.php';
 }
